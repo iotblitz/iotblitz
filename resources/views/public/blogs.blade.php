@@ -19,7 +19,7 @@
 
                 <div class="col-12 col-md-6">
                     <div class="welcome-img">
-                        <lottie-player src="{{ asset('public_page') }}/lottiefiles/content.json" background="transparent"
+                        <lottie-player src="{{ asset('public/public_page') }}/lottiefiles/content.json" background="transparent"
                             speed="1" style="width: 80%; height: auto;" loop autoplay
                             class="img-fluid"></lottie-player>
                         <!-- <img src="{{ asset('public_page') }}/assets/img/welcome-img.png" alt=""> -->
