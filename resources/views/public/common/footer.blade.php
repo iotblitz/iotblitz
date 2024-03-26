@@ -58,7 +58,7 @@
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-footer">
                     <div class="logo-area footer">
-                        <a href="#"><img src="{{ asset('public_page') }}/lottiefiles/logo.png" alt=""></a>
+                        <a href="#"><img src="{{ asset('public/public_page') }}/lottiefiles/logo.png" alt=""></a>
                     </div>
                     <div class="space-20"></div>
                     <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific

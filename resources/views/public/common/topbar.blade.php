@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-4 col-lg-2">
                     <div class="logo-area">
-                        <a href="#"><img src="{{ asset('public_page') }}/lottiefiles/logo.png" alt="" width="50%" height="100%"></a>
+                        <a href="#"><img src="{{ asset('public/public_page') }}/lottiefiles/logo.png" alt="" width="50%" height="100%"></a>
                     </div>
                 </div>
                 <div class="col-4 col-lg-8 d-none d-lg-block">
