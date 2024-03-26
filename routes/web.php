@@ -28,6 +28,9 @@ Route::get('/blogs', [Home::class, 'blogs'])->name('blogs');
 Route::get('/blogs/{blogs_id}', [Home::class, 'single_blogs'])->name('single_blogs');
 Route::post('/blogs/comments/{blog_id}', [Home::class, 'public_comments'])->name('public_comments');
 
+Route::get('/case_study', [Home::class, 'case_study'])->name('case_study');
+Route::get('/case_study/{case_study_id}', [Home::class, 'single_case_study'])->name('single_case_study');
+
 
 Route::get('robots.txt',[Home::class,'robots']);
 Route::get('sitemap.xml',[Home::class,'sitemap']);

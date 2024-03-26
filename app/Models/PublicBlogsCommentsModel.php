@@ -9,10 +9,10 @@ class PublicBlogsCommentsModel extends Model
 {
     use HasFactory;
 
-    protected $table = "public_blog_comments";
-    protected $primaryKey = 'blog_comments_id';
+    protected $table = "public_comments";
+    protected $primaryKey = 'comments_id';
     protected $fillable = [
-        "blog_id","name", "email", "comments", "active_status"
+        "content_id","comment_by_page" ,"name", "email", "comments", "active_status"
     ];
 
 }

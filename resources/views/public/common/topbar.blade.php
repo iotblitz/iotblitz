@@ -24,7 +24,7 @@
                                 </li>
                                 <li><a class="scroll" href="#about">About</a>
                                 </li>
-                                <li><a class="scroll" href="#Paper">Case Study</a></li>
+                                <li><a class="scroll" href="{{route('case_study')}}">Case Study</a></li>
                                 <li><a class="scroll" href="#token">Products</a></li>
                                 <li><a class="scroll" href="#roadmap">solutions</a></li>
                                 <li><a class="scroll" href="{{route('blogs')}}">Blogs</a></li>

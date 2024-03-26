@@ -168,7 +168,7 @@ class IotBlitz extends Controller
                 'create_by'=>auth()->user()->id
             ]);
 
-            return redirect()->route('super_admin.page.blog');
+            return redirect()->route('super_admin.page.case_study');
         }else{
             return view('admin.iot_blitz.case_study_add');
         }
@@ -221,7 +221,7 @@ class IotBlitz extends Controller
                 ];
             }else{
                 $savedata=[
-                    'blog_title'=>$r->title,
+                    'case_study_title'=>$r->title,
                     'case_study_keywords'=>$r->keyword,
                     'case_study_description'=>$r->description_editor,
                     'text_description'=>$r->text_description,
@@ -232,7 +232,7 @@ class IotBlitz extends Controller
 
             PublicCaseStudyModel::where('case_study_id',$case_study_id)->update($savedata);
 
-            return redirect()->route('super_admin.page.blog');
+            return redirect()->route('super_admin.page.case_study');
         }else{
             $data['editdata']=PublicCaseStudyModel::where('case_study_id',$case_study_id)->first();
             $data['case_study_id']=$case_study_id;
