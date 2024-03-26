@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" href="{{ asset('admin_page') }}/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="{{ asset('admin_page') }}/assets/css/style.css">
+    <link rel="icon" href="{{ asset('public/admin_page') }}/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('public/admin_page') }}/assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
 
     <style>
@@ -24,7 +24,7 @@
                 <div class="row align-items-center text-center">
                     <div class="col-md-12">
                         <div class="card-body">
-                            <img src="{{ asset('admin_page') }}/assets/images/" alt="" class="img-fluid mb-4">
+                            <img src="{{ asset('public/admin_page') }}/assets/images/" alt="" class="img-fluid mb-4">
                             <h4 class="mb-3 f-w-400">Signin</h4>
                             <form action="{{route('admin.register')}}" method="post" id="myForm">
                                 @csrf
@@ -53,10 +53,10 @@
     </div>
     <!-- Required Js -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="{{ asset('admin_page') }}/assets/js/vendor-all.min.js"></script>
-    <script src="{{ asset('admin_page') }}/assets/js/plugins/bootstrap.min.js"></script>
-    <script src="{{ asset('admin_page') }}/assets/js/ripple.js"></script>
-    <script src="{{ asset('admin_page') }}/assets/js/pcoded.min.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/vendor-all.min.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/ripple.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/pcoded.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
     <script>
         $(document).ready(function() {

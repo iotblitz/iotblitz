@@ -79,7 +79,7 @@
 
 
                                 <div class="col-md-4 p-5">
-                                    <img src="{{ asset('blog_images') }}/{{$blogdata->blog_image}}" class="card-img" alt="Image">
+                                    <img src="{{ asset('public/blog_images') }}/{{$blogdata->blog_image}}" class="card-img" alt="Image">
                                 </div>
                                 @endif
                             </div>

@@ -53,7 +53,7 @@
 
                 <div class="col-12 col-lg-4">
                     <div class="single-blog wow fadeInUp">
-                        <div class="single-blog-image" style="background:url('{{ asset('blog_images') }}/{{$blogdata->blog_image}}')"></div>
+                        <div class="single-blog-image" style="background:url('{{ asset('public/blog_images') }}/{{$blogdata->blog_image}}')"></div>
                         <div class="single-blog-text">
                             <a href="{{ route('single_blogs', [str_replace(' ', '-', $blogdata->blog_title).'-'.$blogdata->blog_id])}}">{{substr($blogdata->text_description, 0, 100)}}....</a>
                             <div class="space-10"></div>

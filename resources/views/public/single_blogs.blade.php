@@ -14,7 +14,7 @@
                     <div class="space-10"></div>
                     <small>by IoTBlitz <span><i class="fa fa-clock-o"></i> {{$blogs->created_at}}</span></small>
                     <div class="space-50"></div>
-                    <div class="single-blog-image" style="background:url('{{ asset('blog_images') }}/{{$blogs->blog_image}}')"></div>
+                    <div class="single-blog-image" style="background:url('{{ asset('public/blog_images') }}/{{$blogs->blog_image}}')"></div>
                     {{-- <img src="{{ asset('blog_images') }}/{{$blogs->blog_image}}" style="height: auto; width: 100%;" alt="Blog Image"> --}}
 
 

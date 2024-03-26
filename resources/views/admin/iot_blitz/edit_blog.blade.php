@@ -71,7 +71,7 @@
                                     <div class="col-sm-3">
                                         <div class="img">
                                             <img id="previewImage"
-                                                src="{{ asset('blog_images') }}/{{ $editdata->blog_image }}"
+                                                src="{{ asset('public/blog_images') }}/{{ $editdata->blog_image }}"
                                                 class="img-fluid" alt="Preview Image">
                                         </div>
                                     </div>
