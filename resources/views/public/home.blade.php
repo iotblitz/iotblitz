@@ -45,7 +45,8 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="about-mid-img">
-                    <img src="{{ asset('public/public_page') }}/assets/img/about-left.png" alt="">
+                    <lottie-player src="{{ asset('public/public_page') }}/lottiefiles/datanet.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay class="img-fluid"></lottie-player>
+                    {{-- <img src="{{ asset('public/public_page') }}/assets/img/about-left.png" alt=""> --}}
                 </div>
             </div>
             <div class="col-12 col-md-6 align-self-center">
@@ -169,7 +170,7 @@
     <!---distibution area start-->
     <div class="distibution wow fadeInUp" id="token">
         <div class="container">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-12 text-center">
                     <div class="heading">
                         <h5>Token Distribution</h5>
@@ -178,10 +179,10 @@
                     </div>
                     <div class="space-60"></div>
                 </div>
-            </div>
+            </div> --}}
             <div class="row">
 
-                <div class="col-6 text-right">
+                {{-- <div class="col-6 text-right">
                     <div class="distibution-svg distibution-svg-1">
                         <img src="{{ asset('public/public_page') }}/assets/img/token-top.png" alt="">
                     </div>
@@ -195,7 +196,24 @@
                             <li class="distibution-list-4"><span>10% </span>Bounty </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <div class="space-90"></div>
             <div class="row">
