@@ -17,10 +17,10 @@
     <meta name="keywords" content="">
     <meta name="author" content="Phoenixcoded" />
     <!-- Favicon icon -->
-    <link rel="icon" href="{{ asset('admin_page') }}/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('public/admin_page') }}/assets/images/favicon.ico" type="image/x-icon">
 
     <!-- vendor css -->
-    <link rel="stylesheet" href="{{ asset('admin_page') }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('public/admin_page') }}/assets/css/style.css">
 
 
     <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
@@ -70,17 +70,17 @@
 
 
     <!-- Required Js -->
-    <script src="{{ asset('admin_page') }}/assets/js/vendor-all.min.js"></script>
-    <script src="{{ asset('admin_page') }}/assets/js/plugins/bootstrap.min.js"></script>
-    <script src="{{ asset('admin_page') }}/assets/js/ripple.js"></script>
-    <script src="{{ asset('admin_page') }}/assets/js/pcoded.min.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/vendor-all.min.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/ripple.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/pcoded.min.js"></script>
 
     <!-- Apex Chart -->
-    <script src="{{ asset('admin_page') }}/assets/js/plugins/apexcharts.min.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/plugins/apexcharts.min.js"></script>
 
 
     <!-- custom-chart js -->
-    <script src="{{ asset('admin_page') }}/assets/js/pages/dashboard-main.js"></script>
+    <script src="{{ asset('public/admin_page') }}/assets/js/pages/dashboard-main.js"></script>
 
     @yield('admin_page_script')
 </body>

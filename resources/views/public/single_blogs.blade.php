@@ -61,7 +61,7 @@
 
                         <div class="single-comment" style="height: 200px !important">
                             <div class="comment-img">
-                                <img src="{{ asset('public_page') }}/lottiefiles/profile.png" alt="">
+                                <img src="{{ asset('public/public_page') }}/lottiefiles/profile.png" alt="">
                                 <div class="space-10"></div>
                                 <p>{{$comments->name}}</p>
                             </div>

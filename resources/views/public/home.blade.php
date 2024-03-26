@@ -27,8 +27,8 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="welcome-img">
-                    <lottie-player src="{{ asset('public_page') }}/lottiefiles/1710739913090.json" background="transparent" speed="1" style="width: 200%; height: 700px;" loop autoplay class="img-fluid"></lottie-player>
-                    <!-- <img src="{{ asset('public_page') }}/assets/img/welcome-img.png" alt=""> -->
+                    <lottie-player src="{{ asset('public/public_page') }}/lottiefiles/1710739913090.json" background="transparent" speed="1" style="width: 200%; height: 700px;" loop autoplay class="img-fluid"></lottie-player>
+                    <!-- <img src="{{ asset('public/public_page') }}/assets/img/welcome-img.png" alt=""> -->
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="about-mid-img">
-                    <img src="{{ asset('public_page') }}/assets/img/about-left.png" alt="">
+                    <img src="{{ asset('public/public_page') }}/assets/img/about-left.png" alt="">
                 </div>
             </div>
             <div class="col-12 col-md-6 align-self-center">
@@ -74,7 +74,7 @@
             <div class="col-lg-4">
                 <a href="#" class="single-about">
                     <div class="single-about-img">
-                        <img src="{{ asset('public_page') }}/assets/img/about-icon-1.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-1.png" alt="">
                     </div>
                     <div class="single-about-text">
                         <h4>Exciting Opportunity</h4>
@@ -85,7 +85,7 @@
             <div class="col-lg-4">
                 <a href="#" class="single-about">
                     <div class="single-about-img">
-                        <img src="{{ asset('public_page') }}/assets/img/about-icon-2.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-2.png" alt="">
                     </div>
                     <div class="single-about-text">
                         <h4>Vetted ICO Marketplace</h4>
@@ -96,7 +96,7 @@
             <div class="col-lg-4">
                 <a href="#" class="single-about">
                     <div class="single-about-img">
-                        <img src="{{ asset('public_page') }}/assets/img/about-icon-3.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-3.png" alt="">
                     </div>
                     <div class="single-about-text">
                         <h4>Diverse Profit Ways</h4>
@@ -121,7 +121,7 @@
             <div class="col-lg-4">
                 <a href="#" class="single-about">
                     <div class="single-about-img">
-                        <img src="{{ asset('public_page') }}/assets/img/about-icon-1.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-1.png" alt="">
                     </div>
                     <div class="single-about-text">
                         <h4>Exciting Opportunity</h4>
@@ -132,7 +132,7 @@
             <div class="col-lg-4">
                 <a href="#" class="single-about">
                     <div class="single-about-img">
-                        <img src="{{ asset('public_page') }}/assets/img/about-icon-2.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-2.png" alt="">
                     </div>
                     <div class="single-about-text">
                         <h4>Vetted ICO Marketplace</h4>
@@ -143,7 +143,7 @@
             <div class="col-lg-4">
                 <a href="#" class="single-about">
                     <div class="single-about-img">
-                        <img src="{{ asset('public_page') }}/assets/img/about-icon-3.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-3.png" alt="">
                     </div>
                     <div class="single-about-text">
                         <h4>Diverse Profit Ways</h4>
@@ -183,7 +183,7 @@
 
                 <div class="col-6 text-right">
                     <div class="distibution-svg distibution-svg-1">
-                        <img src="{{ asset('public_page') }}/assets/img/token-top.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/token-top.png" alt="">
                     </div>
                 </div>
                 <div class="col-6">
@@ -221,7 +221,7 @@
                 </div>
                 <div class="col-10">
                     <div class="distibution-svg distibution-svg-2">
-                        <img src="{{ asset('public_page') }}/assets/img/token-bottom.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/token-bottom.png" alt="">
                     </div>
                 </div>
             </div>
@@ -252,7 +252,7 @@
             <div class="roadmap-item">
                 <div class="single-roadmap text-center road-left">
                     <div class="single-roadmap-img">
-                        <img src="{{ asset('public_page') }}/assets/img/roadmap-1.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/roadmap-1.png" alt="">
                     </div>
                     <div class="space-30"></div>
                     <div class="roadmap-text">
@@ -268,7 +268,7 @@
                     <div class="row">
                         <div class="col-5 align-self-center">
                             <div class="single-roadmap-img">
-                                <img src="{{ asset('public_page') }}/assets/img/roadmap-2.png" alt="">
+                                <img src="{{ asset('public/public_page') }}/assets/img/roadmap-2.png" alt="">
                             </div>
                         </div>
                         <div class="col-7">
@@ -284,7 +284,7 @@
             <div class="roadmap-item">
                 <div class="single-roadmap text-center road-left">
                     <div class="single-roadmap-img">
-                        <img src="{{ asset('public_page') }}/assets/img/roadmap-4.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/roadmap-4.png" alt="">
                     </div>
                     <div class="space-30"></div>
                     <div class="roadmap-text">
@@ -300,7 +300,7 @@
                     <div class="row">
                         <div class="col-5 align-self-center">
                             <div class="single-roadmap-img">
-                                <img src="{{ asset('public_page') }}/assets/img/roadmap-5.png" alt="">
+                                <img src="{{ asset('public/public_page') }}/assets/img/roadmap-5.png" alt="">
                             </div>
 
                         </div>
@@ -317,7 +317,7 @@
             <div class="roadmap-item">
                 <div class="single-roadmap text-center road-left">
                     <div class="single-roadmap-img">
-                        <img src="{{ asset('public_page') }}/assets/img/roadmap-4.png" alt="">
+                        <img src="{{ asset('public/public_page') }}/assets/img/roadmap-4.png" alt="">
                     </div>
                     <div class="space-30"></div>
                     <div class="roadmap-text">
@@ -333,7 +333,7 @@
                     <div class="row">
                         <div class="col-5 align-self-center">
                             <div class="single-roadmap-img">
-                                <img src="{{ asset('public_page') }}/assets/img/roadmap-5.png" alt="">
+                                <img src="{{ asset('public/public_page') }}/assets/img/roadmap-5.png" alt="">
                             </div>
 
                         </div>
@@ -379,10 +379,10 @@
                     <div class="col-12 col-md-6">
                         <div class="about-mid-img">
 
-                        <lottie-player src="{{ asset('public_page') }}/lottiefiles/contact.json" background="transparent" speed="1" style="width: 200%; height: 700px;" loop autoplay class="img-fluid"></lottie-player>
+                        <lottie-player src="{{ asset('public/public_page') }}/lottiefiles/contact.json" background="transparent" speed="1" style="width: 200%; height: 700px;" loop autoplay class="img-fluid"></lottie-player>
 
 
-                            <!-- <img src="{{ asset('public_page') }}/assets/img/about-left.png" alt=""> -->
+                            <!-- <img src="{{ asset('public/public_page') }}/assets/img/about-left.png" alt=""> -->
                         </div>
                     </div>
                     <div class="col-12 col-md-6 align-self-center">
