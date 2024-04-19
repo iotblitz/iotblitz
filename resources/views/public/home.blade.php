@@ -5,559 +5,585 @@
 
 
 
-<!--welcome area start-->
-<div class="welcome-area wow fadeInUp" id="home">
-    <div id="particles-js"></div>
+<div class="main-banner" id="top">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6 align-self-center">
-                <div class="welcome-right">
-                    <div class="welcome-text">
-                        <h1>Fast Growing ICO
-                            Agency for Blockchain
-                            Investors and Founders </h1>
-                        <h4>Sifting through teaspoons of clay and sand scraped from the
-                            floors of caves, German researchers have managed.</h4>
-                    </div>
-                    <div class="welcome-btn">
-                        <a href="#" class="gradient-btn v2 mr-20">Contact</a>
-                        <a href="#" class="gradient-btn v2">Demo</a>
-                    </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-carousel owl-banner">
+            <div class="item item-1">
+              <div class="header-text">
+                <span class="category">Our Courses</span>
+                <h2>With Scholar Teachers, Everything Is Easier</h2>
+                <p>Scholar is free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="#">Request Demo</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i> What's Scholar?</a>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="col-12 col-md-6">
-                <div class="welcome-img">
-                    <lottie-player src="{{ asset('public/public_page') }}/lottiefiles/1710739913090.json" background="transparent" speed="1" style="width: 200%; height: 700px;" loop autoplay class="img-fluid"></lottie-player>
-                    <!-- <img src="{{ asset('public/public_page') }}/assets/img/welcome-img.png" alt=""> -->
+            <div class="item item-2">
+              <div class="header-text">
+                <span class="category">Best Result</span>
+                <h2>Get the best result out of your effort</h2>
+                <p>You are allowed to use this template for any educational or commercial purpose. You are not allowed to re-distribute the template ZIP file on any other website.</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="#">Request Demo</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i> What's the best result?</a>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="item item-3">
+              <div class="header-text">
+                <span class="category">Online Learning</span>
+                <h2>Online Learning helps you save the time</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporious incididunt ut labore et dolore magna aliqua suspendisse.</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="#">Request Demo</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i> What's Online Course?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<!--welcome area end-->
+  </div>
 
-<!--about area start-->
-<div class="about-area wow fadeInUp" id="about">
-    <div class="space-30"></div>
+  <div class="services section" id="services">
     <div class="container">
-
-        <div class="space-90"></div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <div class="about-mid-img">
-                    <lottie-player src="{{ asset('public/public_page') }}/lottiefiles/datanet.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay class="img-fluid"></lottie-player>
-                    {{-- <img src="{{ asset('public/public_page') }}/assets/img/about-left.png" alt=""> --}}
-                </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="{{ asset('public/public_page') }}/assets/images/service-01.png" alt="online degrees">
             </div>
-            <div class="col-12 col-md-6 align-self-center">
-                <div class="heading">
-                    <h5>We are featured in</h5>
-                </div>
-                <div class="about-mid-text">
-                    <h1>A Platform for Exchange
-                        Cyrptocurrency and shares</h1>
-                    <div class="space-10"></div>
-                    <p>At IoTBlitz, we're not just a technology company; we're architects of digital transformation. Founded in 2024 by a team of passionate innovators, our journey began with a simple yet powerful vision: to empower businesses and individuals with next-generation technology solutions that transcend boundaries and revolutionize the way we live, work, and connect.</p>
-                </div>
-                <div class="space-30"></div>
-                <a href="#" class="gradient-btn v2 about-btn"> <i class="fa fa-send-o"></i> join us on telegraph</a>
+            <div class="main-content">
+              <h4>Online Degrees</h4>
+              <p>Whenever you need free templates in HTML CSS, you just remember TemplateMo website.</p>
+              <div class="main-button">
+                <a href="#">Read More</a>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="{{ asset('public/public_page') }}/assets/images/service-02.png" alt="short courses">
+            </div>
+            <div class="main-content">
+              <h4>Short Courses</h4>
+              <p>You can browse free templates based on different tags such as digital marketing, etc.</p>
+              <div class="main-button">
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="{{ asset('public/public_page') }}/assets/images/service-03.png" alt="web experts">
+            </div>
+            <div class="main-content">
+              <h4>Web Experts</h4>
+              <p>You can start learning HTML CSS by modifying free templates from our website too.</p>
+              <div class="main-button">
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="space-90"></div>
-</div>
-<!--about area end-->
+  </div>
 
-<!--single about area start-->
-<div class="single-about-area wow fadeInUp">
+  <div class="section about-us">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <a href="#" class="single-about">
-                    <div class="single-about-img">
-                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-1.png" alt="">
-                    </div>
-                    <div class="single-about-text">
-                        <h4>Exciting Opportunity</h4>
-                        <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not quite tuned in radio station rises and for a while drowns</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#" class="single-about">
-                    <div class="single-about-img">
-                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-2.png" alt="">
-                    </div>
-                    <div class="single-about-text">
-                        <h4>Vetted ICO Marketplace</h4>
-                        <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not quite tuned in radio station rises and for a while drowns</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#" class="single-about">
-                    <div class="single-about-img">
-                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-3.png" alt="">
-                    </div>
-                    <div class="single-about-text">
-                        <h4>Diverse Profit Ways</h4>
-                        <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not quite tuned in radio station rises and for a while drowns</p>
-                    </div>
-                </a>
-            </div>
-
-
-
-        </div>
-    </div>
-    <div class="space-90"></div>
-</div>
-<!--single about area end-->
-
-
-<!--single about area start-->
-<div class="single-about-area wow fadeInUp">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <a href="#" class="single-about">
-                    <div class="single-about-img">
-                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-1.png" alt="">
-                    </div>
-                    <div class="single-about-text">
-                        <h4>Exciting Opportunity</h4>
-                        <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not quite tuned in radio station rises and for a while drowns</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#" class="single-about">
-                    <div class="single-about-img">
-                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-2.png" alt="">
-                    </div>
-                    <div class="single-about-text">
-                        <h4>Vetted ICO Marketplace</h4>
-                        <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not quite tuned in radio station rises and for a while drowns</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#" class="single-about">
-                    <div class="single-about-img">
-                        <img src="{{ asset('public/public_page') }}/assets/img/about-icon-3.png" alt="">
-                    </div>
-                    <div class="single-about-text">
-                        <h4>Diverse Profit Ways</h4>
-                        <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not quite tuned in radio station rises and for a while drowns</p>
-                    </div>
-                </a>
-            </div>
-
-
-
-        </div>
-    </div>
-    <div class="space-90"></div>
-</div>
-<!--single about area end-->
-
-
-
-
-
-<!--distibution-bg start-->
-<div class="distibution-bg">
-    <!---distibution area start-->
-    <div class="distibution wow fadeInUp" id="token">
-        <div class="container">
-            {{-- <div class="row">
-                <div class="col-12 text-center">
-                    <div class="heading">
-                        <h5>Token Distribution</h5>
-                        <div class="space-10"></div>
-                        <h1>initial distibution</h1>
-                    </div>
-                    <div class="space-60"></div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-1">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Where shall we begin?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
                 </div>
-            </div> --}}
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  How do we work together?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Why SCHOLAR is the best?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  There are more than one hundred responsive HTML templates to choose from <strong>Template</strong>Mo website. You can browse by different tags or categories.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Do we get the best support?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  You can also search on Google with specific keywords such as <code>templatemo business templates, templatemo gallery templates, admin dashboard templatemo, 3-column templatemo, etc.</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <div class="section-heading">
+            <h6>About Us</h6>
+            <h2>What make us the best academy online?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid risus commodo.</p>
+            <div class="main-button">
+              <a href="#">Discover More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section courses" id="courses" >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Latest Courses</h6>
+            <h2>Latest Courses</h2>
+          </div>
+        </div>
+      </div>
+      <ul class="event_filter">
+        <li>
+          <a class="is_active" href="#!" data-filter="*">Show All</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".design">Webdesign</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".development">Development</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".wordpress">Wordpress</a>
+        </li>
+      </ul>
+      <div class="row event_box">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="{{ asset('public/public_page') }}/assets/images/course-01.jpg" alt=""></a>
+              <span class="category">Webdesign</span>
+              <span class="price"><h6><em>$</em>160</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">Stella Blair</span>
+              <h4>Learn Web Design</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="{{ asset('public/public_page') }}/assets/images/course-02.jpg" alt=""></a>
+              <span class="category">Development</span>
+              <span class="price"><h6><em>$</em>340</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">Cindy Walker</span>
+              <h4>Web Development Tips</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design wordpress">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="{{ asset('public/public_page') }}/assets/images/course-03.jpg" alt=""></a>
+              <span class="category">Wordpress</span>
+              <span class="price"><h6><em>$</em>640</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">David Hutson</span>
+              <h4>Latest Web Trends</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 development">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="{{ asset('public/public_page') }}/assets/images/course-04.jpg" alt=""></a>
+              <span class="category">Development</span>
+              <span class="price"><h6><em>$</em>450</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">Stella Blair</span>
+              <h4>Online Learning Steps</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 wordpress development">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="{{ asset('public/public_page') }}/assets/images/course-05.jpg" alt=""></a>
+              <span class="category">Wordpress</span>
+              <span class="price"><h6><em>$</em>320</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">Sophia Rose</span>
+              <h4>Be a WordPress Master</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 wordpress design">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="{{ asset('public/public_page') }}/assets/images/course-06.jpg" alt=""></a>
+              <span class="category">Webdesign</span>
+              <span class="price"><h6><em>$</em>240</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">David Hutson</span>
+              <h4>Full Stack Developer</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section fun-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="wrapper">
             <div class="row">
-
-                {{-- <div class="col-6 text-right">
-                    <div class="distibution-svg distibution-svg-1">
-                        <img src="{{ asset('public/public_page') }}/assets/img/token-top.png" alt="">
-                    </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="150" data-speed="1000"></h2>
+                   <p class="count-text ">Happy Students</p>
                 </div>
-                <div class="col-6">
-                    <div class="distibution-d item-1">
-                        <ul>
-                            <li class="distibution-list-1"><span>15% </span>Build Up Team</li>
-                            <li class="distibution-list-2"><span>50% </span>ICO Investors</li>
-                            <li class="distibution-list-3"><span>25% </span>Branding & Marketing</li>
-                            <li class="distibution-list-4"><span>10% </span>Bounty </li>
-                        </ul>
-                    </div>
-                </div> --}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="804" data-speed="1000"></h2>
+                  <p class="count-text ">Course Hours</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="50" data-speed="1000"></h2>
+                  <p class="count-text ">Employed Students</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="counter end">
+                  <h2 class="timer count-title count-number" data-to="15" data-speed="1000"></h2>
+                  <p class="count-text ">Years Experience</p>
+                </div>
+              </div>
             </div>
-            <div class="space-90"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team section" id="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="team-member">
+            <div class="main-content">
+              <img src="{{ asset('public/public_page') }}/assets/images/member-01.jpg" alt="">
+              <span class="category">UX Teacher</span>
+              <h4>Sophia Rose</h4>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="team-member">
+            <div class="main-content">
+              <img src="{{ asset('public/public_page') }}/assets/images/member-02.jpg" alt="">
+              <span class="category">Graphic Teacher</span>
+              <h4>Cindy Walker</h4>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="team-member">
+            <div class="main-content">
+              <img src="{{ asset('public/public_page') }}/assets/images/member-03.jpg" alt="">
+              <span class="category">Full Stack Master</span>
+              <h4>David Hutson</h4>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="team-member">
+            <div class="main-content">
+              <img src="{{ asset('public/public_page') }}/assets/images/member-04.jpg" alt="">
+              <span class="category">Digital Animator</span>
+              <h4>Stella Blair</h4>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="owl-carousel owl-testimonials">
+            <div class="item">
+              <p>“Please tell your friends or collegues about TemplateMo website. Anyone can access the website to download free templates. Thank you for visiting.”</p>
+              <div class="author">
+                <img src="{{ asset('public/public_page') }}/assets/images/testimonial-author.jpg" alt="">
+                <span class="category">Full Stack Master</span>
+                <h4>Claude David</h4>
+              </div>
+            </div>
+            <div class="item">
+              <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid.”</p>
+              <div class="author">
+                <img src="{{ asset('public/public_page') }}/assets/images/testimonial-author.jpg" alt="">
+                <span class="category">UI Expert</span>
+                <h4>Thomas Jefferson</h4>
+              </div>
+            </div>
+            <div class="item">
+              <p>“Scholar is free website template provided by TemplateMo for educational related websites. This CSS layout is based on Bootstrap v5.3.0 framework.”</p>
+              <div class="author">
+                <img src="{{ asset('public/public_page') }}/assets/images/testimonial-author.jpg" alt="">
+                <span class="category">Digital Animator</span>
+                <h4>Stella Blair</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <div class="section-heading">
+            <h6>TESTIMONIALS</h6>
+            <h2>What they say about us?</h2>
+            <p>You can search free CSS templates on Google using different keywords such as templatemo portfolio, templatemo gallery, templatemo blue color, etc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section events" id="events">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Schedule</h6>
+            <h2>Upcoming Events</h2>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-6">
+          <div class="item">
             <div class="row">
-                <div class="col-12 text-center">
-                    <div class="heading">
-                        <h5>Sale breakdown</h5>
-                        <div class="space-10"></div>
-                        <h1>Token Sales Contribution</h1>
-                    </div>
-                    <div class="space-90"></div>
+              <div class="col-lg-3">
+                <div class="image">
+                  <img src="{{ asset('public/public_page') }}/assets/images/event-01.jpg" alt="">
                 </div>
+              </div>
+              <div class="col-lg-9">
+                <ul>
+                  <li>
+                    <span class="category">Web Design</span>
+                    <h4>UI Best Practices</h4>
+                  </li>
+                  <li>
+                    <span>Date:</span>
+                    <h6>16 Feb 2036</h6>
+                  </li>
+                  <li>
+                    <span>Duration:</span>
+                    <h6>22 Hours</h6>
+                  </li>
+                  <li>
+                    <span>Price:</span>
+                    <h6>$120</h6>
+                  </li>
+                </ul>
+                <a href="#"><i class="fa fa-angle-right"></i></a>
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-6">
+          <div class="item">
             <div class="row">
-                <div class="col-2 text-right">
-                    <div class="distibution-d distibution-d-2">
-                        <ul>
-                            <li class="distibution-list-5"><span>40% </span>HR & Development</li>
-                            <li class="distibution-list-6"><span>30% </span>Branding & Markting</li>
-                            <li class="distibution-list-7"><span>20% </span>Posiblle Buyout</li>
-                            <li class="distibution-list-8"><span>10% </span>Legal Advisory </li>
-                        </ul>
-                    </div>
+              <div class="col-lg-3">
+                <div class="image">
+                  <img src="{{ asset('public/public_page') }}/assets/images/event-02.jpg" alt="">
                 </div>
-                <div class="col-10">
-                    <div class="distibution-svg distibution-svg-2">
-                        <img src="{{ asset('public/public_page') }}/assets/img/token-bottom.png" alt="">
-                    </div>
-                </div>
+              </div>
+              <div class="col-lg-9">
+                <ul>
+                  <li>
+                    <span class="category">Front End</span>
+                    <h4>New Design Trend</h4>
+                  </li>
+                  <li>
+                    <span>Date:</span>
+                    <h6>24 Feb 2036</h6>
+                  </li>
+                  <li>
+                    <span>Duration:</span>
+                    <h6>30 Hours</h6>
+                  </li>
+                  <li>
+                    <span>Price:</span>
+                    <h6>$320</h6>
+                  </li>
+                </ul>
+                <a href="#"><i class="fa fa-angle-right"></i></a>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="space-90"></div>
+        <div class="col-lg-12 col-md-6">
+          <div class="item">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="image">
+                  <img src="{{ asset('public/public_page') }}/assets/images/event-03.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <ul>
+                  <li>
+                    <span class="category">Full Stack</span>
+                    <h4>Web Programming</h4>
+                  </li>
+                  <li>
+                    <span>Date:</span>
+                    <h6>12 Mar 2036</h6>
+                  </li>
+                  <li>
+                    <span>Duration:</span>
+                    <h6>48 Hours</h6>
+                  </li>
+                  <li>
+                    <span>Price:</span>
+                    <h6>$440</h6>
+                  </li>
+                </ul>
+                <a href="#"><i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!---distibution area end-->
-</div>
-<!--distibution-bg end-->
+  </div>
 
-<!--roadmap area start-->
-<div class="roadmap-area section-padding wow fadeInUp" id="roadmap">
+  <div class="contact-us section" id="contact">
     <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="heading">
-                    <h5>history Timeline</h5>
-                    <div class="space-10"></div>
-                    <h1>Development Roadmap</h1>
-                </div>
-                <div class="space-60 d-none d-sm-block"></div>
+      <div class="row">
+        <div class="col-lg-6  align-self-center">
+          <div class="section-heading">
+            <h6>Contact Us</h6>
+            <h2>Feel free to contact us anytime</h2>
+            <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
+            <div class="special-offer">
+              <span class="offer">off<br><em>50%</em></span>
+              <h6>Valide: <em>24 April 2036</em></h6>
+              <h4>Special Offer <em>50%</em> OFF!</h4>
+              <a href="#"><i class="fa fa-angle-right"></i></a>
             </div>
+          </div>
         </div>
-
+        <div class="col-lg-6">
+          <div class="contact-us-content">
+            <form id="contact-form" action="" method="post">
+              <div class="row">
+                <div class="col-lg-12">
+                  <fieldset>
+                    <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container">
-        <div class="roadmap-carousel owl-carousel">
-            <div class="roadmap-item">
-                <div class="single-roadmap text-center road-left">
-                    <div class="single-roadmap-img">
-                        <img src="{{ asset('public/public_page') }}/assets/img/roadmap-1.png" alt="">
-                    </div>
-                    <div class="space-30"></div>
-                    <div class="roadmap-text">
-                        <p>01.03.2017</p>
-                        <div class="space-10"></div>
-                        <h5>Concept and whitepaper</h5>
-                        <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="roadmap-item align-self-center">
-                <div class="single-roadmap road-right">
-                    <div class="row">
-                        <div class="col-5 align-self-center">
-                            <div class="single-roadmap-img">
-                                <img src="{{ asset('public/public_page') }}/assets/img/roadmap-2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-7">
-                            <div class="roadmap-text">
-                                <p>21.06 .2017</p>
-                                <h5>Recruitment of Our team</h5>
-                                <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="roadmap-item">
-                <div class="single-roadmap text-center road-left">
-                    <div class="single-roadmap-img">
-                        <img src="{{ asset('public/public_page') }}/assets/img/roadmap-4.png" alt="">
-                    </div>
-                    <div class="space-30"></div>
-                    <div class="roadmap-text">
-                        <p>31.08.2017</p>
-                        <div class="space-10"></div>
-                        <h5>Core Development</h5>
-                        <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="roadmap-item align-self-center">
-                <div class="single-roadmap road-right">
-                    <div class="row">
-                        <div class="col-5 align-self-center">
-                            <div class="single-roadmap-img">
-                                <img src="{{ asset('public/public_page') }}/assets/img/roadmap-5.png" alt="">
-                            </div>
-
-                        </div>
-                        <div class="col-7">
-                            <div class="roadmap-text">
-                                <p>31.11.2017</p>
-                                <h5>Main Development</h5>
-                                <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="roadmap-item">
-                <div class="single-roadmap text-center road-left">
-                    <div class="single-roadmap-img">
-                        <img src="{{ asset('public/public_page') }}/assets/img/roadmap-4.png" alt="">
-                    </div>
-                    <div class="space-30"></div>
-                    <div class="roadmap-text">
-                        <p>31.08.2017</p>
-                        <div class="space-10"></div>
-                        <h5>Core Development</h5>
-                        <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="roadmap-item align-self-center">
-                <div class="single-roadmap road-right">
-                    <div class="row">
-                        <div class="col-5 align-self-center">
-                            <div class="single-roadmap-img">
-                                <img src="{{ asset('public/public_page') }}/assets/img/roadmap-5.png" alt="">
-                            </div>
-
-                        </div>
-                        <div class="col-7">
-                            <div class="roadmap-text">
-                                <p>31.11.2017</p>
-                                <h5>Main Development</h5>
-                                <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--roadmap area end-->
-
-
-
-
-
-<!--faq area start-->
-<div class="faq-area wow fadeInUp" id="faq">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="heading">
-                    <!-- <h5>faq</h5> -->
-                    <div class="space-10"></div>
-                    <h1>Contact For Any Query </h1>
-                </div>
-                <div class="space-60"></div>
-            </div>
-        </div>
-
-        <div class="space-50"></div>
-    </div>
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="about-mid-img">
-
-                        <lottie-player src="{{ asset('public/public_page') }}/lottiefiles/contact.json" background="transparent" speed="1" style="width: 200%; height: 700px;" loop autoplay class="img-fluid"></lottie-player>
-
-
-                            <!-- <img src="{{ asset('public/public_page') }}/assets/img/about-left.png" alt=""> -->
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 align-self-center">
-
-
-
-                    <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" name="name" required="">
-                                            <label for="name">Your Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" name="email" required="">
-                                            <label for="email">Your Email</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" name="subject" required="" spellcheck="false" data-ms-editor="true">
-                                            <label for="subject">Subject</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" name="message" required="" spellcheck="false" data-ms-editor="true"></textarea>
-                                            <label for="message">Message</label>
-                                        </div>
-                                    </div>
-
-
-
-                                    <!-- <div class="col-12">
-                                        <button class="btn w-100 py-3 gradient-btn v2 about-btn" type="submit"> <i class="fa fa-send-o"></i>Send Message</button>
-                                    </div> -->
-                                </div>
-
-                        <a href="#" onclick="document.getElementById('myform').submit()" class="gradient-btn v2 about-btn"> <i class="fa fa-send-o"></i> join us on telegraph</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="two">
-            <div class="container-fluid">
-                <div class="faq-carousel owl-carousel">
-                    <div class="single-faq">
-                        <h4>Why I should invest in ICO ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                    <div class="single-faq">
-                        <h4>The Risks of Investing in ICO ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                    <div class="single-faq">
-                        <h4>How to Trade Cryptocurrencies ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                    <div class="single-faq">
-                        <h4>How to Trade Cryptocurrencies ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="three">
-            <div class="container-fluid">
-                <div class="faq-carousel owl-carousel">
-                    <div class="single-faq">
-                        <h4>Why I should invest in ICO ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                    <div class="single-faq">
-                        <h4>The Risks of Investing in ICO ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                    <div class="single-faq">
-                        <h4>How to Trade Cryptocurrencies ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                    <div class="single-faq">
-                        <h4>How to Trade Cryptocurrencies ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="four">
-            <div class="container-fluid">
-                <div class="faq-carousel owl-carousel">
-                    <div class="single-faq">
-                        <h4>Why I should invest in ICO ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                    <div class="single-faq">
-                        <h4>The Risks of Investing in ICO ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                    <div class="single-faq">
-                        <h4>How to Trade Cryptocurrencies ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                    <div class="single-faq">
-                        <h4>How to Trade Cryptocurrencies ?</h4>
-                        <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                        <div class="space-20"></div>
-                        <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="space-90"></div>
-</div>
-<!--faq area end-->
-</div>
-<!--team bg area end-->
-
-
-
-
-
+  </div>
 
 
 

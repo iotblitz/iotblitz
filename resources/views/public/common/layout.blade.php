@@ -1,75 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>IoTBlitz</title>
-    <!-- Required meta tags -->
+
+<head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-    <!-- carousel CSS -->
-    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/owl.carousel.min.css">
-    <!--header icon CSS -->
-    <link rel="icon" href="{{ asset('public/public_page') }}/assets/img/fabicon.png">
-    <!-- animations CSS -->
-    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/animate.min.css">
-    <!-- font-awsome CSS -->
-    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/font-awesome.min.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/bootstrap.min.css">
-    <!-- mobile menu CSS -->
-    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/slicknav.min.css">
-    <!--css animation-->
-    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/animation.css">
-    <!--css animation-->
-    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/material-design-iconic-font.min.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="{{ asset('public/public_page') }}/style.css">
-    <!-- responsive CSS -->
-    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/responsive.css">
+    <title>IoTBlitz</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('public/public_page') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  </head>
-  <body>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/owl.css">
+    <link rel="stylesheet" href="{{ asset('public/public_page') }}/assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
-    @include("public.common.topbar")
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/public_page') }}/assets/images/favicon.ico">
+</head>
 
+<body>
 
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
 
-
-
-
-
-        <!-- body -->
-        @yield('page_content')
+    @include('public.common.topbar')
 
 
 
-      <!-- footer -->
-      @include("public.common.footer")
 
 
-      <!-- jquery 2.2.4 js-->
-      <script src="{{ asset('public/public_page') }}/assets/js/jquery-2.2.4.min.js"></script>
-    <!-- popper js-->
-    <script src="{{ asset('public/public_page') }}/assets/js/popper.js"></script>
-    <!-- carousel js-->
-    <script src="{{ asset('public/public_page') }}/assets/js/owl.carousel.min.js"></script>
-    <!-- wow js-->
-    <script src="{{ asset('public/public_page') }}/assets/js/wow.min.js"></script>
-    <!-- bootstrap js-->
-    <script src="{{ asset('public/public_page') }}/assets/js/bootstrap.min.js"></script>
-    <!--skroller js-->
-    <script src="{{ asset('public/public_page') }}/assets/js/skrollr.min.js"></script>
-    <!--mobile menu js-->
-    <script src="{{ asset('public/public_page') }}/assets/js/jquery.slicknav.min.js"></script>
-    <!--particle s-->
-    <script src="{{ asset('public/public_page') }}/assets/js/particles.min.js"></script>
-    <!-- main js-->
-    <script src="{{ asset('public/public_page') }}/assets/js/main.js"></script>
+
+
+    <!-- body -->
+    @yield('page_content')
+
+
+
+    <!-- footer -->
+    @include('public.common.footer')
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ asset('public/public_page') }}/vendor/jquery/jquery.min.js"></script>
+    <script src="{{ asset('public/public_page') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset('public/public_page') }}/assets/js/isotope.min.js"></script>
+    <script src="{{ asset('public/public_page') }}/assets/js/owl-carousel.js"></script>
+    <script src="{{ asset('public/public_page') }}/assets/js/counter.js"></script>
+    <script src="{{ asset('public/public_page') }}/assets/js/custom.js"></script>
 
 
     @yield('page_script')
-  </body>
-</html>
+</body>
 
+</html>
