@@ -10,17 +10,17 @@
                 <div class="col-12 col-lg-9 offset-1">
                     {{-- <a href="#" class="single-blog-top">Lifestyle hacks</a> --}}
                     <div class="space-10"></div>
-                    <h1 class="single-blog-h1">{{$blogs->blog_title}}</h1>
+                    <h1 class="single-blog-h1">{{$case_study->case_study_title}}</h1>
                     <div class="space-10"></div>
-                    <small>by IoTBlitz <span><i class="fa fa-clock-o"></i> {{$blogs->created_at}}</span></small>
+                    <small>by IoTBlitz <span><i class="fa fa-clock-o"></i> {{$case_study->created_at}}</span></small>
                     <div class="space-50"></div>
-                    <div class="single-blog-image" style="background:url('{{ asset('public/blog_images') }}/{{$blogs->blog_image}}')"></div>
-                    {{-- <img src="{{ asset('blog_images') }}/{{$blogs->blog_image}}" style="height: auto; width: 100%;" alt="Blog Image"> --}}
+                    <div class="single-blog-image" style="background:url('{{ asset('public/blog_images') }}/{{$case_study->case_study_image}}')"></div>
+                    {{-- <img src="{{ asset('blog_images') }}/{{$case_study->blog_image}}" style="height: auto; width: 100%;" alt="Blog Image"> --}}
 
 
 
 
-                    {!! $blogs->blog_description !!}
+                    {!! $case_study->case_study_description !!}
 
 
 
@@ -31,10 +31,10 @@
                     <div class="single-blog-contact">
                         <h4>leave a comment</h4>
                         <div class="space-30"></div>
-                        <form action="{{route('public_comments',[$blogs->blog_id])}}" method="POST" id="myform">
+                        <form action="{{route('public_comments',[$case_study->case_study_id])}}" method="POST" id="myform">
                             @csrf
-                            <input type="hidden" name="comment_by_page" value="B">
-                            <input type="hidden" name="blog_id" value="{{$blogs->blog_id}}">
+                            <input type="hidden" name="comment_by_page" value="CS">
+                            <input type="hidden" name="blog_id" value="{{$case_study->case_study_id}}">
                             <input type="text" placeholder="your name" name="name" required>
                             <input type="email" placeholder="email" name="email" required>
                             <div class="space-30"></div>
@@ -52,12 +52,12 @@
 
 
                     <div class="blog-comment">
-                        <h4>{{$blogs_count}} comments</h4>
+                        <h4>{{$case_study_count}} comments</h4>
                         <div class="space-30"></div>
 
 
 
-                        @foreach ($blogs->public_comments as $comments)
+                        @foreach ($case_study->public_comments as $comments)
 
 
                         <div class="single-comment" style="height: 200px !important">

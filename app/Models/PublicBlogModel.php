@@ -18,6 +18,6 @@ class PublicBlogModel extends Model
 
     public function public_comments()
     {
-        return $this->hasMany(PublicBlogsCommentsModel::class,'blog_id','blog_id')->where('active_status', 'A');
+        return $this->hasMany(PublicBlogsCommentsModel::class,'content_id','blog_id')->where('active_status', 'A')->where('comment_by_page', 'B');
     }
 }

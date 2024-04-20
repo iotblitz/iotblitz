@@ -14,7 +14,7 @@
         <div class="row align-items-center">
             <div class="col-md-12">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Blog List</h5>
+                    <h5 class="m-b-10">Case Study List</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
@@ -70,7 +70,7 @@
                                         <div class="mt-3">
                                             {{-- <button type="button" class="btn btn-primary">Edit</button> --}}
                                             <button type="button" class="btn btn-danger">Delete</button>
-                                            <a href="{{route('super_admin.page.blog_edit',$case_study_data->case_study_id)}}" class="btn btn-success">Edit</a>
+                                            <a href="{{route('super_admin.page.case_study_edit',$case_study_data->case_study_id)}}" class="btn btn-success">Edit</a>
                                         </div>
                                     </div>
                                 </div>
