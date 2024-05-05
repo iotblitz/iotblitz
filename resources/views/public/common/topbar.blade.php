@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
@@ -12,7 +12,7 @@
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
-=======
+
 <!--header area start-->
 <div class="header-area wow fadeInDown header-absolate" id="nav" data-0="position:fixed;" data-top-top="position:fixed;top:0;" data-edge-strategy="set">
         <div class="container">
@@ -52,7 +52,6 @@
                 <div class="col-4 col-lg-2 text-right">
                     <a href="#" class="logibtn gradient-btn">Call Now</a>
                 </div>
->>>>>>> ccb3badef9e34246df36ccbf2a2274f166685830
 
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
