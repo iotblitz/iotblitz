@@ -1927,3 +1927,10 @@ body {
 .dropdown:hover .submenu {
     opacity: 1;
 }
+
+
+
+.background-header .main-nav .nav li {
+    height: 40px;
+    line-height: 80px;
+}
