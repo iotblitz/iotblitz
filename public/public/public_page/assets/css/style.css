@@ -1908,6 +1908,7 @@ body {
 .submenu {
     display: none;
     position: absolute;
+    border-radius: 40px;
     background-color: rgba(122, 106, 216,0.6); /* Adjust as needed */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adjust as needed */
     z-index: 1;
