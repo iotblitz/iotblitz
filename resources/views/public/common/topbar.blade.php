@@ -22,8 +22,8 @@
                         <li class="scroll-to-section"><a href="#team">Products</a></li>
 
 
-                        <li class="scroll-to-section">
-                            <a href="#events">Solutions</a>
+                        <li class="scroll-to-section dropdown">
+                            <a href="#events">New Name</a>
                             <ul class="submenu">
                                 <li><a href="#events">Solutions</a></li>
                                 <li><a href="#events">Blogs</a></li>

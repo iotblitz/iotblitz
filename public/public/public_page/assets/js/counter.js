@@ -106,12 +106,3 @@
 
 
 
-  $(document).ready(function() {
-    $('.solutions-menu').hover(function() {
-        // Change text on hover
-        $(this).find('a').first().text('New Solutions Name');
-    }, function() {
-        // Change text back when not hovered
-        $(this).find('a').first().text('Solutions');
-    });
-});

@@ -1904,12 +1904,16 @@ body {
 }
 
 
+
+/* CSS for the submenu */
 .submenu {
     display: none;
     position: absolute;
-    /* Additional styling for the submenu */
+    background-color: #fff; /* Adjust as needed */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adjust as needed */
+    z-index: 1;
 }
 
-.solutions-menu:hover .submenu {
+.dropdown:hover .submenu {
     display: block;
 }
