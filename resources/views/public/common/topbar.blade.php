@@ -54,9 +54,23 @@
                 </div>
 
                     <!-- ***** Serach Start ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                      <li class="scroll-to-section"><a href="#services">Services</a></li>
+                      <li class="scroll-to-section"><a href="#courses">Courses</a></li>
+                      <li class="scroll-to-section"><a href="#team">Team</a></li>
+                      <li class="scroll-to-section"><a href="#events">Events</a></li>
+                      <li class="scroll-to-section"><a href="#contact">Register Now!</a></li>
+                  </ul>
 
-
-
+                  <div class="search-input" style="margin-left: 10%">
+                    <div id="search" action="#">
+                      <input type="button" value="Contact Now" id='searchText' />
+                      {{-- <i class="fa fa-search"></i> --}}
+                      <i class="fa-regular fa-paper-plane"></i>
+                    </div>
+                  </div>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
