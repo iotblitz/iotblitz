@@ -17,11 +17,14 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                       <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                      <li class="scroll-to-section"><a href="#services">Services</a></li>
-                      <li class="scroll-to-section"><a href="#courses">Courses</a></li>
-                      <li class="scroll-to-section"><a href="#team">Team</a></li>
-                      <li class="scroll-to-section"><a href="#events">Events</a></li>
-                      <li class="scroll-to-section"><a href="#contact">Register Now!</a></li>
+                      <li class="scroll-to-section"><a href="#services">About</a></li>
+                      <li class="scroll-to-section"><a href="#courses">Case Study</a></li>
+                      <li class="scroll-to-section"><a href="#team">Products</a></li>
+                      <li class="scroll-to-section"><a href="#events">Solutions</a></li>
+                      <li class="scroll-to-section"><a href="#events">Blogs</a></li>
+                      <li class="scroll-to-section"><a href="#events">Blogs</a></li>
+                      <li class="scroll-to-section"><a href="#events">FAQ</a></li>
+                      <li class="scroll-to-section"><a href="#contact">Contact</a></li>
                   </ul>
 
                   <div class="search-input" style="margin-left: 10%">
