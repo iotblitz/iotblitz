@@ -1902,3 +1902,30 @@ body {
     width: 95%;
   }
 }
+
+
+
+
+
+/* CSS for the submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff; /* Adjust as needed */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adjust as needed */
+    z-index: 1;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+/* Hide submenu when not hovered over */
+.dropdown .submenu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown:hover .submenu {
+    opacity: 1;
+}
