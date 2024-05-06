@@ -1917,4 +1917,12 @@ body {
     display: block;
 }
 
+/* Hide submenu when not hovered over */
+.dropdown .submenu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
+.dropdown:hover .submenu {
+    opacity: 1;
+}
