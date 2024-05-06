@@ -1904,25 +1904,12 @@ body {
 }
 
 
-
-/* Add mouse hover effect */
-.nav > li > a:hover {
-    color: #fff;
+.submenu {
+    display: none;
+    position: absolute;
+    /* Additional styling for the submenu */
 }
 
-/* Change name for submenu links */
-.submenu li:nth-child(1) a::before {
-    content: "Our "; /* Add prefix */
-}
-
-.submenu li:nth-child(1) a {
-    display: inline-block; /* To display properly with ::before */
-}
-
-.submenu li:nth-child(2) a {
-    display: inline-block; /* To display properly with ::before */
-}
-
-.submenu li:nth-child(3) a {
-    display: inline-block; /* To display properly with ::before */
+.solutions-menu:hover .submenu {
+    display: block;
 }
