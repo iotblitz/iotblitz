@@ -221,7 +221,8 @@
 
 $(document).ready(function() {
     // Toggle submenu on click
-    $('#newNameDropdown').click(function() {
+    $('#newNameDropdown').click(function(event) {
+        event.preventDefault(); // Prevent default link behavior
         $(this).toggleClass('active');
         $(this).find('.submenu').toggle();
     });
