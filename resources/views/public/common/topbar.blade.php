@@ -23,7 +23,7 @@
 
 
                         <li class="scroll-to-section dropdown">
-                            <a href="#events" >New Name</a>
+                            <div href="#events" >New Name</div>
                             <ul class="submenu">
                                 <li><a href="#events">Solutions</a></li>
                                 <li><a href="#events">Blogs</a></li>

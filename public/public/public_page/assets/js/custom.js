@@ -228,11 +228,3 @@ $(document).ready(function() {
     });
 });
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    var newNameLink = document.getElementById("newNameLink");
-    newNameLink.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        // Add your code to toggle submenu visibility here if needed
-    });
-});
