@@ -16,18 +16,19 @@
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#services">About</a></li>
-                        <li class="scroll-to-section"><a href="#courses">Case Study</a></li>
-                        <li class="scroll-to-section"><a href="#team">Products</a></li>
+                        <li class="scroll-to-section"><a href="{{route('home')}}" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="">About</a></li>
+                        <li class="scroll-to-section"><a href="{{route('case_study')}}">Case Study</a></li>
+                        <li class="scroll-to-section"><a href="">Products</a></li>
 
 
                         <li class="scroll-to-section dropdown">
                             <a href="javascript:void(0);">More</a>
                             <ul class="submenu">
-                                <li><a href="#events">Solutions</a></li>
-                                <li><a href="#events">Blogs</a></li>
-                                <li><a href="#events">FAQ</a></li>
+                                <li><a href="">Solutions</a></li>
+                                <li><a href="{{route('blogs')}}">Blogs</a></li>
+                                <li><a href="">FAQ</a></li>
+                                <li><a href="">Careers</a></li>
                             </ul>
                         </li>
 
