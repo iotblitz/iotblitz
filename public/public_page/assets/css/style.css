@@ -1907,33 +1907,43 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* CSS for the submenu */
 .submenu {
-    display: none;
+    display: block; /* Show the submenu by default */
     position: absolute;
     border-radius: 18px;
-    background-color: rgba(122, 106, 216,0.6); /* Adjust as needed */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adjust as needed */
+    background-color: rgba(122, 106, 216, 0.6); /* Adjust as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adjust as needed */
     z-index: 1;
 }
 
-.dropdown:hover .submenu {
-    display: block;
-}
-
-/* Hide submenu when not hovered over */
 .dropdown .submenu {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 1; /* Ensure the submenu is fully visible */
 }
 
-.dropdown:hover .submenu {
-    opacity: 1;
-}
-
-
-
+/* Adjust height and line-height for better mobile view */
 .background-header .main-nav .nav li {
-    height: 40px;
-    line-height: 80px;
+    height: auto;
+    line-height: auto;
 }
