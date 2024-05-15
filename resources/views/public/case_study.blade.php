@@ -1,5 +1,7 @@
 @extends('public.common.layout')
 @section('page_content')
+
+
     <!--welcome area start-->
     <div class="welcome-area wow fadeInUp" id="home">
         <div id="particles-js"></div>
