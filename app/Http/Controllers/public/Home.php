@@ -74,7 +74,7 @@ class Home extends Controller
 
     function case_study() : View
     {
-        $data['case_study'] = PublicCaseStudyModel::where('active_status','A')->paginate(20);
+        $data['case_study'] = PublicCaseStudyModel::where('active_status','A')->orderBy("case_study_id","DESC")->paginate(5);
         return view('public.case_study')->with($data);
     }
 

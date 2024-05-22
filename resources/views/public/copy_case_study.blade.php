@@ -58,8 +58,8 @@
           </div>
         </div> --}}
             @foreach ($case_study as $case_study_data)
-                <div class="col-lg-12 col-md-6">
-                    <div class="item" onclick="location.href = '{{ route('single_case_study', [str_replace(' ', '-', $case_study_data->case_study_title).'-'.$case_study_data->case_study_id])}}';">
+                <div class="col-lg-12 col-md-6" onclick="location.href = '{{ route('single_case_study', [str_replace(' ', '-', $case_study_data->case_study_title).'-'.$case_study_data->case_study_id])}}';">
+                    <div class="item">
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="image">
@@ -81,16 +81,20 @@
                 </div>
             @endforeach
       </div>
-      <div class="col-12 col-lg-12">
-        <div class="space-50"></div>
-        {!! $case_study->links('vendor.pagination.my_public_bootstrap-4') !!}
-    </div>
     </div>
   </div>
 
 
 
+  <div class="col-12 col-lg-12">
 
+<div class="space-50"></div>
+{!! $case_study->links('vendor.pagination.bootstrap-4') !!}
+{{-- <div class="blog-blog-btn text-center">
+
+    <a href="#" class="gradient-btn">learn more</a>
+</div> --}}
+</div>
 
 
 
