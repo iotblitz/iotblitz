@@ -120,8 +120,13 @@ class Home extends Controller
 
 
 
+    function public_contact():View{
+        return view('public.contact');
+    }
 
-
+    function public_about():View{
+        return view('public.about');
+    }
 
 
     function robots(): Response

@@ -37,7 +37,7 @@
         </div>
         <div class="col-lg-5">
           <div class="lottie-animation">
-            <lottie-player src="{{ asset('public/public_page') }}/assets/lottiefiles/Animation - 1715838982563.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+            <lottie-player src="{{ asset('public/public_page') }}/assets/lottiefiles/Animation - 1715838982563.json" background="transparent" speed="1" style="width: 70%; height: 100%;" loop autoplay></lottie-player>
           </div>
         </div>
       </div>

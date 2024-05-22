@@ -16,23 +16,24 @@
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="{{route('home')}}" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="">About</a></li>
-                        <li class="scroll-to-section"><a href="{{route('case_study')}}">Case Study</a></li>
+                        <li class="scroll-to-section"><a href="{{route('home')}}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
+
+                        <li class="scroll-to-section"><a href="{{route('about')}}"   class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
+                        <li class="scroll-to-section"><a href="{{route('case_study')}}"  class="{{ request()->routeIs('case_study*') ? 'active' : '' }}">Case Study</a></li>
                         <li class="scroll-to-section"><a href="">Products</a></li>
 
 
                         <li class="scroll-to-section dropdown">
-                            <a href="javascript:void(0);">More</a>
+                            <a href="javascript:void(0);"  class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">More <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 <li><a href="">Solutions</a></li>
-                                <li><a href="{{route('blogs')}}">Blogs</a></li>
+                                <li><a href="{{route('blogs')}}"  class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
                                 <li><a href="">FAQ</a></li>
                                 <li><a href="">Careers</a></li>
                             </ul>
                         </li>
 
-                        <li class="scroll-to-section"><a href="#contact">Contact</a></li>
+                        <li class="scroll-to-section"><a href="{{route('contact')}}"   class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
                     </ul>
 
                     <div class="search-input" style="margin-left: 10%">
