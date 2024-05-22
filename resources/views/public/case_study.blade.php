@@ -63,7 +63,7 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="image">
-                                    <img src="{{ asset('case_study_images') }}/{{$case_study_data->case_study_image}}" alt="">
+                                    <img src="{{ asset('public/case_study_images') }}/{{$case_study_data->case_study_image}}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-5">
