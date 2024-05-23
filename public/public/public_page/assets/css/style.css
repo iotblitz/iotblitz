@@ -1625,16 +1625,16 @@ Footer Style
 ---------------------------------------------
 */
 
-footer {
+/* footer {
   margin-top: 150px;
   position: relative;
   background-color: #7a6ad8;
   vertical-align: middle;
   min-height: 150px;
   border-radius: 150px 150px 0px 0px;
-}
+} */
 
-footer p {
+/* footer p {
   text-align: center;
   line-height: 150px;
   color: #fff;
@@ -1663,6 +1663,12 @@ footer::before {
   height: 119px;
   content: '';
   z-index: 2;
+} */
+.bg-color-footer {
+    background-color: #7a6ad8;
+    padding: 50px;
+    border-radius: 25px 25px 0px 0px;
+
 }
 
 /*
@@ -1912,6 +1918,7 @@ body {
     background-color: rgba(122, 106, 216,0.6); /* Adjust as needed */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adjust as needed */
     z-index: 1;
+    width: 200px;
 }
 
 .dropdown:hover .submenu {
@@ -1934,3 +1941,189 @@ body {
     height: 40px;
     line-height: 80px;
 }
+
+
+
+
+
+
+.custom-theme {
+  --angle: 10px;
+  --blue: #fff; /* Background color */
+  --bg: #1e1e1e; /* Text color */
+  --icon-margin: 0 5px;
+}
+
+.breadcrumbs {
+  display: flex;
+  list-style: none;
+  padding-left: calc(var(--angle) * 2);
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.breadcrumbs li {
+  white-space: nowrap;
+  background: var(--blue); /* Background color */
+  color: var(--bg); /* Text color */
+  padding: calc(var(--angle) / 2);
+  padding-left: calc(var(--angle) * 1.5);
+  padding-right: calc(var(--angle) * 1.5);
+  margin-left: -5px;
+  clip-path: polygon(
+    calc(100% - var(--angle)) 0%,
+    100% 50%,
+    calc(100% - var(--angle)) calc(100% - 0px),
+    0% 100%,
+    var(--angle) 50%,
+    0% 0%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs li a {
+  text-decoration: none;
+  color: inherit; /* Inherit text color */
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs li a .icon {
+  margin: var(--icon-margin);
+}
+
+.breadcrumbs li:hover {
+  cursor: pointer;
+  background: var(--blue); /* Background color */
+}
+
+.breadcrumbs li:hover a {
+  color: #1e1e1e; /* Hover text color */
+}
+
+.breadcrumbs li:last-of-type {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  clip-path: polygon(
+    100% 0%,
+    100% 50%,
+    100% calc(100% - 0px),
+    0% 100%,
+    var(--angle) 50%,
+    0% 0%
+  );
+}
+
+.breadcrumbs li:first-of-type {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  clip-path: polygon(
+    calc(100% - var(--angle)) 0%,
+    100% 50%,
+    calc(100% - var(--angle)) calc(100% - 0px),
+    0% 100%,
+    0 50%,
+    0% 0%
+  );
+}
+
+.breadcrumbs li:only-child {
+  clip-path: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding-left: calc(var(--angle) * 1.5);
+  }
+
+  .breadcrumbs li {
+    padding: calc(var(--angle) / 3);
+    padding-left: calc(var(--angle) * 1);
+    padding-right: calc(var(--angle) * 1);
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumbs {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .breadcrumbs li {
+    margin: 5px 0;
+    padding: calc(var(--angle) / 4);
+    padding-left: calc(var(--angle) * 0.8);
+    padding-right: calc(var(--angle) * 0.8);
+    clip-path: none;
+    border-radius: 10px;
+  }
+
+  .breadcrumbs li:first-of-type,
+  .breadcrumbs li:last-of-type {
+    border-radius: 10px;
+    clip-path: none;
+  }
+}
+
+
+
+
+.main-form input {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgba(249, 235, 255, 0.15);
+    border: none;
+    outline: none;
+    font-weight: 300;
+    padding: 0px 20px;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .main-form input::placeholder {
+    color: #fff;
+  }
+
+  .main-form textarea {
+    width: 100%;
+    height: 120px;
+    border-radius: 25px;
+    background-color: rgba(249, 235, 255, 0.15);
+    border: none;
+    outline: none;
+    font-weight: 300;
+    padding: 20px;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .main-form textarea::placeholder {
+    color: #fff;
+  }
+
+  .main-form button {
+    border: none;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #fff;
+    padding: 0px 25px;
+    border-radius: 25px;
+    color: #7a6ad8;
+    transition: all .4s;
+    position: relative;
+    z-index: 3;
+  }
+
+  .main-form button:hover {
+    opacity: 0.8;
+  }

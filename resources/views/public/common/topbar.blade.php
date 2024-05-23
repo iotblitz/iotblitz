@@ -16,24 +16,39 @@
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="{{route('home')}}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('home') }}"
+                                class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
 
-                        <li class="scroll-to-section"><a href="{{route('about')}}"   class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
-                        <li class="scroll-to-section"><a href="{{route('case_study')}}"  class="{{ request()->routeIs('case_study*') ? 'active' : '' }}">Case Study</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('about') }}"
+                                class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('case_study') }}"
+                                class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') ? 'active' : '' }}">Case
+                                Study</a></li>
                         <li class="scroll-to-section"><a href="">Products</a></li>
 
 
-                        <li class="scroll-to-section dropdown">
-                            <a href="javascript:void(0);"  class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">More <i class="fas fa-chevron-down"></i></a>
+                        <li class="d-block d-md-none"><a href="">Solutions</a></li>
+                        <li class="d-block d-md-none"><a href="{{ route('blogs') }}"
+                                class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
+                        <li class="d-block d-md-none"><a href="">FAQ</a></li>
+                        <li class="d-block d-md-none"><a href="">Careers</a></li>
+
+
+                        <li class="scroll-to-section dropdown d-none d-md-block">
+                            <a href="javascript:void(0);"
+                                class="{{ request()->routeIs('blogs') || request()->routeIs('single_blogs') ? 'active' : '' }}">More
+                                <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 <li><a href="">Solutions</a></li>
-                                <li><a href="{{route('blogs')}}"  class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
+                                <li><a href="{{ route('blogs') }}"
+                                        class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
                                 <li><a href="">FAQ</a></li>
                                 <li><a href="">Careers</a></li>
                             </ul>
                         </li>
 
-                        <li class="scroll-to-section"><a href="{{route('contact')}}"   class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('contact') }}"
+                                class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
                     </ul>
 
                     <div class="search-input" style="margin-left: 10%">

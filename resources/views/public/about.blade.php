@@ -27,7 +27,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-7">
-          <div class="header-text">
+          <div class="header-text mt-5">
 
             {{-- <span class="category text-white">Our Courses</span> --}}
             <h2 class="text-white">About</h2>
@@ -35,7 +35,7 @@
 
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 d-none d-md-block">
           <div class="lottie-animation" style="padding: 10px">
             <lottie-player src="{{ asset('public/public_page') }}/assets/lottiefiles/Animation - 1716382593643.json" background="transparent" speed="1" style="width: 70%; height: 100%;" loop autoplay ></lottie-player>
           </div>
