@@ -45,6 +45,9 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
+
+
+
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <label class="floating-label" for="title">Title address</label>
@@ -59,7 +62,7 @@
                                     <div class="col-sm-4">
                                         <input type="hidden" value="{{ $editdata->product_imag }}" name="old_image">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile"
-                                            name="productImage" >
+                                            name="productImage">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                         <div class="invalid-feedback">Example invalid custom file feedback</div>
                                     </div>
@@ -72,9 +75,20 @@
                                                 class="img-fluid" alt="Preview Image">
                                         </div>
                                     </div>
+                                    <div class="col-sm-5">
+                                        <select class="mb-3 form-control" name="category" required>
+                                            <option>Select Category</option>
+                                            @foreach ($caregory_list as $caregory_list_data)
+                                                <option value="{{ $caregory_list_data->product_category_id }}"
+                                                    @if ($caregory_list_data->product_category_id == $editdata->product_category_id) selected @endif>
+                                                    {{ $caregory_list_data->category }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
 
-{{--
+
+                                    {{--
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label class="floating-label" for="inputWithBadges">Keyword</label>
@@ -88,7 +102,8 @@
                                             {!! $editdata->product_description !!}
                                         </textarea>
                                     </div>
-                                    <input type="hidden" id="editorValue" name="text_description" value="{{$editdata->text_description}}">
+                                    <input type="hidden" id="editorValue" name="text_description"
+                                        value="{{ $editdata->text_description }}">
                                     <div class="col-sm-12">
                                         <button type="submit" class="btn btn-primary btn-block">Submit</button>
                                     </div>
@@ -127,7 +142,7 @@
                             var editorData = ev.editor.getData(); // Get HTML content from CKEditor
                             var plainText = editorData.replace(/<[^>]*>/g, ''); // Remove HTML tags
                             document.getElementById('editorValue').value =
-                            plainText; // Set the value to hidden input
+                                plainText; // Set the value to hidden input
                             console.log(plainText);
                         });
                     }

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\PublicBlogModel;
 use App\Models\PublicBlogsCommentsModel;
 use App\Models\PublicCaseStudyModel;
+use App\Models\PublicProductCategoryModel;
+use App\Models\PublicProductModel;
 use App\Rules\GoogleRecaptchaV2;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -25,8 +27,30 @@ class Home extends Controller
 
     function product() : View
     {
-        $data['products'] = PublicBlogModel::where('active_status','A')->paginate(20);
+        $data['products'] = PublicProductModel::leftJoin('public_product_category', 'public_products.product_category_id', '=', 'public_product_category.product_category_id')
+        ->select('public_products.*', 'public_product_category.category')
+        ->where('public_products.active_status', 'A')
+        ->paginate(18);
+        // ->get();
+        $data['category'] = PublicProductCategoryModel::all();
         return view('public.products')->with($data);
+    }
+
+    function single_product($product_id):View
+    {
+        $lastHyphenPosition = strrpos($product_id, "-");
+        $product_id = substr($product_id, $lastHyphenPosition + 1);
+        $data['product'] =PublicProductModel::leftJoin('public_product_category', 'public_products.product_category_id', '=', 'public_product_category.product_category_id')
+        ->select('public_products.*', 'public_product_category.category')
+        ->where('public_products.active_status', 'A')
+        ->where('public_products.product_id', $product_id)
+        ->first();
+        $data['product_id']=$product_id;
+
+        $data['latest_posts']=PublicBlogModel::select("blog_title","blog_description","text_description","blog_image")->where('active_status',"A")->orderBy("blog_id","DESC")->limit(5)->get();
+
+
+        return view('public.single_product')->with($data);
     }
 
 

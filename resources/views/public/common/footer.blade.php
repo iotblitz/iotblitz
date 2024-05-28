@@ -19,7 +19,7 @@
                             <ul>
                                 <li><a href="{{ route('about') }}" class="text-white">About</a></li>
                                 <li><a href="{{ route('case_study') }}" class="text-white">Case Study</a></li>
-                                <li><a href="" class="text-white">Products</a></li>
+                                <li><a href="{{ route('product') }}" class="text-white">Products</a></li>
                                 <li><a href="{{ route('contact') }}" class="text-white">Contact</a></li>
                             </ul>
                         </div>

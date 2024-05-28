@@ -73,6 +73,7 @@ Route::prefix('/admin')->group(function () {
 
                     Route::prefix('/products')->group(function(){
                         Route::match(['get'],'/list',[IotBlitz::class,'product'])->name('super_admin.page.products');
+                        Route::match(['get','post'],'/add',[IotBlitz::class,'product_add'])->name('super_admin.page.product_add');
                         Route::match(['get','post'],'/edit/{product_id}',[IotBlitz::class,'product_edit'])->name('super_admin.page.products_edit');
                     });
 

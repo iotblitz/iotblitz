@@ -24,7 +24,8 @@
                         <li class="scroll-to-section"><a href="{{ route('case_study') }}"
                                 class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') ? 'active' : '' }}">Case
                                 Study</a></li>
-                        <li class="scroll-to-section"><a href="">Products</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('product') }}"
+                            class="{{ request()->routeIs('product') ? 'active' : '' }}" >Products</a></li>
 
 
                         <li class="d-block d-md-none"><a href="">Solutions</a></li>

@@ -17,7 +17,7 @@
             <div class="row align-items-center">
                 <div class="col-md-12">
                     <div class="page-header-title">
-                        <h5 class="m-b-10">Blog List</h5>
+                        <h5 class="m-b-10">Product Add</h5>
                     </div>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
@@ -44,7 +44,7 @@
                             <h5>Basic Component</h5>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="{{ route('super_admin.page.blog_add') }}"
+                            <form method="POST" action="{{ route('super_admin.page.product_add') }}"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -60,7 +60,7 @@
 
                                     <div class="col-sm-4">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile"
-                                            name="blogimage" required="">
+                                            name="productImage" required="">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                         <div class="invalid-feedback">Example invalid custom file feedback</div>
                                     </div>
@@ -72,8 +72,16 @@
                                         </div>
                                     </div>
 
-
-
+                                    <div class="col-sm-5">
+                                        <select class="mb-3 form-control" name="category" required>
+                                            <option>Select Category</option>
+                                            @foreach ($caregory_list as $caregory_list_data)
+                                                <option value="{{ $caregory_list_data->product_category_id }}">
+                                                    {{ $caregory_list_data->category }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+{{--
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label class="floating-label" for="inputWithBadges">Keyword</label>
@@ -81,7 +89,7 @@
                                                 name="keyword">
                                             <div id="badgeContainer"></div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-sm-12">
                                         <textarea name="description_editor" placeholder="description" class="form-control" rows="12" cols="50"></textarea>
                                     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\PublicBlogModel;
 use App\Models\PublicCaseStudyModel;
+use App\Models\PublicProductCategoryModel;
 use App\Models\PublicProductModel;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -247,6 +248,42 @@ class IotBlitz extends Controller
         return view('admin.iot_blitz.products.product')->with($data);
     }
 
+    function product_add(Request $r): View|RedirectResponse|JsonResponse
+    {
+        if($r->isMethod('POST')){
+            $rules=[
+                "description_editor"=>'required',
+                "text_description"=>'required',
+                "title"=>'required',
+                "category"=>'required',
+            ];
+
+            $valaditor = Validator::make($r->all(), $rules);
+            if ($valaditor->fails()) {
+                return response()->json($valaditor->errors(), 200);
+                // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
+            }
+            $image = $r->file('productImage');
+            $imageName = time() . '.' . $image->extension();
+            $image->move(public_path('product_image'), $imageName);
+
+
+            PublicProductModel::create([
+                "product_category_id"=>$r->category,
+                "product_title"=>$r->title,
+                "product_description"=>$r->description_editor,
+                "text_description"=>$r->description_editor,
+                "product_image"=>$image,
+                "active_statu"=>"A",
+                "create_by"=> auth()->user()->id
+            ]);
+            return redirect()->route('super_admin.page.products');
+        }else{
+            $data['caregory_list']=PublicProductCategoryModel::all();
+            return view('admin.iot_blitz.products.add')->with($data);
+        }
+    }
+
     function product_edit($product_id, Request $r): View|RedirectResponse|JsonResponse
     {
         if ($r->isMethod('post')) {
@@ -254,7 +291,8 @@ class IotBlitz extends Controller
             $rules = [
                 'description_editor' => 'required',
                 'text_description' => 'required',
-                'title'=>'required'
+                'title'=>'required',
+                'category'=>'required',
             ];
 
 
@@ -275,6 +313,7 @@ class IotBlitz extends Controller
                 $imageName = time() . '.' . $image->extension();
                 $image->move(public_path('product_image'), $imageName);
                 $savedata = [
+                    'product_category_id'=>$r->category,
                     'product_title'=>$r->title,
                     'product_description' => $r->description_editor,
                     'text_description' => $r->text_description,
@@ -287,6 +326,7 @@ class IotBlitz extends Controller
                 ];
             } else {
                 $savedata = [
+                    'product_category_id'=>$r->category,
                     'product_title'=>$r->title,
                     'product_description' => $r->description_editor,
                     'text_description' => $r->text_description,
@@ -299,6 +339,7 @@ class IotBlitz extends Controller
         } else {
             $data['editdata'] = PublicProductModel::where('product_id', $product_id)->first();
             $data['product_id'] = $product_id;
+            $data['caregory_list']=PublicProductCategoryModel::all();
             return view('admin.iot_blitz.products.product_edit')->with($data);
         }
     }

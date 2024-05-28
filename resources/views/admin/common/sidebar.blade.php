@@ -52,14 +52,14 @@
 					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Product</span></a>
 					    <ul class="pcoded-submenu">
 					        <li><a href="{{route('super_admin.page.products')}}">List</a></li>
-					        <li><a href="{{route('super_admin.page.case_study_add')}}">Add</a></li>
+					        <li><a href="{{route('super_admin.page.product_add')}}">Add</a></li>
 
 					    </ul>
 					</li>
 
 
 
-					<li class="nav-item pcoded-menu-caption">
+					{{-- <li class="nav-item pcoded-menu-caption">
 					    <label>Forms &amp; table</label>
 					</li>
 					<li class="nav-item">
@@ -87,7 +87,7 @@
 					        <li><a href="auth-signin.html" target="_blank">Sign in</a></li>
 					    </ul>
 					</li>
-					<li class="nav-item"><a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
+					<li class="nav-item"><a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li> --}}
 
 				</ul>
 
