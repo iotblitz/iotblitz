@@ -340,10 +340,11 @@
                             <li class="list-inline-item"><a href="{{ route('home') }}" class="text-white-50">Home</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
                             <li class="list-inline-item"><a href="{{ route('case_study') }}" class="text-white-50">Case
-                                Study</a></li>
+                                    Study</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="#" class="text-white">{{ ucwords($case_study->case_study_title) }}</a></li>
-                          </ul>
+                            <li class="list-inline-item"><a href="#"
+                                    class="text-white">{{ ucwords($case_study->case_study_title) }}</a></li>
+                        </ul>
 
 
 
@@ -373,8 +374,7 @@
 
     <div class="container mb-5">
         <div class="row">
-            <div class="col-md-8">
-                <div class="space-10"></div>
+            <div class="col-md-9">
                 <div class="blog-post">
                     <h1 class="blog-title mb-2">{{ $case_study->case_study_title }}</h1>
                     {{-- <img src="https://via.placeholder.com/800x400" alt="Blog Post Image"> --}}
@@ -416,10 +416,18 @@
                             <fieldset>
                                 <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Say something..."></textarea>
                             </fieldset>
-
-                            <fieldset>
-                                <button type="submit" id="form-submit" class="orange-button">Comment Now</button>
-                            </fieldset>
+                            <div class="row">
+                                <div class="col-lg-6  mb-4">
+                                    <fieldset>
+                                        <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-md-end  mb-4">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="orange-button">Comment Now</button>
+                                    </fieldset>
+                                </div>
+                            </div>
 
                         </form>
 
@@ -436,32 +444,37 @@
 
 
                         <div class="row">
-                            <div class="col-12 col-lg-9">
+                            <div class="col-12 col-lg-12">
                                 <div class="blog-comment">
                                     <h4 class="text-white">{{ $case_study_count }} comments</h4>
                                     <div class="space-30"></div>
                                     @foreach ($case_study->public_comments as $comments)
-                                    <div class="single-comment text-white mt-3" style="max-height: 200px;">
-                                        <div class="row no-gutters">
-                                            <div class="col-md-2 d-flex align-items-center justify-content-center">
-                                                <img src="{{ asset('public/public_page') }}/assets/images/user.png" class="card-img" alt="Profile Image" width="10px">
-                                            </div>
-                                            <div class="col-md-10">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <h5 class="card-title mb-0">{{ $comments->name }}</h5>
+                                        <div class="single-comment text-white mt-3" style="max-height: 200px;">
+                                            <div class="row no-gutters">
+                                                <div
+                                                    class="col-md-2 d-flex align-items-center justify-content-center   d-none d-md-block">
+                                                    <img src="{{ asset('public/public_page') }}/assets/images/user.png"
+                                                        class="card-img" alt="Profile Image" width="10px">
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h5 class="card-title mb-0">{{ $comments->name }}</h5>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <p class="card-subtitle mb-0  text-white">
+                                                                    <small>{{ date('j F, Y', strtotime($comments->created_at)) }}</small>
+                                                                </p>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-auto">
-                                                            <h6 class="card-subtitle mb-0  text-white"><small>{{ $comments->created_at }}</small></h6>
-                                                        </div>
+                                                        <p class="card-text  text-white">{{ $comments->comments }}</p>
                                                     </div>
-                                                    <p class="card-text  text-white">{{ $comments->comments }}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="mb-3"></div>
+
+                                        <hr>
                                     @endforeach
 
 
@@ -497,76 +510,25 @@
 
 
 
-            <div class="col-lg-3 mt-5">
+            <div class="col-md-3 mt-5">
                 <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
                     <h5>Latest Posts</h5>
-
-                    <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
-                        <a href="#"><img class="mr-4"
-                                src="{{ asset('public/case_study_images') }}/{{ $case_study->case_study_image }}"
-                                alt=""
-                                style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important; border-radius: 5px"></a>
-                        <div class="media-body" style=" flex: 1;">
-                            <h6 class="my-2"><a href="#" class="text-body">Thoughtful living in los Angeles</a></h6>
-                            <span class="text-sm text-muted">03 Mar 2018</span>
+                    @foreach ($latest_posts as $ltdata)
+                        <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
+                            <a href="#"><img class="mr-4"
+                                    src="{{ asset('public/blog_images') }}/{{ $ltdata->blog_image }}" alt=""
+                                    style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important; border-radius: 5px"></a>
+                            <div class="media-body" style=" flex: 1;">
+                                <h6 class="my-1"><a href="#" class="text-body">{{ $ltdata->blog_title }}</a>
+                                </h6>
+                                <p class="my-1"><a href="#" class="text-body text-justify">{{ substr($ltdata->text_description, 0, 37) }}...</a>
+                                </p>
+                                <span
+                                    class="text-sm text-muted">{{ date('j F, Y', strtotime($ltdata->created_at)) }}</span>
+                            </div>
                         </div>
-                    </div>
-
-
-
-                    <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
-                        <a href="#"><img class="mr-4"
-                                src="{{ asset('public/case_study_images') }}/{{ $case_study->case_study_image }}"
-                                alt=""
-                                style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important;"></a>
-                        <div class="media-body" style=" flex: 1;">
-                            <h6 class="my-2"><a href="#" class="text-body">Thoughtful living in los Angeles</a>
-                            </h6>
-                            <span class="text-sm text-muted">03 Mar 2018</span>
-                        </div>
-                    </div>
-
-
-                    <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
-                        <a href="#"><img class="mr-4"
-                                src="{{ asset('public/case_study_images') }}/{{ $case_study->case_study_image }}"
-                                alt=""
-                                style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important;"></a>
-                        <div class="media-body" style=" flex: 1;">
-                            <h6 class="my-2"><a href="#" class="text-body">Thoughtful living in los Angeles</a>
-                            </h6>
-                            <span class="text-sm text-muted">03 Mar 2018</span>
-                        </div>
-                    </div>
-
-                    <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
-                        <a href="#"><img class="mr-4"
-                                src="{{ asset('public/case_study_images') }}/{{ $case_study->case_study_image }}"
-                                alt=""
-                                style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important;"></a>
-                        <div class="media-body" style=" flex: 1;">
-                            <h6 class="my-2"><a href="#" class="text-body">Thoughtful living in los Angeles</a>
-                            </h6>
-                            <span class="text-sm text-muted">03 Mar 2018</span>
-                        </div>
-                    </div>
-
-                    <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
-                        <a href="#"><img class="mr-4"
-                                src="{{ asset('public/case_study_images') }}/{{ $case_study->case_study_image }}"
-                                alt=""
-                                style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important;"></a>
-                        <div class="media-body" style=" flex: 1;">
-                            <h6 class="my-2"><a href="#" class="text-body">Thoughtful living in los Angeles</a>
-                            </h6>
-                            <span class="text-sm text-muted">03 Mar 2018</span>
-                        </div>
-                    </div>
-
-
-
-
-
+                    @endforeach
+                        <a href="{{ route('blogs') }}" class="btn btn-primary mt-3" style="background-color: #7a6ad8 !important">View All</a>
                 </div>
             </div>
         </div>

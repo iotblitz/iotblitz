@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <span>Date:</span>
-                                    <h6>January 12th, 2018</h6>
+                                    <h6>{{ date('j F, Y', strtotime($case_study_data->created_at)) }}</h6>
                                 </div>
                                 <a
                                     href="{{ route('single_case_study', [str_replace(' ', '-', $case_study_data->case_study_title) . '-' . $case_study_data->case_study_id]) }}"><i
@@ -85,6 +85,7 @@
                             </div>
                         </div>
                     </div>
+
                 @endforeach
             </div>
             <div class="col-12 col-lg-12">

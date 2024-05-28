@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\PublicBlogModel;
 use App\Models\PublicBlogsCommentsModel;
 use App\Models\PublicCaseStudyModel;
+use App\Rules\GoogleRecaptchaV2;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -35,6 +36,7 @@ class Home extends Controller
         $data['blogs'] = PublicBlogModel::where('blog_id',$blog_id)->where('active_status','A')->with('public_comments')->first();
         $data['blogs_count'] = PublicBlogsCommentsModel::where('content_id',$blog_id)->where('comment_by_page', 'B')->where('active_status','A')->count();
         $data['blog_id']=$blog_id;
+        $data['latest_posts']=PublicBlogModel::select("blog_title","blog_description","text_description","blog_image")->where('active_status',"A")->orderBy("blog_id","DESC")->limit(5)->get();
 
         return view('public.single_blogs')->with($data);
     }
@@ -50,6 +52,7 @@ class Home extends Controller
             'email'=>'required|email',
             'comments'=>'required',
             'comment_by_page'=>'required',
+            'g-recaptcha-response' => ['required', new GoogleRecaptchaV2],
         ];
         $valaditor = Validator::make($r->all(), $rules);
         if ($valaditor->fails()) {
@@ -62,7 +65,7 @@ class Home extends Controller
             'name'=>$r->name,
             'email'=>$r->email,
             'comments'=>$r->comments,
-            'active_status'=>'D'
+            'active_status'=>'A'
         ]);
 
 
@@ -86,6 +89,7 @@ class Home extends Controller
         $data['case_study'] = PublicCaseStudyModel::where('case_study_id',$case_study_id)->where('active_status','A')->with('public_comments')->first();
         $data['case_study_count'] = PublicBlogsCommentsModel::where('content_id',$case_study_id)->where('comment_by_page', 'CS')->where('active_status','A')->count();
         $data['case_study_id']=$case_study_id;
+        $data['latest_posts']=PublicBlogModel::where('active_status',"A")->orderBy("blog_id","DESC")->limit(5)->get();
 
         return view('public.single_case_study')->with($data);
     }
