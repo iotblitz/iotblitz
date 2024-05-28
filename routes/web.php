@@ -25,6 +25,11 @@ Route::get('/', [Home::class, 'home'])->name('home');
 
 Route::get('/contact', [Home::class, 'public_contact'])->name('contact');
 Route::get('/about', [Home::class, 'public_about'])->name('about');
+
+
+Route::get('/products', [Home::class, 'product'])->name('product');
+Route::get('/products/{product_id}', [Home::class, 'single_product'])->name('single_product');
+
 Route::get('/blogs', [Home::class, 'blogs'])->name('blogs');
 Route::get('/blogs/{blogs_id}', [Home::class, 'single_blogs'])->name('single_blogs');
 Route::post('/blogs/comments/{blog_id}', [Home::class, 'public_comments'])->name('public_comments');
@@ -65,6 +70,12 @@ Route::prefix('/admin')->group(function () {
                         Route::match(['get','post'],'/add',[IotBlitz::class,'case_study_add'])->name('super_admin.page.case_study_add');
                         Route::match(['get','post'],'/list/{case_study_id}',[IotBlitz::class,'case_study_edit'])->name('super_admin.page.case_study_edit');
                     });
+
+                    Route::prefix('/products')->group(function(){
+                        Route::match(['get'],'/list',[IotBlitz::class,'product'])->name('super_admin.page.products');
+                        Route::match(['get','post'],'/edit/{product_id}',[IotBlitz::class,'product_edit'])->name('super_admin.page.products_edit');
+                    });
+
                 });
             });
         });

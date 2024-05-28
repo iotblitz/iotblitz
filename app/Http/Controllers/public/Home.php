@@ -21,6 +21,15 @@ class Home extends Controller
     }
 
 
+
+
+    function product() : View
+    {
+        $data['products'] = PublicBlogModel::where('active_status','A')->paginate(20);
+        return view('public.products')->with($data);
+    }
+
+
     function blogs() : View
     {
         $data['blogs'] = PublicBlogModel::where('active_status','A')->paginate(20);
