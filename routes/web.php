@@ -43,6 +43,9 @@ Route::get('/blogs/{blogs_id}', [Home::class, 'single_blogs'])->name('single_blo
 Route::post('/blogs/comments/{blog_id}', [Home::class, 'public_comments'])->name('public_comments');
 
 
+Route::get('/careers', [Home::class, 'careers'])->name('careers');
+Route::get('/careers/{carcers_id}', [Home::class, 'single_career'])->name('single_careers');
+
 
 Route::get('robots.txt',[Home::class,'robots']);
 Route::get('sitemap.xml',[Home::class,'sitemap']);

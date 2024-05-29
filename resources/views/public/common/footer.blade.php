@@ -32,7 +32,7 @@
                                  <hr>
                                 <li><a href="" class="text-white">Careers</a></li>
                                 <hr>
-                                <li><a href="" class="text-white">Solutions</a></li>
+                                <li><a href="{{route('solutions')}}" class="text-white">Solutions</a></li>
                                 <hr>
                                 <li><a href="{{ route('blogs') }}" class="text-white">Blogs</a></li>
                             </ul>
@@ -70,8 +70,8 @@
                                 <hr>
                                 <li class="d-flex align-items-start">
                                     <i class="fa fa-envelope mt-1 mr-2" style="color: white;"></i>
-                                    <div class="text-white" style="margin-left:20px">
-                                        example@example.com
+                                    <div class="text-white" style="margin-left:20px" title="mail:info@iotblitz.com">
+                                        info@iotblitz.com
                                     </div>
                                 </li>
                             </ul>

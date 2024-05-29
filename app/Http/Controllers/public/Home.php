@@ -25,6 +25,12 @@ class Home extends Controller
 
 
 
+    function careers() : View
+    {
+        return view('public.careers');
+    }
+
+
 
     function product() : View
     {
@@ -53,6 +59,10 @@ class Home extends Controller
 
         return view('public.single_product')->with($data);
     }
+
+
+
+
 
 
     function blogs() : View

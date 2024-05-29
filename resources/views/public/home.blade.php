@@ -62,16 +62,33 @@
     <div class="services section" id="services">
         <div class="container">
             <div class="row">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="icon">
+                            <img src="{{ asset('public/public_page') }}/assets/images/service-03.png" alt="web experts">
+                        </div>
+                        <div class="main-content">
+                            <h4>Ai & Automation</h4>
+                            <p>Leverage cutting-edge AI and Automation technologies to optimize processes, enhance efficiency, and drive innovation with our advanced solutions.</p>
+                            <div class="main-button">
+                                <a href="{{route('product')}}">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
                         <div class="icon">
                             <img src="{{ asset('public/public_page') }}/assets/images/service-01.png" alt="online degrees">
                         </div>
                         <div class="main-content">
-                            <h4>Online Degrees</h4>
-                            <p>Whenever you need free templates in HTML CSS, you just remember TemplateMo website.</p>
+                            <h4>IoT Solutions</h4>
+                            <p>Unlock the potential of IoT Solutions. Connect devices, gather data, and optimize operations with our advanced Internet of Things technology</p>
                             <div class="main-button">
-                                <a href="#">Read More</a>
+                                <a href="{{route('product')}}">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -82,28 +99,15 @@
                             <img src="{{ asset('public/public_page') }}/assets/images/service-02.png" alt="short courses">
                         </div>
                         <div class="main-content">
-                            <h4>Short Courses</h4>
-                            <p>You can browse free templates based on different tags such as digital marketing, etc.</p>
+                            <h4>Design & Development</h4>
+                            <p>From conceptualization to execution, we specialize in creating intuitive web, Android, and iOS applications tailored to your unique needs</p>
                             <div class="main-button">
-                                <a href="#">Read More</a>
+                                <a href="{{route('product')}}">Read More</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <img src="{{ asset('public/public_page') }}/assets/images/service-03.png" alt="web experts">
-                        </div>
-                        <div class="main-content">
-                            <h4>Web Experts</h4>
-                            <p>You can start learning HTML CSS by modifying free templates from our website too.</p>
-                            <div class="main-button">
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -183,11 +187,11 @@
                 <div class="col-lg-5 align-self-center">
                     <div class="section-heading">
                         <h6>About Us</h6>
-                        <h2>What make us the best academy online?</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid risus commodo.</p>
+                        <h2>Welcome to IoTBlitz
+                            We have a strong desire to provide our clients with cutting-edge, meaningful solutions..</h2>
+                        <p>At IoTBlitz, our mission is to empower businesses by leveraging the latest technologies and industry best practices. We strive to deliver innovative software solutions that optimize efficiency..........</p>
                         <div class="main-button">
-                            <a href="#">Discover More</a>
+                            <a href="{{route('product')}}">Discover More</a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +199,7 @@
         </div>
     </div>
 
-    <section class="section courses" id="courses">
+    {{-- <section class="section courses" id="courses">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -318,7 +322,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <div class="section fun-facts">
         <div class="container">
@@ -328,26 +332,26 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter">
-                                    <h2 class="timer count-title count-number" data-to="150" data-speed="1000"></h2>
-                                    <p class="count-text ">Happy Students</p>
+                                    <h2 class="timer count-title count-number" data-to="1" data-speed="1000"></h2>
+                                    <p class="count-text ">Years Experience</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter">
-                                    <h2 class="timer count-title count-number" data-to="804" data-speed="1000"></h2>
-                                    <p class="count-text ">Course Hours</p>
+                                    <h2 class="timer count-title count-number" data-to="20" data-speed="1000"></h2>
+                                    <p class="count-text ">Compleate Projects</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter">
                                     <h2 class="timer count-title count-number" data-to="50" data-speed="1000"></h2>
-                                    <p class="count-text ">Employed Students</p>
+                                    <p class="count-text ">Happy Clients</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h2 class="timer count-title count-number" data-to="15" data-speed="1000"></h2>
-                                    <p class="count-text ">Years Experience</p>
+                                    <h2 class="timer count-title count-number" data-to="365" data-speed="364" style="content: none !important; margin-left: 0 !important;" ></h2>
+                                    <p class="count-text ">Days Of Support</p>
                                 </div>
                             </div>
                         </div>
