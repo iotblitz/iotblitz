@@ -64,7 +64,7 @@
                 <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development" onclick="location.href = '{{ route('single_solutions', [str_replace(' ', '-', $solutions_key->solutions_title) . '-' . $solutions_key->solutions_id]) }}';">
                     <div class="events_item">
                         <div class="thumb">
-                            <a href="{{ route('single_solutions', [str_replace(' ', '-', $solutions_key->solutions_title) . '-' . $solutions_key->product_id]) }}"><img src="{{ asset('public/solutions_image') }}/{{$solutions_key->solutions_image}}"
+                            <a href="{{ route('single_solutions', [str_replace(' ', '-', $solutions_key->solutions_title) . '-' . $solutions_key->product_id]) }}"><img src="{{ asset('public/solution_image') }}/{{$solutions_key->solutions_image}}"
                                     alt=""></a>
                             {{-- <span class="category">{{$solutions_key->category}}</span> --}}
                             {{-- <span class="price">

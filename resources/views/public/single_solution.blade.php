@@ -361,7 +361,7 @@
                 <div class="blog-post">
                     <h1 class="blog-title mb-2">{{ $solutions->solutions_title }}</h1>
                     {{-- <img src="https://via.placeholder.com/800x400" alt="Blog Post Image"> --}}
-                    <img src="{{ asset('public/solutions_image') }}/{{ $solutions->solutions_image }}"
+                    <img src="{{ asset('public/solution_image') }}/{{ $solutions->solutions_image }}"
                         style="height: 400px; width: 100%;border-radius: 20px; object-fit: cover;" alt="Blog Image"
                         class="mb-2">
                     <div class="blog-content mb-2">
