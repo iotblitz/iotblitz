@@ -8,6 +8,7 @@ use App\Models\PublicBlogsCommentsModel;
 use App\Models\PublicCaseStudyModel;
 use App\Models\PublicProductCategoryModel;
 use App\Models\PublicProductModel;
+use App\Models\PublicSolutionModel;
 use App\Rules\GoogleRecaptchaV2;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -156,6 +157,26 @@ class Home extends Controller
     }
 
 
+    function solutions(): View
+    {
+        $data['solutions'] = PublicSolutionModel::where('active_status','A')->orderBy("solutions_id","DESC")->paginate(5);
+        return view('public.solutions')->with($data);
+    }
+
+    function single_solution($solutions_id):View
+    {
+        $lastHyphenPosition = strrpos($solutions_id, "-");
+        $solutions_id = substr($solutions_id, $lastHyphenPosition + 1);
+        $data['solutions'] =PublicSolutionModel::where('solutions_id', $solutions_id)
+        ->first();
+        $data['solutions_id']=$solutions_id;
+
+        $data['latest_posts']=PublicBlogModel::select("blog_title","blog_description","text_description","blog_image")->where('active_status',"A")->orderBy("blog_id","DESC")->limit(5)->get();
+
+
+        return view('public.single_solution')->with($data);
+    }
+
 
     function public_contact():View{
         return view('public.contact');
@@ -174,4 +195,8 @@ class Home extends Controller
     {
         return response()->view('sitemap')->header('Content-Type', 'text/xml');
     }
+
+
+
+
 }

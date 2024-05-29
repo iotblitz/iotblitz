@@ -7,6 +7,7 @@ use App\Models\PublicBlogModel;
 use App\Models\PublicCaseStudyModel;
 use App\Models\PublicProductCategoryModel;
 use App\Models\PublicProductModel;
+use App\Models\PublicSolutionModel;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -250,12 +251,13 @@ class IotBlitz extends Controller
 
     function product_add(Request $r): View|RedirectResponse|JsonResponse
     {
-        if($r->isMethod('POST')){
-            $rules=[
-                "description_editor"=>'required',
-                "text_description"=>'required',
-                "title"=>'required',
-                "category"=>'required',
+        if ($r->isMethod('POST')) {
+            $rules = [
+                "description_editor" => 'required',
+                "text_description" => 'required',
+                "title" => 'required',
+                "category" => 'required',
+                "keyword" => 'required'
             ];
 
             $valaditor = Validator::make($r->all(), $rules);
@@ -269,17 +271,18 @@ class IotBlitz extends Controller
 
 
             PublicProductModel::create([
-                "product_category_id"=>$r->category,
-                "product_title"=>$r->title,
-                "product_description"=>$r->description_editor,
-                "text_description"=>$r->description_editor,
-                "product_image"=>$image,
-                "active_statu"=>"A",
-                "create_by"=> auth()->user()->id
+                "product_category_id" => $r->category,
+                "product_title" => $r->title,
+                'keyword' => $r->keyword,
+                "product_description" => $r->description_editor,
+                "text_description" => $r->text_description,
+                "product_image" => $image,
+                "active_statu" => "A",
+                "create_by" => auth()->user()->id
             ]);
             return redirect()->route('super_admin.page.products');
-        }else{
-            $data['caregory_list']=PublicProductCategoryModel::all();
+        } else {
+            $data['caregory_list'] = PublicProductCategoryModel::all();
             return view('admin.iot_blitz.products.add')->with($data);
         }
     }
@@ -291,8 +294,9 @@ class IotBlitz extends Controller
             $rules = [
                 'description_editor' => 'required',
                 'text_description' => 'required',
-                'title'=>'required',
-                'category'=>'required',
+                'title' => 'required',
+                'keyword' => 'required',
+                'category' => 'required',
             ];
 
 
@@ -313,8 +317,9 @@ class IotBlitz extends Controller
                 $imageName = time() . '.' . $image->extension();
                 $image->move(public_path('product_image'), $imageName);
                 $savedata = [
-                    'product_category_id'=>$r->category,
-                    'product_title'=>$r->title,
+                    'product_category_id' => $r->category,
+                    'product_title' => $r->title,
+                    'keyword' => $r->keyword,
                     'product_description' => $r->description_editor,
                     'text_description' => $r->text_description,
                     'product_image' => $imageName,
@@ -326,8 +331,9 @@ class IotBlitz extends Controller
                 ];
             } else {
                 $savedata = [
-                    'product_category_id'=>$r->category,
-                    'product_title'=>$r->title,
+                    'product_category_id' => $r->category,
+                    'product_title' => $r->title,
+                    'keyword' => $r->keyword,
                     'product_description' => $r->description_editor,
                     'text_description' => $r->text_description,
                     'active_status' => 'A', // 'A' means 'Active
@@ -339,8 +345,144 @@ class IotBlitz extends Controller
         } else {
             $data['editdata'] = PublicProductModel::where('product_id', $product_id)->first();
             $data['product_id'] = $product_id;
-            $data['caregory_list']=PublicProductCategoryModel::all();
+            $data['caregory_list'] = PublicProductCategoryModel::all();
             return view('admin.iot_blitz.products.product_edit')->with($data);
+        }
+    }
+
+
+    // ===============================================================================
+    // ===============================================================================
+    function solution_add(Request $r): View|RedirectResponse|JsonResponse
+    {
+        if ($r->isMethod('POST')) {
+            $rules = [
+                "description_editor" => 'required',
+                "text_description" => 'required',
+                "title" => 'required',
+                'productSolutionImage' => 'required|mimes:jpeg,png,jpg,gif|max:2048',
+                'brochure_file' => 'required|mimes:pdf|max:10000',
+            ];
+
+            $valaditor = Validator::make($r->all(), $rules);
+            if ($valaditor->fails()) {
+                return response()->json($valaditor->errors(), 200);
+                // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
+            }
+
+            if ($r->hasFile('productSolutionImage')) {
+                $image = $r->file('productSolutionImage');
+                $imageName = time() . '.' . $image->extension();
+                $image->move(public_path('solution_image'), $imageName);
+            } else {
+                return redirect()->route('super_admin.page.solution_add');
+            }
+
+            if ($r->hasFile('brochure_file')) {
+                $pdf = $r->file('brochure_file');
+                $pdfname = time() . '.' . $pdf->extension();
+                $pdf->move(public_path('solution_file_pdf'), $pdfname);
+            } else {
+                return redirect()->route('super_admin.page.solution_add');
+            }
+            PublicSolutionModel::create([
+                "solutions_title" => $r->title,
+                "solutions_keywords" => $r->keyword,
+                "solutions_description" => $r->description_editor,
+                "text_description" => $r->text_description,
+                "solutions_image" => $imageName,
+                "solutions_brochure" => $pdfname,
+                "active_status" => "A",
+                "create_by" => auth()->user()->id
+            ]);
+            return redirect()->route('super_admin.page.solutions');
+        } else {
+
+            return view('admin.iot_blitz.solutions.add');
+        }
+    }
+
+
+
+    function solution(): View
+    {
+        $data["solutions"] = PublicSolutionModel::all();
+        return view('admin.iot_blitz.solutions.solutions')->with($data);
+    }
+
+
+
+    function solution_edit($solution_id, Request $r): View|RedirectResponse|JsonResponse
+    {
+        if ($r->isMethod('POST')) {
+            $rules = [
+                "description_editor" => 'required',
+                "text_description" => 'required',
+                "title" => 'required',
+                // 'productSolutionImage' => 'mimes:jpeg,png,jpg,gif|max:2048',
+                // 'brochure_file' => 'mimes:pdf|max:10000',
+            ];
+
+            $valaditor = Validator::make($r->all(), $rules);
+            if ($valaditor->fails()) {
+                return response()->json($valaditor->errors(), 200);
+                // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
+            }
+
+            $data = [
+                "solutions_title" => $r->title,
+                "solutions_keywords" => $r->keyword,
+                "solutions_description" => $r->description_editor,
+                "text_description" => $r->text_description,
+                "active_status" => "A",
+                "create_by" => auth()->user()->id
+            ];
+
+            if ($r->hasFile('productSolutionImage')) {
+                $rules = [
+                    'productSolutionImage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                ];
+
+                $valaditor = Validator::make($r->all(), $rules);
+                if ($valaditor->fails()) {
+                    return response()->json($valaditor->errors(), 200);
+                }
+                $oldimagepath = public_path('solution_image/' . $r->input('old_image'));
+                if (File::exists($oldimagepath)) {
+                    File::delete($oldimagepath);
+                }
+
+                $image = $r->file('productSolutionImage');
+                $imageName = time() . '.' . $image->extension();
+                $image->move(public_path('solution_image'), $imageName);
+                $data['solutions_image'] = $imageName;
+            }
+
+
+            if ($r->hasFile('brochure_file')) {
+                $rules = [
+                    'brochure_file' => 'required|mimes:pdf|max:10000'
+                ];
+
+                $valaditor = Validator::make($r->all(), $rules);
+                if ($valaditor->fails()) {
+                    return response()->json($valaditor->errors(), 200);
+                }
+                $oldpdfpath = public_path('solution_file_pdf/' . $r->input('old_pdf'));
+                if (File::exists($oldpdfpath)) {
+                    File::delete($oldpdfpath);
+                }
+                $pdf = $r->file('brochure_file');
+                $pdfname = time() . '.' . $pdf->extension();
+                $pdf->move(public_path('solution_file_pdf'), $pdfname);
+                $data['solutions_brochure'] = $pdfname;
+            }
+            PublicSolutionModel::where('solutions_id',$solution_id)->update($data);
+            return redirect()->route('super_admin.page.solutions');
+        } else {
+            $data['solution_id']=$solution_id;
+            $data['solution']=PublicSolutionModel::where('solutions_id',$solution_id)->first();
+            return view('admin.iot_blitz.solutions.solutions_edit')->with($data);
         }
     }
 }

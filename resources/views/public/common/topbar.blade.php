@@ -28,19 +28,19 @@
                             class="{{ request()->routeIs('product') ? 'active' : '' }}" >Products</a></li>
 
 
-                        <li class="d-block d-md-none"><a href="">Solutions</a></li>
+                        <li class="d-block d-md-none"><a href="{{ route('solutions') }}" class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a></li>
                         <li class="d-block d-md-none"><a href="{{ route('blogs') }}"
-                                class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
+                                class="{{ request()->routeIs('blogs') || request()->routeIs('single_blogs') ? 'active' : '' }}">Blogs</a></li>
                         <li class="d-block d-md-none"><a href="">FAQ</a></li>
                         <li class="d-block d-md-none"><a href="">Careers</a></li>
 
 
                         <li class="scroll-to-section dropdown d-none d-md-block">
                             <a href="javascript:void(0);"
-                                class="{{ request()->routeIs('blogs') || request()->routeIs('single_blogs') ? 'active' : '' }}">More
+                                class="{{ request()->routeIs('blogs') || request()->routeIs('single_blogs')||request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">More
                                 <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
-                                <li><a href="">Solutions</a></li>
+                                <li><a href="{{ route('solutions') }}" class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a></li>
                                 <li><a href="{{ route('blogs') }}"
                                         class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
                                 <li><a href="">FAQ</a></li>

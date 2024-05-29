@@ -88,15 +88,15 @@
 
 
 
-                                    {{--
+
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label class="floating-label" for="inputWithBadges">Keyword</label>
                                             <input type="text" class="form-control" id="inputWithBadges" placeholder=""
-                                                name="keyword" value="{{ $editdata->blog_keywords }}">
+                                                name="keyword" value="{{ $editdata->keyword }}">
                                             <div id="badgeContainer"></div>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     <div class="col-sm-12">
                                         <textarea name="description_editor" placeholder="description" class="form-control" rows="12" cols="50">
                                             {!! $editdata->product_description !!}

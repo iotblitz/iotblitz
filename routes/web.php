@@ -27,6 +27,14 @@ Route::get('/contact', [Home::class, 'public_contact'])->name('contact');
 Route::get('/about', [Home::class, 'public_about'])->name('about');
 
 
+Route::get('/case_study', [Home::class, 'case_study'])->name('case_study');
+Route::get('/case_study/{case_study_id}', [Home::class, 'single_case_study'])->name('single_case_study');
+
+
+Route::get('/solutions', [Home::class, 'solutions'])->name('solutions');
+Route::get('/solution/{solutions_id}', [Home::class, 'single_solution'])->name('single_solutions');
+
+
 Route::get('/products', [Home::class, 'product'])->name('product');
 Route::get('/products/{product_id}', [Home::class, 'single_product'])->name('single_product');
 
@@ -34,8 +42,6 @@ Route::get('/blogs', [Home::class, 'blogs'])->name('blogs');
 Route::get('/blogs/{blogs_id}', [Home::class, 'single_blogs'])->name('single_blogs');
 Route::post('/blogs/comments/{blog_id}', [Home::class, 'public_comments'])->name('public_comments');
 
-Route::get('/case_study', [Home::class, 'case_study'])->name('case_study');
-Route::get('/case_study/{case_study_id}', [Home::class, 'single_case_study'])->name('single_case_study');
 
 
 Route::get('robots.txt',[Home::class,'robots']);
@@ -75,6 +81,12 @@ Route::prefix('/admin')->group(function () {
                         Route::match(['get'],'/list',[IotBlitz::class,'product'])->name('super_admin.page.products');
                         Route::match(['get','post'],'/add',[IotBlitz::class,'product_add'])->name('super_admin.page.product_add');
                         Route::match(['get','post'],'/edit/{product_id}',[IotBlitz::class,'product_edit'])->name('super_admin.page.products_edit');
+                    });
+
+                    Route::prefix('/solution')->group(function(){
+                        Route::match(['get'],'/list',[IotBlitz::class,'solution'])->name('super_admin.page.solutions');
+                        Route::match(['get','post'],'/add',[IotBlitz::class,'solution_add'])->name('super_admin.page.solution_add');
+                        Route::match(['get','post'],'/edit/{solution_id}',[IotBlitz::class,'solution_edit'])->name('super_admin.page.solutions_edit');
                     });
 
                 });
