@@ -63,8 +63,8 @@
                                 <hr>
                                 <li class="d-flex align-items-start">
                                     <i class="fa fa-phone mt-1 mr-2" style="color: white;"></i>
-                                    <div class="text-white"  style="margin-left:20px">
-                                        123-456-7890
+                                    <div class="text-white"  style="margin-left:20px" title="mail:info@iotblitz.com" title="tel:+86 13911890238">
+                                        +91 7890833920
                                     </div>
                                 </li>
                                 <hr>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\JobCareersModel;
+use App\Models\JobRoleModel;
+use App\Models\MdCountriesModel;
 use App\Models\PublicBlogModel;
 use App\Models\PublicCaseStudyModel;
 use App\Models\PublicProductCategoryModel;
@@ -477,12 +480,121 @@ class IotBlitz extends Controller
                 $pdf->move(public_path('solution_file_pdf'), $pdfname);
                 $data['solutions_brochure'] = $pdfname;
             }
-            PublicSolutionModel::where('solutions_id',$solution_id)->update($data);
+            PublicSolutionModel::where('solutions_id', $solution_id)->update($data);
             return redirect()->route('super_admin.page.solutions');
         } else {
-            $data['solution_id']=$solution_id;
-            $data['solution']=PublicSolutionModel::where('solutions_id',$solution_id)->first();
+            $data['solution_id'] = $solution_id;
+            $data['solution'] = PublicSolutionModel::where('solutions_id', $solution_id)->first();
             return view('admin.iot_blitz.solutions.solutions_edit')->with($data);
+        }
+    }
+
+    // ==============================================================================
+    // ==============================================================================
+
+
+
+    function careers_add(Request $r): View|RedirectResponse|JsonResponse
+    {
+        if ($r->isMethod('POST')) {
+            $rules = [
+                "title" => 'required',
+                "cties" => "required|integer",
+                "last_date" => 'required',
+                "experience_level" => 'required',
+                "minimum_qualifications" => 'required',
+                "preferred_qualifications" => "required",
+                "about_the_job" => 'required',
+                "responsibilities" => 'required',
+                "note_alert" => 'required',
+                "job_role" => 'required'
+
+            ];
+
+            $valaditor = Validator::make($r->all(), $rules);
+            if ($valaditor->fails()) {
+                return response()->json($valaditor->errors(), 200);
+                // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
+            }
+
+            JobCareersModel::create([
+                "role_id" => $r->job_role,
+                "title" => $r->title,
+                "end_date" => $r->last_date,
+                "cities_id" => $r->cties,
+                "experience" => $r->experience_level,
+                // "work_experience"=>$r->,
+                "note" => $r->note_alert,
+                "minimum_qualifications" => $r->minimum_qualifications,
+                "preferred_qualifications" => $r->preferred_qualifications,
+                "about_job" => $r->about_the_job,
+                "responsibilities" => $r->responsibilities,
+                "status" => "A",
+                "create_by" => auth()->user()->id
+            ]);
+            return redirect()->route('super_admin.page.careerss');
+        } else {
+            $data['countries'] = MdCountriesModel::all();
+            $data['role'] = JobRoleModel::all();
+            return view('admin.iot_blitz.careers.add')->with($data);
+        }
+    }
+
+
+    function careers(): View
+    {
+        $data["careers"] = JobCareersModel::all();
+        return view('admin.iot_blitz.careers.careers')->with($data);
+    }
+
+
+
+    function careers_edit($careers_id, Request $r): View|RedirectResponse|JsonResponse
+    {
+        if ($r->isMethod('POST')) {
+            $rules = [
+                "title" => 'required',
+                "cties" => "required|integer",
+                "last_date" => 'required',
+                "experience_level" => 'required',
+                "minimum_qualifications" => 'required',
+                "preferred_qualifications" => "required",
+                "about_the_job" => 'required',
+                "responsibilities" => 'required',
+                "note_alert" => 'required',
+                "job_role" => 'required'
+
+            ];
+
+            $valaditor = Validator::make($r->all(), $rules);
+            if ($valaditor->fails()) {
+                return response()->json($valaditor->errors(), 200);
+                // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
+            }
+
+            JobCareersModel::where("careers_id",$careers_id)->update([
+                "role_id" => $r->job_role,
+                "title" => $r->title,
+                "end_date" => $r->last_date,
+                "cities_id" => $r->cties,
+                "experience" => $r->experience_level,
+                // "work_experience"=>$r->,
+                "note" => $r->note_alert,
+                "minimum_qualifications" => $r->minimum_qualifications,
+                "preferred_qualifications" => $r->preferred_qualifications,
+                "about_job" => $r->about_the_job,
+                "responsibilities" => $r->responsibilities,
+                "status" => "A",
+                "create_by" => auth()->user()->id
+            ]);
+            return redirect()->route('super_admin.page.careerss');
+        } else {
+            $data['countries'] = MdCountriesModel::all();
+            $data['role'] = JobRoleModel::all();
+            $data['careers_id'] = $careers_id;
+            $data['careers'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")->join("md_lo_states AS c", "c.id", "=", "b.state_id")->select("jobs_careers.*","b.state_id","c.country_id")->first();
+
+            return view('admin.iot_blitz.careers.careers_edit')->with($data);
         }
     }
 }

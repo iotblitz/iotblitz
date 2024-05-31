@@ -39,70 +39,63 @@
 
 
 
-        ul.job-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        ul.job-list>li.job-preview {
-            background: #fff;
-            border: 1px solid #d7e2e9;
-            -webkit-border-radius: 0.4rem;
-            -moz-border-radius: 0.4rem;
-            border-radius: 0.4rem;
-            padding: 1.5rem 2rem;
-            margin-bottom: 1rem;
-            float: left;
-            width: 100%;
-            -webkit-transition: all 0.3s ease 0s;
-            -moz-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
+        .card-body {
+            padding: 2rem;
         }
 
-        ul.job-list>li.job-preview:hover {
-            cursor: pointer;
-            -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-            -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        .card-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #343a40;
         }
 
-        .job-title {
-            margin-top: 0.6rem;
+        .card-text strong {
+            color: #343a40;
         }
 
-        .company {
-            color: #96a4b1;
+        .card-text {
+            font-size: 1rem;
+            color: #6c757d;
         }
 
-        .job-preview .btn {
-            margin-top: 1.1rem;
+        .badge-secondary {
+            background-color: #6c757d;
         }
 
-        .btn-apply {
-            text-transform: uppercase;
-            font-size: 0.875rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            background-color: transparent;
-            color: #393a5f;
-            border: 2px solid #393a5f;
-            padding: 0.6rem 2rem;
-            -webkit-border-radius: 2rem;
-            -moz-border-radius: 2rem;
-            border-radius: 2rem;
-        }
-
-        .btn-apply:hover {
-            background-color: #393a5f;
-            color: #fff;
-            border: 2px solid #393a5f;
-        }
-
-        @media (max-width: 575px) {
-            .job-preview .content {
-                width: 100%;
+        /* ul {
+                list-style-type: none;
+                padding-left: 0;
             }
+
+            ul li {
+                padding-left: 1.5rem;
+                position: relative;
+                font-size: 1rem;
+                color: #6c757d;
+            }
+
+            ul li::before {
+                content: "\2022";
+                color: #7a6ad8;
+                font-weight: bold;
+                display: inline-block;
+                width: 1rem;
+                margin-left: -1.5rem;
+            } */
+
+        .btn-primary {
+            background-color: #7a6ad8;
+            border-color: #7a6ad8;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
         }
     </style>
 
@@ -134,93 +127,73 @@
 
 
     <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
-                    <ul class="job-list">
-                        <li class="job-preview">
-                            <div class="content float-left">
-                                <h4 class="job-title">
-                                    Senior Web Designer
-                                </h4>
-                                <h5 class="company">
-                                    Seattle, WA
-                                </h5>
+
+
+
+        <div class="container mt-4 mb-4">
+            @foreach ($careers as $careers_data)
+                <div class="card mb-4">
+                    <div class="card-body">
+
+
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">{{ $careers_data->title }}</h4>
+                                {{-- <p class="card-text"><strong>Google</strong></p> --}}
+                                <p class="card-text"><i class="fas fa-map-marker-alt"></i>
+                                    {{ $careers_data->countries_name }},
+                                    {{ $careers_data->state_name }}, {{ $careers_data->citi_name }}</p>
+                                <p class="card-text"><span class="badge badge-secondary">{{ $careers_data->role }}</span>
+                                    <span class="badge badge-secondary">{{ $careers_data->experience }}</span></p>
                             </div>
-                            <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                                Apply
-                            </a>
-                        </li>
-                        <li class="job-preview">
-                            <div class="content float-left">
-                                <h4 class="job-title">
-                                    Front-End Engineer
-                                </h4>
-                                <h5 class="company">
-                                    New York, NY
-                                </h5>
+                            <div>
+                                {{-- <button class="btn btn-light"><i class="fas fa-save"></i></button> --}}
+                                <button class="btn btn-light shareButton" id="shareButton" job_title="{{ $careers_data->title }}" joburl="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}" min_qua=" {{$careers_data->minimum_qualifications}}"><i class="fas fa-share"></i></button>
                             </div>
-                            <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                                Apply
-                            </a>
-                        </li>
-                        <li class="job-preview">
-                            <div class="content float-left">
-                                <h4 class="job-title">
-                                    UI/UX Designer
-                                </h4>
-                                <h5 class="company">
-                                    Los Angeles, CA
-                                </h5>
-                            </div>
-                            <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                                Apply
-                            </a>
-                        </li>
-                        <li class="job-preview">
-                            <div class="content float-left">
-                                <h4 class="job-title">
-                                    Web Developer
-                                </h4>
-                                <h5 class="company">
-                                    Los Angeles, CA
-                                </h5>
-                            </div>
-                            <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                                Apply
-                            </a>
-                        </li>
-                        <li class="job-preview">
-                            <div class="content float-left">
-                                <h4 class="job-title">
-                                    Web Designer &amp; Developer
-                                </h4>
-                                <h5 class="company">
-                                    Seattle, WA
-                                </h5>
-                            </div>
-                            <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                                Apply
-                            </a>
-                        </li>
-                        <li class="job-preview">
-                            <div class="content float-left">
-                                <h4 class="job-title">
-                                    Visual Designer
-                                </h4>
-                                <h5 class="company">
-                                    Los Angeles, CA
-                                </h5>
-                            </div>
-                            <a href="#" class="btn btn-apply float-sm-right float-xs-left">
-                                Apply
-                            </a>
-                        </li>
-                    </ul>
+                        </div>
+
+
+
+                        <h5>Minimum qualifications</h5>
+                        {!! $careers_data->minimum_qualifications !!}
+                        <br>
+                        <a href="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}" class="btn btn-primary mt-2">Learn more</a>
+                    </div>
                 </div>
-            </div>
+            @endforeach
+
+
+            {!! $careers->links('vendor.pagination.my_public_bootstrap-4') !!}
+
         </div>
     </section>
 @endsection
 @section('page_script')
+    <script>
+        $(document).ready(function() {
+            $('.shareButton').on('click', async function() {
+
+                const title =$(this).attr('job_title')
+                const url =$(this).attr('joburl')
+                const min_qua =$(this).attr('min_qua')
+
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: title,
+                            text: min_qua,
+                            url: url
+                        });
+                    } catch (error) {
+                        console.error('Error sharing', error);
+                    }
+                } else {
+                    // Fallback for browsers that do not support the Web Share API
+                    const shareUrl =
+                        `mailto:?subject=${encodeURIComponent(title)}&body=Check out this job posting: ${encodeURIComponent(url)}`;
+                    window.location.href = shareUrl;
+                }
+            });
+        });
+    </script>
 @endsection

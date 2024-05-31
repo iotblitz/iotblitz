@@ -26,8 +26,40 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        #cookieConsent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #7b6ad8b1;
+            /* border-top: 1px solid rgb(238, 10, 10); */
+            z-index: 9999;
+            border-radius: 20px;
+        }
 
-            @yield('page_style')
+        .cookiealert {
+            box-shadow: none;
+            padding: 1rem;
+        }
+
+        .cookiealert-text {
+            margin: 0;
+            color: #fff;
+        }
+
+        .accept-btn {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        .accept-btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+
+    @yield('page_style')
 </head>
 
 <body>
@@ -61,6 +93,15 @@
     <!-- footer -->
     @include('public.common.footer')
 
+    <div id="cookieConsent" class="alert alert-dark cookiealert" role="alert" style="display: none;">
+        <div class="d-flex align-items-center justify-content-between">
+            <span class="cookiealert-text">This website uses cookies to ensure you get the best experience on our
+                website.</span>
+            <button type="button" class="btn btn-outline-light btn-sm accept-btn">Got it!</button>
+        </div>
+
+    </div>
+
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('public/public_page') }}/vendor/jquery/jquery.min.js"></script>
@@ -72,6 +113,51 @@
 
 
     @yield('page_script')
+
+
+
+    <script>
+        $(document).ready(function() {
+            var cookieConsent = $("#cookieConsent");
+
+
+            if (!getCookie("cookieAccepted")) {
+                cookieConsent.css("display", "block");
+            }
+
+            $("#cookieConsent .accept-btn").on("click", function() {
+                setCookie("cookieAccepted", true, 365);
+                cookieConsent.css("display", "none");
+                $(this).off("click"); // Remove the event listener after the button is clicked once
+            });
+
+            // Check for cookie on page load
+            if (getCookie("cookieAccepted")) {
+                cookieConsent.css("display", "none");
+            }
+        });
+
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+    </script>
 </body>
 
 </html>

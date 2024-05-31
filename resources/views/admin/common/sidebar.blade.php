@@ -69,6 +69,16 @@
 					</li>
 
 
+                    <li class="nav-item pcoded-hasmenu">
+					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Careers</span></a>
+					    <ul class="pcoded-submenu">
+					        <li><a href="{{route('super_admin.page.careerss')}}">List</a></li>
+					        <li><a href="{{route('super_admin.page.careers_add')}}">Add</a></li>
+
+					    </ul>
+					</li>
+
+
 
 					{{-- <li class="nav-item pcoded-menu-caption">
 					    <label>Forms &amp; table</label>
