@@ -57,7 +57,7 @@
                                 <li class="d-flex align-items-start">
                                     <i class="fa fa-map-marker mt-1 mr-2" style="color: white;"></i>
                                     <div class="text-white"  style="margin-left:20px">
-                                        123 Street, New York, USA 123 Street, New York, USA 123 Street, New York, USA
+                                        Green Villa Residency, Boral Main Road, Kolkata 700154
                                     </div>
                                 </li>
                                 <hr>
