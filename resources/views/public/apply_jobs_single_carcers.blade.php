@@ -110,7 +110,7 @@
 
 
                         <div class="header-text">
-                            <h2 class="text-white">Careers</h2>
+                            <h2 class="text-white">Apply Job</h2>
                         </div>
 
 
@@ -147,9 +147,18 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">{{ $product->title }}</h1>
-                        <p class="card-text">
-                            <span class="badge badge-secondary">{{ $product->role }}</span>
-                        </p>
+
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="card-text">
+                                    <span class="badge badge-secondary">{{ $product->role }}</span>
+                                </p>
+                            </div>
+                            <div> {{ date('j F, Y', strtotime($product->end_date)) }}</div>
+                        </div>
+
+
+
                         <p class="card-text">
                             <i class="fas fa-building"></i> IotBlitz
                             <i class="fas fa-map-marker-alt"></i> {{ $product->countries_name }},
@@ -158,14 +167,81 @@
                         </p>
 
                         <div class="d-flex justify-content-between">
-                            <div>
-                                <a href="{{ route('apply_jobs', [str_replace(' ', '-',$product->title) . '-' . $product->careers_id]) }}"  class="btn btn-primary btn-lg mt-2">Apply</a>
-                                {{-- <button type="button" class="btn btn-primary btn-lg mt-2" data-bs-toggle="modal"
-                                    data-bs-target="#applyModal">
-                                    Apply
-                                </button> --}}
+
+
+
+                            <div style="background-color: #7a6ad8 !important">
+
+                                <form action="{{ route('public_comments', [$carcers_id]) }}" method="POST" id="myform"
+                                    class="main-form">
+                                    <div class="modal-body row">
+                                        @csrf
+                                        <div class="col-md-6">
+
+
+                                            <div class="form-group">
+
+                                                <input type="text" class="form-control" id="name" required
+                                                    placeholder="Enter your name" name="name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+
+                                            <div class="form-group">
+
+                                                <input type="email" class="form-control" id="email" required
+                                                    placeholder="Enter your email" name="email">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+
+                                                <input type="tel" class="form-control" id="mobile_no" required
+                                                    placeholder="Enter your mobile number" name="mobile_no">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <textarea name="message" id="message" placeholder="About yourself" spellcheck="false" required></textarea>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+
+
+                                            <div class="form-group">
+                                                <div class="custom-file mb-3">
+                                                    <input type="file" class="custom-file-input" id="customFile" required=""
+                                                        name="uploadfile" accept=".pdf">
+                                                    {{-- <label class="custom-file-label" for="customFile">Upload CV</label> --}}
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+
+                                            <div class="custom-file mb-3">
+                                                <fieldset>
+                                                    <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
+                                </form>
                             </div>
-                            <div> {{ date('j F, Y', strtotime($product->end_date)) }}</div>
+
+
+
                         </div>
                         <hr>
                         <div class="alert alert-info mt-3" role="alert">

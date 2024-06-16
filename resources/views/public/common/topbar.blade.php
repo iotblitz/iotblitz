@@ -18,35 +18,42 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{ route('home') }}"
                                 class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('product') }}"
+                                class="{{ request()->routeIs('product') ? 'active' : '' }}">Products</a></li>
+                        <li><a href="{{ route('blogs') }}"
+                                class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
 
                         <li class="scroll-to-section"><a href="{{ route('about') }}"
-                                class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
-                        <li class="scroll-to-section"><a href="{{ route('case_study') }}"
+                                class="{{ request()->routeIs('about') ? 'active' : '' }}">About Us</a></li>
+
+
+
+                        <li class="d-block d-md-none"><a href="{{ route('case_study') }}"
                                 class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') ? 'active' : '' }}">Case
                                 Study</a></li>
-                        <li class="scroll-to-section"><a href="{{ route('product') }}"
-                            class="{{ request()->routeIs('product') ? 'active' : '' }}" >Products</a></li>
 
+                        <li class="d-block d-md-none"><a href="{{ route('solutions') }}"
+                                class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a>
+                        </li>
 
-                        <li class="d-block d-md-none"><a href="{{ route('solutions') }}" class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a></li>
-                        <li class="d-block d-md-none"><a href="{{ route('blogs') }}"
-                                class="{{ request()->routeIs('blogs') || request()->routeIs('single_blogs') ? 'active' : '' }}">Blogs</a></li>
                         <li class="d-block d-md-none"><a href="">FAQ</a></li>
                         <li class="d-block d-md-none"><a href="{{ route('careers') }}"
-                            class="{{ request()->routeIs('careers*') ? 'active' : '' }}">Careers</a></li>
+                                class="{{ request()->routeIs('careers*') ? 'active' : '' }}">Careers</a></li>
 
 
                         <li class="scroll-to-section dropdown d-none d-md-block">
                             <a href="javascript:void(0);"
-                                class="{{ request()->routeIs('blogs') || request()->routeIs('single_blogs')||request()->routeIs('solutions') || request()->routeIs('single_solutions')||request()->routeIs('careers') || request()->routeIs('single_careers') ? 'active' : '' }}">More
+                                class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') || request()->routeIs('solutions') || request()->routeIs('single_solutions') || request()->routeIs('careers') || request()->routeIs('single_careers') ? 'active' : '' }}">More
                                 <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
-                                <li><a href="{{ route('solutions') }}" class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a></li>
-                                <li><a href="{{ route('blogs') }}"
-                                        class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
+                                <li><a href="{{ route('case_study') }}"
+                                        class="{{ request()->routeIs('case_study*') ? 'active' : '' }}">Case Study</a></li>
+                                <li><a href="{{ route('solutions') }}"
+                                        class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a>
+                                </li>
                                 <li><a href="">FAQ</a></li>
-                                <li><a  href="{{ route('careers') }}"
-                                    class="{{ request()->routeIs('careers*') ? 'active' : '' }}">Careers</a></li>
+                                <li><a href="{{ route('careers') }}"
+                                        class="{{ request()->routeIs('careers*') ? 'active' : '' }}">Careers</a></li>
                             </ul>
                         </li>
 

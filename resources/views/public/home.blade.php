@@ -112,7 +112,7 @@
         </div>
     </div>
 
-    <div class="section about-us">
+    {{-- <div class="section about-us">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-1">
@@ -197,7 +197,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- <section class="section courses" id="courses">
         <div class="container">
@@ -369,10 +369,10 @@
                         <div class="main-content">
                             <img src="{{ asset('public/public_page') }}/assets/images/member-01.jpg" alt="">
                             <span class="category">UX Teacher</span>
-                            <h4>Sophia Rose</h4>
+                            <h4>Srijit Mitra</h4>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                             </ul>
                         </div>
@@ -383,10 +383,10 @@
                         <div class="main-content">
                             <img src="{{ asset('public/public_page') }}/assets/images/member-02.jpg" alt="">
                             <span class="category">Graphic Teacher</span>
-                            <h4>Cindy Walker</h4>
+                            <h4>Amit Mondal</h4>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                             </ul>
                         </div>
@@ -395,12 +395,12 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="team-member">
                         <div class="main-content">
-                            <img src="{{ asset('public/public_page') }}/assets/images/member-03.jpg" alt="">
+                            <img src="{{ asset('public/public_page') }}/assets/images/member-04.jpg" alt="">
                             <span class="category">Full Stack Master</span>
-                            <h4>David Hutson</h4>
+                            <h4>Suparna Dutta</h4>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                             </ul>
                         </div>
@@ -411,10 +411,10 @@
                         <div class="main-content">
                             <img src="{{ asset('public/public_page') }}/assets/images/member-04.jpg" alt="">
                             <span class="category">Digital Animator</span>
-                            <h4>Stella Blair</h4>
+                            <h4>Partha Maity</h4>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                             </ul>
                         </div>
@@ -424,7 +424,7 @@
         </div>
     </div>
 
-    <div class="section testimonials">
+    {{-- <div class="section testimonials">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
@@ -471,7 +471,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- <div class="section events" id="events">
         <div class="container">

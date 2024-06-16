@@ -61,6 +61,34 @@ class Home extends Controller
     }
 
 
+    function apply_jobs($carcers_id): View
+    {
+        $lastHyphenPosition = strrpos($carcers_id, "-");
+        $carcers_id = substr($carcers_id, $lastHyphenPosition + 1);
+        $data['product'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")
+                                            ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
+                                            ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
+                                            ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
+                                            ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
+                                            ->where("jobs_careers.careers_id",$carcers_id)
+                                            ->where("jobs_careers.status","A")
+                                            ->first();
+        $data['carcers_id'] = $carcers_id;
+
+        $data['latest_posts_carcers'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")
+                                                ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
+                                                ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
+                                                ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
+                                                ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
+                                                ->where("jobs_careers.status","A")
+                                                ->orderBy("jobs_careers.careers_id", "DESC")->limit(5)->get();
+
+        return view('public.apply_jobs_single_carcers')->with($data);
+
+
+    }
+
+
 
     function product(): View
     {
