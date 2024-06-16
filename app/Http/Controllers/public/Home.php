@@ -90,36 +90,43 @@ class Home extends Controller
     }
 
 
-    function apply_jobs_save($carcers_id, Request $r): RedirectResponse
+    function apply_jobs_save($carcers_id, Request $r)
     {
         $rules = [
-            'carcers_id' => 'required',
+            // 'carcers_id' => 'required',
             'name' => 'required',
             'email' => 'required|email',
-            'phone' => 'required',
+            'mobile_no' => 'required',
+            'about'=>'required|max:500',
             'uploadfile' => 'required|mimes:pdf,doc,docx',
             'g-recaptcha-response' => ['required', new GoogleRecaptchaV2],
         ];
         $valaditor = Validator::make($r->all(), $rules);
         if ($valaditor->fails()) {
+            return $valaditor->errors();
             return redirect()->back();
         }
 
-        $file = $r->file('uploadfile');
-        $file_name = time() . "_" . $file->getClientOriginalName();
-        $file->move(public_path('uploads/resume/'), $file_name);
+
+        if ($r->hasFile('uploadfile')) {
+            $image = $r->file('uploadfile');
+            $file_name = time() . '.' . $image->extension();
+            $image->move(public_path('resume'), $file_name);
+        } else {
+            return redirect()->back();
+        }
 
         EmpCareersModel::create([
             'carcers_id' => $carcers_id,
             'name' => $r->name,
             'email' => $r->email,
-            'mobile' => $r->phone,
+            'mobile' => $r->mobile_no,
             'cv_file' => $file_name,
             'about' => $r->about,
-            'active_status' => 'A'
+            'active_status' => 'Y'
         ]);
 
-        return redirect()->back();
+        return redirect()->route('careers');
     }
 
 

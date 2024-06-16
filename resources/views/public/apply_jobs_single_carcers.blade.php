@@ -215,7 +215,7 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <textarea name="message" id="message" class="form-control" placeholder="About yourself" spellcheck="false" required></textarea>
+                                                <textarea name="about" id="message" class="form-control" placeholder="About yourself" spellcheck="false" required></textarea>
                                             </div>
                                         </div>
 
@@ -227,7 +227,7 @@
                                             <div class="form-group">
                                                 <div class="custom-file mb-3">
                                                     <input type="file" class="custom-file-input" id="customFile"
-                                                        required="" name="uploadfile" accept=".pdf">
+                                                        required="" name="uploadfile" accept=".doc,.docx,.txt,.pdf">
                                                     {{-- <label class="custom-file-label" for="customFile">Upload CV</label> --}}
                                                 </div>
                                             </div>
@@ -247,6 +247,7 @@
                                     </div>
 
                                     <button type="submit" class="btn btn-primary btn-block" style="background-color: #7a6ad8 !important; color: #fff">Submit</button>
+                                    {{-- <input type="submit" value="Submit"> --}}
 
                                 </form>
                             </div>
@@ -318,84 +319,7 @@
     </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content " style="background-color: #7a6ad8 !important">
-                <div class="modal-header">
-                    <h5 class="modal-title text-white" id="applyModalLabel">{{ $product->title }}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="{{ route('public_comments', [$carcers_id]) }}" method="POST" id="myform"
-                    class="main-form">
-                    <div class="modal-body row">
-                        @csrf
-                        <div class="col-md-6">
 
-
-                            <div class="form-group">
-
-                                <input type="text" class="form-control" id="name" required
-                                    placeholder="Enter your name" name="name">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-
-
-                            <div class="form-group">
-
-                                <input type="email" class="form-control" id="email" required
-                                    placeholder="Enter your email" name="email">
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-
-                                <input type="tel" class="form-control" id="mobile_no" required
-                                    placeholder="Enter your mobile number" name="mobile_no">
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <textarea name="message" id="message" placeholder="About yourself" spellcheck="false" required></textarea>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6">
-
-
-
-                            <div class="form-group">
-                                <div class="custom-file mb-3">
-                                    <input type="file" class="custom-file-input" id="customFile" required=""
-                                        name="uploadfile" accept=".pdf">
-                                    {{-- <label class="custom-file-label" for="customFile">Upload CV</label> --}}
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-6">
-
-
-                            <div class="custom-file mb-3">
-                                <fieldset>
-                                    <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-                                </fieldset>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 @endsection
 @section('page_script')
 @endsection
