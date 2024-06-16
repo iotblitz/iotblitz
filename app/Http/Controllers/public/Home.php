@@ -8,6 +8,7 @@ use App\Models\JobCareersModel;
 use App\Models\PublicBlogModel;
 use App\Models\PublicBlogsCommentsModel;
 use App\Models\PublicCaseStudyModel;
+use App\Models\PublicContactModel;
 use App\Models\PublicProductCategoryModel;
 use App\Models\PublicProductModel;
 use App\Models\PublicSolutionModel;
@@ -290,6 +291,30 @@ class Home extends Controller
     function public_contact(): View
     {
         return view('public.contact');
+    }
+
+    function public_contact_public(Request $r){
+        $rules = [
+            'name' => 'required',
+            'email' => 'required|email',
+            'mobile_no' => 'required',
+            'message' => 'required',
+            'g-recaptcha-response' => ['required', new GoogleRecaptchaV2],
+        ];
+        $valaditor = Validator::make($r->all(), $rules);
+        if ($valaditor->fails()) {
+            return redirect()->back();
+        }
+
+        PublicContactModel::create([
+            'name' => $r->name,
+            'email' => $r->email,
+            'mobile' => $r->mobile_no,
+            'message' => $r->message
+        ]);
+
+
+        return redirect()->back();
     }
 
     function public_about(): View

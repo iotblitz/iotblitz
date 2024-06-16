@@ -604,32 +604,47 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-us-content">
-                        <form id="contact-form" action="" method="post">
-                            <div class="row">
-                                <div class="col-lg-12">
+                        <form id="contact-form" action="{{route('contact_public')}}" method="post">
+                            @csrf
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                              <fieldset>
+                                <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                                <fieldset>
+                                  <input type="text" name="mobile_no" id="mobile"  placeholder="Your Mobile no..." required="">
+                                </fieldset>
+                              </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                              </fieldset>
+                            </div>
+
+                            <div class="col-md-12">
+
+
+                                <div class="custom-file mb-3">
                                     <fieldset>
-                                        <input type="name" name="name" id="name" placeholder="Your Name..."
-                                            autocomplete="on" required>
-                                    </fieldset>
-                                </div>
-                                <div class="col-lg-12">
-                                    <fieldset>
-                                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
-                                            placeholder="Your E-mail..." required="">
-                                    </fieldset>
-                                </div>
-                                <div class="col-lg-12">
-                                    <fieldset>
-                                        <textarea name="message" id="message" placeholder="Your Message"></textarea>
-                                    </fieldset>
-                                </div>
-                                <div class="col-lg-12">
-                                    <fieldset>
-                                        <button type="submit" id="form-submit" class="orange-button">Send Message
-                                            Now</button>
+                                        <div class="g-recaptcha"
+                                            data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                                     </fieldset>
                                 </div>
                             </div>
+
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                              </fieldset>
+                            </div>
+                          </div>
                         </form>
                     </div>
                 </div>
