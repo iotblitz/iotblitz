@@ -46,6 +46,7 @@ Route::post('/blogs/comments/{blog_id}', [Home::class, 'public_comments'])->name
 Route::get('/careers', [Home::class, 'careers'])->name('careers');
 Route::get('/careers/{carcers_id}', [Home::class, 'single_career'])->name('single_careers');
 Route::get('/apply-job/{carcers_id}', [Home::class, 'apply_jobs'])->name('apply_jobs');
+Route::post('/apply-job-submit/{carcers_id}', [Home::class, 'apply_jobs_save'])->name('apply_jobs_save');
 
 
 Route::get('robots.txt',[Home::class,'robots']);

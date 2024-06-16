@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\public;
 
 use App\Http\Controllers\Controller;
+use App\Models\EmpCareersModel;
 use App\Models\JobCareersModel;
 use App\Models\PublicBlogModel;
 use App\Models\PublicBlogsCommentsModel;
@@ -86,6 +87,39 @@ class Home extends Controller
         return view('public.apply_jobs_single_carcers')->with($data);
 
 
+    }
+
+
+    function apply_jobs_save($carcers_id, Request $r): RedirectResponse
+    {
+        $rules = [
+            'carcers_id' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'uploadfile' => 'required|mimes:pdf,doc,docx',
+            'g-recaptcha-response' => ['required', new GoogleRecaptchaV2],
+        ];
+        $valaditor = Validator::make($r->all(), $rules);
+        if ($valaditor->fails()) {
+            return redirect()->back();
+        }
+
+        $file = $r->file('uploadfile');
+        $file_name = time() . "_" . $file->getClientOriginalName();
+        $file->move(public_path('uploads/resume/'), $file_name);
+
+        EmpCareersModel::create([
+            'carcers_id' => $carcers_id,
+            'name' => $r->name,
+            'email' => $r->email,
+            'mobile' => $r->phone,
+            'cv_file' => $file_name,
+            'about' => $r->about,
+            'active_status' => 'A'
+        ]);
+
+        return redirect()->back();
     }
 
 

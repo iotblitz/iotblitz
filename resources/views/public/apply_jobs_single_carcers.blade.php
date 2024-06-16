@@ -99,6 +99,14 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+
+        .form-control {
+            background-color: #7a6ad8 !important;
+        }
+
+        .main-form input {
+            background-color: #7a6ad8 !important;
+        }
     </style>
 
 
@@ -168,12 +176,13 @@
 
                         <div class="d-flex justify-content-between">
 
+                            <hr>
 
+                            <div class="mt-5">
+                                {{-- <div style="background-color: #7a6ad8 !important"> --}}
 
-                            <div style="background-color: #7a6ad8 !important">
-
-                                <form action="{{ route('public_comments', [$carcers_id]) }}" method="POST" id="myform"
-                                    class="main-form">
+                                <form action="{{ route('apply_jobs_save', [$carcers_id]) }}" method="POST" id="myform"
+                                    class="main-form" enctype="multipart/form-data">
                                     <div class="modal-body row">
                                         @csrf
                                         <div class="col-md-6">
@@ -182,7 +191,8 @@
                                             <div class="form-group">
 
                                                 <input type="text" class="form-control" id="name" required
-                                                    placeholder="Enter your name" name="name">
+                                                    placeholder="Enter your name" name="name"
+                                                    style="background-color:#7a6ad8 !important">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -205,7 +215,7 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <textarea name="message" id="message" placeholder="About yourself" spellcheck="false" required></textarea>
+                                                <textarea name="message" id="message" class="form-control" placeholder="About yourself" spellcheck="false" required></textarea>
                                             </div>
                                         </div>
 
@@ -216,8 +226,8 @@
 
                                             <div class="form-group">
                                                 <div class="custom-file mb-3">
-                                                    <input type="file" class="custom-file-input" id="customFile" required=""
-                                                        name="uploadfile" accept=".pdf">
+                                                    <input type="file" class="custom-file-input" id="customFile"
+                                                        required="" name="uploadfile" accept=".pdf">
                                                     {{-- <label class="custom-file-label" for="customFile">Upload CV</label> --}}
                                                 </div>
                                             </div>
@@ -228,14 +238,15 @@
 
                                             <div class="custom-file mb-3">
                                                 <fieldset>
-                                                    <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                                    <div class="g-recaptcha"
+                                                        data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                                                 </fieldset>
                                             </div>
                                         </div>
 
                                     </div>
 
-                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #7a6ad8 !important; color: #fff">Submit</button>
 
                                 </form>
                             </div>
