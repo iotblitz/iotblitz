@@ -53,7 +53,18 @@
 
                     <div class="card mb-0">
                         <div class="card-header" id="headingOne{{$careersdata->careers_id}}">
+                            <div class="d-flex justify-content-between">
+                                <div>
+
                             <h5 class="mb-0"><a href="#!" data-toggle="collapse" data-target="#collapseOne{{$careersdata->careers_id}}" aria-expanded="true" aria-controls="collapseOne{{$careersdata->careers_id}}">{{$careersdata->title}} #{{$careersdata->created_at}}</a></h5>
+
+                        </div>
+                        <div>
+                           <a href="{{route('super_admin.page.applycation_list',$careersdata->careers_id) }}" class="btn btn-primary">Application list</a>
+                        </div>
+
+
+
                         </div>
                         <div id="collapseOne{{$careersdata->careers_id}}" class="collapse" aria-labelledby="headingOne{{$careersdata->careers_id}}" data-parent="#accordionExample">
                             <div class="row no-gutters">

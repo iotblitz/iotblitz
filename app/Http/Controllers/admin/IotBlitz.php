@@ -8,6 +8,7 @@ use App\Models\JobRoleModel;
 use App\Models\MdCountriesModel;
 use App\Models\PublicBlogModel;
 use App\Models\PublicCaseStudyModel;
+use App\Models\PublicContactModel;
 use App\Models\PublicProductCategoryModel;
 use App\Models\PublicProductModel;
 use App\Models\PublicSolutionModel;
@@ -596,5 +597,30 @@ class IotBlitz extends Controller
 
             return view('admin.iot_blitz.careers.careers_edit')->with($data);
         }
+    }
+
+    function applycation_list($careers_id): View
+    {
+        $data['careers_id'] = $careers_id;
+
+        $data['jobs_careers']=JobCareersModel::where('careers_id',$careers_id)->join("jobs_careers_role AS e", "e.careers_role_id", "=", "jobs_careers.role_id")->first();
+        $data['job_applications'] = JobCareersModel::join("jobs_applied_employee AS a", "jobs_careers.careers_id", "=", "a.carcers_id")
+                                    ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
+                                    ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
+                                    ->join("md_lo_cities AS d", "d.id", "=", "c.country_id")
+                                    ->join("jobs_careers_role AS e", "e.careers_role_id", "=", "jobs_careers.role_id")
+                                    ->select("a.*", "jobs_careers.*", "b.name AS city_name", "c.name AS state_name", "d.name AS country_name", "e.role")
+                                    ->where("jobs_careers.careers_id", $careers_id)
+                                    ->where("a.carcers_id", $careers_id)->get();
+
+
+        return view('admin.iot_blitz.careers.applycation_list')->with($data);
+    }
+
+
+    function contact(): View
+    {
+        $data['contact']=PublicContactModel::orderBy('contact_id','DESC')->get();
+        return view('admin.iot_blitz.contact.list')->with($data);
     }
 }
