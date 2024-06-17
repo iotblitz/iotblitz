@@ -50,6 +50,9 @@ Route::get('/apply-job/{carcers_id}', [Home::class, 'apply_jobs'])->name('apply_
 Route::post('/apply-job-submit/{carcers_id}', [Home::class, 'apply_jobs_save'])->name('apply_jobs_save');
 
 
+Route::get('/terms-and-conditions', [Home::class, 'terms_and_conditions'])->name('terms_and_conditions');
+Route::get('/cookies-policy', [Home::class, 'cookies_policy'])->name('cookies_policy');
+Route::get('/privacy-policy', [Home::class, 'privacy_policy'])->name('privacy_policy');
 Route::get('robots.txt',[Home::class,'robots']);
 Route::get('sitemap.xml',[Home::class,'sitemap']);
 

@@ -87,7 +87,7 @@
             <loc>https://iotblitz.com/careers/{{str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id}}</loc>
             <lastmod>{{$careers_data->updated_at}}</lastmod>
             <changefreq>monthly</changefreq>
-            <priority>0.8</priority>
+            <priority>0.51</priority>
         </url>
     @endforeach
 
@@ -98,7 +98,7 @@
             <loc>https://iotblitz.com/apply-job/{{str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id}}</loc>
             <lastmod>{{$careers_data->updated_at}}</lastmod>
             <changefreq>never</changefreq>
-            <priority>0.8</priority>
+            <priority>0.51</priority>
         </url>
     @endforeach
 

@@ -323,6 +323,20 @@ class Home extends Controller
     }
 
 
+    function terms_and_conditions(): View
+    {
+        return view('public.terms_conditions');
+    }
+    function cookies_policy(): View
+    {
+        return view('public.cookies_policy');
+    }
+    function privacy_policy(): View
+    {
+        return view('public.privacy_policy');
+    }
+
+
     function robots(): Response
     {
         return response()->view('robots')->header('Content-Type', 'text/plain');

@@ -30,7 +30,7 @@
                             <ul>
                                 <li><a href="" class="text-white">FAQ</a></li>
                                  <hr>
-                                <li><a href="" class="text-white">Careers</a></li>
+                                <li><a href="{{route('careers')}}" class="text-white">Careers</a></li>
                                 <hr>
                                 <li><a href="{{route('solutions')}}" class="text-white">Solutions</a></li>
                                 <hr>
@@ -42,11 +42,11 @@
                         <div class="footer-link">
                             <h3 class="text-white" style="margin-bottom: 20px">Legal</h3>
                             <ul>
-                                <li><a href="" class="text-white">Terms & Conditions</a></li>
+                                <li><a href="{{ route('terms_and_conditions') }}" class="text-white">Terms & Conditions</a></li>
 
-                                <li><a href="" class="text-white">Privacy Policy</a></li>
+                                <li><a href="{{ route('privacy_policy') }}" class="text-white">Privacy Policy</a></li>
 
-                                <li><a href="" class="text-white">Cookies</a></li>
+                                <li><a href="{{ route('cookies_policy') }}" class="text-white">Cookies</a></li>
                             </ul>
                         </div>
                     </div>
