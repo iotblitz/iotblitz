@@ -329,6 +329,15 @@ class Home extends Controller
     }
     function sitemap(): Response
     {
-        return response()->view('sitemap')->header('Content-Type', 'text/xml');
+        $data['products']= PublicProductModel::where('active_status', 'A')
+                                        ->select('product_title','product_id','created_at','updated_at')
+                                        ->get();
+        $data['blogs']= PublicBlogModel::where('active_status', 'A')->select('blog_title','blog_id','created_at','updated_at')->get();
+        $data['case_study'] = PublicCaseStudyModel::where('active_status', 'A')->select('case_study_title','case_study_id','created_at','updated_at')->get();
+        $data['solutions'] = PublicSolutionModel::where('active_status', 'A')->select('solutions_title','solutions_id','created_at','updated_at')->get();
+        $data['careers'] = JobCareersModel::where("status","A")->select('title','careers_id','created_at','updated_at')->get();
+
+
+        return response()->view('sitemap',$data)->header('Content-Type', 'text/xml');
     }
 }

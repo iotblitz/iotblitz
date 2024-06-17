@@ -368,7 +368,7 @@
                     <div class="team-member">
                         <div class="main-content">
                             <img src="{{ asset('public/public_page') }}/assets/images/member-01.jpg" alt="">
-                            <span class="category">UX Teacher</span>
+                            <span class="category">co-founder</span>
                             <h4>Srijit Mitra</h4>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -378,11 +378,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                {{-- <div class="col-lg-3 col-md-6">
                     <div class="team-member">
                         <div class="main-content">
                             <img src="{{ asset('public/public_page') }}/assets/images/member-02.jpg" alt="">
-                            <span class="category">Graphic Teacher</span>
+                            <span class="category">co-founder</span>
                             <h4>Amit Mondal</h4>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -396,7 +396,7 @@
                     <div class="team-member">
                         <div class="main-content">
                             <img src="{{ asset('public/public_page') }}/assets/images/member-04.jpg" alt="">
-                            <span class="category">Full Stack Master</span>
+                            <span class="category">co-founder</span>
                             <h4>Suparna Dutta</h4>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -405,8 +405,8 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+                </div> --}}
+                {{-- <div class="col-lg-3 col-md-6">
                     <div class="team-member">
                         <div class="main-content">
                             <img src="{{ asset('public/public_page') }}/assets/images/member-04.jpg" alt="">
@@ -419,7 +419,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

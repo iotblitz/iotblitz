@@ -33,7 +33,7 @@ Route::get('/case_study/{case_study_id}', [Home::class, 'single_case_study'])->n
 
 
 Route::get('/solutions', [Home::class, 'solutions'])->name('solutions');
-Route::get('/solution/{solutions_id}', [Home::class, 'single_solution'])->name('single_solutions');
+Route::get('/solutions/{solutions_id}', [Home::class, 'single_solution'])->name('single_solutions');
 
 
 Route::get('/products', [Home::class, 'product'])->name('product');
