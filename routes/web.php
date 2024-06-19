@@ -25,7 +25,7 @@ Route::get('/', [Home::class, 'home'])->name('home');
 
 Route::get('/contact', [Home::class, 'public_contact'])->name('contact');
 Route::post('/contact_public', [Home::class, 'public_contact_public'])->name('contact_public');
-Route::get('/about', [Home::class, 'public_about'])->name('about');
+Route::get('/about-us', [Home::class, 'public_about'])->name('about');
 
 
 Route::get('/case_study', [Home::class, 'case_study'])->name('case_study');

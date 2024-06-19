@@ -125,7 +125,7 @@
         <div class="d-flex align-items-center justify-content-between">
             {{-- <span class="cookiealert-text">This website uses cookies to ensure you get the best experience on our
                 website.</span> --}}
-                <p class="cookiealert-text">We use cookies to ensure you get the best experience on our website. By using our website, you agree to our Cookies Policy. <a href="{{ route('cookies_policy') }}">Learn More</a></p>
+                <p class="cookiealert-text">We use cookies to ensure you get the best experience on our website. By using our website, you agree to our Cookies Policy. <a href="{{ route('cookies_policy') }}"><strong>Learn More</strong></a></p>
             <button type="button" class="btn btn-outline-light btn-sm accept-btn">Got it!</button>
         </div>
 
