@@ -30,8 +30,8 @@
           <div class="header-text mt-5">
 
             {{-- <span class="category text-white">Our Courses</span> --}}
-            <h2 class="text-white">About</h2>
-            <p class="text-white">Scholar is a free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+            <h1>About IoTBlitz LLP</h1>
+            <p class="text-white">At IoTBlitz LLP, we are pioneers in harnessing the power of cutting-edge technologies to revolutionize businesses across industries. With over 1 year of invaluable experience, we have successfully completed 20 projects and delighted 50 clients with our innovative solutions.</p>
 
           </div>
         </div>
@@ -47,20 +47,39 @@
 
 
 
-  <div class="contact-us section" id="contact">
+  <div class="section" id="contact">
     <div class="container">
       <div class="row">
         <div class="col-lg-6  align-self-center">
           <div class="section-heading">
-            <h6>Contact Us</h6>
-            <h2>Feel free to contact us anytime</h2>
-            <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
-            <div class="special-offer">
+            <h6>About Us</h6>
+            <p>At IoTBlitz LLP, we are pioneers in harnessing the power of cutting-edge technologies to revolutionize businesses across industries. With over 1 year of invaluable experience, we have successfully completed 20 projects and delighted 50 clients with our innovative solutions.</p>
+
+        <h2>Our Expertise</h2>
+        <ul>
+            <li><strong>AI & Automation:</strong> Embrace the future with our AI-driven solutions that optimize processes, boost efficiency, and foster innovation. We integrate advanced automation technologies to streamline operations and empower your business.</li>
+            <li><strong>IoT Solutions:</strong> Explore limitless possibilities with our IoT solutions. We specialize in seamlessly connecting devices, extracting meaningful data, and enhancing operational efficiencies through robust Internet of Things technology.</li>
+            <li><strong>Design & Development:</strong> From ideation to implementation, we excel in crafting bespoke web, Android, and iOS applications tailored to meet your specific requirements. Our focus is on delivering intuitive designs and seamless user experiences.</li>
+        </ul>
+
+        <h2>Commitment to Excellence</h2>
+        <p>At IoTBlitz LLP, our mission is to drive your success through innovative solutions that propel your business forward. We combine technical expertise with a deep understanding of industry dynamics to deliver measurable results and exceed expectations.</p>
+
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><strong>Expertise:</strong> Our team of skilled professionals brings a wealth of experience and knowledge to every project.</li>
+            <li><strong>Innovation:</strong> We stay ahead of the curve by embracing emerging technologies and industry trends.</li>
+            <li><strong>Client-Centric Approach:</strong> Your satisfaction is our priority. We collaborate closely with you to ensure our solutions align with your goals.</li>
+        </ul>
+
+        <h2>Get in Touch</h2>
+        <p>Discover how IoTBlitz LLP can transform your business. Partner with us to unlock new opportunities and achieve unparalleled growth through advanced technology solutions.</p>
+            {{-- <div class="special-offer">
               <span class="offer">off<br><em>50%</em></span>
               <h6>Valide: <em>24 April 2036</em></h6>
               <h4>Special Offer <em>50%</em> OFF!</h4>
               <a href="#"><i class="fa fa-angle-right"></i></a>
-            </div>
+            </div> --}}
           </div>
         </div>
         <div class="col-lg-6">

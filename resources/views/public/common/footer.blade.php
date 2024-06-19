@@ -8,7 +8,7 @@
                         <img src="{{ asset('public/public_page') }}/assets/images/logo.png" alt="logo" style="max-width: 100px; height: auto;">
                     </a>
                     <!-- Content -->
-                    <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat illum saepe doloribus! Ipsa repellendus quaerat exercitationem.</p>
+                    <p class="text-white">Scholar is a free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
                 </div>
             </div>
             <div class="col-lg-9">

@@ -29,8 +29,7 @@
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
                         <h2 class="text-white">Blogs</h2>
-                        <p class="text-white">Scholar is a free CSS template designed by TemplateMo for online educational
-                            related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                        <p class="text-white">Discover IoTBlitz LLP's expertise in AI & Automation, IoT Solutions, and Design & Development. Optimize processes, enhance efficiency, and innovate with our advanced, tailored solutions.</p>
 
                     </div>
                 </div>
