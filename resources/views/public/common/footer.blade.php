@@ -8,7 +8,7 @@
                         <img src="{{ asset('public/public_page') }}/assets/images/logo.png" alt="logo" style="max-width: 100px; height: auto;">
                     </a>
                     <!-- Content -->
-                    <p class="text-white">Scholar is a free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                    <p class="text-white">At IoTBlitz LLP, we are pioneers in harnessing the power of cutting-edge technologies to revolutionize businesses across industries. With over 1 year of invaluable experience, we have successfully completed 20 projects and delighted 50 clients with our innovative solutions.</p>
                 </div>
             </div>
             <div class="col-lg-9">
@@ -57,7 +57,7 @@
                                 <li class="d-flex align-items-start">
                                     <i class="fa fa-map-marker mt-1 mr-2" style="color: white;"></i>
                                     <div class="text-white"  style="margin-left:20px">
-                                        Green Villa Residency, Boral Main Road, Kolkata 700154
+                                        Green Valley Residency, Boral Main Road, Kolkata 700154
                                     </div>
                                 </li>
                                 <hr>

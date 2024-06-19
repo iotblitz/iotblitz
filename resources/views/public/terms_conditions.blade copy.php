@@ -114,7 +114,7 @@
   mso-themetint:166;">
                                                 <bdt class="statement-end-if-in-editor"></bdt>
                                             </span></span></bdt>
-                                </span></span> at <bdt class="question">Green Villa Residency</bdt>
+                                </span></span> at <bdt class="question">Green Valley Residency</bdt>
                             <bdt class="block-component"></bdt>
                         </span></span>, <bdt class="question">Kolkata</bdt></span>
             </span><span style="font-size: 15px;"><span data-custom-class="body_text"><span
@@ -163,7 +163,7 @@
                 can contact us by <bdt class="block-component"></bdt>phone at <bdt class="question">9999999999</bdt>,
                 email at <bdt class="question">leyic16307@noefa.com</bdt>
                 <bdt class="block-component"></bdt>,<bdt class="statement-end-if-in-editor"></bdt> or by mail to <bdt
-                    class="question">Green Villa Residency</bdt>
+                    class="question">Green Valley Residency</bdt>
                 <bdt class="block-component"></bdt>, <bdt class="question">Kolkata</bdt>
                 <bdt class="block-component"></bdt>, <bdt class="question">West Bengal</bdt>
                 <bdt class="statement-end-if-in-editor"></bdt>
@@ -1571,7 +1571,7 @@
                     Agent</span></div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; text-align: left;"><span
                     style="font-size: 11pt; line-height: 16.8667px; color: rgb(89, 89, 89);">
-                    <bdt class="question">Green Villa Residency</bdt>
+                    <bdt class="question">Green Valley Residency</bdt>
                 </span></div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; text-align: left;"><span
                     style="font-size: 11pt; line-height: 16.8667px; color: rgb(89, 89, 89);">
@@ -1966,7 +1966,7 @@
                     style="font-size: 15px;"><span
                         style="line-height: 115%; font-family: Arial; color: rgb(89, 89, 89);">
                         <bdt class="question"><strong>
-                                <bdt class="question">Green Villa Residency</bdt>
+                                <bdt class="question">Green Valley Residency</bdt>
                             </strong></bdt><span
                             style="line-height: 115%; font-family: Arial; color: rgb(89, 89, 89);">
                             <bdt class="statement-end-if-in-editor"></bdt>

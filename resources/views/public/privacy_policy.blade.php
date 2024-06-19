@@ -126,7 +126,7 @@
             <ul>
                 <li><strong>IoTBlitz LLP</strong></li>
                 <li>Email: <a href="mailto:info@iotblitz.com">info@iotblitz.com</a></li>
-                <li>Address: Green Villa Residency, Boral Main Road, Kolkata 700154</li>
+                <li>Address: Green Valley Residency, Boral Main Road, Kolkata 700154</li>
                 <li>Website: <a href="http://www.iotblitz.com">www.iotblitz.com</a></li>
             </ul>
         </section>

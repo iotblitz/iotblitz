@@ -57,7 +57,7 @@
                     <div class="section-heading">
                         <h2>Connect with IoTBlitz LLP Today</h2>
                         <p><strong>Address:</strong><br>
-                            Green Villa Residency,<br>
+                            Green Valley Residency,<br>
                             Boral Main Road,<br>
                             Kolkata 700154,<br>
                             India</p>
