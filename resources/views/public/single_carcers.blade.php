@@ -204,7 +204,7 @@
             </div>
             <div class="col-md-3 mt-5">
                 <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
-                    <h5>Latest Jobs</h5>
+                    <h5>Active Jobs</h5>
                     @foreach ($latest_posts_carcers as $ltdata)
                         <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;"
                             onclick="location.href = '{{ route('single_careers', [str_replace(' ', '-', $ltdata->title) . '-' . $ltdata->careers_id]) }}';">

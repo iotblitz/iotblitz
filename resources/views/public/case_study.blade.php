@@ -69,14 +69,14 @@
                                             alt="">
                                     </div>
                                 </div>
-                                <div class="col-lg-5">
+                                <div class="col-lg-7">
                                     <h4>{{ $case_study_data->case_study_title }}</h4>
                                     <p>{{ substr($case_study_data->text_description, 0, 100) }}....</p>
                                 </div>
-                                <div class="col-lg-3">
+                                {{-- <div class="col-lg-3">
                                     <span>Date:</span>
                                     <h6>{{ date('j F, Y', strtotime($case_study_data->created_at)) }}</h6>
-                                </div>
+                                </div> --}}
                                 <a
                                     href="{{ route('single_case_study', [str_replace(' ', '-', $case_study_data->case_study_title) . '-' . $case_study_data->case_study_id]) }}"><i
                                         class="fa fa-angle-right"></i></a>

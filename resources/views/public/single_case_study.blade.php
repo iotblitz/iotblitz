@@ -23,7 +23,7 @@
         .blog-content h6 {
             font-weight: bold;
             color: #333;
-            margin-top: 30px;
+            /* margin-top: 30px; */
             /* Adjust spacing between headings */
             margin-bottom: 15px;
 

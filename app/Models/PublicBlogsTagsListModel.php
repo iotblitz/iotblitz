@@ -13,4 +13,8 @@ class PublicBlogsTagsListModel extends Model
     protected $fillable = [
         "blog_id","blog_tags_id"
     ];
+    public function tag()
+    {
+        return $this->belongsTo(PublicBlogsTagsModel::class, 'blog_tags_id', 'blog_tags_id');
+    }
 }

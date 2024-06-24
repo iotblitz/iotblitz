@@ -185,7 +185,12 @@ class Home extends Controller
     {
         $lastHyphenPosition = strrpos($blogs_id, "-");
         $blog_id = substr($blogs_id, $lastHyphenPosition + 1);
-        $data['blogs'] = PublicBlogModel::where('blog_id', $blog_id)->where('active_status', 'A')->with('public_comments')->first();
+        $data['blogs'] =  PublicBlogModel::where('public_blog.blog_id', $blog_id)  // Assuming $blog_id is the ID you are querying for
+        ->where('public_blog.active_status', 'A')
+        ->join('users', 'public_blog.create_by', '=', 'users.id')
+        ->with('public_tags.tag')  // Eager load public_comments relationship
+        ->with('public_tags')  // Eager load public_tags relationship
+        ->first();
         $data['blogs_count'] = PublicBlogsCommentsModel::where('content_id', $blog_id)->where('comment_by_page', 'B')->where('active_status', 'A')->count();
         $data['blog_id'] = $blog_id;
         $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();

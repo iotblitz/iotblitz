@@ -70,25 +70,25 @@
         }
 
         /* ul {
-                list-style-type: none;
-                padding-left: 0;
-            }
+                    list-style-type: none;
+                    padding-left: 0;
+                }
 
-            ul li {
-                padding-left: 1.5rem;
-                position: relative;
-                font-size: 1rem;
-                color: #6c757d;
-            }
+                ul li {
+                    padding-left: 1.5rem;
+                    position: relative;
+                    font-size: 1rem;
+                    color: #6c757d;
+                }
 
-            ul li::before {
-                content: "\2022";
-                color: #7a6ad8;
-                font-weight: bold;
-                display: inline-block;
-                width: 1rem;
-                margin-left: -1.5rem;
-            } */
+                ul li::before {
+                    content: "\2022";
+                    color: #7a6ad8;
+                    font-weight: bold;
+                    display: inline-block;
+                    width: 1rem;
+                    margin-left: -1.5rem;
+                } */
 
         .btn-primary {
             background-color: #7a6ad8;
@@ -97,6 +97,22 @@
             padding: 0.5rem 1.5rem;
             font-size: 1rem;
         }
+
+
+
+
+
+        /* Position the toast notification */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000; /* Ensure it's on top of everything */
+        }
+        .toast-custom {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+        }
+
     </style>
 
     <div class="main-banner" id="top">
@@ -107,7 +123,8 @@
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
                         <h2 class="text-white">Careers</h2>
-                        <p class="text-white">Explore exciting career opportunities at IoTBlitz LLP. Join us to innovate with AI, IoT solutions, and app development, shaping the future of technology.</p>
+                        <p class="text-white">Explore exciting career opportunities at IoTBlitz LLP. Join us to innovate with
+                            AI, IoT solutions, and app development, shaping the future of technology.</p>
 
                     </div>
                 </div>
@@ -143,11 +160,23 @@
                                     {{ $careers_data->countries_name }},
                                     {{ $careers_data->state_name }}, {{ $careers_data->citi_name }}</p>
                                 <p class="card-text"><span class="badge badge-secondary">{{ $careers_data->role }}</span>
-                                    <span class="badge badge-secondary">{{ $careers_data->experience }}</span></p>
+                                    <span class="badge badge-secondary">{{ $careers_data->experience }}</span>
+                                </p>
                             </div>
                             <div>
                                 {{-- <button class="btn btn-light"><i class="fas fa-save"></i></button> --}}
-                                <button class="btn btn-light shareButton" id="shareButton" job_title="{{ $careers_data->title }}" joburl="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}" min_qua=" {{$careers_data->minimum_qualifications}}"><i class="fas fa-share"></i></button>
+                                <button class="btn btn-light shareButton" id="shareButton"
+                                    job_title="{{ $careers_data->title }}"
+                                    joburl="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}"
+                                    min_qua=" {{ $careers_data->minimum_qualifications }}"><i
+                                        class="fas fa-share"></i></button>
+
+                                <button class="btn btn-light copyButton" id="copyButton"
+                                    job_title="{{ $careers_data->title }}"
+                                    joburl="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}"
+                                    min_qua="{{ $careers_data->minimum_qualifications }}">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                             </div>
                         </div>
 
@@ -156,7 +185,8 @@
                         <h5>Minimum qualifications</h5>
                         {!! $careers_data->minimum_qualifications !!}
                         <br>
-                        <a href="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}" class="btn btn-primary mt-2">Learn more</a>
+                        <a href="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}"
+                            class="btn btn-primary mt-2">Learn more</a>
                     </div>
                 </div>
             @endforeach
@@ -168,13 +198,27 @@
     </section>
 @endsection
 @section('page_script')
+
+<!-- Toast Notification HTML -->
+<div class="toast-container">
+    <div id="copyToast" class="toast align-items-center text-white bg-primary border-0 toast-custom" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+        <div class="d-flex">
+            <div class="toast-body">
+                Job title copied to clipboard!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+
     <script>
         $(document).ready(function() {
             $('.shareButton').on('click', async function() {
 
-                const title =$(this).attr('job_title')
-                const url =$(this).attr('joburl')
-                const min_qua =$(this).attr('min_qua')
+                const title = $(this).attr('job_title')
+                const url = $(this).attr('joburl')
+                const min_qua = $(this).attr('min_qua')
 
                 if (navigator.share) {
                     try {
@@ -192,6 +236,42 @@
                         `mailto:?subject=${encodeURIComponent(title)}&body=Check out this job posting: ${encodeURIComponent(url)}`;
                     window.location.href = shareUrl;
                 }
+            });
+        });
+
+
+
+
+        $(document).ready(function() {
+            // Copy Job Title Button Click Handler
+            $('.copyButton').click(function() {
+                // Get the job title from the button's attribute
+                var jobTitle = $(this).attr('job_title');
+
+
+                const title = $(this).attr('job_title')
+                const url = $(this).attr('joburl')
+                const min_qua = $(this).attr('min_qua')
+
+                // Create a temporary input element
+                var tempInput = $('<input>');
+                $('body').append(tempInput);
+
+                // Set the input value to the job title
+                tempInput.val(url).select();
+
+                // Copy the job title to clipboard
+                document.execCommand('copy');
+
+                // Remove the temporary input element
+                tempInput.remove();
+
+               // Remove the temporary input element
+            tempInput.remove();
+
+// Show the toast notification
+var copyToast = new bootstrap.Toast(document.getElementById('copyToast'));
+copyToast.show();
             });
         });
     </script>

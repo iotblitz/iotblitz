@@ -28,7 +28,7 @@
                     <div class="header-text  mt-5">
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
-                        <h2 class="text-white">Contact Us</h2>
+                        <h2 class="text-white">CONTACT US</h2>
                         <p class="text-white"><strong>IoTBlitz LLP</strong> is here to assist you with all your IoT needs. Whether you have
                             questions about our products, need technical support, or want to discuss a potential project, we
                             are ready to help.</p>

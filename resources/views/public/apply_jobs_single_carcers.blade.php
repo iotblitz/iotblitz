@@ -128,8 +128,9 @@
                             <li class="list-inline-item"><a href="{{ route('careers') }}" class="text-white-50">careers</a>
                             </li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="#"
-                                    class="text-white">{{ ucwords($product->title) }}</a></li>
+                            <li class="list-inline-item"><a href="{{ route('single_careers', [str_replace(' ', '-', $product->title) . '-' . $product->careers_id]) }}" class="text-white-50">{{ ucwords($product->title) }}</a></li>
+                            <li class="list-inline-item"><span class="text-white">/</span></li>
+                            <li class="list-inline-item"><a href="#" class="text-white">Apply</a></li>
                         </ul>
 
                     </div>
@@ -292,7 +293,7 @@
             </div>
             <div class="col-md-3 mt-5">
                 <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
-                    <h5>Latest Jobs</h5>
+                    <h5>Active Jobs</h5>
                     @foreach ($latest_posts_carcers as $ltdata)
                         <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;"
                             onclick="location.href = '{{ route('single_careers', [str_replace(' ', '-', $ltdata->title) . '-' . $ltdata->careers_id]) }}';">

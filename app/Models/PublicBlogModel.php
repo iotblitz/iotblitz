@@ -20,4 +20,9 @@ class PublicBlogModel extends Model
     {
         return $this->hasMany(PublicBlogsCommentsModel::class,'content_id','blog_id')->where('active_status', 'A')->where('comment_by_page', 'B');
     }
+
+    public function public_tags()
+    {
+        return $this->hasMany(PublicBlogsTagsListModel::class,'blog_id','blog_id');
+    }
 }

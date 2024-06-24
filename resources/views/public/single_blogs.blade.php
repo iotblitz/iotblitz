@@ -11,7 +11,7 @@
             line-height: 1.6;
             color: #555;
             margin-bottom: 15px;
-            text-align: justify;
+            /* text-align: justify; */
         }
 
         /* Headings */
@@ -23,7 +23,7 @@
         .blog-content h6 {
             font-weight: bold;
             color: #333;
-            margin-top: 30px;
+            /* margin-top: 30px; */
             /* Adjust spacing between headings */
             margin-bottom: 15px;
 
@@ -321,6 +321,10 @@
             overflow-x: auto;
             /* Add horizontal scroll if needed */
         }
+
+        .badge {
+            background-color: #7a6ad8 !important;
+        }
     </style>
 
 
@@ -355,121 +359,151 @@
 
 
 
+
     <div class="container mb-5">
         <div class="row">
             <div class="col-md-9">
                 <div class="blog-post">
-                    <h1 class="blog-title mb-2">{{ $blogs->blog_title }}</h1>
+
                     {{-- <img src="https://via.placeholder.com/800x400" alt="Blog Post Image"> --}}
                     <img src="{{ asset('public/blog_images') }}/{{ $blogs->blog_image }}"
-                        style="height: 400px; width: 100%;border-radius: 20px; object-fit: cover;" alt="Blog Image"
-                        class="mb-2">
+                        style="height: auto; width: 100%;border-radius: 20px; " alt="Blog Image" class="mb-2">
+                    <h1 class="blog-title mb-2">{{ $blogs->blog_title }}</h1>
                     <div class="blog-content mb-2">
-                        {!! $blogs->blog_description !!}
-                    </div>
-
-
-                    <div class=""
-                        style=" background-color: #7a6ad8 !important;
-                    border-radius: 15px;
-                    padding: 20px;
-                    color: #ffffff;">
-                        <form action="{{ route('public_comments', [$blogs->blog_id]) }}" method="POST"
-                            id="myform" class="main-form">
-                            @csrf
-                            <input type="hidden" name="comment_by_page" value="B">
-                            <input type="hidden" name="blog_id" value="{{ $blogs->blog_id }}">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <fieldset>
-                                        <input type="text" name="name" id="name" placeholder="Your Name..."
-                                            autocomplete="on" required>
-                                    </fieldset>
+                        <div class="blog-content mb-2">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_FWF2judaujT30K9sMf-tZFhMWpgP6xCemw&s"
+                                    alt="Author Image" class="rounded-circle me-3" style="width: 50px">
+                                <div class="text-center">
+                                    <div>
+                                        <h5 class="mb-0"> <a href="">{{ ucfirst($blogs->name) }}</a></h5>
+                                        <small class="text-muted">{{ date('j F, Y', strtotime($blogs->created_at)) }}</small>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <fieldset>
-                                        <input type="email" name="email" id="email" placeholder="Email"
-                                            autocomplete="on" required>
-                                    </fieldset>
+                            </div>
+                            <div id="toc">
+                                <h2>Table of Contents</h2>
+                                <ul></ul>
+                            </div>
+                            <div class="content-place">
+                                {!! $blogs->blog_description !!}
+                            </div>
+
+
+
+                            <div class="card" style=" background-color: #7a6ad8 !important; border-radius: 15px; padding: 20px;  color: #ffffff;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-white">About the Author</h5>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_FWF2judaujT30K9sMf-tZFhMWpgP6xCemw&s" alt="Author Image" class="rounded-circle me-3" style="width: 50%">
+                                        <div>
+                                            <h5 class="card-title text-white" >Author Name</h5>
+                                            <p class="text-muted">Author role</p>
+                                            <p class="card-text text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada augue id nibh commodo, eget sodales dui mollis. Vestibulum tincidunt felis quis tortor cursus, sed vehicula arcu ultricies. Nullam eu eros ut nisi rhoncus sollicitudin. Proin id risus ut nulla fringilla gravida.</p>
+                                            <p class="card-text">
+
+                                                    <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                                                    <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                                                    <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                                                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                                                    <a href="#" class="text-white"><i class="fa-brands fa-x-twitter"></i></a>
+
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="space-30"></div>
 
-                            <fieldset>
-                                <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Say something..."></textarea>
-                            </fieldset>
+
+
+                        </div>
+                        {{-- <div class=""
+                            style=" background-color: #7a6ad8 !important; border-radius: 15px; padding: 20px;  color: #ffffff;">
+                            <form action="{{ route('public_comments', [$blogs->blog_id]) }}" method="POST" id="myform"
+                                class="main-form">
+                                @csrf
+                                <input type="hidden" name="comment_by_page" value="B">
+                                <input type="hidden" name="blog_id" value="{{ $blogs->blog_id }}">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <fieldset>
+                                            <input type="text" name="name" id="name" placeholder="Your Name..."
+                                                autocomplete="on" required>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <fieldset>
+                                            <input type="email" name="email" id="email" placeholder="Email"
+                                                autocomplete="on" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <div class="space-30"></div>
+
+                                <fieldset>
+                                    <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Say something..."></textarea>
+                                </fieldset>
+                                <div class="row">
+                                    <div class="col-lg-6  mb-4">
+                                        <fieldset>
+                                            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-6 d-flex justify-content-md-end  mb-4">
+                                        <fieldset>
+                                            <button type="submit" id="form-submit" class="orange-button">Comment
+                                                Now</button>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <hr>
                             <div class="row">
-                                <div class="col-lg-6  mb-4">
-                                    <fieldset>
-                                        <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-                                    </fieldset>
-                                </div>
-                                <div class="col-lg-6 d-flex justify-content-md-end  mb-4">
-                                    <fieldset>
-                                        <button type="submit" id="form-submit" class="orange-button">Comment Now</button>
-                                    </fieldset>
-                                </div>
-                            </div>
+                                <div class="col-12 col-lg-12">
+                                    <div class="blog-comment">
+                                        <h4 class="text-white">{{ $blogs_count }} comments</h4>
+                                        <div class="space-30"></div>
+                                        @foreach ($blogs->public_comments as $comments)
+                                            <div class="single-comment text-white mt-3" style="max-height: 200px;">
+                                                <div class="row no-gutters">
+                                                    <div
+                                                        class="col-md-2 d-flex align-items-center justify-content-center   d-none d-md-block">
+                                                        <img src="{{ asset('public/public_page') }}/assets/images/user.png"
+                                                            class="card-img" alt="Profile Image" width="10px">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <div class="card-body">
 
-                        </form>
-
-
-
-
-
-
-
-
-
-
-                        <hr>
-
-
-                        <div class="row">
-                            <div class="col-12 col-lg-12">
-                                <div class="blog-comment">
-                                    <h4 class="text-white">{{ $blogs_count }} comments</h4>
-                                    <div class="space-30"></div>
-                                    @foreach ($blogs->public_comments as $comments)
-                                        <div class="single-comment text-white mt-3" style="max-height: 200px;">
-                                            <div class="row no-gutters">
-                                                <div
-                                                    class="col-md-2 d-flex align-items-center justify-content-center   d-none d-md-block">
-                                                    <img src="{{ asset('public/public_page') }}/assets/images/user.png"
-                                                        class="card-img" alt="Profile Image" width="10px">
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <div class="card-body">
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <h5 class="card-title mb-0">{{ $comments->name }}</h5>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <h5 class="card-title mb-0">{{ $comments->name }}</h5>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <p class="card-subtitle mb-0  text-white">
+                                                                        <small>{{ date('j F, Y', strtotime($comments->created_at)) }}</small>
+                                                                    </p>
+                                                                </div>
                                                             </div>
-                                                            <div class="col-auto">
-                                                                <p class="card-subtitle mb-0  text-white">
-                                                                    <small>{{ date('j F, Y', strtotime($comments->created_at)) }}</small>
-                                                                </p>
-                                                            </div>
+                                                            <p class="card-text  text-white">{{ $comments->comments }}</p>
                                                         </div>
-                                                        <p class="card-text  text-white">{{ $comments->comments }}</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <hr>
-                                    @endforeach
+                                            <hr>
+                                        @endforeach
 
-
-
-
+                                    </div>
+                                    <div class="space-50"></div>
 
                                 </div>
-                                <div class="space-50"></div>
-
                             </div>
-                        </div>
 
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -484,38 +518,70 @@
                             <div class="media-body" style=" flex: 1;">
                                 <h6 class="my-1"><a href="#" class="text-body">{{ $ltdata->blog_title }}</a>
                                 </h6>
-                                <p class="my-1"><a href="#" class="text-body text-justify">{{ substr($ltdata->text_description, 0, 37) }}...</a>
+                                <p class="my-1"><a href="#"
+                                        class="text-body text-justify">{{ substr($ltdata->text_description, 0, 37) }}...</a>
                                 </p>
                                 <span
                                     class="text-sm text-muted">{{ date('j F, Y', strtotime($ltdata->created_at)) }}</span>
                             </div>
                         </div>
                     @endforeach
-                        <a href="{{ route('blogs') }}" class="btn btn-primary mt-3" style="background-color: #7a6ad8 !important">View All</a>
+                    <a href="{{ route('blogs') }}" class="btn btn-primary mt-3"
+                        style="background-color: #7a6ad8 !important">View All</a>
                 </div>
 
 
+                <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
+                    <h5 class="card-title">Tags</h5>
+                    <div class="d-flex flex-wrap justify-content-between">
+
+                        @foreach ($blogs->public_tags as $tagdata)
 
 
+                        <a href="#" class="text-decoration-none mb-2">
+                            <span class="badge">{{$tagdata->tag->tags_name}}</span>
+                        </a>
 
+                        @endforeach
 
+                    </div>
 
-
-
-
-
-
-
-
+                </div>
 
             </div>
         </div>
     </div>
-
 @endsection
 @section('page_script')
+    <script>
+        $(document).ready(function() {
+            const tocContainer = $('#toc');
+            const contentPlaces = $('.content-place h1');
+
+            contentPlaces.each(function(index) {
+                // Create anchor element with numbered text
+                const anchor = $('<a></a>').text((index + 1) + '. ' + $(this).text()).attr('href',
+                    `#heading-${index}`);
+                $(this).attr('id', `heading-${index}`);
+
+                // Create list item and append the anchor
+                const listItem = $('<li></li>').append(anchor);
+
+                // Append list item to TOC container
+                tocContainer.append(listItem);
+            });
+
+            // Add click event for smooth scrolling
+            tocContainer.on('click', 'a', function(event) {
+                event.preventDefault();
+
+                const targetId = $(this).attr('href');
+                const targetPosition = $(targetId).offset().top - 200; // 200px above the target heading
+
+                $('html, body').animate({
+                    scrollTop: targetPosition
+                }, 500); // Animation duration in milliseconds
+            });
+        });
+    </script>
 @endsection
-
-
-
-
