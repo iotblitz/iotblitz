@@ -13,7 +13,7 @@
                                     websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
                                 <div class="buttons">
                                     <div class="main-button">
-                                        <a href="#">Request Demo</a>
+                                        <a href="{{route('contact')}}">Request Demo</a>
                                     </div>
                                     <div class="icon-button">
                                         <a href="#"><i class="fa fa-play"></i> What's Scholar?</a>
@@ -29,7 +29,7 @@
                                     not allowed to re-distribute the template ZIP file on any other website.</p>
                                 <div class="buttons">
                                     <div class="main-button">
-                                        <a href="#">Request Demo</a>
+                                        <a href="{{route('contact')}}">Request Demo</a>
                                     </div>
                                     <div class="icon-button">
                                         <a href="#"><i class="fa fa-play"></i> What's the best result?</a>
@@ -45,7 +45,7 @@
                                     incididunt ut labore et dolore magna aliqua suspendisse.</p>
                                 <div class="buttons">
                                     <div class="main-button">
-                                        <a href="#">Request Demo</a>
+                                        <a href="{{route('contact')}}">Request Demo</a>
                                     </div>
                                     <div class="icon-button">
                                         <a href="#"><i class="fa fa-play"></i> What's Online Course?</a>
@@ -361,7 +361,7 @@
         </div>
     </div>
 
-    <div class="team section" id="team">
+    {{-- <div class="team section" id="team">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -378,7 +378,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="team-member">
                         <div class="main-content">
                             <img src="{{ asset('public/public_page') }}/assets/images/member-02.jpg" alt="">
@@ -405,8 +405,8 @@
                             </ul>
                         </div>
                     </div>
-                </div> --}}
-                {{-- <div class="col-lg-3 col-md-6">
+                </div>
+                <div class="col-lg-3 col-md-6">
                     <div class="team-member">
                         <div class="main-content">
                             <img src="{{ asset('public/public_page') }}/assets/images/member-04.jpg" alt="">
@@ -419,10 +419,10 @@
                             </ul>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- <div class="section testimonials">
         <div class="container">

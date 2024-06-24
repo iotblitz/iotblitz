@@ -15,6 +15,11 @@ class PublicProductModel extends Model
     ];
 
 
+
+
+     /**
+     * Get the category that owns the product.
+     */
     public function category()
     {
         return $this->belongsTo(PublicProductCategoryModel::class, 'product_category_id', 'product_category_id');

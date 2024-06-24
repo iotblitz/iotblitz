@@ -110,7 +110,7 @@ body {
 
 .section {
   padding-top: 30px;
-  margin-top: 120px;
+  margin-top: 10px;
 }
 
 .section-heading {
@@ -941,10 +941,10 @@ h2.accordion-header button {
 Courses Style
 ---------------------------------------------
 */
-
+/*
 .courses {
   margin-top: 160px;
-}
+} */
 
 .event_filter {
   text-align: center;
@@ -1792,9 +1792,9 @@ body {
     background-color: #7a6ad8;
     color: #fff;
   }
-  .courses {
+  /* .courses {
     margin-top: 100px;
-  }
+  } */
   .event_filter ul li {
     display: block;
     margin: 12px 5px;

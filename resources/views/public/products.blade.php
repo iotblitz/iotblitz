@@ -21,6 +21,8 @@
         }
     </style>
 
+
+
     <div class="main-banner" id="top">
         <div class="container">
             <div class="row align-items-center">
@@ -28,8 +30,10 @@
                     <div class="header-text mt-5">
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
-                        <h2 class="text-white">Product</h2>
-                        <p class="text-white">IoTBlitz LLP specializes in AI & Automation, IoT Solutions, and Design & Development, offering innovative technologies and tailored applications to enhance efficiency, connectivity, and user experiences.</p>
+                        <h2 class="text-white">Our Products</h2>
+                        <p class="text-white">IoTBlitz LLP specializes in AI & Automation, IoT Solutions, and Design &
+                            Development, offering innovative technologies and tailored applications to enhance efficiency,
+                            connectivity, and user experiences.</p>
 
                     </div>
                 </div>
@@ -65,39 +69,38 @@
                     <a href="#!" data-filter=".wordpress">Wordpress</a>
                 </li>
             </ul> --}}
-            <div class="row event_box">
+            @foreach ($products as $cattagorydata)
+                <h2 class="mb-5">{{ $cattagorydata->category }}</h2>
+                <div class="row event_box">
 
 
-                @foreach ($products as $product_key)
-
-
-
-
-                <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development" onclick="location.href = '{{ route('single_product', [str_replace(' ', '-', $product_key->product_title) . '-' . $product_key->product_id]) }}';">
-                    <div class="events_item">
-                        <div class="thumb">
-                            <a href="{{ route('single_product', [str_replace(' ', '-', $product_key->product_title) . '-' . $product_key->product_id]) }}"><img src="{{ asset('public/product_image') }}/{{$product_key->product_image}}"
-                                    alt=""></a>
-                            <span class="category">{{$product_key->category}}</span>
-                            {{-- <span class="price">
+                    @foreach ($cattagorydata->products as $product_key)
+                        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development"
+                            onclick="location.href = '{{ route('single_product', [str_replace(' ', '-', $product_key->product_title) . '-' . $product_key->product_id]) }}';">
+                            <div class="events_item">
+                                <div class="thumb">
+                                    <a
+                                        href="{{ route('single_product', [str_replace(' ', '-', $product_key->product_title) . '-' . $product_key->product_id]) }}"><img
+                                            src="{{ asset('public/product_image') }}/{{ $product_key->product_image }}"
+                                            alt=""></a>
+                                    <span class="category"></span>
+                                    {{-- <span class="price">
 
                                 <h6><em>$</em>340  <i class="fa-solid fa-globe"></i> </h6>
                             </span> --}}
+                                </div>
+                                <div class="down-content">
+                                    <span class="author"></span>
+                                    <h4>{{ $product_key->product_title }}</h4>
+                                </div>
+                            </div>
                         </div>
-                        <div class="down-content">
-                            <span class="author">{{$product_key->category}}</span>
-                            <h4>{{$product_key->product_title}}</h4>
-                        </div>
-                    </div>
-                </div>
-
-
-                @endforeach
+                    @endforeach
 
 
 
 
-                {{-- <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development">
+                    {{-- <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development">
                     <div class="events_item">
                         <div class="thumb">
                             <a href="#"><img src="{{ asset('public/public_page') }}/assets/images/course-02.jpg"
@@ -177,10 +180,11 @@
                         </div>
                     </div>
                 </div> --}}
-            </div>
+                </div>
+            @endforeach
             <div class="col-12 col-lg-12">
                 <div class="space-50"></div>
-                {!! $products->links('vendor.pagination.my_public_bootstrap-4') !!}
+                {{-- {!! $products->links('vendor.pagination.my_public_bootstrap-4') !!} --}}
             </div>
         </div>
     </section>
@@ -228,11 +232,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 @endsection
 @section('page_script')
 @endsection

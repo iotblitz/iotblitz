@@ -7,6 +7,8 @@ use App\Models\JobCareersModel;
 use App\Models\JobRoleModel;
 use App\Models\MdCountriesModel;
 use App\Models\PublicBlogModel;
+use App\Models\PublicBlogsTagsListModel;
+use App\Models\PublicBlogsTagsModel;
 use App\Models\PublicCaseStudyModel;
 use App\Models\PublicContactModel;
 use App\Models\PublicProductCategoryModel;
@@ -28,7 +30,8 @@ class IotBlitz extends Controller
     }
 
 
-    function blog_add(Request $r): View|RedirectResponse|JsonResponse
+    // function blog_add(Request $r): View|RedirectResponse|JsonResponse
+    function blog_add(Request $r)
     {
         if ($r->isMethod('post')) {
 
@@ -38,6 +41,16 @@ class IotBlitz extends Controller
                 'description_editor' => 'required',
                 'text_description' => 'required',
                 'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+                'fimagealttxt' => 'required',
+                'imagedescriotion' => 'required|max:255',
+                'imageCaption' => 'required|max:255',
+                'imageTitle' => 'required|max:255',
+                'mataTitle' => 'required|max:255',
+                'metaDescriptions' => 'required|max:255',
+                'focusKeyword' => 'required|max:255',
+                'blogExcerpt' => 'required|max:255',
+                'searchTags' => 'required|max:255'
             ];
 
             $valaditor = Validator::make($r->all(), $rules);
@@ -45,17 +58,53 @@ class IotBlitz extends Controller
                 return response()->json($valaditor->errors(), 200);
                 // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
             }
+
+
+
+
+            $tag = strtolower($r->searchTags);
+            $tags = explode(",", $tag);
+            $tag_ids = [];
+            foreach ($tags as $item) {
+                $tagModel = PublicBlogsTagsModel::where("tags_name", $item)->first();
+                if ($tagModel) {
+                    $tag_id = $tagModel->blog_tags_id;
+                } else {
+                    $tagModel = PublicBlogsTagsModel::create(["tags_name" => $item, "create_by" => auth()->user()->id]);
+                    $tag_id = $tagModel->blog_tags_id;
+                }
+                $tag_ids[] = $tag_id; // Add the tag_id to the array
+            }
+
+
             $image = $r->file('blogimage');
             $imageName = time() . '.' . $image->extension();
             $image->move(public_path('blog_images'), $imageName);
-            PublicBlogModel::create([
+            $id = PublicBlogModel::create([
                 'blog_title' => $r->title,
                 'blog_keywords' => $r->keyword,
                 'blog_description' => $r->description_editor,
                 'text_description' => $r->text_description,
                 'blog_image' => $imageName,
-                'create_by' => auth()->user()->id
+                'create_by' => auth()->user()->id,
+                'featured_image_alt_text' => $r->fimagealttxt,
+                'image_description' => $r->imagedescriotion,
+                'image_caption' => $r->imageCaption,
+                'image_title' => $r->imageTitle,
+                'meta_title' => $r->mataTitle,
+                'meta_descriptions' => $r->metaDescriptions,
+                'focus_keyword' => $r->focusKeyword,
+                'blog_excerpt' => $r->blogExcerpt
             ]);
+
+            foreach ($tag_ids as $item2) {
+                PublicBlogsTagsListModel::create([
+                    'blog_id' => $id->blog_id,
+                    'blog_tags_id' => $item2
+                ]);
+            }
+
+            // return  $id->blog_id;
 
             return redirect()->route('super_admin.page.blog');
         } else {
@@ -573,7 +622,7 @@ class IotBlitz extends Controller
                 // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
             }
 
-            JobCareersModel::where("careers_id",$careers_id)->update([
+            JobCareersModel::where("careers_id", $careers_id)->update([
                 "role_id" => $r->job_role,
                 "title" => $r->title,
                 "end_date" => $r->last_date,
@@ -593,7 +642,7 @@ class IotBlitz extends Controller
             $data['countries'] = MdCountriesModel::all();
             $data['role'] = JobRoleModel::all();
             $data['careers_id'] = $careers_id;
-            $data['careers'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")->join("md_lo_states AS c", "c.id", "=", "b.state_id")->select("jobs_careers.*","b.state_id","c.country_id")->first();
+            $data['careers'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")->join("md_lo_states AS c", "c.id", "=", "b.state_id")->select("jobs_careers.*", "b.state_id", "c.country_id")->first();
 
             return view('admin.iot_blitz.careers.careers_edit')->with($data);
         }
@@ -603,15 +652,15 @@ class IotBlitz extends Controller
     {
         $data['careers_id'] = $careers_id;
 
-        $data['jobs_careers']=JobCareersModel::where('careers_id',$careers_id)->join("jobs_careers_role AS e", "e.careers_role_id", "=", "jobs_careers.role_id")->first();
+        $data['jobs_careers'] = JobCareersModel::where('careers_id', $careers_id)->join("jobs_careers_role AS e", "e.careers_role_id", "=", "jobs_careers.role_id")->first();
         $data['job_applications'] = JobCareersModel::join("jobs_applied_employee AS a", "jobs_careers.careers_id", "=", "a.carcers_id")
-                                    ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
-                                    ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
-                                    ->join("md_lo_cities AS d", "d.id", "=", "c.country_id")
-                                    ->join("jobs_careers_role AS e", "e.careers_role_id", "=", "jobs_careers.role_id")
-                                    ->select("a.*", "jobs_careers.*", "b.name AS city_name", "c.name AS state_name", "d.name AS country_name", "e.role")
-                                    ->where("jobs_careers.careers_id", $careers_id)
-                                    ->where("a.carcers_id", $careers_id)->get();
+            ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
+            ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
+            ->join("md_lo_cities AS d", "d.id", "=", "c.country_id")
+            ->join("jobs_careers_role AS e", "e.careers_role_id", "=", "jobs_careers.role_id")
+            ->select("a.*", "jobs_careers.*", "b.name AS city_name", "c.name AS state_name", "d.name AS country_name", "e.role")
+            ->where("jobs_careers.careers_id", $careers_id)
+            ->where("a.carcers_id", $careers_id)->get();
 
 
         return view('admin.iot_blitz.careers.applycation_list')->with($data);
@@ -620,7 +669,7 @@ class IotBlitz extends Controller
 
     function contact(): View
     {
-        $data['contact']=PublicContactModel::orderBy('contact_id','DESC')->get();
+        $data['contact'] = PublicContactModel::orderBy('contact_id', 'DESC')->get();
         return view('admin.iot_blitz.contact.list')->with($data);
     }
 }

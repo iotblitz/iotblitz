@@ -374,7 +374,7 @@
             </div>
             <div class="col-md-3 mt-5">
                 <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
-                    <h5>Latest Posts</h5>
+                    <h5>Recent Posts</h5>
                     @foreach ($latest_posts as $ltdata)
                         <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
                             <a href="#"><img class="mr-4"

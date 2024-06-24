@@ -19,6 +19,9 @@
             align-items: center;
             height: 100%;
         }
+        .badge {
+            background-color: #7a6ad8 !important;
+        }
     </style>
 
     <div class="main-banner" id="top">
@@ -52,6 +55,7 @@
     <div class="section events" id="events">
         <div class="container">
             <div class="row">
+                <div class="col-md-9">
                 {{-- <div class="col-lg-12 text-center">
           <div class="section-heading">
             <h6>Case Study</h6>
@@ -69,27 +73,75 @@
                                             alt="">
                                     </div>
                                 </div>
-                                <div class="col-lg-5">
+                                <div class="col-lg-7">
                                     <h4>{{ $blogdata->blog_title }}</h4>
-                                    <p>{{ substr($blogdata->text_description, 0, 100) }}....</p>
+                                    <p>{{ substr($blogdata->text_description, 0, 205) }}</p>
                                 </div>
-                                <div class="col-lg-3">
+                                {{-- <div class="col-lg-3">
                                     <span>Date:</span>
                                     <h6>{{ date('j F, Y', strtotime($blogdata->created_at)) }}</h6>
-                                </div>
-                                <a
-                                    href="{{ route('single_blogs', [str_replace(' ', '-', $blogdata->blog_title) . '-' . $blogdata->blog_id]) }}"><i
+                                </div> --}}
+                                <a href="{{ route('single_blogs', [str_replace(' ', '-', $blogdata->blog_title) . '-' . $blogdata->blog_id]) }}"><i
                                         class="fa fa-angle-right"></i></a>
 
                             </div>
                         </div>
                     </div>
                 @endforeach
+
+                <div class="col-12 col-lg-12">
+                    <div class="space-50"></div>
+                    {!! $blogs->links('vendor.pagination.my_public_bootstrap-4') !!}
+                </div>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
+                        <h5>Recent Posts</h5>
+                        @foreach ($latest_posts as $ltdata)
+                            <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
+                                <a href="#"><img class="mr-4"
+                                        src="{{ asset('public/blog_images') }}/{{ $ltdata->blog_image }}" alt=""
+                                        style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important; border-radius: 5px"></a>
+                                <div class="media-body" style=" flex: 1;">
+                                    <h6 class="my-1"><a href="#" class="text-body">{{ $ltdata->blog_title }}</a>
+                                    </h6>
+                                    <p class="my-1"><a href="#" class="text-body text-justify">{{ substr($ltdata->text_description, 0, 37) }}...</a>
+                                    </p>
+                                    <span
+                                        class="text-sm text-muted">{{ date('j F, Y', strtotime($ltdata->created_at)) }}</span>
+                                </div>
+                            </div>
+                        @endforeach
+                            <a href="{{ route('blogs') }}" class="btn btn-primary mt-3" style="background-color: #7a6ad8 !important">View All</a>
+                    </div>
+
+
+
+
+                    <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
+                        <h5 class="card-title">Tags</h5>
+                        <div class="d-flex flex-wrap justify-content-between">
+                            @foreach ($tags as $tagdata)
+
+
+                            <a href="#" class="text-decoration-none mb-2">
+                                <span class="badge">{{$tagdata->tags_name}}</span>
+                            </a>
+                            @endforeach
+
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
             </div>
-            <div class="col-12 col-lg-12">
-                <div class="space-50"></div>
-                {!! $blogs->links('vendor.pagination.my_public_bootstrap-4') !!}
-            </div>
+
         </div>
     </div>
 

@@ -11,7 +11,7 @@ class PublicBlogModel extends Model
     protected $table = "public_blog";
     protected $primaryKey = 'blog_id';
     protected $fillable = [
-        "blog_title", "blog_keywords", "blog_description", "text_description", "blog_image","active_status", "create_by"
+        "blog_title", "blog_keywords", "blog_description", "text_description", "blog_image", "featured_image_alt_text", "image_description", "image_caption", "image_title", "meta_title", "meta_descriptions", "focus_keyword", "blog_excerpt", "active_status", "create_by"
     ];
 
 

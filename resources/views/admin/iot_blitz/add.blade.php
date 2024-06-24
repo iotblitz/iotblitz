@@ -7,6 +7,11 @@
             margin-right: 5px;
             /* Adjust as needed */
         }
+        .list-group-item{
+            margin: 0.5px;
+            background-color: rgb(89, 89, 89);
+            color: white;
+        }
     </style>
 
 
@@ -38,20 +43,20 @@
 
             <!-- [ Main Content ] start -->
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-9">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Basic Component</h5>
+                            {{-- <h5>Basic Component</h5> --}}
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{ route('super_admin.page.blog_add') }}"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-12">
                                         <div class="form-group">
-                                            <label class="floating-label" for="title">Title address</label>
-                                            <input type="title" class="form-control" id="title"
+                                            <label class="floating-label" for="title">Blog Title</label>
+                                            <input type="text" class="form-control" id="title"
                                                 aria-describedby="titleHelp" name="title">
                                         </div>
                                     </div>
@@ -59,16 +64,80 @@
 
 
                                     <div class="col-sm-4">
+                                        <div class="form-group">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile"
                                             name="blogimage" required="">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                         <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="fimagealttxt">Featured Image Alt Text</label>
+                                            <input type="text" class="form-control" id="fimagealttxt" name="fimagealttxt">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="imagedescriotion">Image Description</label>
+                                            <input type="text" class="form-control" id="imagedescriotion" name="imagedescriotion">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="imageCaption">Image caption</label>
+                                            <input type="text" class="form-control" id="imageCaption"  name="imageCaption">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="imageTitle">Image title</label>
+                                            <input type="text" class="form-control" id="imageTitle" name="imageTitle">
+                                        </div>
                                     </div>
 
 
-                                    <div class="col-sm-3">
-                                        <div class="img">
-                                            <img id="previewImage" src="" class="img-fluid" alt="Preview Image">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="mataTitle">Meta title</label>
+                                            <input type="text" class="form-control" id="mataTitle" name="mataTitle">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="metaDescriptions">Meta descriptions</label>
+                                            <input type="text" class="form-control" id="metaDescriptions" name="metaDescriptions">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="focusKeyword ">Focus Keyword </label>
+                                            <input type="text" class="form-control" id="focusKeyword" name="focusKeyword">
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="inputWithBadges">Secondary Keywords</label>
+                                            <input type="text" class="form-control" id="inputWithBadges" placeholder=""
+                                                name="keyword">
+                                            <div id="badgeContainer"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="blogExcerpt">Blog Excerpt</label>
+                                            <input type="text" class="form-control" id="blogExcerpt" name="blogExcerpt" maxlength="205">
                                         </div>
                                     </div>
 
@@ -76,12 +145,18 @@
 
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <label class="floating-label" for="inputWithBadges">Keyword</label>
-                                            <input type="text" class="form-control" id="inputWithBadges" placeholder=""
-                                                name="keyword">
-                                            <div id="badgeContainer"></div>
+                                            <label for="searchTags" class="floating-label">Search Tags:</label>
+                                            <input type="text" class="form-control" id="searchTags" name="searchTags">
+                                            <ul class="list-group mt-3" id="similarTagsList">
+                                                <!-- Similar tags will be inserted here dynamically -->
+                                              </ul>
+                                              <div id="tagsContainer">
+                                                <!-- Tags will be inserted here dynamically -->
+                                              </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col-sm-12">
                                         <textarea name="description_editor" placeholder="description" class="form-control" rows="12" cols="50"></textarea>
                                     </div>
@@ -93,6 +168,17 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-sm-3">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="img">
+                                    <img id="previewImage" src="" class="img-fluid" alt="Preview Image">
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
                 <!-- [ form-element ] start -->
 
@@ -131,7 +217,7 @@
                             var editorData = ev.editor.getData(); // Get HTML content from CKEditor
                             var plainText = editorData.replace(/<[^>]*>/g, ''); // Remove HTML tags
                             document.getElementById('editorValue').value =
-                            plainText; // Set the value to hidden input
+                                plainText; // Set the value to hidden input
                             console.log(plainText);
                         });
                     }
@@ -173,5 +259,100 @@
                 document.getElementById('previewImage').setAttribute('src', '');
             }
         });
+    </script>
+
+
+
+<script>
+    $(document).ready(function() {
+      // Array of example tags
+
+
+      // Function to create and update tags
+      function updateTags(tags) {
+        $('#tagsContainer').empty();
+        tags.forEach(function(tag) {
+          $('#tagsContainer').append(`<span class="badge bg-primary">${tag}</span>&nbsp;`);
+        });
+      }
+
+      // Function to show similar tags in list
+      function showSimilarTags(searchTerm) {
+        var apiUrl = `{{route('api.tags_serch')}}?search=${searchTerm}`;
+        $.ajax({
+        url: apiUrl,
+        method: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            var similarTags = response; // Assuming response is in JSON format with data array
+            console.log(response);
+            $('#similarTagsList').empty();
+            similarTags.forEach(function(tag) {
+            $('#similarTagsList').append(`<li class="list-group-item clickable">${tag.tags_name}</li>`);
+            });
+
+            $('#similarTagsList').show(); // Show the list
+        },
+        error: function(xhr, status, error) {
+            console.error('Error fetching similar tags:', error);
+        }
+        });
+
+
+
+        // var similarTags = availableTags.filter(function(tag) {
+        //   return tag.includes(searchTerm) && tag !== searchTerm;
+        // });
+
+        // $('#similarTagsList').empty();
+        // similarTags.forEach(function(tag) {
+        //   $('#similarTagsList').append(`<li class="list-group-item clickable">${tag}</li>`);
+        // });
+
+        // // Show the list
+        // $('#similarTagsList').show();
+      }
+
+      // Keyup event handler for tag input
+      $('#searchTags').keyup(function() {
+        var inputVal = $(this).val().trim();
+
+        // Separate search term and show similar tags
+        var searchTerms = inputVal.split(',').map(term => term.trim());
+        var lastTerm = searchTerms[searchTerms.length - 1]; // Get the last term for suggestions
+
+        updateTags(searchTerms); // Update tags container
+
+        if (lastTerm !== '') {
+          showSimilarTags(lastTerm); // Show similar tags for the last term
+        } else {
+          $('#similarTagsList').hide(); // Hide list if input is empty or only commas
+        }
+      });
+
+      // Click event handler for adding tags from similarTagsList
+      $(document).on('click', '#similarTagsList .clickable', function() {
+        var tagToAdd = $(this).text().trim();
+        var currentInput = $('#searchTags').val().trim();
+
+        // Split current input into terms and replace last one with clicked tag
+        var searchTerms = currentInput.split(',').map(term => term.trim());
+        searchTerms[searchTerms.length - 1] = tagToAdd;
+
+        // Join terms with comma and update input field
+        var updatedInput = searchTerms.join(', ');
+        $('#searchTags').val(updatedInput);
+
+        updateTags(searchTerms); // Update tags container
+        $('#similarTagsList').hide(); // Hide similar tags list
+      });
+
+      // Close list on click outside
+      $(document).on('click', function(e) {
+        if (!$(e.target).closest('#similarTagsList').length && !$(e.target).is('#searchTags')) {
+          $('#similarTagsList').hide();
+        }
+      });
+    });
     </script>
 @endsection

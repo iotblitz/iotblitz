@@ -22,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/states',[Controller::class,'states_list'])->name('api.state');
 Route::get('/cties',[Controller::class,'cties_list'])->name('api.cties');
+
+Route::get('/tags-serch',[Controller::class,'search_tags'])->name('api.tags_serch');

@@ -92,7 +92,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- ***** Preloader Start ***** -->
+    {{-- <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
         <div class="preloader-inner">
             <span class="dot"></span>
@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-    <!-- ***** Preloader End ***** -->
+    <!-- ***** Preloader End ***** --> --}}
 
     @include('public.common.topbar')
 

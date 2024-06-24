@@ -5,11 +5,11 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    {{-- <a href="{{route('home')}}" class="logo"> --}}
                         {{-- <h1>Scholar</h1> --}}
-                        <img src="{{ asset('public/public_page') }}/assets/images/logo.png" class="logo" alt=""
-                            width="30%" style="position: absolute;">
-                    </a>
+                        <img src="{{ asset('public/public_page') }}/assets/images/logo.png" class="logo" alt="iotblitz"
+                            style="width: 10% !important; margin: 5px !important; ">
+                    {{-- </a> --}}
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
 
@@ -20,21 +20,23 @@
                                 class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
                         <li class="scroll-to-section"><a href="{{ route('product') }}"
                                 class="{{ request()->routeIs('product') ? 'active' : '' }}">Products</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('solutions') }}"
+                                    class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Services</a>
+                            </li>
                         <li><a href="{{ route('blogs') }}"
                                 class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
 
-                        <li class="scroll-to-section"><a href="{{ route('about') }}"
-                                class="{{ request()->routeIs('about') ? 'active' : '' }}">About Us</a></li>
 
+{{-- ============================== --}}
 
 
                         <li class="d-block d-md-none"><a href="{{ route('case_study') }}"
                                 class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') ? 'active' : '' }}">Case
                                 Study</a></li>
 
-                        <li class="d-block d-md-none"><a href="{{ route('solutions') }}"
+                        {{-- <li class="d-block d-md-none"><a href="{{ route('solutions') }}"
                                 class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a>
-                        </li>
+                        </li> --}}
 
                         <li class="d-block d-md-none"><a href="">FAQ</a></li>
                         <li class="d-block d-md-none"><a href="{{ route('careers') }}"
@@ -48,17 +50,18 @@
                             <ul class="submenu">
                                 <li><a href="{{ route('case_study') }}"
                                         class="{{ request()->routeIs('case_study*') ? 'active' : '' }}">Case Study</a></li>
-                                <li><a href="{{ route('solutions') }}"
-                                        class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a>
-                                </li>
+
                                 <li><a href="">FAQ</a></li>
                                 <li><a href="{{ route('careers') }}"
                                         class="{{ request()->routeIs('careers*') ? 'active' : '' }}">Careers</a></li>
                             </ul>
                         </li>
 
+{{-- ========================= --}}
+                        <li class="scroll-to-section"><a href="{{ route('about') }}"
+                            class="{{ request()->routeIs('about') ? 'active' : '' }}">About Us</a></li>
                         <li class="scroll-to-section"><a href="{{ route('contact') }}"
-                                class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
+                                class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact Us</a></li>
                     </ul>
 
                     <div class="search-input" style="margin-left: 10%">
