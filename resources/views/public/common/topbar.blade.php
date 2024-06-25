@@ -11,6 +11,15 @@
                         {{-- <img src="{{ asset('public/public_page') }}/assets/images/logo.png" class="logo" alt="iotblitz"
                             style="width: 10% !important; margin: 5px !important; "> --}}
                     </a>
+
+
+                    {{-- <a href="index.html" class="logo">
+                            <img src="{{ asset('public/public_page') }}/assets/images/logo.png" class="logo" alt=""
+                                width="30%" style="position: absolute;">
+                        </a> --}}
+
+
+
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
 
@@ -39,20 +48,22 @@
                                 class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a>
                         </li> --}}
 
-                        <li class="d-block d-md-none"><a href="">FAQ</a></li>
+                        <li class="d-block d-md-none"><a href="{{ route('faqs') }}" class="{{ request()->routeIs('faqs') ? 'active' : '' }}>FAQ</a></li>
                         <li class="d-block d-md-none"><a href="{{ route('careers') }}"
                                 class="{{ request()->routeIs('careers*') ? 'active' : '' }}">Careers</a></li>
 
 
                         <li class="scroll-to-section dropdown d-none d-md-block">
                             <a href="javascript:void(0);"
-                                class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') || request()->routeIs('solutions') || request()->routeIs('single_solutions') || request()->routeIs('careers') || request()->routeIs('single_careers') ? 'active' : '' }}">More
+                                class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') || request()->routeIs('solutions') || request()->routeIs('single_solutions') || request()->routeIs('careers') || request()->routeIs('single_careers')|| request()->routeIs('faqs') ? 'active' : '' }}">More
                                 <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('case_study') }}"
                                         class="{{ request()->routeIs('case_study*') ? 'active' : '' }}">Case Study</a></li>
 
-                                <li><a href="">FAQ</a></li>
+
+                                <li><a href="{{ route('faqs') }}"
+                                    class="{{ request()->routeIs('faqs') ? 'active' : '' }}">FAQ</a></li>
                                 <li><a href="{{ route('careers') }}"
                                         class="{{ request()->routeIs('careers*') ? 'active' : '' }}">Careers</a></li>
                             </ul>

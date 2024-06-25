@@ -31,6 +31,12 @@ class Home extends Controller
     }
 
 
+    function faqs(): View
+    {
+        return view('public.faqs');
+    }
+
+
 
     function careers(): View
     {

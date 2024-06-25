@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
  ====================================================================================*/
 
 Route::get('/', [Home::class, 'home'])->name('home');
+Route::get('/faqs', [Home::class, 'faqs'])->name('faqs');
 
 Route::get('/contact-us', [Home::class, 'public_contact'])->name('contact');
 Route::post('/contact_public', [Home::class, 'public_contact_public'])->name('contact_public');
