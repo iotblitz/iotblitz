@@ -14,6 +14,7 @@ use App\Models\PublicProductCategoryModel;
 use App\Models\PublicProductModel;
 use App\Models\PublicSolutionModel;
 use App\Rules\GoogleRecaptchaV2;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -326,7 +327,7 @@ class Home extends Controller
             'message' => $r->message
         ]);
 
-
+        Toastr::success('This is a success message.', 'Success');
         return redirect()->back();
     }
 

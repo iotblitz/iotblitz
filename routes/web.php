@@ -32,8 +32,8 @@ Route::get('/case_study', [Home::class, 'case_study'])->name('case_study');
 Route::get('/case_study/{case_study_id}', [Home::class, 'single_case_study'])->name('single_case_study');
 
 
-Route::get('/solutions', [Home::class, 'solutions'])->name('solutions');
-Route::get('/solutions/{solutions_id}', [Home::class, 'single_solution'])->name('single_solutions');
+Route::get('/services', [Home::class, 'solutions'])->name('solutions');
+Route::get('/services/{solutions_id}', [Home::class, 'single_solution'])->name('single_solutions');
 
 
 Route::get('/products', [Home::class, 'product'])->name('product');

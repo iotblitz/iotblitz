@@ -142,6 +142,8 @@
     <script src="{{ asset('public/public_page') }}/assets/js/custom.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    {!! Toastr::message() !!}
     @yield('page_script')
 
 

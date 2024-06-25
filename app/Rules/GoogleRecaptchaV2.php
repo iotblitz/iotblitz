@@ -17,7 +17,7 @@ class GoogleRecaptchaV2 implements ValidationRule
     {
         $gResponseToken = (string) $value;
 
-        $response = Http::asForm()->post(
+        $response = Http::withOptions(['verify' => false])->asForm()->post(
             'https://www.google.com/recaptcha/api/siteverify',
             ['secret' => env('RECAPTCHA_SECRET_KEY'), 'response' => $gResponseToken]
         );
