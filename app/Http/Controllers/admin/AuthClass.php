@@ -110,7 +110,7 @@ class AuthClass extends Controller
                 // Add other data you want to pass to the email
             ];
 
-            Mail::to('$r->email')->send(new EmployeMail($data25));
+            Mail::to($r->email)->send(new EmployeMail($data25));
 
             return redirect()->route('employee.register')->with('success', 'User created successfully');
         } else {
