@@ -53,8 +53,8 @@ Route::post('/apply-job-submit/{carcers_id}', [Home::class, 'apply_jobs_save'])-
 Route::get('/terms-and-conditions', [Home::class, 'terms_and_conditions'])->name('terms_and_conditions');
 Route::get('/cookies-policy', [Home::class, 'cookies_policy'])->name('cookies_policy');
 Route::get('/privacy-policy', [Home::class, 'privacy_policy'])->name('privacy_policy');
-Route::get('robots.txt',[Home::class,'robots']);
-Route::get('sitemap.xml',[Home::class,'sitemap']);
+Route::get('robots.txt', [Home::class, 'robots']);
+Route::get('sitemap.xml', [Home::class, 'sitemap']);
 
 
 
@@ -75,55 +75,49 @@ Route::prefix('/admin')->group(function () {
                 Route::get('/dashboard', [Dashboard::class, 'super_admin_dashboard'])->name('super_admin.dashboard');
                 Route::prefix('/page')->group(function () {
                     Route::prefix('/blog')->group(function () {
-                        Route::match(['get'],'/list',[IotBlitz::class,'blog'])->name('super_admin.page.blog');
-                        Route::match(['get','post'],'/add',[IotBlitz::class,'blog_add'])->name('super_admin.page.blog_add');
-                        Route::match(['get','post'],'/list/{blog_id}',[IotBlitz::class,'blog_edit'])->name('super_admin.page.blog_edit');
+                        Route::match(['get'], '/list', [IotBlitz::class, 'blog'])->name('super_admin.page.blog');
+                        Route::match(['get', 'post'], '/add', [IotBlitz::class, 'blog_add'])->name('super_admin.page.blog_add');
+                        Route::match(['get', 'post'], '/list/{blog_id}', [IotBlitz::class, 'blog_edit'])->name('super_admin.page.blog_edit');
                     });
 
                     Route::prefix('/case_study')->group(function () {
-                        Route::match(['get'],'/list',[IotBlitz::class,'case_study'])->name('super_admin.page.case_study');
-                        Route::match(['get','post'],'/add',[IotBlitz::class,'case_study_add'])->name('super_admin.page.case_study_add');
-                        Route::match(['get','post'],'/list/{case_study_id}',[IotBlitz::class,'case_study_edit'])->name('super_admin.page.case_study_edit');
+                        Route::match(['get'], '/list', [IotBlitz::class, 'case_study'])->name('super_admin.page.case_study');
+                        Route::match(['get', 'post'], '/add', [IotBlitz::class, 'case_study_add'])->name('super_admin.page.case_study_add');
+                        Route::match(['get', 'post'], '/list/{case_study_id}', [IotBlitz::class, 'case_study_edit'])->name('super_admin.page.case_study_edit');
                     });
 
-                    Route::prefix('/products')->group(function(){
-                        Route::match(['get'],'/list',[IotBlitz::class,'product'])->name('super_admin.page.products');
-                        Route::match(['get','post'],'/add',[IotBlitz::class,'product_add'])->name('super_admin.page.product_add');
-                        Route::match(['get','post'],'/edit/{product_id}',[IotBlitz::class,'product_edit'])->name('super_admin.page.products_edit');
+                    Route::prefix('/products')->group(function () {
+                        Route::match(['get'], '/list', [IotBlitz::class, 'product'])->name('super_admin.page.products');
+                        Route::match(['get', 'post'], '/add', [IotBlitz::class, 'product_add'])->name('super_admin.page.product_add');
+                        Route::match(['get', 'post'], '/edit/{product_id}', [IotBlitz::class, 'product_edit'])->name('super_admin.page.products_edit');
                     });
 
-                    Route::prefix('/solution')->group(function(){
-                        Route::match(['get'],'/list',[IotBlitz::class,'solution'])->name('super_admin.page.solutions');
-                        Route::match(['get','post'],'/add',[IotBlitz::class,'solution_add'])->name('super_admin.page.solution_add');
-                        Route::match(['get','post'],'/edit/{solution_id}',[IotBlitz::class,'solution_edit'])->name('super_admin.page.solutions_edit');
-                    });
-
-
-                    Route::prefix('/careers')->group(function(){
-                        Route::match(['get'],'/list',[IotBlitz::class,'careers'])->name('super_admin.page.careerss');
-                        Route::match(['get','post'],'/add',[IotBlitz::class,'careers_add'])->name('super_admin.page.careers_add');
-                        Route::match(['get','post'],'/edit/{careers_id}',[IotBlitz::class,'careers_edit'])->name('super_admin.page.careerss_edit');
-
-                        Route::match(['get','post'],'/{careers_id}',[IotBlitz::class,'careers_edit'])->name('super_admin.page.careerss_edit');
-                        Route::get('/applycation-list/{careers_id}',[IotBlitz::class,'applycation_list'])->name('super_admin.page.applycation_list');
+                    Route::prefix('/solution')->group(function () {
+                        Route::match(['get'], '/list', [IotBlitz::class, 'solution'])->name('super_admin.page.solutions');
+                        Route::match(['get', 'post'], '/add', [IotBlitz::class, 'solution_add'])->name('super_admin.page.solution_add');
+                        Route::match(['get', 'post'], '/edit/{solution_id}', [IotBlitz::class, 'solution_edit'])->name('super_admin.page.solutions_edit');
                     });
 
 
-                    Route::prefix('/contact')->group(function(){
-                        Route::match(['get'],'/list',[IotBlitz::class,'contact'])->name('super_admin.page.contact');
+                    Route::prefix('/careers')->group(function () {
+                        Route::match(['get'], '/list', [IotBlitz::class, 'careers'])->name('super_admin.page.careerss');
+                        Route::match(['get', 'post'], '/add', [IotBlitz::class, 'careers_add'])->name('super_admin.page.careers_add');
+                        Route::match(['get', 'post'], '/edit/{careers_id}', [IotBlitz::class, 'careers_edit'])->name('super_admin.page.careerss_edit');
+
+                        Route::match(['get', 'post'], '/{careers_id}', [IotBlitz::class, 'careers_edit'])->name('super_admin.page.careerss_edit');
+                        Route::get('/applycation-list/{careers_id}', [IotBlitz::class, 'applycation_list'])->name('super_admin.page.applycation_list');
                     });
 
+
+                    Route::prefix('/contact')->group(function () {
+                        Route::match(['get'], '/list', [IotBlitz::class, 'contact'])->name('super_admin.page.contact');
+                    });
+                });
+
+                Route::prefix('/employee')->group(function () {
+                    Route::match(['get', 'post'], '/register', [AuthClass::class, 'register'])->name('employee.register');
                 });
             });
         });
     });
 });
-
-
-
-
-
-
-
-
-

@@ -26,6 +26,7 @@ class User extends Authenticatable
         'otp_status',
         'active_status',
         'mobile',
+        'dp',
         'created_by'
     ];
 
