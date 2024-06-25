@@ -4,12 +4,13 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    {{-- <a href="{{route('home')}}" class="logo"> --}}
+                    <a href="{{route('home')}}" class="logo" style="margin-right: 1% !important">
                         {{-- <h1>Scholar</h1> --}}
-                        <img src="{{ asset('public/public_page') }}/assets/images/logo.png" class="logo" alt="iotblitz"
-                            style="width: 10% !important; margin: 5px !important; ">
-                    {{-- </a> --}}
+                         <img src="{{ asset('public/public_page') }}/assets/images/logo.png" alt=""
+                           style="position: absolute; width: 6% !important; height: auto;" onclick="redirectToHome()">
+                        {{-- <img src="{{ asset('public/public_page') }}/assets/images/logo.png" class="logo" alt="iotblitz"
+                            style="width: 10% !important; margin: 5px !important; "> --}}
+                    </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
 
@@ -64,7 +65,7 @@
                                 class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact Us</a></li>
                     </ul>
 
-                    <div class="search-input" style="margin-left: 10%">
+                    <div class="search-input" style="margin-left: 2%">
                         <div id="search" action="#">
                             <input type="button" value="Contact Now" id='searchText' />
                             {{-- <i class="fa fa-search"></i> --}}

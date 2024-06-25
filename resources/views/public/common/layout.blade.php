@@ -189,6 +189,12 @@
             }
             return null;
         }
+
+
+        function redirectToHome() {
+        // Assuming you want to redirect to the home page
+        window.location.href = "{{ route('home') }}";
+    }
     </script>
 </body>
 
