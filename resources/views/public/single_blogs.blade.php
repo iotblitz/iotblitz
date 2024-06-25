@@ -372,11 +372,11 @@
                     <div class="blog-content mb-2">
                         <div class="blog-content mb-2">
                             <div class="d-flex align-items-center mb-3">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_FWF2judaujT30K9sMf-tZFhMWpgP6xCemw&s"
+                                <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.png  @endif"
                                     alt="Author Image" class="rounded-circle me-3" style="width: 50px">
                                 <div class="text-center">
                                     <div>
-                                        <h5 class="mb-0"> <a href="">{{ ucfirst($blogs->name) }}</a></h5>
+                                        <h5 class="mb-0"> <a href="{{route('public_blog_author', ['author' => str_replace(' ', '-',$blogs->name)])}}">{{ ucfirst($blogs->name) }}</a></h5>
                                         <small class="text-muted">{{ date('j F, Y', strtotime($blogs->created_at)) }}</small>
                                     </div>
                                 </div>
@@ -393,12 +393,18 @@
 
                             <div class="card" style=" background-color: #7a6ad8 !important; border-radius: 15px; padding: 20px;  color: #ffffff;">
                                 <div class="card-body">
-                                    <h5 class="card-title text-white">About the Author</h5>
+                                    {{-- <h5 class="card-title text-white">About the Author</h5> --}}
                                     <div class="d-flex align-items-center mb-3">
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_FWF2judaujT30K9sMf-tZFhMWpgP6xCemw&s" alt="Author Image" class="rounded-circle me-3" style="width: 50%">
+                                        <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.png  @endif" alt="Author Image" class="rounded-circle me-3" style="width: 50%">
                                         <div>
-                                            <h5 class="card-title text-white" >Author Name</h5>
-                                            <p class="text-muted">Author role</p>
+                                            <h5 class="card-title text-white" >{{ ucfirst($blogs->name) }}</h5>
+                                            <p class="text-muted">{{
+                                                ($blogs->user_type == 'C') ? 'Content Writer' :
+                                                (($blogs->user_type == 'E') ? 'Employee' :
+                                                (($blogs->user_type == 'M') ? 'Manager' :
+                                                (($blogs->user_type == 'AD') ? 'Admin' :
+                                                'Super Admin')))
+                                            }}</p>
                                             <p class="card-text text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada augue id nibh commodo, eget sodales dui mollis. Vestibulum tincidunt felis quis tortor cursus, sed vehicula arcu ultricies. Nullam eu eros ut nisi rhoncus sollicitudin. Proin id risus ut nulla fringilla gravida.</p>
                                             <p class="card-text">
 
@@ -532,7 +538,7 @@
 
 
                 <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
-                    <h5 class="card-title">Tags</h5>
+                    <h5 class="card-title">Popular Tags</h5>
                     <div class="d-flex flex-wrap justify-content-between">
 
                         @foreach ($blogs->public_tags as $tagdata)

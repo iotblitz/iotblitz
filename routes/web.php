@@ -41,6 +41,8 @@ Route::get('/products/{product_id}', [Home::class, 'single_product'])->name('sin
 
 Route::get('/blogs', [Home::class, 'blogs'])->name('blogs');
 Route::get('/blogs/{blogs_id}', [Home::class, 'single_blogs'])->name('single_blogs');
+Route::get('/author/{author}', [Home::class, 'public_blog_author'])->name('public_blog_author');
+Route::get('/tags/{tags}', [Home::class, 'public_blog_tags'])->name('public_blog_tags');
 Route::post('/blogs/comments/{blog_id}', [Home::class, 'public_comments'])->name('public_comments');
 
 
@@ -55,6 +57,9 @@ Route::get('/cookies-policy', [Home::class, 'cookies_policy'])->name('cookies_po
 Route::get('/privacy-policy', [Home::class, 'privacy_policy'])->name('privacy_policy');
 Route::get('robots.txt', [Home::class, 'robots']);
 Route::get('sitemap.xml', [Home::class, 'sitemap']);
+
+
+
 
 
 

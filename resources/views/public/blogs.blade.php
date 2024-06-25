@@ -119,12 +119,12 @@
 
 
                     <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
-                        <h5 class="card-title">Tags</h5>
+                        <h5 class="card-title">Popular Tags</h5>
                         <div class="d-flex flex-wrap justify-content-between">
                             @foreach ($tags as $tagdata)
 
 
-                            <a href="#" class="text-decoration-none mb-2">
+                            <a href="{{route('public_blog_tags', ['tags' => str_replace(' ', '-',$tagdata->tags_name)])}}" class="text-decoration-none mb-2">
                                 <span class="badge">{{$tagdata->tags_name}}</span>
                             </a>
                             @endforeach

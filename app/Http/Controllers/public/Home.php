@@ -7,6 +7,7 @@ use App\Models\EmpCareersModel;
 use App\Models\JobCareersModel;
 use App\Models\PublicBlogModel;
 use App\Models\PublicBlogsCommentsModel;
+use App\Models\PublicBlogsTagsListModel;
 use App\Models\PublicBlogsTagsModel;
 use App\Models\PublicCaseStudyModel;
 use App\Models\PublicContactModel;
@@ -18,6 +19,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
@@ -176,8 +178,59 @@ class Home extends Controller
     {
         $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
         $data['blogs'] = PublicBlogModel::where('active_status', 'A')->orderBy("blog_id","DESC")->paginate(10);
-        $data['tags'] = PublicBlogsTagsModel::get();
+
+        $data['tags'] = PublicBlogsTagsListModel::join('public_blog_tags as pt', 'public_blog_tag_list.blog_tags_id', '=', 'pt.blog_tags_id')
+                        ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
+                        ->groupBy('pt.blog_tags_id', 'pt.tags_name')
+                        ->orderByDesc('tag_count')
+                        ->limit(10)
+                        ->get();
+
         return view('public.blogs')->with($data);
+    }
+
+
+
+    function public_blog_author($author): View
+    {
+        $authername=str_replace('-', ' ', $author);
+        $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
+        $data['blogs'] = PublicBlogModel::where('public_blog.active_status', 'A')
+        ->join('users AS b', 'public_blog.create_by', '=', 'b.id')
+        ->where('b.name', 'LIKE', "%$authername%")
+        ->orderBy('public_blog.blog_id', 'DESC')
+        ->paginate(10);
+        $data['tags'] = PublicBlogsTagsListModel::join('public_blog_tags as pt', 'public_blog_tag_list.blog_tags_id', '=', 'pt.blog_tags_id')
+        ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
+        ->groupBy('pt.blog_tags_id', 'pt.tags_name')
+        ->orderByDesc('tag_count')
+        ->limit(10)
+        ->get();
+        $data['authername'] = $authername;
+        return view('public.blogs_author')->with($data);
+    }
+
+
+
+    function public_blog_tags($tags): View
+    {
+        $tagsname=str_replace('-', ' ', $tags);
+        $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
+        $data['blogs'] = PublicBlogModel::where('public_blog.active_status', 'A')
+        ->join('users AS b', 'public_blog.create_by', '=', 'b.id')
+        ->join('public_blog_tag_list AS c', 'public_blog.blog_id', '=', 'c.blog_id')
+        ->join('public_blog_tags AS d', 'c.blog_tags_id', '=', 'd.blog_tags_id')
+        ->where('d.tags_name', 'LIKE', "%$tagsname%")
+        ->orderBy('public_blog.blog_id', 'DESC')
+        ->paginate(10);
+        $data['tags'] = PublicBlogsTagsListModel::join('public_blog_tags as pt', 'public_blog_tag_list.blog_tags_id', '=', 'pt.blog_tags_id')
+        ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
+        ->groupBy('pt.blog_tags_id', 'pt.tags_name')
+        ->orderByDesc('tag_count')
+        ->limit(10)
+        ->get();
+        $data['authername'] = $tagsname;
+        return view('public.blogs_tags')->with($data);
     }
 
 
