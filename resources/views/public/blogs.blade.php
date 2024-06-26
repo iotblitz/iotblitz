@@ -1,5 +1,12 @@
+@php
+    $title="BLOGS";
+    $meta_author="iotblitz";
+    $meta_keywords="iotblitz, blogs, iotblitz blogs";
+    $meta_description="Discover IoTBlitz LLP's expertise in AI & Automation, IoT Solutions, and Design & Development. Optimize processes, enhance efficiency, and innovate with our advanced, tailored solutions.";
+@endphp
+
 @extends('public.common.layout')
-@section('page_content')
+@section('page_style')
     <style>
         .main-banner {
             padding: 50px 0;
@@ -23,6 +30,9 @@
             background-color: #7a6ad8 !important;
         }
     </style>
+
+@endsection
+@section('page_content')
 
     <div class="main-banner" id="top">
         <div class="container">

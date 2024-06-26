@@ -1,5 +1,5 @@
 @extends('public.common.layout')
-@section('page_content')
+@section('page_style')
     <style>
         .he-clas {
             color: #7a6ad8 !important;
@@ -100,6 +100,9 @@
             white-space: nowrap;
         }
     </style>
+
+@endsection
+@section('page_content')
 
 
     <div class="main-banner" id="top">

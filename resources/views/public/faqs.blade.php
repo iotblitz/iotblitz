@@ -1,5 +1,5 @@
 @extends('public.common.layout')
-@section('page_content')
+@section('page_style')
     <style>
         .card {
             border: none;
@@ -132,6 +132,9 @@
             display: block;
         } */
     </style>
+
+@endsection
+@section('page_content')
 
 
     <div class="main-banner" id="top">

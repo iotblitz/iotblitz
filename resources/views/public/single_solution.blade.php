@@ -1,5 +1,5 @@
 @extends('public.common.layout')
-@section('page_content')
+@section('page_style')
     <style>
         .blog-post {
             margin-top: 20px;
@@ -322,6 +322,9 @@
             /* Add horizontal scroll if needed */
         }
     </style>
+
+@endsection
+@section('page_content')
 
 
     <div class="main-banner" id="top">

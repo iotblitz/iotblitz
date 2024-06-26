@@ -1,5 +1,5 @@
 @extends('public.common.layout')
-@section('page_content')
+@section('page_style')
     <style>
         .main-banner {
             padding: 50px 0;
@@ -114,6 +114,9 @@
         }
 
     </style>
+
+@endsection
+@section('page_content')
 
     <div class="main-banner" id="top">
         <div class="container">

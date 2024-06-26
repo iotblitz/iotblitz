@@ -1,5 +1,8 @@
+
+
 @extends('public.common.layout')
-@section('page_content')
+@section('page_style')
+
 <style>
     .blog-post {
         margin-top: 20px;
@@ -326,6 +329,8 @@
         background-color: #7a6ad8 !important;
     }
 </style>
+@endsection
+@section('page_content')
 
 
 <div class="main-banner" id="top">

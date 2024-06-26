@@ -1,5 +1,12 @@
+@php
+    $title="$blogs->blog_title";
+    $meta_author=$blogs->name;
+    $meta_keywords="iotblitz, blogs, iotblitz blogs";
+    $meta_description=$blogs->focus_keyword.', '.$blogs->meta_descriptions;
+@endphp
+
 @extends('public.common.layout')
-@section('page_content')
+@section('page_style')
     <style>
         .blog-post {
             margin-top: 20px;
@@ -326,6 +333,9 @@
             background-color: #7a6ad8 !important;
         }
     </style>
+
+@endsection
+@section('page_content')
 
 
     <div class="main-banner" id="top">
