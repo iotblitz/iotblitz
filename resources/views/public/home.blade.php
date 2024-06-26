@@ -1,4 +1,13 @@
 @extends('public.common.layout')
+@section('page_style')
+<style>
+    h3.count-number{
+        color: #FFFF !important;
+    }
+</style>
+@endsection
+
+
 @section('page_content')
     <div class="main-banner" id="top">
         <div class="container">
@@ -351,16 +360,17 @@
 
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h2 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >Affordable Pricing
-                                    </h2>
+                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >365</h3>
+                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >DAYS OF SUPPORT</h3>
                                     {{-- <p class="count-text ">Days Of Support</p> --}}
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h2 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >Affordable Pricing
-                                    </h2>
+                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >2</h3>
+                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >YEARS OF WARRANTY
+                                    </h3>
                                     {{-- <p class="count-text ">Days Of Support</p> --}}
                                 </div>
                             </div>
@@ -368,16 +378,16 @@
 
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h2 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >Affordable Pricing
-                                    </h2>
+                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >AFFORDABLE</h3>
+                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >PRICING</h3>
                                     {{-- <p class="count-text ">Days Of Support</p> --}}
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h2 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >dtrh</h2>
-                                    <p class="count-text ">Days Of Support</p>
+                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >CUSTOM SOFTWARE AND HARDWARE</h3>
+                                    {{-- <p class="count-text ">Days Of Support</p> --}}
                                 </div>
                             </div>
                         </div>
