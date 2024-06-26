@@ -9,13 +9,13 @@
                             style="max-width: 100px; height: auto;">
                     </a>
                     <!-- Content -->
-                    <p class="text-white">At IoTBlitz LLP, we are pioneers in harnessing the power of cutting-edge
+                    <p class="text-white mt-3">At IoTBlitz LLP, we are pioneers in harnessing the power of cutting-edge
                         technologies to revolutionize businesses across industries. With over 1 year of invaluable
                         experience, we have successfully completed 20 projects and delighted 50 clients with our
                         innovative solutions.</p>
 
                     <!-- Social Icons -->
-                    <div class="social-icons mt-3">
+                    <div class="social-icons mt-3 mb-3">
                         <a href="https://www.facebook.com/iotblitzllp" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/iotblitz/" class="text-white me-4"><i class="fab fa-instagram"></i></a>
                         {{-- <a href="#" class="text-white me-4"><i class="fab fa-youtube"></i></a> --}}
@@ -104,7 +104,7 @@
             </div>
         </div>
 
-        <div class="col-lg-12 text-center">
+        <div class="col-lg-12 text-center mt-2">
             <p class="text-white">Copyright © 2024 IoTBlitz. All rights reserved</p>
         </div>
     </div>

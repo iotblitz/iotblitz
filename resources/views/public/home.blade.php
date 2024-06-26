@@ -66,33 +66,35 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
                         <div class="icon">
-                            <img src="{{ asset('public/public_page') }}/assets/images/service-03.png" alt="web experts">
-                        </div>
-                        <div class="main-content">
-                            <h4>Our Services</h4>
-                            <p>Leverage cutting-edge AI and Automation technologies to optimize processes, enhance efficiency, and drive innovation with our advanced solutions.</p>
-                            <div class="main-button">
-                                <a href="{{route('solutions')}}">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="icon">
                             <img src="{{ asset('public/public_page') }}/assets/images/service-01.png" alt="online degrees">
                         </div>
                         <div class="main-content">
                             <h4>Our IoT Platforms</h4>
                             <p>Unlock the potential of IoT Solutions. Connect devices, gather data, and optimize operations with our advanced Internet of Things technology</p>
                             <div class="main-button">
-                                <a href="{{route('product')}}">Read More</a>
+                                <a href="{{route('product')}}">Explore Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="icon">
+                            <img src="{{ asset('public/public_page') }}/assets/images/service-03.png" alt="web experts">
+                        </div>
+                        <div class="main-content">
+                            <h4>Our Services</h4>
+                            <p>Leverage cutting-edge AI and Automation technologies to optimize processes, enhance efficiency, and drive innovation with our advanced solutions.</p>
+                            <div class="main-button">
+                                <a href="{{route('solutions')}}">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
                         <div class="icon">
@@ -102,7 +104,7 @@
                             <h4>Our IoT Hardware</h4>
                             <p>From conceptualization to execution, we specialize in creating intuitive web, Android, and iOS applications tailored to your unique needs</p>
                             <div class="main-button">
-                                <a href="{{route('product')}}">Read More</a>
+                                <a href="{{route('product')}}">Explore Now</a>
                             </div>
                         </div>
                     </div>
