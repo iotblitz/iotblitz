@@ -254,7 +254,7 @@ class Home extends Controller
         $data['blogs_count'] = PublicBlogsCommentsModel::where('content_id', $blog_id)->where('comment_by_page', 'B')->where('active_status', 'A')->count();
         $data['blog_id'] = $blog_id;
         $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
-        
+
         $data['tags'] = PublicBlogsTagsListModel::join('public_blog_tags as pt', 'public_blog_tag_list.blog_tags_id', '=', 'pt.blog_tags_id')
         ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
         ->groupBy('pt.blog_tags_id', 'pt.tags_name')
@@ -394,7 +394,7 @@ class Home extends Controller
         ]);
 
         Toastr::success('This is a success message.', 'Success');
-        return redirect()->back();
+        return redirect()->route('contact');
     }
 
     function public_about(): View
