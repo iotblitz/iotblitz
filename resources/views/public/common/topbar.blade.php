@@ -34,7 +34,7 @@
                                     class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Services</a>
                             </li>
                         <li><a href="{{ route('blogs') }}"
-                                class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Blogs</a></li>
+                                class="{{ request()->routeIs('blogs')|| request()->routeIs('single_blogs') ? 'active' : '' }}">Blogs</a></li>
 
 
 {{-- ============================== --}}
@@ -48,14 +48,14 @@
                                 class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Solutions</a>
                         </li> --}}
 
-                        <li class="d-block d-md-none"><a href="{{ route('faqs') }}" class="{{ request()->routeIs('faqs') ? 'active' : '' }}>FAQ</a></li>
+                        <li class="d-block d-md-none"><a href="{{ route('faqs') }}" class="{{ request()->routeIs('faqs') ? 'active' : '' }}">FAQ</a></li>
                         <li class="d-block d-md-none"><a href="{{ route('careers') }}"
                                 class="{{ request()->routeIs('careers*') ? 'active' : '' }}">Careers</a></li>
 
 
                         <li class="scroll-to-section dropdown d-none d-md-block">
                             <a href="javascript:void(0);"
-                                class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') || request()->routeIs('solutions') || request()->routeIs('single_solutions') || request()->routeIs('careers') || request()->routeIs('single_careers')|| request()->routeIs('faqs') ? 'active' : '' }}">More
+                                class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') ||  request()->routeIs('careers') || request()->routeIs('single_careers')|| request()->routeIs('faqs') ? 'active' : '' }}">More
                                 <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('case_study') }}"
