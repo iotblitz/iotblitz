@@ -1927,6 +1927,10 @@ body {
   .contact-us .contact-us-content {
     padding: 30px;
   }
+
+  .contact-us-content {
+    padding: 30px;
+  }
   footer {
     margin-top: 30px;
   }
