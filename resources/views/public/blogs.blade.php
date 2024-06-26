@@ -47,7 +47,8 @@
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
                         <h2 class="text-white">BLOGS</h2>
-                        <p class="text-white">Discover IoTBlitz LLP's expertise in AI & Automation, IoT Solutions, and Design & Development. Optimize processes, enhance efficiency, and innovate with our advanced, tailored solutions.</p>
+                        <p class="text-white">What is Industry 4.0? What is remote monitoring? How is IoT changing the world?
+                            Are these questions keeping you awake at night? Find out all the answers in our blogs.</p>
 
                     </div>
                 </div>

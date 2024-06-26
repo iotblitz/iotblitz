@@ -57,28 +57,35 @@
       <div class="row">
         <div class="col-lg-6  align-self-center">
           <div class="section-heading">
-            {{-- <h6>About Us</h6> --}}
-            <p>At IoTBlitz LLP, we are pioneers in harnessing the power of cutting-edge technologies to revolutionize businesses across industries. With over 1 year of invaluable experience, we have successfully completed 20 projects and delighted 50 clients with our innovative solutions.</p>
+
+            <ul>
+                <li>Since its founding and establishment in 2024, IoTBlitz has expanded rapidly, serving both local and foreign customers. Our team of highly skilled experts uses cutting-edge technology to deliver the finest IoT Platform and Remote Monitoring Systems.</li>
+            </ul>
 
         <h2>Our Expertise</h2>
         <ul>
-            <li><strong>AI & Automation:</strong> Embrace the future with our AI-driven solutions that optimize processes, boost efficiency, and foster innovation. We integrate advanced automation technologies to streamline operations and empower your business.</li>
-            <li><strong>IoT Solutions:</strong> Explore limitless possibilities with our IoT solutions. We specialize in seamlessly connecting devices, extracting meaningful data, and enhancing operational efficiencies through robust Internet of Things technology.</li>
-            <li><strong>Design & Development:</strong> From ideation to implementation, we excel in crafting bespoke web, Android, and iOS applications tailored to meet your specific requirements. Our focus is on delivering intuitive designs and seamless user experiences.</li>
+            <li class="mb-2"><strong>IoT Solutions:</strong> Use our IoT solutions to discover almost endless possibilities. Our expertise lies in easily integrating devices, collecting essential information, and optimizing operational effectiveness with strong Internet of Things (IoT) technology</li>
+
+            <li class="mb-2"><strong>Design & Development:</strong> We are experts in creating custom web, Android, and iOS apps that are made to match precisely your requirements. From conceptualization to execution, our goal is to provide smooth user experiences and designs that are easy to understand.</li>
+
+            <li class="mb-2"><strong>IoT Hardware:</strong> We have unmatched expertise and experience in IoT Hardware manufacturing. Our Hardware division, Techavo Systems, can provide end-to-end customized IoT hardware solutions that fit your business and operational requirements.</li>
+
         </ul>
-
-        <h2>Commitment to Excellence</h2>
-        <p>At IoTBlitz LLP, our mission is to drive your success through innovative solutions that propel your business forward. We combine technical expertise with a deep understanding of industry dynamics to deliver measurable results and exceed expectations.</p>
-
         <h2>Why Choose Us?</h2>
         <ul>
-            <li><strong>Expertise:</strong> Our team of skilled professionals brings a wealth of experience and knowledge to every project.</li>
-            <li><strong>Innovation:</strong> We stay ahead of the curve by embracing emerging technologies and industry trends.</li>
-            <li><strong>Client-Centric Approach:</strong> Your satisfaction is our priority. We collaborate closely with you to ensure our solutions align with your goals.</li>
+            <li class="mb-2"><strong>Competitive Edge:</strong> Our team of designers and developers goes above and beyond to satisfy your objectives and determine the ideal solution. With the help of our IIoT Platforms and Industry 4.0 dashboards, your company can gain a competitive advantage and reach new heights of efficiency and accuracy.</li>
+
+            <li class="mb-2"><strong>Commitment to Excellence:</strong> IoTBlitz is committed to pushing beyond what is possible. Our experienced teams are equipped with the knowledge and skills necessary to tackle any technological problem, no matter how big or small, with unparalleled agility and proficiency.</li>
+
+            <li class="mb-2"><strong>Client-Centric Approach:</strong> We at IotBlitz take client satisfaction very seriously. Our team of engineers, designers, and developers collaborates closely with our clients to maintain transparency at all stages of production and ensures our solutions meet their needs perfectly. IoTBlitz provides a personalized IoT Remote Monitoring System designed to meet your specific demands and goals.</li>
+
+            <li class="mb-2"><strong>Diverse Portfolio:</strong> We offer solutions across diverse industry verticals, especially in the Energy, Water, Fuel, Solar, and UPS domains. In Hardware, we have acquired unmatched expertise in embedded systems, remote monitoring systems, PCB, remote terminal units, LoRawan gateway, and more.</li>
         </ul>
 
         <h2>Get in Touch</h2>
-        <p>Discover how IoTBlitz LLP can transform your business. Partner with us to unlock new opportunities and achieve unparalleled growth through advanced technology solutions.</p>
+        <ul>
+            <li>Discover how IoTBlitz can transform your business with the power of IoT. Partner with us today to unlock new opportunities and achieve unparalleled growth through advanced technology solutions.</li>
+        </ul>
             {{-- <div class="special-offer">
               <span class="offer">off<br><em>50%</em></span>
               <h6>Valide: <em>24 April 2036</em></h6>
@@ -88,37 +95,7 @@
           </div>
         </div>
         <div class="col-lg-6">
-          {{-- <div class="contact-us-content"> --}}
-
             <lottie-player src="{{ asset('public/public_page') }}/assets/lottiefiles/Animation - 1716383597225.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay ></lottie-player>
-
-
-
-            {{-- <form id="contact-form" action="" method="post">
-              <div class="row">
-                <div class="col-lg-12">
-                  <fieldset>
-                    <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
-                  </fieldset>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
-                  </fieldset>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
-                  </fieldset>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
-                  </fieldset>
-                </div>
-              </div>
-            </form> --}}
-          {{-- </div> --}}
         </div>
       </div>
     </div>

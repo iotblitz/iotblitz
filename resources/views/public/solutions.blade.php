@@ -32,7 +32,7 @@
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
                         <h2 class="text-white">SERVICES</h2>
-                        <p class="text-white">Explore AI & Automation, IoT Solutions, and Design & Development at IoTBlitz LLP. Innovate with tailored applications, diverse IoT offerings, and advanced technology solutions.</p>
+                        <p class="text-white">Our expert IoT engineers are available 24/7 to provide a solution tailored to your business and operational needs.</p>
 
                     </div>
                 </div>

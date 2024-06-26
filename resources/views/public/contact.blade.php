@@ -32,9 +32,7 @@
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
                         <h2 class="text-white">CONTACT US</h2>
-                        <p class="text-white"><strong>IoTBlitz LLP</strong> is here to assist you with all your IoT needs. Whether you have
-                            questions about our products, need technical support, or want to discuss a potential project, we
-                            are ready to help.</p>
+                        <p class="text-white"><strong>IoTBlitz</strong>  is here to assist you with all your IoT needs. Whether you have a question about our products, need technical support, or want to discuss a potential project, we are ready to help.</p>
 
                     </div>
                 </div>
@@ -53,25 +51,49 @@
 
 
 
-    <div class="contact-us section" id="contact">
+    <div class="section mb-5" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6  align-self-center">
                     <div class="section-heading">
-                        <h2>Connect with IoTBlitz LLP Today</h2>
-                        <p><strong>Address:</strong><br>
-                            Green Valley Residency,<br>
+
+                        <h2 style="color: #7a6ad8;">Connect With IoTBlitz Today</h2>
+                        {{-- <div class="contact-details">
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Green Valley Residency,Boral Main Road,Kolkata 700154,India</p>
+                            <p><i class="fas fa-phone-alt"></i> Phone: +123 456 7890</p>
+                            <p><i class="fas fa-envelope"></i> Email: info@company.com</p>
+                        </div> --}}
+
+
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-start mb-5 mt-5">
+                                <i class="fa fa-map-marker mt-1 mr-2" style="color: #7a6ad8;"></i>
+                                <div style="margin-left:20px">
+                                    Green Valley Residency,<br>
                             Boral Main Road,<br>
                             Kolkata 700154,<br>
-                            India</p>
-                        <p><strong>Phone:</strong><br>
-                            +91 7890833920</p>
-                        <p><strong>Email:</strong><br>
-                            <a href="mailto:info@iotblitz.com">info@iotblitz.com</a>
-                        </p>
-                        <p>We look forward to connecting with you and exploring how IoTBlitz LLP can support your IoT
-                            initiatives. Feel free to reach out to us through any of the contact methods above, and our team
-                            will get back to you promptly.</p>
+                            India
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start mb-5">
+                                <i class="fa fa-phone mt-1 mr-2" style="color: #7a6ad8;"></i>
+                                <div style="margin-left:20px" title="mail:info@iotblitz.com"
+                                    title="tel:+86 13911890238">
+                                    +91 7890833920
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start mb-5">
+                                <i class="fa fa-envelope mt-1 mr-2" style="color: #7a6ad8;"></i>
+                                <div style="margin-left:20px" title="mail:info@iotblitz.com">
+                                    info@iotblitz.com
+                                </div>
+                            </li>
+                        </ul>
+
+
+                      <p class="mb-2">We look forward to connecting with you and exploring how IoTBlitz can help you support your IoT and business goals.</p>
+                      <p>Give us a call or reach out to us through our contact form.</p>
+
                     </div>
                 </div>
                 <div class="col-lg-6">

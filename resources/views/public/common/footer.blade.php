@@ -9,10 +9,7 @@
                             style="max-width: 100px; height: auto;">
                     </a>
                     <!-- Content -->
-                    <p class="text-white mt-3">At IoTBlitz LLP, we are pioneers in harnessing the power of cutting-edge
-                        technologies to revolutionize businesses across industries. With over 1 year of invaluable
-                        experience, we have successfully completed 20 projects and delighted 50 clients with our
-                        innovative solutions.</p>
+                    <p class="text-white mt-3">At IoTBlitz, we are pioneers in harnessing the power of cutting-edge technologies to revolutionize businesses across industries. Our team of expert engineers goes above and beyond to provide IIoT Platforms, Websites, Applications, and IoT hardware that are custom-built and designed to meet your business needs.</p>
 
                     <!-- Social Icons -->
                     <div class="social-icons mt-3 mb-3">

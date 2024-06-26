@@ -34,9 +34,7 @@
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
                         <h2 class="text-white">OUR PRODUCTS</h2>
-                        <p class="text-white">IoTBlitz LLP specializes in AI & Automation, IoT Solutions, and Design &
-                            Development, offering innovative technologies and tailored applications to enhance efficiency,
-                            connectivity, and user experiences.</p>
+                        <p class="text-white">IoTBlitz specializes in IoT software design and development, IIoT Platforms, and end-to-end IoT Solutions. Our custom-designed IoT Platforms and Remote Monitoring Systems aim to enhance industry efficiency and performance.</p>
 
                     </div>
                 </div>

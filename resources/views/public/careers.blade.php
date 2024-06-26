@@ -126,8 +126,7 @@
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
                         <h2 class="text-white">CAREERS</h2>
-                        <p class="text-white">Explore exciting career opportunities at IoTBlitz LLP. Join us to innovate with
-                            AI, IoT solutions, and app development, shaping the future of technology.</p>
+                        <p class="text-white">Explore exciting career opportunities at IoTBlitz. Join our team of techies and innovators to create apps, IoT devices, and industry 4.0 solutions to shape the future of technology. </p>
 
                     </div>
                 </div>
