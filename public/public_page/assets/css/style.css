@@ -1115,8 +1115,8 @@ Facts Style
 }
 
 .fun-facts h2::after {
-  content: '+';
-  margin-left: 5px;
+  /* content: '+'; */
+  /* margin-left: 5px; */
 }
 
 .fun-facts p {

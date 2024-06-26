@@ -8,9 +8,8 @@
                         <div class="item item-1">
                             <div class="header-text">
                                 <span class="category">Automation</span>
-                                <h2>Optimize Workflows with AI Innovation</h2>
-                                <p>Scholar is free CSS template designed by TemplateMo for online educational related
-                                    websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                                <h2>Are You Ready for Industry 4.0?</h2>
+                                <p>Connect your devices and be at the forefront of the Industry 4.0 revolution with the effortless power of IoT. </p>
                                 <div class="buttons">
                                     <div class="main-button">
                                         <a href="{{route('contact')}}">Request Demo</a>
@@ -24,9 +23,8 @@
                         <div class="item item-2">
                             <div class="header-text">
                                 <span class="category">Automation</span>
-                                <h2>Innovative Automation Powered by IoT</h2>
-                                <p>You are allowed to use this template for any educational or commercial purpose. You are
-                                    not allowed to re-distribute the template ZIP file on any other website.</p>
+                                <h2>Real-Time Alerts Using Industrial IoT Platform</h2>
+                                <p>Stay ahead of the curve with real-time alerts using our IoT Platform powered by Cloud and Industrial IoT.</p>
                                 <div class="buttons">
                                     <div class="main-button">
                                         <a href="{{route('contact')}}">Request Demo</a>
@@ -40,9 +38,8 @@
                         <div class="item item-3">
                             <div class="header-text">
                                 <span class="category">Smart Technology Solutions</span>
-                                <h2>Smart Applications for a Smart Era</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporious
-                                    incididunt ut labore et dolore magna aliqua suspendisse.</p>
+                                <h2>Real-Time Monitoring and Optimization</h2>
+                                <p>Track your energy, fuel, water, solar, and voltage consumption in real-time and optimize it according to your needs.</p>
                                 <div class="buttons">
                                     <div class="main-button">
                                         <a href="{{route('contact')}}">Request Demo</a>
@@ -70,7 +67,7 @@
                         </div>
                         <div class="main-content">
                             <h4>Our IoT Platforms</h4>
-                            <p>Unlock the potential of IoT Solutions. Connect devices, gather data, and optimize operations with our advanced Internet of Things technology</p>
+                            <p>Leverage our remote IoT platforms for energy, fuel, water, and UPS monitoring to unlock your full potential and save power costs.</p>
                             <div class="main-button">
                                 <a href="{{route('product')}}">Explore Now</a>
                             </div>
@@ -85,7 +82,7 @@
                         </div>
                         <div class="main-content">
                             <h4>Our Services</h4>
-                            <p>Leverage cutting-edge AI and Automation technologies to optimize processes, enhance efficiency, and drive innovation with our advanced solutions.</p>
+                            <p>Enter the world of Industry 4.0 with us and transform your business with the power of IoT and Seamless end-to-end services.</p>
                             <div class="main-button">
                                 <a href="{{route('solutions')}}">Explore Now</a>
                             </div>
@@ -102,9 +99,9 @@
                         </div>
                         <div class="main-content">
                             <h4>Our IoT Hardware</h4>
-                            <p>From conceptualization to execution, we specialize in creating intuitive web, Android, and iOS applications tailored to your unique needs</p>
+                            <p>We provide custom IoT hardware that fits your needs. From Conceptualization to seamless integration, we do it all.</p>
                             <div class="main-button">
-                                <a href="{{route('product')}}">Explore Now</a>
+                                <a href="https://techavo.in/" target="_blank">Explore Now</a>
                             </div>
                         </div>
                     </div>
@@ -332,16 +329,17 @@
                 <div class="col-lg-12">
                     <div class="wrapper">
                         <div class="row">
-                            <div class="col-lg-3 col-md-6">
+                            {{--  <div class="col-lg-3 col-md-6">
                                 <div class="counter">
-                                    <h2 class="timer count-title count-number" data-to="1" data-speed="1000"></h2>
-                                    <p class="count-text ">Years Experience</p>
+
+                                    <h2 class="timer count-title count-number" data-to="365" data-speed="1000"></h2>
+                                    <p class="count-text ">Days of Support</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter">
-                                    <h2 class="timer count-title count-number" data-to="20" data-speed="1000"></h2>
-                                    <p class="count-text ">Compleate Projects</p>
+                                    <h2 class="timer count-title count-number" data-to="2" data-speed="1000"></h2>
+                                    <p class="count-text ">Years of Warranty</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
@@ -349,10 +347,36 @@
                                     <h2 class="timer count-title count-number" data-to="50" data-speed="1000"></h2>
                                     <p class="count-text ">Happy Clients</p>
                                 </div>
-                            </div>
+                            </div> --}}
+
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h2 class="timer count-title count-number" data-to="365" data-speed="364" style="content: none !important; margin-left: 0 !important;" ></h2>
+                                    <h2 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >Affordable Pricing
+                                    </h2>
+                                    {{-- <p class="count-text ">Days Of Support</p> --}}
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="counter end">
+                                    <h2 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >Affordable Pricing
+                                    </h2>
+                                    {{-- <p class="count-text ">Days Of Support</p> --}}
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="counter end">
+                                    <h2 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >Affordable Pricing
+                                    </h2>
+                                    {{-- <p class="count-text ">Days Of Support</p> --}}
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="counter end">
+                                    <h2 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >dtrh</h2>
                                     <p class="count-text ">Days Of Support</p>
                                 </div>
                             </div>
