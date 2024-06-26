@@ -30,7 +30,7 @@
           <div class="header-text mt-5">
 
             {{-- <span class="category text-white">Our Courses</span> --}}
-            <h1 class="text-white">About IoTBlitz LLP</h1>
+            <h1 class="text-white">ABOUT US</h1>
             {{-- <p class="text-white">At IoTBlitz LLP, we are pioneers in harnessing the power of cutting-edge technologies to revolutionize businesses across industries. With over 1 year of invaluable experience, we have successfully completed 20 projects and delighted 50 clients with our innovative solutions.</p> --}}
 
           </div>

@@ -332,7 +332,7 @@
 
 
                         <div class="header-text">
-                            <h2 class="text-white">Case Study</h2>
+                            {{-- <h2 class="text-white">Case Study</h2> --}}
                         </div>
 
 

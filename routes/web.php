@@ -29,8 +29,8 @@ Route::post('/contact_public', [Home::class, 'public_contact_public'])->name('co
 Route::get('/about-us', [Home::class, 'public_about'])->name('about');
 
 
-Route::get('/case_study', [Home::class, 'case_study'])->name('case_study');
-Route::get('/case_study/{case_study_id}', [Home::class, 'single_case_study'])->name('single_case_study');
+Route::get('/case-study', [Home::class, 'case_study'])->name('case_study');
+Route::get('/case-study/{case_study_id}', [Home::class, 'single_case_study'])->name('single_case_study');
 
 
 Route::get('/services', [Home::class, 'solutions'])->name('solutions');

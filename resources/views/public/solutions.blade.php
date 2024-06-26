@@ -28,7 +28,7 @@
                     <div class="header-text mt-5">
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
-                        <h2 class="text-white">Services</h2>
+                        <h2 class="text-white">SERVICES</h2>
                         <p class="text-white">Explore AI & Automation, IoT Solutions, and Design & Development at IoTBlitz LLP. Innovate with tailored applications, diverse IoT offerings, and advanced technology solutions.</p>
 
                     </div>

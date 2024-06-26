@@ -118,7 +118,7 @@
 
 
                         <div class="header-text">
-                            <h2 class="text-white">Apply Job</h2>
+                            <h2 class="text-white">APPLY JOB</h2>
                         </div>
 
 

@@ -336,7 +336,7 @@
 
 
                     <div class="header-text">
-                        <h2 class="text-white">Tags Archives</h2>
+                        <h2 class="text-white">AUTHOR ARCHIVES: {{ strtoupper($authername) }} </h2>
                     </div>
 
 

@@ -336,7 +336,7 @@
 
 
                         <div class="header-text">
-                            <h2 class="text-white">Case Study</h2>
+                            {{-- <h2 class="text-white">Case Study</h2> --}}
                         </div>
 
 
@@ -366,9 +366,9 @@
                 <div class="blog-post">
 
                     {{-- <img src="https://via.placeholder.com/800x400" alt="Blog Post Image"> --}}
+                    <h1 class="blog-title mb-2">{{ $blogs->blog_title }}</h1>
                     <img src="{{ asset('public/blog_images') }}/{{ $blogs->blog_image }}"
                         style="height: auto; width: 100%;border-radius: 20px; " alt="Blog Image" class="mb-2">
-                    <h1 class="blog-title mb-2">{{ $blogs->blog_title }}</h1>
                     <div class="blog-content mb-2">
                         <div class="blog-content mb-2">
                             <div class="d-flex align-items-center mb-3">

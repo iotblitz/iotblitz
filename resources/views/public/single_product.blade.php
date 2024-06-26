@@ -331,9 +331,9 @@
                     <div class="header-text text-center">
 
 
-                        <div class="header-text">
+                        {{-- <div class="header-text">
                             <h2 class="text-white">Product</h2>
-                        </div>
+                        </div> --}}
 
 
                         <ul class="list-inline">

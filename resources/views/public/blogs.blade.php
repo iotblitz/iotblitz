@@ -31,7 +31,7 @@
                     <div class="header-text mt-5">
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
-                        <h2 class="text-white">Blogs</h2>
+                        <h2 class="text-white">BLOGS</h2>
                         <p class="text-white">Discover IoTBlitz LLP's expertise in AI & Automation, IoT Solutions, and Design & Development. Optimize processes, enhance efficiency, and innovate with our advanced, tailored solutions.</p>
 
                     </div>

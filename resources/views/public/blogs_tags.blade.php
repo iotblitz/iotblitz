@@ -336,7 +336,7 @@
 
 
                     <div class="header-text">
-                        <h2 class="text-white">{{ ucwords($authername) }}</h2>
+                        <h2 class="text-white">{{ strtoupper($authername) }}</h2>
                     </div>
 
 

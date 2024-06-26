@@ -30,7 +30,7 @@
                     <div class="header-text mt-5">
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
-                        <h2 class="text-white">Our Products</h2>
+                        <h2 class="text-white">OUR PRODUCTS</h2>
                         <p class="text-white">IoTBlitz LLP specializes in AI & Automation, IoT Solutions, and Design &
                             Development, offering innovative technologies and tailored applications to enhance efficiency,
                             connectivity, and user experiences.</p>

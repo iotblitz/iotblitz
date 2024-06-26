@@ -110,7 +110,7 @@
 
 
                         <div class="header-text">
-                            <h2 class="text-white">Careers</h2>
+                            <h2 class="text-white">CAREERS</h2>
                         </div>
 
 

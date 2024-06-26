@@ -122,7 +122,7 @@
                     <div class="header-text mt-5">
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
-                        <h2 class="text-white">Careers</h2>
+                        <h2 class="text-white">CAREERS</h2>
                         <p class="text-white">Explore exciting career opportunities at IoTBlitz LLP. Join us to innovate with
                             AI, IoT solutions, and app development, shaping the future of technology.</p>
 
