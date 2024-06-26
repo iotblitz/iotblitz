@@ -418,7 +418,7 @@
                                                 <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
                                                 <a href="#" class="text-white me-4"><i class="fab fa-youtube"></i></a>
                                                 <a href="#" class="text-white me-4"><i class="fab fa-linkedin-in"></i></a>
-                                                <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+                                                <a href="" class="text-white me-4"><i class="fab fa-x-twitter"></i></a>
                                             </div>
                                         </div>
                                     </div>

@@ -16,11 +16,11 @@
 
                     <!-- Social Icons -->
                     <div class="social-icons mt-3">
-                        <a href="#" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white me-4"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="text-white me-4"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/iotblitzllp" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/iotblitz/" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+                        {{-- <a href="#" class="text-white me-4"><i class="fab fa-youtube"></i></a> --}}
+                        <a href="https://www.linkedin.com/company/iotblitz" class="text-white me-4"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/iotblitz" class="text-white me-4"><i class="fab fa-x-twitter"></i></a>
                     </div>
                 </div>
             </div>
