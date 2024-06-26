@@ -135,11 +135,14 @@
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('public/public_page') }}/vendor/jquery/jquery.min.js"></script>
+
     <script src="{{ asset('public/public_page') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="{{ asset('public/public_page') }}/assets/js/isotope.min.js"></script>
     <script src="{{ asset('public/public_page') }}/assets/js/owl-carousel.js"></script>
     <script src="{{ asset('public/public_page') }}/assets/js/counter.js"></script>
     <script src="{{ asset('public/public_page') }}/assets/js/custom.js"></script>
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
