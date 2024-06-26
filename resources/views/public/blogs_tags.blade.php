@@ -350,7 +350,7 @@
                             <li class="list-inline-item"><span class="text-white">/</span></li>
                             <li class="list-inline-item"><a href="{{ route('blogs') }}" class="text-white-50">Blogs</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="#" class="text-white">{{ ucwords($authername) }}</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-white">Post Tagged "{{ ucwords($authername) }}"</a></li>
 
                     </ul>
 

@@ -378,12 +378,12 @@
                     {{-- <img src="https://via.placeholder.com/800x400" alt="Blog Post Image"> --}}
                     <h1 class="blog-title mb-2">{{ $blogs->blog_title }}</h1>
                     <img src="{{ asset('public/blog_images') }}/{{ $blogs->blog_image }}"
-                        style="height: auto; width: 100%;border-radius: 20px; " alt="Blog Image" class="mb-2">
+                        style="height: auto; width: 100%; border-radius: 20px; " alt="Blog Image" class="mb-2">
                     <div class="blog-content mb-2">
                         <div class="blog-content mb-2">
                             <div class="d-flex align-items-center mb-3">
                                 <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.png  @endif"
-                                    alt="Author Image" class="rounded-circle me-3" style="width: 50px">
+                                    alt="{{$blogs->featured_image_alt_text}}" title="{{$blogs->image_title}}" class="rounded-circle me-3" style="width: 50px">
                                 <div class="text-center">
                                     <div>
                                         <h5 class="mb-0"> <a href="{{route('public_blog_author', ['author' => str_replace(' ', '-',$blogs->name)])}}">{{ ucfirst($blogs->name) }}</a></h5>
@@ -551,14 +551,24 @@
                     <h5 class="card-title">Popular Tags</h5>
                     <div class="d-flex flex-wrap justify-content-between">
 
-                        @foreach ($blogs->public_tags as $tagdata)
+                        {{-- @foreach ($blogs->public_tags as $tagdata)
 
 
                         <a href="#" class="text-decoration-none mb-2">
                             <span class="badge">{{$tagdata->tag->tags_name}}</span>
                         </a>
 
-                        @endforeach
+                        @endforeach --}}
+
+
+
+                        @foreach ($tags as $tagdata)
+
+
+                            <a href="{{route('public_blog_tags', ['tags' => str_replace(' ', '-',$tagdata->tags_name)])}}" class="text-decoration-none mb-2">
+                                <span class="badge">{{$tagdata->tags_name}}</span>
+                            </a>
+                            @endforeach
 
                     </div>
 

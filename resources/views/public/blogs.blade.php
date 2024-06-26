@@ -28,6 +28,11 @@
         }
         .badge {
             background-color: #7a6ad8 !important;
+            padding: 5px 10px;
+
+            color: #fff; /* Text color */
+            text-decoration: none;
+            border-radius: 5px;
         }
     </style>
 
@@ -85,7 +90,7 @@
                                 </div>
                                 <div class="col-lg-7">
                                     <h4>{{ $blogdata->blog_title }}</h4>
-                                    <p>{{ substr($blogdata->text_description, 0, 205) }}</p>
+                                    <p>{{ substr($blogdata->blog_excerpt, 0, 205) }}</p>
                                 </div>
                                 {{-- <div class="col-lg-3">
                                     <span>Date:</span>
