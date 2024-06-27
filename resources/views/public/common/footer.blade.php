@@ -46,12 +46,12 @@
                         <div class="footer-link">
                             <h3 class="text-white" style="margin-bottom: 20px">Support</h3>
                             <ul>
-                                <li><a href="{{ route('faqs') }}" class="text-white">FAQ</a></li>
-                                <hr>
+                                <li class="mb-2"><a href="{{ route('faqs') }}" class="text-white">FAQ</a></li>
+                                {{-- <hr> --}}
                                 <li class="mb-2"><a href="{{ route('about') }}" class="text-white">About</a></li>
-                                <hr>
+                                {{-- <hr> --}}
 
-                                <li><a href="{{ route('blogs') }}" class="text-white">Blogs</a></li>
+                                <li class="mb-2"><a href="{{ route('blogs') }}" class="text-white">Blogs</a></li>
                             </ul>
                         </div>
                     </div>

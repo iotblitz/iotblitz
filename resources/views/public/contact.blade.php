@@ -165,4 +165,34 @@
     <!--team bg area end-->
 @endsection
 @section('page_script')
+
+
+<script>
+    $(document).ready(function() {
+        $('#contactForm').submit(function(event) {
+            event.preventDefault();
+            var formData = {
+                'name': $('#name').val(),
+                'email': $('#email').val(),
+                'mobile_no': $('#mobile').val(),
+                'message': $('#message').val(),
+                'g-recaptcha-response': grecaptcha.getResponse()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: 'process_form.php', // PHP script to verify and send email
+                data: formData,
+                dataType: 'json',
+                encode: true,
+                success: function(response) {
+                    $('#response').html(response.message);
+                    grecaptcha.reset(); // Reset reCAPTCHA after submission
+                }
+            });
+        });
+    });
+    </script>
+
+
 @endsection
