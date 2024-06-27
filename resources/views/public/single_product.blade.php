@@ -321,6 +321,17 @@
             overflow-x: auto;
             /* Add horizontal scroll if needed */
         }
+
+        .catagory {
+            background-color: #7a6ad8;
+            color: #fff;
+            font-size: 10px;
+            text-transform: uppercase;
+            padding: 2px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            /* margin-bottom: 50px; */
+        }
     </style>
 
 @endsection
@@ -365,7 +376,7 @@
                     <h1 class="blog-title mb-2">{{ $product->product_title }}</h1>
                     {{-- <img src="https://via.placeholder.com/800x400" alt="Blog Post Image"> --}}
                     <img src="{{ asset('public/product_image') }}/{{ $product->product_image }}"
-                        style="height: 400px; width: 100%;border-radius: 20px; object-fit: cover;" alt="Blog Image"
+                        style="height: auto; width: 100%;border-radius: 20px; object-fit: cover;" alt="Blog Image"
                         class="mb-2">
                     <div class="blog-content mb-2">
                         {!! $product->product_description !!}
@@ -377,23 +388,25 @@
             </div>
             <div class="col-md-3 mt-5">
                 <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
-                    <h5>Recent Posts</h5>
-                    @foreach ($latest_posts as $ltdata)
+                    <h5>Other Products</h5>
+                    @foreach ($products as $cattagorydata)
+                    <p class="mb-5 catagory">{{ $cattagorydata->category }}</p>
+                    @foreach ($cattagorydata->products as $product_key)
                         <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
-                            <a href="#"><img class="mr-4"
-                                    src="{{ asset('public/blog_images') }}/{{ $ltdata->blog_image }}" alt=""
+                            <a href="{{ route('single_product', [str_replace(' ', '-', $product_key->product_title) . '-' . $product_key->product_id]) }}"><img class="mr-4"
+                                    src="{{ asset('public/product_image') }}/{{ $product_key->product_image }}" alt=""
                                     style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important; border-radius: 5px"></a>
                             <div class="media-body" style=" flex: 1;">
-                                <h6 class="my-1"><a href="#" class="text-body">{{ $ltdata->blog_title }}</a>
+                                <h6 class="my-1"><a href="{{ route('single_product', [str_replace(' ', '-', $product_key->product_title) . '-' . $product_key->product_id]) }}" class="text-body">{{ $product_key->product_title }}</a>
                                 </h6>
-                                <p class="my-1"><a href="#" class="text-body text-justify">{{ substr($ltdata->text_description, 0, 37) }}...</a>
+                                <p class="my-1"><a href="{{ route('single_product', [str_replace(' ', '-', $product_key->product_title) . '-' . $product_key->product_id]) }}" class="text-body text-justify">{{ substr($product_key->text_description, 0, 37) }}...</a>
                                 </p>
-                                <span
-                                    class="text-sm text-muted">{{ date('j F, Y', strtotime($ltdata->created_at)) }}</span>
+
                             </div>
                         </div>
                     @endforeach
-                        <a href="{{ route('blogs') }}" class="btn btn-primary mt-3" style="background-color: #7a6ad8 !important">View All</a>
+                    @endforeach
+
                 </div>
             </div>
         </div>

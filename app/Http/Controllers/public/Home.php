@@ -40,7 +40,7 @@ class Home extends Controller
 
     function careers(): View
     {
-        $data['careers'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")->join("md_lo_states AS c", "c.id", "=", "b.state_id")->join("md_lo_countries AS d", "d.id", "=", "c.country_id")->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name") ->where("jobs_careers.status","A")->paginate(20);
+        $data['careers'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")->join("md_lo_states AS c", "c.id", "=", "b.state_id")->join("md_lo_countries AS d", "d.id", "=", "c.country_id")->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")->where("jobs_careers.status", "A")->paginate(20);
 
 
         return view('public.careers')->with($data);
@@ -51,22 +51,22 @@ class Home extends Controller
         $lastHyphenPosition = strrpos($carcers_id, "-");
         $carcers_id = substr($carcers_id, $lastHyphenPosition + 1);
         $data['product'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")
-                                            ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
-                                            ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
-                                            ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
-                                            ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
-                                            ->where("jobs_careers.careers_id",$carcers_id)
-                                            ->where("jobs_careers.status","A")
-                                            ->first();
+            ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
+            ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
+            ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
+            ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
+            ->where("jobs_careers.careers_id", $carcers_id)
+            ->where("jobs_careers.status", "A")
+            ->first();
         $data['carcers_id'] = $carcers_id;
 
         $data['latest_posts_carcers'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")
-                                                ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
-                                                ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
-                                                ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
-                                                ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
-                                                ->where("jobs_careers.status","A")
-                                                ->orderBy("jobs_careers.careers_id", "DESC")->limit(5)->get();
+            ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
+            ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
+            ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
+            ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
+            ->where("jobs_careers.status", "A")
+            ->orderBy("jobs_careers.careers_id", "DESC")->limit(5)->get();
 
 
         return view('public.single_carcers')->with($data);
@@ -78,26 +78,24 @@ class Home extends Controller
         $lastHyphenPosition = strrpos($carcers_id, "-");
         $carcers_id = substr($carcers_id, $lastHyphenPosition + 1);
         $data['product'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")
-                                            ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
-                                            ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
-                                            ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
-                                            ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
-                                            ->where("jobs_careers.careers_id",$carcers_id)
-                                            ->where("jobs_careers.status","A")
-                                            ->first();
+            ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
+            ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
+            ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
+            ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
+            ->where("jobs_careers.careers_id", $carcers_id)
+            ->where("jobs_careers.status", "A")
+            ->first();
         $data['carcers_id'] = $carcers_id;
 
         $data['latest_posts_carcers'] = JobCareersModel::join("jobs_careers_role AS a", "jobs_careers.role_id", "=", "a.careers_role_id")
-                                                ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
-                                                ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
-                                                ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
-                                                ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
-                                                ->where("jobs_careers.status","A")
-                                                ->orderBy("jobs_careers.careers_id", "DESC")->limit(5)->get();
+            ->join("md_lo_cities AS b", "b.id", "=", "jobs_careers.cities_id")
+            ->join("md_lo_states AS c", "c.id", "=", "b.state_id")
+            ->join("md_lo_countries AS d", "d.id", "=", "c.country_id")
+            ->select("jobs_careers.*", "a.*", "b.state_id", "c.country_id", "b.name AS citi_name", "c.name AS state_name", "d.name AS countries_name")
+            ->where("jobs_careers.status", "A")
+            ->orderBy("jobs_careers.careers_id", "DESC")->limit(5)->get();
 
         return view('public.apply_jobs_single_carcers')->with($data);
-
-
     }
 
 
@@ -108,7 +106,7 @@ class Home extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'mobile_no' => 'required',
-            'about'=>'required|max:500',
+            'about' => 'required|max:500',
             'uploadfile' => 'required|mimes:pdf,doc,docx',
             'g-recaptcha-response' => ['required', new GoogleRecaptchaV2],
         ];
@@ -144,7 +142,7 @@ class Home extends Controller
 
     function product(): View
     {
-        $data['products'] =PublicProductCategoryModel::with('products')->get();
+        $data['products'] = PublicProductCategoryModel::with('products')->get();
 
 
 
@@ -169,7 +167,11 @@ class Home extends Controller
             ->first();
         $data['product_id'] = $product_id;
 
-        $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
+        $data['products'] = PublicProductCategoryModel::with(['products' => function ($query) use ($product_id) {
+                                                                $query->where('product_id', '!=', $product_id);
+                                                            }])->get();
+
+        // $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
 
 
         return view('public.single_product')->with($data);
@@ -183,14 +185,14 @@ class Home extends Controller
     function blogs(): View
     {
         $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
-        $data['blogs'] = PublicBlogModel::where('active_status', 'A')->orderBy("blog_id","DESC")->paginate(10);
+        $data['blogs'] = PublicBlogModel::where('active_status', 'A')->orderBy("blog_id", "DESC")->paginate(10);
 
         $data['tags'] = PublicBlogsTagsListModel::join('public_blog_tags as pt', 'public_blog_tag_list.blog_tags_id', '=', 'pt.blog_tags_id')
-                        ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
-                        ->groupBy('pt.blog_tags_id', 'pt.tags_name')
-                        ->orderByDesc('tag_count')
-                        ->limit(20)
-                        ->get();
+            ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
+            ->groupBy('pt.blog_tags_id', 'pt.tags_name')
+            ->orderByDesc('tag_count')
+            ->limit(20)
+            ->get();
 
         return view('public.blogs')->with($data);
     }
@@ -199,19 +201,19 @@ class Home extends Controller
 
     function public_blog_author($author): View
     {
-        $authername=str_replace('-', ' ', $author);
+        $authername = str_replace('-', ' ', $author);
         $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
         $data['blogs'] = PublicBlogModel::where('public_blog.active_status', 'A')
-        ->join('users AS b', 'public_blog.create_by', '=', 'b.id')
-        ->where('b.name', 'LIKE', "%$authername%")
-        ->orderBy('public_blog.blog_id', 'DESC')
-        ->paginate(10);
+            ->join('users AS b', 'public_blog.create_by', '=', 'b.id')
+            ->where('b.name', 'LIKE', "%$authername%")
+            ->orderBy('public_blog.blog_id', 'DESC')
+            ->paginate(10);
         $data['tags'] = PublicBlogsTagsListModel::join('public_blog_tags as pt', 'public_blog_tag_list.blog_tags_id', '=', 'pt.blog_tags_id')
-        ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
-        ->groupBy('pt.blog_tags_id', 'pt.tags_name')
-        ->orderByDesc('tag_count')
-        ->limit(20)
-        ->get();
+            ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
+            ->groupBy('pt.blog_tags_id', 'pt.tags_name')
+            ->orderByDesc('tag_count')
+            ->limit(20)
+            ->get();
         $data['authername'] = $authername;
         return view('public.blogs_author')->with($data);
     }
@@ -220,21 +222,21 @@ class Home extends Controller
 
     function public_blog_tags($tags): View
     {
-        $tagsname=str_replace('-', ' ', $tags);
+        $tagsname = str_replace('-', ' ', $tags);
         $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
         $data['blogs'] = PublicBlogModel::where('public_blog.active_status', 'A')
-        ->join('users AS b', 'public_blog.create_by', '=', 'b.id')
-        ->join('public_blog_tag_list AS c', 'public_blog.blog_id', '=', 'c.blog_id')
-        ->join('public_blog_tags AS d', 'c.blog_tags_id', '=', 'd.blog_tags_id')
-        ->where('d.tags_name', 'LIKE', "%$tagsname%")
-        ->orderBy('public_blog.blog_id', 'DESC')
-        ->paginate(10);
+            ->join('users AS b', 'public_blog.create_by', '=', 'b.id')
+            ->join('public_blog_tag_list AS c', 'public_blog.blog_id', '=', 'c.blog_id')
+            ->join('public_blog_tags AS d', 'c.blog_tags_id', '=', 'd.blog_tags_id')
+            ->where('d.tags_name', 'LIKE', "%$tagsname%")
+            ->orderBy('public_blog.blog_id', 'DESC')
+            ->paginate(10);
         $data['tags'] = PublicBlogsTagsListModel::join('public_blog_tags as pt', 'public_blog_tag_list.blog_tags_id', '=', 'pt.blog_tags_id')
-        ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
-        ->groupBy('pt.blog_tags_id', 'pt.tags_name')
-        ->orderByDesc('tag_count')
-        ->limit(20)
-        ->get();
+            ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
+            ->groupBy('pt.blog_tags_id', 'pt.tags_name')
+            ->orderByDesc('tag_count')
+            ->limit(20)
+            ->get();
         $data['authername'] = $tagsname;
         return view('public.blogs_tags')->with($data);
     }
@@ -246,21 +248,21 @@ class Home extends Controller
         $lastHyphenPosition = strrpos($blogs_id, "-");
         $blog_id = substr($blogs_id, $lastHyphenPosition + 1);
         $data['blogs'] =  PublicBlogModel::where('public_blog.blog_id', $blog_id)  // Assuming $blog_id is the ID you are querying for
-        ->where('public_blog.active_status', 'A')
-        ->join('users', 'public_blog.create_by', '=', 'users.id')
-        ->with('public_tags.tag')  // Eager load public_comments relationship
-        ->with('public_tags')  // Eager load public_tags relationship
-        ->first();
+            ->where('public_blog.active_status', 'A')
+            ->join('users', 'public_blog.create_by', '=', 'users.id')
+            ->with('public_tags.tag')  // Eager load public_comments relationship
+            ->with('public_tags')  // Eager load public_tags relationship
+            ->first();
         $data['blogs_count'] = PublicBlogsCommentsModel::where('content_id', $blog_id)->where('comment_by_page', 'B')->where('active_status', 'A')->count();
         $data['blog_id'] = $blog_id;
         $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
 
         $data['tags'] = PublicBlogsTagsListModel::join('public_blog_tags as pt', 'public_blog_tag_list.blog_tags_id', '=', 'pt.blog_tags_id')
-        ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
-        ->groupBy('pt.blog_tags_id', 'pt.tags_name')
-        ->orderByDesc('tag_count')
-        ->limit(20)
-        ->get();
+            ->select('pt.tags_name', DB::raw('COUNT(*) as tag_count'))
+            ->groupBy('pt.blog_tags_id', 'pt.tags_name')
+            ->orderByDesc('tag_count')
+            ->limit(20)
+            ->get();
 
         return view('public.single_blogs')->with($data);
     }
@@ -373,7 +375,8 @@ class Home extends Controller
         return view('public.contact');
     }
 
-    function public_contact_public(Request $r){
+    function public_contact_public(Request $r)
+    {
         $rules = [
             'name' => 'required',
             'email' => 'required|email',
@@ -423,15 +426,15 @@ class Home extends Controller
     }
     function sitemap(): Response
     {
-        $data['products']= PublicProductModel::where('active_status', 'A')
-                                        ->select('product_title','product_id','created_at','updated_at')
-                                        ->get();
-        $data['blogs']= PublicBlogModel::where('active_status', 'A')->select('blog_title','blog_id','created_at','updated_at')->get();
-        $data['case_study'] = PublicCaseStudyModel::where('active_status', 'A')->select('case_study_title','case_study_id','created_at','updated_at')->get();
-        $data['solutions'] = PublicSolutionModel::where('active_status', 'A')->select('solutions_title','solutions_id','created_at','updated_at')->get();
-        $data['careers'] = JobCareersModel::where("status","A")->select('title','careers_id','created_at','updated_at')->get();
+        $data['products'] = PublicProductModel::where('active_status', 'A')
+            ->select('product_title', 'product_id', 'created_at', 'updated_at')
+            ->get();
+        $data['blogs'] = PublicBlogModel::where('active_status', 'A')->select('blog_title', 'blog_id', 'created_at', 'updated_at')->get();
+        $data['case_study'] = PublicCaseStudyModel::where('active_status', 'A')->select('case_study_title', 'case_study_id', 'created_at', 'updated_at')->get();
+        $data['solutions'] = PublicSolutionModel::where('active_status', 'A')->select('solutions_title', 'solutions_id', 'created_at', 'updated_at')->get();
+        $data['careers'] = JobCareersModel::where("status", "A")->select('title', 'careers_id', 'created_at', 'updated_at')->get();
 
 
-        return response()->view('sitemap',$data)->header('Content-Type', 'text/xml');
+        return response()->view('sitemap', $data)->header('Content-Type', 'text/xml');
     }
 }
