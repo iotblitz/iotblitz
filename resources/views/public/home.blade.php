@@ -1,10 +1,10 @@
 @extends('public.common.layout')
 @section('page_style')
-<style>
-    h3.count-number{
-        color: #FFFF !important;
-    }
-</style>
+    <style>
+        h3.count-number {
+            color: #FFFF !important;
+        }
+    </style>
 @endsection
 
 
@@ -18,10 +18,11 @@
                             <div class="header-text">
                                 <span class="category">Automation</span>
                                 <h2>Are You Ready for Industry 4.0?</h2>
-                                <p>Connect your devices and be at the forefront of the Industry 4.0 revolution with the effortless power of IoT. </p>
+                                <p>Connect your devices and be at the forefront of the Industry 4.0 revolution with the
+                                    effortless power of IoT. </p>
                                 <div class="buttons">
                                     <div class="main-button">
-                                        <a href="{{route('contact')}}">Request Demo</a>
+                                        <a href="{{ route('contact') }}">Request Demo</a>
                                     </div>
                                     <div class="icon-button">
                                         <a href="#"><i class="fa fa-play"></i> What's Scholar?</a>
@@ -33,10 +34,11 @@
                             <div class="header-text">
                                 <span class="category">Automation</span>
                                 <h2>Real-Time Alerts Using Industrial IoT Platform</h2>
-                                <p>Stay ahead of the curve with real-time alerts using our IoT Platform powered by Cloud and Industrial IoT.</p>
+                                <p>Stay ahead of the curve with real-time alerts using our IoT Platform powered by Cloud and
+                                    Industrial IoT.</p>
                                 <div class="buttons">
                                     <div class="main-button">
-                                        <a href="{{route('contact')}}">Request Demo</a>
+                                        <a href="{{ route('contact') }}">Request Demo</a>
                                     </div>
                                     <div class="icon-button">
                                         <a href="#"><i class="fa fa-play"></i> What's the best result?</a>
@@ -48,10 +50,11 @@
                             <div class="header-text">
                                 <span class="category">Smart Technology Solutions</span>
                                 <h2>Real-Time Monitoring and Optimization</h2>
-                                <p>Track your energy, fuel, water, solar, and voltage consumption in real-time and optimize it according to your needs.</p>
+                                <p>Track your energy, fuel, water, solar, and voltage consumption in real-time and optimize
+                                    it according to your needs.</p>
                                 <div class="buttons">
                                     <div class="main-button">
-                                        <a href="{{route('contact')}}">Request Demo</a>
+                                        <a href="{{ route('contact') }}">Request Demo</a>
                                     </div>
                                     <div class="icon-button">
                                         <a href="#"><i class="fa fa-play"></i> What's Online Course?</a>
@@ -76,9 +79,10 @@
                         </div>
                         <div class="main-content">
                             <h4>Our IoT Platforms</h4>
-                            <p>Leverage our remote IoT platforms for energy, fuel, water, and UPS monitoring to unlock your full potential and save power costs.</p>
+                            <p>Leverage our remote IoT platforms for energy, fuel, water, and UPS monitoring to unlock your
+                                full potential and save power costs.</p>
                             <div class="main-button">
-                                <a href="{{route('product')}}">Explore Now</a>
+                                <a href="{{ route('product') }}">Explore Now</a>
                             </div>
                         </div>
                     </div>
@@ -91,9 +95,10 @@
                         </div>
                         <div class="main-content">
                             <h4>Our Services</h4>
-                            <p>Enter the world of Industry 4.0 with us and transform your business with the power of IoT and Seamless end-to-end services.</p>
+                            <p>Enter the world of Industry 4.0 with us and transform your business with the power of IoT and
+                                Seamless end-to-end services.</p>
                             <div class="main-button">
-                                <a href="{{route('solutions')}}">Explore Now</a>
+                                <a href="{{ route('solutions') }}">Explore Now</a>
                             </div>
                         </div>
                     </div>
@@ -108,7 +113,8 @@
                         </div>
                         <div class="main-content">
                             <h4>Our IoT Hardware</h4>
-                            <p>We provide custom IoT hardware that fits your needs. From Conceptualization to seamless integration, we do it all.</p>
+                            <p>We provide custom IoT hardware that fits your needs. From Conceptualization to seamless
+                                integration, we do it all.</p>
                             <div class="main-button">
                                 <a href="https://techavo.in/" target="_blank">Explore Now</a>
                             </div>
@@ -360,16 +366,20 @@
 
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >365</h3>
-                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >DAYS OF SUPPORT</h3>
+                                    <h3 class="count-title count-number"
+                                        style="content: none !important; margin-left: 0 !important;">365</h3>
+                                    <h3 class="count-title count-number"
+                                        style="content: none !important; margin-left: 0 !important;">DAYS OF SUPPORT</h3>
                                     {{-- <p class="count-text ">Days Of Support</p> --}}
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >2</h3>
-                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >YEARS OF WARRANTY
+                                    <h3 class="count-title count-number"
+                                        style="content: none !important; margin-left: 0 !important;">2</h3>
+                                    <h3 class="count-title count-number"
+                                        style="content: none !important; margin-left: 0 !important;">YEARS OF WARRANTY
                                     </h3>
                                     {{-- <p class="count-text ">Days Of Support</p> --}}
                                 </div>
@@ -378,15 +388,19 @@
 
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >AFFORDABLE</h3>
-                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >PRICING</h3>
+                                    <h3 class="count-title count-number"
+                                        style="content: none !important; margin-left: 0 !important;">AFFORDABLE</h3>
+                                    <h3 class="count-title count-number"
+                                        style="content: none !important; margin-left: 0 !important;">PRICING</h3>
                                     {{-- <p class="count-text ">Days Of Support</p> --}}
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-6">
                                 <div class="counter end">
-                                    <h3 class="count-title count-number" style="content: none !important; margin-left: 0 !important;" >CUSTOM SOFTWARE AND HARDWARE</h3>
+                                    <h3 class="count-title count-number"
+                                        style="content: none !important; margin-left: 0 !important;">CUSTOM SOFTWARE AND
+                                        HARDWARE</h3>
                                     {{-- <p class="count-text ">Days Of Support</p> --}}
                                 </div>
                             </div>
@@ -628,7 +642,9 @@
                     <div class="section-heading">
                         <h6>Visit IoTBlitz</h6>
                         <h3 class="mt-2">Find Us at the Forefront of IoT Innovation</h3>
-                        <p>Located in the heart of innovation, IoTBlitz is situated strategically to serve global clients seeking cutting-edge IoT solutions. Join us at our headquarters to explore the future of technology-driven efficiency and growth.</p>
+                        <p>Located in the heart of innovation, IoTBlitz is situated strategically to serve global clients
+                            seeking cutting-edge IoT solutions. Join us at our headquarters to explore the future of
+                            technology-driven efficiency and growth.</p>
                         {{-- <div class="special-offer">
                             <span class="offer">off<br><em>50%</em></span>
                             <h6>Valide: <em>24 April 2036</em></h6>
@@ -642,8 +658,12 @@
                         <div id="contact-form"> --}}
 
 
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.4300796987472!2d88.37257297436688!3d22.450466979578902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0271b97eb603bd%3A0x3f972575249e099!2sGreen%20Valley%20Residency%2C%20486%2C%20Boral%20Main%20Road%2C%20near%20To...wheelz%2C%20Banerjee%20Para%2C%20Kamdahari%2C%20West%20Bengal%20700084!5e0!3m2!1sen!2sin!4v1719463781784!5m2!1sen!2sin" width="100%" height="450" style="border:0;border-radius: 20px!important;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
-                        {{-- </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.4300796987472!2d88.37257297436688!3d22.450466979578902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0271b97eb603bd%3A0x3f972575249e099!2sGreen%20Valley%20Residency%2C%20486%2C%20Boral%20Main%20Road%2C%20near%20To...wheelz%2C%20Banerjee%20Para%2C%20Kamdahari%2C%20West%20Bengal%20700084!5e0!3m2!1sen!2sin!4v1719463781784!5m2!1sen!2sin"
+                        width="100%" height="450" style="border:0;border-radius: 20px!important;"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    {{-- </div>
                     </div> --}}
                 </div>
             </div>
