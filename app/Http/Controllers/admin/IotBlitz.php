@@ -413,7 +413,7 @@ class IotBlitz extends Controller
                 "description_editor" => 'required',
                 "text_description" => 'required',
                 "title" => 'required',
-                'productSolutionImage' => 'required|mimes:jpeg,png,jpg,gif|max:2048',
+                'productSolutionImage' => 'required|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
                 'brochure_file' => 'required|mimes:pdf|max:10000',
             ];
 
