@@ -40,7 +40,7 @@ class IotBlitz extends Controller
                 'keyword' => 'required',
                 'description_editor' => 'required',
                 'text_description' => 'required',
-                'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
 
                 'fimagealttxt' => 'required',
                 'imagedescriotion' => 'required|max:255',
@@ -132,7 +132,7 @@ class IotBlitz extends Controller
             }
             if ($r->hasFile('blogimage')) {
                 $rules = [
-                    'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                    'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
                 ];
 
                 $valaditor = Validator::make($r->all(), $rules);
@@ -197,7 +197,7 @@ class IotBlitz extends Controller
                 'keyword' => 'required',
                 'description_editor' => 'required',
                 'text_description' => 'required',
-                'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             ];
 
             $valaditor = Validator::make($r->all(), $rules);
@@ -243,7 +243,7 @@ class IotBlitz extends Controller
             }
             if ($r->hasFile('blogimage')) {
                 $rules = [
-                    'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                    'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
                 ];
 
                 $valaditor = Validator::make($r->all(), $rules);
@@ -355,7 +355,7 @@ class IotBlitz extends Controller
 
             if ($r->hasFile('productImage')) {
                 $rules = [
-                    'productImage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                    'productImage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
                 ];
 
                 $valaditor = Validator::make($r->all(), $rules);
@@ -493,7 +493,7 @@ class IotBlitz extends Controller
 
             if ($r->hasFile('productSolutionImage')) {
                 $rules = [
-                    'productSolutionImage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                    'productSolutionImage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
                 ];
 
                 $valaditor = Validator::make($r->all(), $rules);
