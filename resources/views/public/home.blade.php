@@ -16,7 +16,7 @@
                     <div class="owl-carousel owl-banner">
                         <div class="item item-1">
                             <div class="header-text">
-                                <span class="category">Automation</span>
+                                {{-- <span class="category">Automation</span> --}}
                                 <h2>Are You Ready for Industry 4.0?</h2>
                                 <p>Connect your devices and be at the forefront of the Industry 4.0 revolution with the
                                     effortless power of IoT. </p>
@@ -24,15 +24,15 @@
                                     <div class="main-button">
                                         <a href="{{ route('contact') }}">Request Demo</a>
                                     </div>
-                                    <div class="icon-button">
+                                    {{-- <div class="icon-button">
                                         <a href="#"><i class="fa fa-play"></i> What's Scholar?</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="item item-2">
                             <div class="header-text">
-                                <span class="category">Automation</span>
+                                {{-- <span class="category">Automation</span> --}}
                                 <h2>Real-Time Alerts Using Industrial IoT Platform</h2>
                                 <p>Stay ahead of the curve with real-time alerts using our IoT Platform powered by Cloud and
                                     Industrial IoT.</p>
@@ -40,15 +40,15 @@
                                     <div class="main-button">
                                         <a href="{{ route('contact') }}">Request Demo</a>
                                     </div>
-                                    <div class="icon-button">
+                                    {{-- <div class="icon-button">
                                         <a href="#"><i class="fa fa-play"></i> What's the best result?</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="item item-3">
                             <div class="header-text">
-                                <span class="category">Smart Technology Solutions</span>
+                                {{-- <span class="category">Smart Technology Solutions</span> --}}
                                 <h2>Real-Time Monitoring and Optimization</h2>
                                 <p>Track your energy, fuel, water, solar, and voltage consumption in real-time and optimize
                                     it according to your needs.</p>
@@ -56,9 +56,9 @@
                                     <div class="main-button">
                                         <a href="{{ route('contact') }}">Request Demo</a>
                                     </div>
-                                    <div class="icon-button">
+                                    {{-- <div class="icon-button">
                                         <a href="#"><i class="fa fa-play"></i> What's Online Course?</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
