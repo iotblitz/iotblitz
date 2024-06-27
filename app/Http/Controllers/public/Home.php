@@ -363,7 +363,7 @@ class Home extends Controller
             ->first();
         $data['solutions_id'] = $solutions_id;
 
-        $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
+        $data['solution'] = PublicSolutionModel::where('active_status', 'A')->whereNot("solutions_id",$solutions_id)->orderBy("solutions_id", "DESC")->paginate(5);
 
 
         return view('public.single_solution')->with($data);

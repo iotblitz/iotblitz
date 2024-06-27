@@ -322,11 +322,8 @@
             /* Add horizontal scroll if needed */
         }
     </style>
-
 @endsection
 @section('page_content')
-
-
     <div class="main-banner" id="top">
         <div class="container">
             <div class="row align-items-center">
@@ -342,9 +339,11 @@
                         <ul class="list-inline">
                             <li class="list-inline-item"><a href="{{ route('home') }}" class="text-white-50">Home</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="{{ route('solutions') }}" class="text-white-50">Solutions</a></li>
+                            <li class="list-inline-item"><a href="{{ route('solutions') }}"
+                                    class="text-white-50">Solutions</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="#" class="text-white">{{ ucwords($solutions->solutions_title) }}</a></li>
+                            <li class="list-inline-item"><a href="#"
+                                    class="text-white">{{ ucwords($solutions->solutions_title) }}</a></li>
                         </ul>
 
                     </div>
@@ -376,32 +375,33 @@
             </div>
             <div class="col-md-3 mt-5">
                 <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
-                    <h5>Recent Posts</h5>
-                    @foreach ($latest_posts as $ltdata)
+                    <h5>Other Services</h5>
+                    @foreach ($solution as $solutions_key)
                         <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
-                            <a href="#"><img class="mr-4"
-                                    src="{{ asset('public/blog_images') }}/{{ $ltdata->blog_image }}" alt=""
-                                    style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important; border-radius: 5px"></a>
+                            <a
+                                href="{{ route('single_solutions', [str_replace(' ', '-', $solutions_key->solutions_title) . '-' . $solutions_key->solutions_id]) }}">
+                                <img class="mr-4" src="{{ asset('public/solution_image') }}/{{$solutions_key->solutions_image}}"
+                                    alt=""
+                                    style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important; border-radius: 5px">
+                            </a>
                             <div class="media-body" style=" flex: 1;">
-                                <h6 class="my-1"><a href="#" class="text-body">{{ $ltdata->blog_title }}</a>
+                                <h6 class="my-1">
+                                    <a href="{{ route('single_solutions', [str_replace(' ', '-', $solutions_key->solutions_title) . '-' . $solutions_key->solutions_id]) }}"
+                                        class="text-body">{{ $solutions_key->solutions_title }}</a>
                                 </h6>
-                                <p class="my-1"><a href="#" class="text-body text-justify">{{ substr($ltdata->text_description, 0, 37) }}...</a>
+                                <p class="my-1">
+                                    <a href="{{ route('single_solutions', [str_replace(' ', '-', $solutions_key->solutions_title) . '-' . $solutions_key->solutions_id]) }}"
+                                        class="text-body text-justify">{{ substr($solutions_key->text_description, 0, 37) }}...</a>
                                 </p>
-                                <span
-                                    class="text-sm text-muted">{{ date('j F, Y', strtotime($ltdata->created_at)) }}</span>
                             </div>
                         </div>
                     @endforeach
-                        <a href="{{ route('blogs') }}" class="btn btn-primary mt-3" style="background-color: #7a6ad8 !important">View All</a>
+                    <a href="{{ route('blogs') }}" class="btn btn-primary mt-3"
+                        style="background-color: #7a6ad8 !important">View All</a>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
 @section('page_script')
 @endsection
-
-
-
-
