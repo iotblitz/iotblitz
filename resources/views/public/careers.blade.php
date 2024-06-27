@@ -169,13 +169,13 @@
                                 {{-- <button class="btn btn-light"><i class="fas fa-save"></i></button> --}}
                                 <button class="btn btn-light shareButton" id="shareButton"
                                     job_title="{{ $careers_data->title }}"
-                                    joburl="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}"
+                                    joburl="{{ route('single_careers', [preg_replace('/[^a-z0-9]+/', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}"
                                     min_qua=" {{ $careers_data->minimum_qualifications }}"><i
                                         class="fas fa-share"></i></button>
 
                                 <button class="btn btn-light copyButton" id="copyButton"
                                     job_title="{{ $careers_data->title }}"
-                                    joburl="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}"
+                                    joburl="{{ route('single_careers', [preg_replace('/[^a-z0-9]+/', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}"
                                     min_qua="{{ $careers_data->minimum_qualifications }}">
                                     <i class="fas fa-copy"></i>
                                 </button>
@@ -187,7 +187,7 @@
                         <h5>Minimum qualifications</h5>
                         {!! $careers_data->minimum_qualifications !!}
                         <br>
-                        <a href="{{ route('single_careers', [str_replace(' ', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}"
+                        <a href="{{ route('single_careers', [preg_replace('/[^a-z0-9]+/', '-', $careers_data->title) . '-' . $careers_data->careers_id]) }}"
                             class="btn btn-primary mt-2">Learn more</a>
                     </div>
                 </div>

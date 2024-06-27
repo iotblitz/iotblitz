@@ -81,7 +81,7 @@
                 @foreach ($blogs as $blogdata)
                     <div class="col-lg-12 col-md-6">
                         <div class="item"
-                            onclick="location.href = '{{ route('single_blogs', [str_replace(' ', '-', $blogdata->blog_title) . '-' . $blogdata->blog_id]) }}';">
+                            onclick="location.href = '{{ route('single_blogs', [preg_replace('/[^a-z0-9]+/', '-', $blogdata->blog_title) . '-' . $blogdata->blog_id]) }}';">
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="image">
@@ -97,7 +97,7 @@
                                     <span>Date:</span>
                                     <h6>{{ date('j F, Y', strtotime($blogdata->created_at)) }}</h6>
                                 </div> --}}
-                                <a href="{{ route('single_blogs', [str_replace(' ', '-', $blogdata->blog_title) . '-' . $blogdata->blog_id]) }}"><i
+                                <a href="{{ route('single_blogs', [preg_replace('/[^a-z0-9]+/', '-', $blogdata->blog_title) . '-' . $blogdata->blog_id]) }}"><i
                                         class="fa fa-angle-right"></i></a>
 
                             </div>
@@ -140,7 +140,7 @@
                             @foreach ($tags as $tagdata)
 
 
-                            <a href="{{route('public_blog_tags', ['tags' => str_replace(' ', '-',$tagdata->tags_name)])}}" class="text-decoration-none mb-2">
+                            <a href="{{route('public_blog_tags', ['tags' => preg_replace('/[^a-z0-9]+/', '-',$tagdata->tags_name)])}}" class="text-decoration-none mb-2">
                                 <span class="badge">{{$tagdata->tags_name}}</span>
                             </a>
                             @endforeach

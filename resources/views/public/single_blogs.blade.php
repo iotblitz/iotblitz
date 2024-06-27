@@ -383,7 +383,7 @@
                                     alt="{{$blogs->featured_image_alt_text}}" title="{{$blogs->image_title}}" class="rounded-circle me-3" style="width: 50px">
                                 <div class="text-center">
                                     <div>
-                                        <h5 class="mb-0"> <a href="{{route('public_blog_author', ['author' => str_replace(' ', '-',$blogs->name)])}}">{{ ucfirst($blogs->name) }}</a></h5>
+                                        <h5 class="mb-0"> <a href="{{route('public_blog_author', ['author' => preg_replace('/[^a-z0-9]+/', '-',$blogs->name)])}}">{{ ucfirst($blogs->name) }}</a></h5>
                                         <small class="text-muted">{{ date('j F, Y', strtotime($blogs->created_at)) }}</small>
                                     </div>
                                 </div>
@@ -560,7 +560,7 @@
                         @foreach ($tags as $tagdata)
 
 
-                            <a href="{{route('public_blog_tags', ['tags' => str_replace(' ', '-',$tagdata->tags_name)])}}" class="text-decoration-none mb-2">
+                            <a href="{{route('public_blog_tags', ['tags' => preg_replace('/[^a-z0-9]+/', '-',$tagdata->tags_name)])}}" class="text-decoration-none mb-2">
                                 <span class="badge">{{$tagdata->tags_name}}</span>
                             </a>
                             @endforeach

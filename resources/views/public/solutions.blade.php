@@ -63,10 +63,10 @@
 
 
 
-                <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development" onclick="location.href = '{{ route('single_solutions', [str_replace(' ', '-', $solutions_key->solutions_title) . '-' . $solutions_key->solutions_id]) }}';">
+                <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development" onclick="location.href = '{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', $solutions_key->solutions_title) . '-' . $solutions_key->solutions_id]) }}';">
                     <div class="events_item">
                         <div class="thumb">
-                            <a href="{{ route('single_solutions', [str_replace(' ', '-', $solutions_key->solutions_title) . '-' . $solutions_key->solutions_id]) }}"><img src="{{ asset('public/solution_image') }}/{{$solutions_key->solutions_image}}"
+                            <a href="{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', $solutions_key->solutions_title) . '-' . $solutions_key->solutions_id]) }}"><img src="{{ asset('public/solution_image') }}/{{$solutions_key->solutions_image}}"
                                     alt=""></a>
                             {{-- <span class="category">{{$solutions_key->category}}</span> --}}
                             {{-- <span class="price">
@@ -190,7 +190,7 @@
         </div> --}}
                 {{-- @foreach ($products as $productsdata)
                 <div class="col-lg-12 col-md-6">
-                    <div class="item" onclick="location.href = '{{ route('single_blogs', [str_replace(' ', '-', $blogdata->blog_title).'-'.$blogdata->blog_id])}}';">
+                    <div class="item" onclick="location.href = '{{ route('single_blogs', [preg_replace('/[^a-z0-9]+/', '-', $blogdata->blog_title).'-'.$blogdata->blog_id])}}';">
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="image">
@@ -205,7 +205,7 @@
                             <span>Date:</span>
                             <h6>{{date('j F, Y', strtotime($blogdata->created_at))}}</h6>
                             </div>
-                            <a href="{{ route('single_blogs', [str_replace(' ', '-', $blogdata->blog_title).'-'.$blogdata->blog_id])}}"><i class="fa fa-angle-right"></i></a>
+                            <a href="{{ route('single_blogs', [preg_replace('/[^a-z0-9]+/', '-', $blogdata->blog_title).'-'.$blogdata->blog_id])}}"><i class="fa fa-angle-right"></i></a>
 
                         </div>
                     </div>
