@@ -132,7 +132,7 @@
                             <li class="list-inline-item"><a href="{{ route('careers') }}" class="text-white-50">careers</a>
                             </li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="{{ route('single_careers', [preg_replace('/[^a-z0-9]+/', '-', $product->title) . '-' . $product->careers_id]) }}" class="text-white-50">{{ ucwords($product->title) }}</a></li>
+                            <li class="list-inline-item"><a href="{{ route('single_careers', [preg_replace('/[^a-z0-9]+/', '-', strtolower($product->title)) . '-' . $product->careers_id]) }}" class="text-white-50">{{ ucwords($product->title) }}</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
                             <li class="list-inline-item"><a href="#" class="text-white">Apply</a></li>
                         </ul>
@@ -300,7 +300,7 @@
                     <h5>Active Jobs</h5>
                     @foreach ($latest_posts_carcers as $ltdata)
                         <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;"
-                            onclick="location.href = '{{ route('single_careers', [preg_replace('/[^a-z0-9]+/', '-', $ltdata->title) . '-' . $ltdata->careers_id]) }}';">
+                            onclick="location.href = '{{ route('single_careers', [preg_replace('/[^a-z0-9]+/', '-', strtolower($ltdata->title)) . '-' . $ltdata->careers_id]) }}';">
                             {{-- <a href="#">
                                 <img class="mr-4" src="{{ asset('public/blog_images') }}/{{ $ltdata->blog_image }}"
                                     alt=""

@@ -53,7 +53,7 @@
 
     @foreach ($products as $product_key)
         <url>
-            <loc>https://iotblitz.com/products/{{preg_replace('/[^a-z0-9]+/', '-', $product_key->product_title) . '-' . $product_key->product_id}}</loc>
+            <loc>https://iotblitz.com/products/{{preg_replace('/[^a-z0-9]+/', '-', strtolower($product_key->product_title)) . '-' . $product_key->product_id}}</loc>
             <lastmod>{{$product_key->updated_at}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.64</priority>
@@ -62,7 +62,7 @@
 
     @foreach ($blogs as $blogdata)
         <url>
-            <loc>https://iotblitz.com/blogs/{{preg_replace('/[^a-z0-9]+/', '-', $blogdata->blog_title) . '-' . $blogdata->blog_id}}</loc>
+            <loc>https://iotblitz.com/blogs/{{preg_replace('/[^a-z0-9]+/', '-', strtolower($blogdata->blog_title)) . '-' . $blogdata->blog_id}}</loc>
             <lastmod>{{$blogdata->updated_at}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.64</priority>
@@ -72,7 +72,7 @@
 
     @foreach ($case_study as $case_study_data)
         <url>
-            <loc>https://iotblitz.com/blogs/{{preg_replace('/[^a-z0-9]+/', '-', $case_study_data->case_study_title) . '-' . $case_study_data->case_study_id}}</loc>
+            <loc>https://iotblitz.com/blogs/{{preg_replace('/[^a-z0-9]+/', '-', strtolower($case_study_data->case_study_title)) . '-' . $case_study_data->case_study_id}}</loc>
             <lastmod>{{$case_study_data->updated_at}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.64</priority>
@@ -80,7 +80,7 @@
     @endforeach
     @foreach ($solutions as $solutions_key)
         <url>
-            <loc>https://iotblitz.com/services/{{preg_replace('/[^a-z0-9]+/', '-', $solutions_key->solutions_title) . '-' . $solutions_key->solutions_id}}</loc>
+            <loc>https://iotblitz.com/services/{{preg_replace('/[^a-z0-9]+/', '-', strtolower($solutions_key->solutions_title)) . '-' . $solutions_key->solutions_id}}</loc>
             <lastmod>{{$solutions_key->updated_at}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.64</priority>
@@ -91,7 +91,7 @@
 
     @foreach ($careers as $careers_data)
         <url>
-            <loc>https://iotblitz.com/careers/{{preg_replace('/[^a-z0-9]+/', '-', $careers_data->title) . '-' . $careers_data->careers_id}}</loc>
+            <loc>https://iotblitz.com/careers/{{preg_replace('/[^a-z0-9]+/', '-', strtolower($careers_data->title)) . '-' . $careers_data->careers_id}}</loc>
             <lastmod>{{$careers_data->updated_at}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.51</priority>
@@ -102,7 +102,7 @@
 
     @foreach ($careers as $careers_data)
         <url>
-            <loc>https://iotblitz.com/apply-job/{{preg_replace('/[^a-z0-9]+/', '-', $careers_data->title) . '-' . $careers_data->careers_id}}</loc>
+            <loc>https://iotblitz.com/apply-job/{{preg_replace('/[^a-z0-9]+/', '-', strtolower($careers_data->title)) . '-' . $careers_data->careers_id}}</loc>
             <lastmod>{{$careers_data->updated_at}}</lastmod>
             <changefreq>never</changefreq>
             <priority>0.51</priority>

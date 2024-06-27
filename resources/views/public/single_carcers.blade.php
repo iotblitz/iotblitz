@@ -162,7 +162,7 @@
 
                         <div class="d-flex justify-content-between">
                             <div>
-                                <a href="{{ route('apply_jobs', [preg_replace('/[^a-z0-9]+/', '-',$product->title) . '-' . $product->careers_id]) }}"  class="btn btn-primary btn-lg mt-2">Apply</a>
+                                <a href="{{ route('apply_jobs', [preg_replace('/[^a-z0-9]+/', '-',strtolower($product->title)) . '-' . $product->careers_id]) }}"  class="btn btn-primary btn-lg mt-2">Apply</a>
                                 {{-- <button type="button" class="btn btn-primary btn-lg mt-2" data-bs-toggle="modal"
                                     data-bs-target="#applyModal">
                                     Apply
@@ -210,7 +210,7 @@
                     <h5>Active Jobs</h5>
                     @foreach ($latest_posts_carcers as $ltdata)
                         <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;"
-                            onclick="location.href = '{{ route('single_careers', [preg_replace('/[^a-z0-9]+/', '-', $ltdata->title) . '-' . $ltdata->careers_id]) }}';">
+                            onclick="location.href = '{{ route('single_careers', [preg_replace('/[^a-z0-9]+/', '-', strtolower($ltdata->title)) . '-' . $ltdata->careers_id]) }}';">
                             {{-- <a href="#">
                                 <img class="mr-4" src="{{ asset('public/blog_images') }}/{{ $ltdata->blog_image }}"
                                     alt=""

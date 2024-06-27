@@ -55,11 +55,11 @@
                     <div class="single-blog wow fadeInUp">
                         <div class="single-blog-image" style="background:url('{{ asset('public/blog_images') }}/{{$blogdata->blog_image}}')"></div>
                         <div class="single-blog-text">
-                            <a href="{{ route('single_blogs', [preg_replace('/[^a-z0-9]+/', '-', $blogdata->blog_title).'-'.$blogdata->blog_id])}}">{{substr($blogdata->text_description, 0, 100)}}....</a>
+                            <a href="{{ route('single_blogs', [preg_replace('/[^a-z0-9]+/', '-', strtolower($blogdata->blog_title)).'-'.$blogdata->blog_id])}}">{{substr($blogdata->text_description, 0, 100)}}....</a>
                             <div class="space-10"></div>
                             <small> <i class="fa fa-clock-o"></i> January 12th, 2018</small>
                             <!-- Add the blog title here -->
-                            <h4><a href="{{ route('single_blogs', [preg_replace('/[^a-z0-9]+/', '-', $blogdata->blog_title).'-'.$blogdata->blog_id])}}">{{$blogdata->blog_title}}</a></h4>
+                            <h4><a href="{{ route('single_blogs', [preg_replace('/[^a-z0-9]+/', '-', strtolower($blogdata->blog_title)).'-'.$blogdata->blog_id])}}">{{$blogdata->blog_title}}</a></h4>
                         </div>
                     </div>
                 </div>
