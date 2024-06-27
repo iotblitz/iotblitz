@@ -19,13 +19,20 @@
             align-items: center;
             height: 100%;
         }
-    </style>
 
+        h2 {
+            background-color: #7a6ad8;
+            color: #fff;
+            font-size: 25px;
+            text-transform: uppercase;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+    </style>
 @endsection
 @section('page_content')
-
-
-
     <div class="main-banner" id="top">
         <div class="container">
             <div class="row align-items-center">
@@ -33,8 +40,10 @@
                     <div class="header-text mt-5">
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
-                        <h2 class="text-white">OUR PRODUCTS</h2>
-                        <p class="text-white">IoTBlitz specializes in IoT software design and development, IIoT Platforms, and end-to-end IoT Solutions. Our custom-designed IoT Platforms and Remote Monitoring Systems aim to enhance industry efficiency and performance.</p>
+                        <h1 class="text-white">OUR PRODUCTS</h1>
+                        <p class="text-white">IoTBlitz specializes in IoT software design and development, IIoT Platforms,
+                            and end-to-end IoT Solutions. Our custom-designed IoT Platforms and Remote Monitoring Systems
+                            aim to enhance industry efficiency and performance.</p>
 
                     </div>
                 </div>
@@ -71,7 +80,7 @@
                 </li>
             </ul> --}}
             @foreach ($products as $cattagorydata)
-                <h2 class="mb-5">{{ $cattagorydata->category }}</h2>
+                <h2 class="mb-5 category">{{ $cattagorydata->category }}</h2>
                 <div class="row event_box">
 
 
