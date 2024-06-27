@@ -78,7 +78,7 @@
 
                     <div class="search-input" style="margin-left: 2%">
                         <div id="search" action="#">
-                            <input type="button" value="Contact Now" id='searchText' />
+                            <input type="button" value="IoT Hardware" id='searchText' />
                             {{-- <i class="fa fa-search"></i> --}}
                             <i class="fa-regular fa-paper-plane"></i>
                         </div>
