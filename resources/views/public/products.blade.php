@@ -93,7 +93,7 @@
                                         href="{{ route('single_product', [str_replace(' ', '-', $product_key->product_title) . '-' . $product_key->product_id]) }}"><img
                                             src="{{ asset('public/product_image') }}/{{ $product_key->product_image }}"
                                             alt=""></a>
-                                    <span class="category"></span>
+                                    {{-- <span class="category"></span> --}}
                                     {{-- <span class="price">
 
                                 <h6><em>$</em>340  <i class="fa-solid fa-globe"></i> </h6>
