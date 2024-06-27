@@ -45,7 +45,7 @@
 <body>
     <div class="email-container">
         <div class="email-header">
-            <img src="{{ asset('public/public_page') }}/assets/images/logo.png" alt="IoTBlitz LLP">
+            <img src="{{ asset('public/public_page') }}/assets/images/logo.webp" alt="IoTBlitz LLP">
         </div>
         <div class="email-content">
             <h1>Welcome, {{ $data['name'] }}!</h1>

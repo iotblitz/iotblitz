@@ -456,7 +456,7 @@
                                             <div class="row no-gutters">
                                                 <div
                                                     class="col-md-2 d-flex align-items-center justify-content-center   d-none d-md-block">
-                                                    <img src="{{ asset('public/public_page') }}/assets/images/user.png"
+                                                    <img src="{{ asset('public/public_page') }}/assets/images/user.webp"
                                                         class="card-img" alt="Profile Image" width="10px">
                                                 </div>
                                                 <div class="col-md-10">

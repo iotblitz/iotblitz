@@ -379,7 +379,7 @@
                     <div class="blog-content mb-2">
                         <div class="blog-content mb-2">
                             <div class="d-flex align-items-center mb-3">
-                                <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.png  @endif"
+                                <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.webp  @endif"
                                     alt="{{$blogs->featured_image_alt_text}}" title="{{$blogs->image_title}}" class="rounded-circle me-3" style="width: 50px">
                                 <div class="text-center">
                                     <div>
@@ -402,7 +402,7 @@
                                 <div class="card-body">
                                     {{-- <h5 class="card-title text-white">About the Author</h5> --}}
                                     <div class="d-flex align-items-center mb-3">
-                                        <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.png  @endif" alt="Author Image" class="rounded-circle me-3" style="width: 50%">
+                                        <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.webp  @endif" alt="Author Image" class="rounded-circle me-3" style="width: 50%">
                                         <div>
                                             <h5 class="card-title text-white" >{{ ucfirst($blogs->name) }}</h5>
                                             <p class="text-muted">{{
@@ -483,7 +483,7 @@
                                                 <div class="row no-gutters">
                                                     <div
                                                         class="col-md-2 d-flex align-items-center justify-content-center   d-none d-md-block">
-                                                        <img src="{{ asset('public/public_page') }}/assets/images/user.png"
+                                                        <img src="{{ asset('public/public_page') }}/assets/images/user.webp"
                                                             class="card-img" alt="Profile Image" width="10px">
                                                     </div>
                                                     <div class="col-md-10">

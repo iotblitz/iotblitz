@@ -8,7 +8,7 @@
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
                         {{-- <h1>Scholar</h1> --}}
-                        <img src="{{ asset('public/public_page') }}/assets/images/logo.png" class="logo" alt="" width="30%" style="position: absolute;">
+                        <img src="{{ asset('public/public_page') }}/assets/images/logo.webp" class="logo" alt="" width="30%" style="position: absolute;">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-4 col-lg-2">
                     <div class="logo-area">
-                        <a href="#"><img src="{{ asset('public/public_page') }}/lottiefiles/logo.png" alt="" width="50%" height="100%"></a>
+                        <a href="#"><img src="{{ asset('public/public_page') }}/lottiefiles/logo.webp" alt="" width="50%" height="100%"></a>
                     </div>
                 </div>
                 <div class="col-4 col-lg-8 d-none d-lg-block">

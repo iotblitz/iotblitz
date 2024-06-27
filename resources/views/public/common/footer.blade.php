@@ -5,7 +5,7 @@
                 <div class="footer-link">
                     <!-- Logo -->
                     <a href="index.html" style="display: inline-block;">
-                        <img src="{{ asset('public/public_page') }}/assets/images/logo.png" alt="logo"
+                        <img src="{{ asset('public/public_page') }}/assets/images/logo.webp" alt="logo"
                             style="max-width: 100px; height: auto;">
                     </a>
                     <!-- Content -->

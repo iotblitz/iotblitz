@@ -6,15 +6,15 @@
                 <nav class="main-nav">
                     <a href="{{route('home')}}" class="logo" style="margin-right: 1% !important">
                         {{-- <h1>Scholar</h1> --}}
-                         <img src="{{ asset('public/public_page') }}/assets/images/logo.png" alt=""
+                         <img src="{{ asset('public/public_page') }}/assets/images/logo.webp" alt=""
                            style="position: absolute; width: 6% !important; height: auto;" onclick="redirectToHome()">
-                        {{-- <img src="{{ asset('public/public_page') }}/assets/images/logo.png" class="logo" alt="iotblitz"
+                        {{-- <img src="{{ asset('public/public_page') }}/assets/images/logo.webp" class="logo" alt="iotblitz"
                             style="width: 10% !important; margin: 5px !important; "> --}}
                     </a>
 
 
                     {{-- <a href="index.html" class="logo">
-                            <img src="{{ asset('public/public_page') }}/assets/images/logo.png" class="logo" alt=""
+                            <img src="{{ asset('public/public_page') }}/assets/images/logo.webp" class="logo" alt=""
                                 width="30%" style="position: absolute;">
                         </a> --}}
 
