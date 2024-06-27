@@ -344,8 +344,7 @@
                             <li class="list-inline-item"><span class="text-white">/</span></li>
                             <li class="list-inline-item"><a href="{{ route('solutions') }}" class="text-white-50">Solutions</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="#"
-                                    class="text-white">{{ ucwords($solutions->solutions_title) }}</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-white">{{ ucwords($solutions->solutions_title) }}</a></li>
                         </ul>
 
                     </div>
@@ -365,7 +364,7 @@
                     <h1 class="blog-title mb-2">{{ $solutions->solutions_title }}</h1>
                     {{-- <img src="https://via.placeholder.com/800x400" alt="Blog Post Image"> --}}
                     <img src="{{ asset('public/solution_image') }}/{{ $solutions->solutions_image }}"
-                        style="height: 400px; width: 100%;border-radius: 20px; object-fit: cover;" alt="Blog Image"
+                        style="height: auto; width: 100%;border-radius: 20px; object-fit: cover;" alt="Blog Image"
                         class="mb-2">
                     <div class="blog-content mb-2">
                         {!! $solutions->solutions_description !!}
