@@ -388,10 +388,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="toc">
+                            {{-- <div id="toc">
                                 <h2>Table of Contents</h2>
                                 <ul></ul>
-                            </div>
+                            </div> --}}
                             <div class="content-place">
                                 {!! $blogs->blog_description !!}
                             </div>
@@ -574,35 +574,39 @@
     </div>
 @endsection
 @section('page_script')
-    <script>
-        $(document).ready(function() {
-            const tocContainer = $('#toc');
-            const contentPlaces = $('.content-place h1');
+<script>
+    $(document).ready(function() {
+        const tocContainer = $('#toc');
 
-            contentPlaces.each(function(index) {
-                // Create anchor element with numbered text
-                const anchor = $('<a></a>').text((index + 1) + '. ' + $(this).text()).attr('href',
-                    `#heading-${index}`);
-                $(this).attr('id', `heading-${index}`);
+        // Find all h2 tags directly below #toc
+        const h2Tags = tocContainer.nextAll('h2');
 
-                // Create list item and append the anchor
-                const listItem = $('<li></li>').append(anchor);
+        // Loop through each h2 tag
+        h2Tags.each(function(index) {
+            // Assign dynamic ID to each h2 tag
+            const dynamicId = 'heading-' + (index + 1);
+            $(this).attr('id', dynamicId);
 
-                // Append list item to TOC container
-                tocContainer.append(listItem);
-            });
+            // Create anchor element with indexed text
+            const anchor = $('<a></a>').text((index + 1) + '. ' + $(this).text()).attr('href', '#' + dynamicId);
 
-            // Add click event for smooth scrolling
-            tocContainer.on('click', 'a', function(event) {
+            // Create list item and append the anchor
+            const listItem = $('<li></li>').append(anchor);
+
+            // Append list item to TOC container's ul
+            tocContainer.find('ul').append(listItem);
+
+            // Smooth scroll to corresponding section on TOC item click
+            anchor.on('click', function(event) {
                 event.preventDefault();
-
                 const targetId = $(this).attr('href');
-                const targetPosition = $(targetId).offset().top - 200; // 200px above the target heading
+                const targetPosition = $(targetId).offset().top - 50; // Adjust scroll position if needed
 
                 $('html, body').animate({
                     scrollTop: targetPosition
                 }, 500); // Animation duration in milliseconds
             });
         });
-    </script>
+    });
+</script>
 @endsection

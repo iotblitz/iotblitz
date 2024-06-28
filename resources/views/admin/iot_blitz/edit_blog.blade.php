@@ -7,6 +7,8 @@
             margin-right: 5px;
             /* Adjust as needed */
         }
+
+
     </style>
 
 
@@ -123,14 +125,36 @@
             // };
             // CKEDITOR.replace('editor1');
             // CKEDITOR.replace('myeditor');
+             // Define the custom plugin
+             CKEDITOR.plugins.add('tabl_Of_content', {
+                icons: 'tabl_Of_content',
+                init: function(editor) {
+                    editor.ui.addButton('TablOfContent', {
+                        label: 'Insert Table of Contents',
+                        command: 'insertTablOfContent',
+                        toolbar: 'insert',
+                        icon: 'https://iotblitz.com/public/public_page/assets/images/service-01.webp' // Custom icon URL
+                    });
+
+                    editor.addCommand('insertTablOfContent', {
+                        exec: function(editor) {
+                            // Insert the specified HTML content
+                            editor.insertHtml('<div class="highlight" id="toc"><h2>Table of Contents</h2><ul></ul></div><br>');
+                        }
+                    });
+                }
+            });
+
+            // Replace the textarea with CKEditor and configure it
             CKEDITOR.replace('description_editor', {
+                extraPlugins: 'tabl_Of_content',
+                allowedContent: true, // Allow all content
                 on: {
                     instanceReady: function(ev) {
                         ev.editor.on('change', function() {
                             var editorData = ev.editor.getData(); // Get HTML content from CKEditor
                             var plainText = editorData.replace(/<[^>]*>/g, ''); // Remove HTML tags
-                            document.getElementById('editorValue').value =
-                            plainText; // Set the value to hidden input
+                            document.getElementById('editorValue').value = plainText; // Set the value to hidden input
                             console.log(plainText);
                         });
                     }
