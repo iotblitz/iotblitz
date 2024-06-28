@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\EmployeMail;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthClass extends Controller
 {
-    function login(Request $r): View | RedirectResponse
+    function login(Request $r): View | RedirectResponse |JsonResponse
     {
         if ($r->isMethod('post')) {
             $rules = [
@@ -28,19 +29,37 @@ class AuthClass extends Controller
                 return redirect()->route('admin.login')->withErrors($valaditor)->withInput();
             }
 
-            // User::where('email', $r->email)->fast();
-            if (Auth::guard('admin')->attempt(['email' => $r->email, 'password' => $r->password])) {
-                return redirect()->route('super_admin.dashboard');
+            $userlogdata= User::where('email', $r->email)->where('otp_status','A')->first();
+            if(!empty($userlogdata)){
+                if($userlogdata->user_type == 'SA'){
+                    if (Auth::guard('sa_admin')->attempt(['email' => $r->email, 'password' => $r->password])) {
+                        return redirect()->route('super_admin.dashboard');
+                    } else {
+                        return redirect()->route('admin.login')->with('error', 'Invalid email or password');
+                    }
+                }else if($userlogdata->user_type == 'C'){
+                    // return response()->json(Auth::guard('content_writer')->attempt(['email' => $r->email, 'password' => $r->password]), 200);
+                    if (Auth::guard('content_writer')->attempt(['email' => $r->email, 'password' => $r->password])) {
+                        // return response()->json("success", 200);
+                        return redirect()->route('content_writer.dashboard');
+                    } else {
+                        return redirect()->route('admin.login')->with('error', 'Invalid email or password');
+                    }
+                }else{
+                    return redirect()->route('admin.login')->with('error', 'Invalid email or password');
+                }
             } else {
-                return redirect()->route('admin.login')->with('error', 'Invalid email or password');
+                return view('admin.auth.login');
             }
+
+
         } else {
             return view('admin.auth.login');
         }
     }
 
 
-    function register(Request $r): View|RedirectResponse
+    function register(Request $r)
     {
         if ($r->isMethod('post')) {
             $rules = [
@@ -52,7 +71,8 @@ class AuthClass extends Controller
             ];
             $valaditor = Validator::make($r->all(), $rules);
             if ($valaditor->fails()) {
-                return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
+                return response()->json($valaditor->errors(), 200);
+                return redirect()->route('employee.register')->withErrors($valaditor)->withInput();
             }
 
 
@@ -85,7 +105,7 @@ class AuthClass extends Controller
                     'active_status' => 'A',
                     'mobile' => "1234567890",
                     'dp' => $imageName,
-                    'created_by' => 0
+                    'created_by' => auth()->user()->id
                 ]);
             } else {
                 $user = User::create([
@@ -97,7 +117,7 @@ class AuthClass extends Controller
                     'otp_status' => 'A',
                     'active_status' => 'A',
                     'mobile' => "1234567890",
-                    'created_by' => 0
+                    'created_by' => auth()->user()->id
                 ]);
             }
 
@@ -123,7 +143,11 @@ class AuthClass extends Controller
 
     function logout()
     {
-        Auth::guard('admin')->logout();
+        if(Auth::guard('sa_admin')->check()){
+            Auth::guard('sa_admin')->logout();
+        }else if(Auth::guard('content_writer')->check()){
+            Auth::guard('content_writer')->logout();
+        }
         return redirect()->route('admin.login');
     }
 }

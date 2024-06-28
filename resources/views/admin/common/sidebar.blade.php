@@ -4,7 +4,7 @@
 			<div class="navbar-content scroll-div " >
 				<div class="">
 					<div class="main-menu-header">
-						{{-- <img class="img-radius" src="{{ asset('public/admin_page') }}/assets/images/user/avatar-2.jpg" alt="User-Profile-Image"> --}}
+						<img class="img-radius" src="@if(auth()->user()->dp){{ asset('public/profile') }}/{{auth()->user()->dp}}@else{{ asset('public_page/assets/images/user.webp') }}  @endif" alt="User-Profile-Image">
 						<div class="user-details">
 							<div id="more-details">{{auth()->user()->name}} <i class="fa fa-caret-down"></i></div>
 						</div>
@@ -19,68 +19,106 @@
 				</div>
 
 				<ul class="nav pcoded-inner-navbar ">
-					<li class="nav-item pcoded-menu-caption">
-					    <label>Navigation</label>
-					</li>
-					<li class="nav-item">
-					    <a href="{{route('super_admin.dashboard')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
-					</li>
-					<li class="nav-item pcoded-menu-caption">
-					    <label>UI Element</label>
-					</li>
-					<li class="nav-item pcoded-hasmenu">
-					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Blog</span></a>
-					    <ul class="pcoded-submenu">
-					        <li><a href="{{route('super_admin.page.blog')}}">List</a></li>
-					        <li><a href="{{route('super_admin.page.blog_add')}}">Add</a></li>
-
-					    </ul>
-					</li>
 
 
-                    <li class="nav-item pcoded-hasmenu">
-					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather  icon-file-text"></i></span><span class="pcoded-mtext">Case Study</span></a>
-					    <ul class="pcoded-submenu">
-					        <li><a href="{{route('super_admin.page.case_study')}}">List</a></li>
-					        <li><a href="{{route('super_admin.page.case_study_add')}}">Add</a></li>
-
-					    </ul>
-					</li>
-
-
-                    <li class="nav-item pcoded-hasmenu">
-					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Product</span></a>
-					    <ul class="pcoded-submenu">
-					        <li><a href="{{route('super_admin.page.products')}}">List</a></li>
-					        <li><a href="{{route('super_admin.page.product_add')}}">Add</a></li>
-
-					    </ul>
-					</li>
+                    @if (auth()->user()->user_type=='SA')
+                        <li class="nav-item pcoded-menu-caption">
+                            <label>Dashboard</label>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('super_admin.dashboard')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                        </li>
+                    @elseif (auth()->user()->user_type=='C')
+                        <li class="nav-item pcoded-menu-caption">
+                            <label>Console</label>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('content_writer.dashboard')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Console</span></a>
+                        </li>
+                    @endif
 
 
 
-                    <li class="nav-item pcoded-hasmenu">
-					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Solution</span></a>
-					    <ul class="pcoded-submenu">
-					        <li><a href="{{route('super_admin.page.solutions')}}">List</a></li>
-					        <li><a href="{{route('super_admin.page.solution_add')}}">Add</a></li>
 
-					    </ul>
-					</li>
+                    @if ((auth()->user()->user_type=='SA')||(auth()->user()->user_type=='C'))
+                        <li class="nav-item pcoded-menu-caption">
+                            <label>Public Page</label>
+                        </li>
+
+                        <li class="nav-item pcoded-hasmenu">
+                            <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Blog</span></a>
+                            <ul class="pcoded-submenu">
+                                <li><a href="{{route('super_admin.page.blog')}}">List</a></li>
+                                <li><a href="{{route('super_admin.page.blog_add')}}">Add</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item pcoded-hasmenu">
+                            <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather  icon-file-text"></i></span><span class="pcoded-mtext">Case Study</span></a>
+                            <ul class="pcoded-submenu">
+                                <li><a href="{{route('super_admin.page.case_study')}}">List</a></li>
+                                <li><a href="{{route('super_admin.page.case_study_add')}}">Add</a></li>
+
+                            </ul>
+                        </li>
 
 
-                    <li class="nav-item pcoded-hasmenu">
-					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Careers</span></a>
-					    <ul class="pcoded-submenu">
-					        <li><a href="{{route('super_admin.page.careerss')}}">List</a></li>
-					        <li><a href="{{route('super_admin.page.careers_add')}}">Add</a></li>
+                        <li class="nav-item pcoded-hasmenu">
+                            <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Product</span></a>
+                            <ul class="pcoded-submenu">
+                                <li><a href="{{route('super_admin.page.products')}}">List</a></li>
+                                <li><a href="{{route('super_admin.page.product_add')}}">Add</a></li>
 
-					    </ul>
-					</li>
+                            </ul>
+                        </li>
 
-                    <li class="nav-item">
-					    <a href="{{route('super_admin.page.contact')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Contact</span></a>
-					</li>
+
+
+                        <li class="nav-item pcoded-hasmenu">
+                            <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Services</span></a>
+                            <ul class="pcoded-submenu">
+                                <li><a href="{{route('super_admin.page.solutions')}}">List</a></li>
+                                <li><a href="{{route('super_admin.page.solution_add')}}">Add</a></li>
+
+                            </ul>
+                        </li>
+
+                    @endif
+
+                    @if (auth()->user()->user_type=='SA')
+                        <li class="nav-item pcoded-menu-caption">
+                            <label>Teams</label>
+                        </li>
+                        <li class="nav-item pcoded-hasmenu">
+                            <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Careers</span></a>
+                            <ul class="pcoded-submenu">
+                                <li><a href="{{route('super_admin.page.careerss')}}">List</a></li>
+                                <li><a href="{{route('super_admin.page.careers_add')}}">Add</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item pcoded-hasmenu">
+                            <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Employee</span></a>
+                            <ul class="pcoded-submenu">
+                                {{-- <li><a href="{{route('super_admin.page.careerss')}}">List</a></li> --}}
+                                <li><a href="{{route('employee.register')}}">New</a></li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item pcoded-menu-caption">
+                            <label>Contact</label>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{route('super_admin.page.contact')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Contact</span></a>
+                        </li>
+
+
+
+                    @endif
 
 
 

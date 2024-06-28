@@ -23,6 +23,15 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }
+
+
+            // if (Auth::guard($guard)->check()) {
+            //     if($guard == 'sa_admin'){
+            //         return redirect()->route('super_admin.dashboard');
+            //     }else if($guard == 'content_writer'){
+            //         return redirect()->route('content_writer.dashboard');
+            //     }
+            // }
         }
 
         return $next($request);

@@ -13,4 +13,9 @@ class Dashboard extends Controller
     {
         return view('admin.dashboard.super_admin_dashboard');
     }
+
+    function content_writer_dashboard(): View|RedirectResponse
+    {
+        return view('admin.dashboard.content_writer_dashboard');
+    }
 }

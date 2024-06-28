@@ -34,7 +34,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-notification">
                             <div class="pro-head">
-                                {{-- <img src="{{ asset('public/admin_page') }}/assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image"> --}}
+                                <img src="@if(auth()->user()->dp){{ asset('public/profile') }}/{{auth()->user()->dp}}@else{{ asset('public_page/assets/images/user.webp') }}  @endif" class="img-radius" alt="User-Profile-Image">
                                 <span>{{auth()->user()->name}}</span>
                                 <a href="{{route('admin.logout')}}" class="dud-logout" title="Logout">
                                     <i class="feather icon-log-out"></i>

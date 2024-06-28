@@ -41,9 +41,9 @@ return [
             'provider' => 'users',
         ],
 
-        'admin' => [
+        'sa_admin' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'sa_admin',
         ],
         'content_writer' => [
             'driver' => 'session',
@@ -70,6 +70,11 @@ return [
 
     'providers' => [
         'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+
+        'sa_admin' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
@@ -108,6 +113,12 @@ return [
 
     'passwords' => [
         'users' => [
+            'provider' => 'users',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'sa_admin' => [
             'provider' => 'users',
             'table' => 'password_reset_tokens',
             'expire' => 60,
