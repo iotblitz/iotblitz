@@ -75,7 +75,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
                         <div class="icon">
-                            <img src="{{ asset('public/public_page') }}/assets/images/service-01.png" alt="online degrees">
+                            <img src="{{ asset('public/public_page') }}/assets/images/service-01.webp" alt="online degrees">
                         </div>
                         <div class="main-content">
                             <h4>Our IoT Platforms</h4>
@@ -91,7 +91,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
                         <div class="icon">
-                            <img src="{{ asset('public/public_page') }}/assets/images/service-03.png" alt="web experts">
+                            <img src="{{ asset('public/public_page') }}/assets/images/service-03.webp" alt="web experts">
                         </div>
                         <div class="main-content">
                             <h4>Our Services</h4>
@@ -109,14 +109,14 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
                         <div class="icon">
-                            <img src="{{ asset('public/public_page') }}/assets/images/service-02.png" alt="short courses">
+                            <img src="{{ asset('public/public_page') }}/assets/images/service-02.webp" alt="short courses">
                         </div>
                         <div class="main-content">
                             <h4>Our IoT Hardware</h4>
                             <p>We provide custom IoT hardware that fits your needs. From Conceptualization to seamless
                                 integration, we do it all.</p>
                             <div class="main-button">
-                                <a href="https://techavo.in/" target="_blank">Explore Now</a>
+                                <a href="https://www.techavo.in/products/" target="_blank">Explore Now</a>
                             </div>
                         </div>
                     </div>

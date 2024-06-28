@@ -225,7 +225,7 @@
             $('#searchText').click(function(e) {
                 e.preventDefault(); // Prevent the default action of the click event
 
-                var url = 'https://techavo.in/';  // Replace with your desired URL
+                var url = 'https://www.techavo.in/products/';  // Replace with your desired URL
 
                 // Open URL in a new tab
                 var win = window.open(url, '_blank');
