@@ -27,6 +27,8 @@ class AuthClass extends Controller
             if ($valaditor->fails()) {
                 return redirect()->route('admin.login')->withErrors($valaditor)->withInput();
             }
+
+            // User::where('email', $r->email)->fast();
             if (Auth::guard('admin')->attempt(['email' => $r->email, 'password' => $r->password])) {
                 return redirect()->route('super_admin.dashboard');
             } else {
