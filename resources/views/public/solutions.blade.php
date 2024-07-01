@@ -63,10 +63,10 @@
 
 
 
-                <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development" onclick="location.href = '{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower($solutions_key->solutions_title)) . '-' . $solutions_key->solutions_id]) }}';">
+                <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development" onclick="location.href = '{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($solutions_key->solutions_title))) . '-' . $solutions_key->solutions_id]) }}';">
                     <div class="events_item">
                         <div class="thumb">
-                            <a href="{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower($solutions_key->solutions_title)) . '-' . $solutions_key->solutions_id]) }}"><img src="{{ asset('public/solution_image') }}/{{$solutions_key->solutions_image}}"
+                            <a href="{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($solutions_key->solutions_title))) . '-' . $solutions_key->solutions_id]) }}"><img src="{{ asset('public/solution_image') }}/{{$solutions_key->solutions_image}}"
                                     alt=""></a>
                             {{-- <span class="category">{{$solutions_key->category}}</span> --}}
                             {{-- <span class="price">

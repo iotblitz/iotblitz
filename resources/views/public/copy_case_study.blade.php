@@ -61,7 +61,7 @@
           </div>
         </div> --}}
             @foreach ($case_study as $case_study_data)
-                <div class="col-lg-12 col-md-6" onclick="location.href = '{{ route('single_case_study', [preg_replace('/[^a-z0-9]+/', '-', strtolower($case_study_data->case_study_title)).'-'.$case_study_data->case_study_id])}}';">
+                <div class="col-lg-12 col-md-6" onclick="location.href = '{{ route('single_case_study', [preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($case_study_data->case_study_title))).'-'.$case_study_data->case_study_id])}}';">
                     <div class="item">
                         <div class="row">
                             <div class="col-lg-4">
@@ -77,7 +77,7 @@
                             <span>Date:</span>
                             <h6>January 12th, 2018</h6>
                             </div>
-                            <a href="{{ route('single_case_study', [preg_replace('/[^a-z0-9]+/', '-', strtolower($case_study_data->case_study_title)).'-'.$case_study_data->case_study_id])}}"><i class="fa fa-angle-right"></i></a>
+                            <a href="{{ route('single_case_study', [preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($case_study_data->case_study_title))).'-'.$case_study_data->case_study_id])}}"><i class="fa fa-angle-right"></i></a>
 
                         </div>
                     </div>

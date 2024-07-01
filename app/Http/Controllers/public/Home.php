@@ -386,6 +386,7 @@ class Home extends Controller
         ];
         $valaditor = Validator::make($r->all(), $rules);
         if ($valaditor->fails()) {
+            Toastr::error('This is a success message.', 'Success');
             return redirect()->back();
         }
 

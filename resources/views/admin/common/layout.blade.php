@@ -21,6 +21,7 @@
     <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
 
     <style>
@@ -65,10 +66,12 @@
 
 
     <!-- Required Js -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ asset('public/admin_page') }}/assets/js/vendor-all.min.js"></script>
     <script src="{{ asset('public/admin_page') }}/assets/js/plugins/bootstrap.min.js"></script>
     <script src="{{ asset('public/admin_page') }}/assets/js/ripple.js"></script>
     <script src="{{ asset('public/admin_page') }}/assets/js/pcoded.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
 
     <!-- Apex Chart -->
     <script src="{{ asset('public/admin_page') }}/assets/js/plugins/apexcharts.min.js"></script>
@@ -76,6 +79,10 @@
 
     <!-- custom-chart js -->
     <script src="{{ asset('public/admin_page') }}/assets/js/pages/dashboard-main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    {!! Toastr::message() !!}
 
     @yield('admin_page_script')
 </body>

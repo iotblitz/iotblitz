@@ -106,6 +106,7 @@ Route::prefix('/admin')->group(function () {
                     Route::prefix('/blog')->group(function () {
                         Route::match(['get'], '/list', [IotBlitz::class, 'blog'])->name('super_admin.page.blog');
                         Route::match(['get', 'post'], '/add', [IotBlitz::class, 'blog_add'])->name('super_admin.page.blog_add');
+                        Route::match(['get', 'post'], '/save', [IotBlitz::class, 'blog_save'])->name('super_admin.page.save');
                         Route::match(['get', 'post'], '/list/{blog_id}', [IotBlitz::class, 'blog_edit'])->name('super_admin.page.blog_edit');
                     });
                     Route::prefix('/case_study')->group(function () {

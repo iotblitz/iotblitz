@@ -379,18 +379,18 @@
                     @foreach ($solution as $solutions_key)
                         <div class="media border-bottom py-3" style="display: flex;  align-items: flex-start;">
                             <a
-                                href="{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower($solutions_key->solutions_title)) . '-' . $solutions_key->solutions_id]) }}">
+                                href="{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($solutions_key->solutions_title))) . '-' . $solutions_key->solutions_id]) }}">
                                 <img class="mr-4" src="{{ asset('public/solution_image') }}/{{$solutions_key->solutions_image}}"
                                     alt=""
                                     style="width: 80px; height : 80px; object-fit: cover; margin-right: 1.5rem !important; border-radius: 5px">
                             </a>
                             <div class="media-body" style=" flex: 1;">
                                 <h6 class="my-1">
-                                    <a href="{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower($solutions_key->solutions_title)) . '-' . $solutions_key->solutions_id]) }}"
+                                    <a href="{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($solutions_key->solutions_title))) . '-' . $solutions_key->solutions_id]) }}"
                                         class="text-body">{{ $solutions_key->solutions_title }}</a>
                                 </h6>
                                 <p class="my-1">
-                                    <a href="{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower($solutions_key->solutions_title)) . '-' . $solutions_key->solutions_id]) }}"
+                                    <a href="{{ route('single_solutions', [preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($solutions_key->solutions_title))) . '-' . $solutions_key->solutions_id]) }}"
                                         class="text-body text-justify">{{ substr($solutions_key->text_description, 0, 37) }}...</a>
                                 </p>
                             </div>

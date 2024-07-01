@@ -19,6 +19,15 @@
             background-color: yellow;
             padding: 50px;
         }
+        .custom-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .error{
+            color: red;
+        }
     </style>
 
 
@@ -51,189 +60,150 @@
             <!-- [ Main Content ] start -->
 
            {{-- {{ auth()->user()->user_info}} --}}
-            <form method="POST" action="{{ route('super_admin.page.blog_add') }}" enctype="multipart/form-data">
-                @csrf
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="title">Blog Title</label>
-                                                    <input type="text" class="form-control" id="title"
-                                                        aria-describedby="titleHelp" name="title">
-                                                </div>
+           <form method="POST" id="myForm" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="title">Blog Title</label>
+                                                <input type="text" class="form-control required-field" id="title" aria-describedby="titleHelp" name="title">
                                             </div>
-
-
-
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <input type="file" class="custom-file-input" id="validatedCustomFile"
-                                                        name="blogimage" required="">
-                                                    <label class="custom-file-label" for="validatedCustomFile">Choose
-                                                        file...</label>
-                                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="fimagealttxt">Featured Image Alt
-                                                        Text</label>
-                                                    <input type="text" class="form-control" id="fimagealttxt"
-                                                        name="fimagealttxt">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="imagedescriotion">Image
-                                                        Description</label>
-                                                    <input type="text" class="form-control" id="imagedescriotion"
-                                                        name="imagedescriotion">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="imageCaption">Image caption</label>
-                                                    <input type="text" class="form-control" id="imageCaption"
-                                                        name="imageCaption">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="imageTitle">Image title</label>
-                                                    <input type="text" class="form-control" id="imageTitle"
-                                                        name="imageTitle">
-                                                </div>
-                                            </div>
-
-
-
-
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <textarea name="description_editor" placeholder="description" class="form-control required-field description_editor" rows="12" cols="50"></textarea>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="card">
-
-                                    <div class="card-body">
-                                        <div class="row">
-
-                                            <div class="col-sm-12">
-                                                <textarea name="description_editor" placeholder="description" class="form-control" rows="12" cols="50"></textarea>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="mataTitle">Meta title</label>
+                                                <input type="text" class="form-control" id="mataTitle" name="mataTitle">
                                             </div>
-
-
-
-
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="mataTitle">Meta title</label>
-                                                    <input type="text" class="form-control" id="mataTitle"
-                                                        name="mataTitle">
-                                                </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="metaDescriptions">Meta descriptions</label>
+                                                <input type="text" class="form-control" id="metaDescriptions" name="metaDescriptions">
                                             </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="metaDescriptions">Meta
-                                                        descriptions</label>
-                                                    <input type="text" class="form-control" id="metaDescriptions"
-                                                        name="metaDescriptions">
-                                                </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="focusKeyword">Focus Keyword</label>
+                                                <input type="text" class="form-control" id="focusKeyword" name="focusKeyword">
                                             </div>
-
-
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="focusKeyword ">Focus Keyword
-                                                    </label>
-                                                    <input type="text" class="form-control" id="focusKeyword"
-                                                        name="focusKeyword">
-                                                </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="inputWithBadges">Secondary Keywords</label>
+                                                <input type="text" class="form-control" id="inputWithBadges" placeholder="" name="keyword">
+                                                <div id="badgeContainer"></div>
                                             </div>
-
-
-
-
-
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="inputWithBadges">Secondary
-                                                        Keywords</label>
-                                                    <input type="text" class="form-control" id="inputWithBadges"
-                                                        placeholder="" name="keyword">
-                                                    <div id="badgeContainer"></div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label class="floating-label" for="blogExcerpt">Blog Excerpt</label>
-                                                    <input type="text" class="form-control" id="blogExcerpt"
-                                                        name="blogExcerpt" maxlength="205">
-                                                </div>
-                                            </div>
-
-
-
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="searchTags" class="floating-label">Search Tags:</label>
-                                                    <input type="text" class="form-control" id="searchTags"
-                                                        name="searchTags">
-                                                    <ul class="list-group mt-3" id="similarTagsList">
-                                                        <!-- Similar tags will be inserted here dynamically -->
-                                                    </ul>
-                                                    <div id="tagsContainer">
-                                                        <!-- Tags will be inserted here dynamically -->
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-
-
-                                            <input type="hidden" id="editorValue" name="text_description"
-                                                value="">
-                                            <div class="col-sm-12">
-                                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                                            </div>
+                                        </div>
+                                        <input type="hidden" id="editorValue" name="text_description" value="">
+                                        <div class="col-sm-12">
+                                            <button type="submit" class="btn btn-primary btn-block custom-btn" style="" id="publish"><span>PUBLISH</span><i class="fas fa-eye"></i></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-sm-3">
-
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="img">
-                                    <img id="previewImage" src="" class="img-fluid" alt="Preview Image">
+                <div class="col-sm-3">
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <button type="submit" class="btn btn-success btn-block shadow p-3 mb-2 rounded custom-btn" id="save"><span>SAVE</span><i class="fas fa-check"></i></button>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="col-sm-12 mb-3 mt-2">
+                                        <img id="previewImage" src="https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg" class="img-fluid" alt="Preview Image">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="file" class="custom-file-input required-field" id="validatedCustomFile" name="blogimage" required>
+                                            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="fimagealttxt">Featured Image Alt Text</label>
+                                            <input type="text" class="form-control" id="fimagealttxt" name="fimagealttxt">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="imagedescriotion">Image Description</label>
+                                            <input type="text" class="form-control" id="imagedescriotion" name="imagedescriotion">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="imageCaption">Image caption</label>
+                                            <input type="text" class="form-control" id="imageCaption" name="imageCaption">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="imageTitle">Image title</label>
+                                            <input type="text" class="form-control" id="imageTitle" name="imageTitle">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="col-sm-12  mt-2 mb-2">
 
+                                    <select class="mb-3 form-control" name="content_category">
+                                        <option value="B">Blog</option>
+                                        <option value="N">News</option>
+                                    </select>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="col-sm-12 mt-2">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="blogExcerpt">Blog Excerpt</label>
+                                        <input type="text" class="form-control" id="blogExcerpt" name="blogExcerpt" maxlength="205">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="searchTags" class="floating-label">Search Tags:</label>
+                                        <input type="text" class="form-control" id="searchTags" name="searchTags">
+                                        <ul class="list-group mt-3" id="similarTagsList">
+                                            <!-- Similar tags will be inserted here dynamically -->
+                                        </ul>
+                                        <div id="tagsContainer">
+                                            <!-- Tags will be inserted here dynamically -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
-            </form>
+                </div>
+        </form>
 
 
             <!-- [ form-element ] start -->
@@ -457,4 +427,149 @@
             });
         });
     </script>
+
+<script>
+    $(document).ready(function() {
+
+        var validator = $('#myForm').validate({
+            // Define initial empty rules and messages (will be updated dynamically)
+            rules: {},
+            messages: {},
+            // Handle form submission
+            submitHandler: function(form) {
+                // Form submission logic here (e.g., AJAX submission)
+                form.submit();
+            }
+        });
+
+
+
+
+
+
+         // Initialize form validation
+         $('#myForm').validate({
+            // Define validation rules
+            rules: {
+                title: {
+                    required: true
+                },
+                description_editor: {
+                    required: true
+                },
+                blogimage: {
+                    required: true
+                }
+                // Add more rules as needed
+            },
+            // Define validation error messages
+            messages: {
+                title: {
+                    required: "Please enter a blog title."
+                },
+                description_editor: {
+                    required: "Please enter a blog description."
+                },
+                blogimage: {
+                    required: "Please select a blog image."
+                }
+                // Add more messages as needed
+            },
+            // Handle form submission
+             submitHandler: function(form) {
+                // Form submission logic here (e.g., AJAX submission)
+                form.submit();
+            }
+        });
+
+
+        // Change form action for submit button
+        $('#save').click(function(event) {
+            $('#myForm').attr('action', '{{ route('super_admin.page.save') }}');
+            // Remove required attributes from unnecessary fields
+            $('#myForm input, #myForm textarea, #myForm select').removeAttr('required');
+            // Add required attribute only to blog title
+            $('#title').attr('required', 'required');
+
+
+            validator.resetForm(); // Reset validation messages
+
+            // Update validation rules and messages
+            validator.settings.rules = {
+                title: {
+                    required: true
+                }
+                // Add more rules as needed for save button
+            };
+            validator.settings.messages = {
+                title: {
+                    required: "Please enter a blog title."
+                }
+                // Add more messages as needed for save button
+            };
+
+            // Remove validation rules for publish button fields
+            validator.settings.rules.blogimage = {};
+            validator.settings.messages.blogimage = {};
+
+            // Update validation
+            validator.resetForm();
+            validator.form();
+
+            // Prevent form submission
+            event.preventDefault();
+            $('#myForm').submit();
+
+
+        });
+
+        // Change form action for publish button
+        $('#publish').click(function(event) {
+            $('#myForm').attr('action', '{{ route('super_admin.page.blog_add') }}');
+            // Add required attributes to necessary fields
+            $('#title, .description_editor, #validatedCustomFile').attr('required', 'required');
+
+            validator.resetForm(); // Reset validation messages
+
+            // Update validation rules and messages
+            validator.settings.rules = {
+                title: {
+                    required: true
+                },
+                blogimage: {
+                    required: true
+                }
+                // Add more rules as needed for publish button
+            };
+            validator.settings.messages = {
+                title: {
+                    required: "Please enter a blog title."
+                },
+                blogimage: {
+                    required: "Please select a blog image."
+                }
+                // Add more messages as needed for publish button
+            };
+
+            // Update validation
+            validator.resetForm();
+            validator.form();
+
+            // Prevent form submission
+            event.preventDefault();
+            $('#myForm').submit();
+
+
+        });
+
+        // Disable form submission on Enter key press
+        $('#myForm').on('keydown', function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                return false;
+            }
+        });
+    });
+</script>
+
 @endsection

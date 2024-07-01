@@ -14,6 +14,7 @@ use App\Models\PublicContactModel;
 use App\Models\PublicProductCategoryModel;
 use App\Models\PublicProductModel;
 use App\Models\PublicSolutionModel;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -37,26 +38,29 @@ class IotBlitz extends Controller
 
             $rules = [
                 'title' => 'required',
-                'keyword' => 'required',
+                'keyword' => 'max:500',
                 'description_editor' => 'required',
                 'text_description' => 'required',
                 'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
-
-                'fimagealttxt' => 'required',
-                'imagedescriotion' => 'required|max:255',
-                'imageCaption' => 'required|max:255',
-                'imageTitle' => 'required|max:255',
-                'mataTitle' => 'required|max:255',
-                'metaDescriptions' => 'required|max:255',
-                'focusKeyword' => 'required|max:255',
-                'blogExcerpt' => 'required|max:255',
-                'searchTags' => 'required|max:255'
+                'fimagealttxt' => 'max:500',
+                'imagedescriotion' => 'max:255',
+                'imageCaption' => 'max:255',
+                'imageTitle' => 'max:255',
+                'mataTitle' => 'max:255',
+                'metaDescriptions' => 'max:255',
+                'focusKeyword' => 'max:255',
+                'blogExcerpt' => 'max:255',
+                'searchTags' => 'max:255',
+                'content_category' => 'max:255'
             ];
 
             $valaditor = Validator::make($r->all(), $rules);
             if ($valaditor->fails()) {
-                return response()->json($valaditor->errors(), 200);
-                // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
+                foreach ($valaditor->errors()->all() as $error) {
+                    Toastr::error($error, 'Error');
+                }
+                // return response()->json($valaditor->errors(), 200);
+                return redirect()->route('super_admin.page.blog_add')->withErrors($valaditor)->withInput();
             }
 
 
@@ -76,10 +80,25 @@ class IotBlitz extends Controller
                 $tag_ids[] = $tag_id; // Add the tag_id to the array
             }
 
+            if ($r->hasFile('blogimage')) {
+                $rules = [
+                    'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+                ];
 
-            $image = $r->file('blogimage');
-            $imageName = time() . '.' . $image->extension();
-            $image->move(public_path('blog_images'), $imageName);
+                $valaditor = Validator::make($r->all(), $rules);
+                if ($valaditor->fails()) {
+                    foreach ($valaditor->errors()->all() as $error) {
+                        Toastr::error($error, 'Error');
+                    }
+                    // return response()->json($valaditor->errors(), 200);
+                    return redirect()->route('super_admin.page.blog_add')->withErrors($valaditor)->withInput();
+                }
+                $image = $r->file('blogimage');
+                $imageName = time() . '.' . $image->extension();
+                $image->move(public_path('blog_images'), $imageName);
+            } else {
+                $imageName = '';
+            }
             $id = PublicBlogModel::create([
                 'blog_title' => $r->title,
                 'blog_keywords' => $r->keyword,
@@ -94,7 +113,9 @@ class IotBlitz extends Controller
                 'meta_title' => $r->mataTitle,
                 'meta_descriptions' => $r->metaDescriptions,
                 'focus_keyword' => $r->focusKeyword,
-                'blog_excerpt' => $r->blogExcerpt
+                'blog_excerpt' => $r->blogExcerpt,
+                'content_category' => $r->content_category,
+                'active_status' => 'A'
             ]);
 
             foreach ($tag_ids as $item2) {
@@ -113,8 +134,105 @@ class IotBlitz extends Controller
     }
 
 
+    function blog_save(Request $r)
+    {
+
+        $rules = [
+            'title' => 'required'
+        ];
+
+        $valaditor = Validator::make($r->all(), $rules);
+        if ($valaditor->fails()) {
+            foreach ($valaditor->errors()->all() as $error) {
+                Toastr::error($error, 'Error');
+            }
+            // return response()->json($valaditor->errors(), 200);
+            return redirect()->route('super_admin.page.blog_add')->withErrors($valaditor)->withInput();
+        }
+
+
+
+
+        $tag = strtolower($r->searchTags);
+        $tags = explode(",", $tag);
+        $tag_ids = [];
+        foreach ($tags as $item) {
+            $tagModel = PublicBlogsTagsModel::where("tags_name", $item)->first();
+            if ($tagModel) {
+                $tag_id = $tagModel->blog_tags_id;
+            } else {
+                $tagModel = PublicBlogsTagsModel::create(["tags_name" => $item, "create_by" => auth()->user()->id]);
+                $tag_id = $tagModel->blog_tags_id;
+            }
+            $tag_ids[] = $tag_id; // Add the tag_id to the array
+        }
+
+        if ($r->hasFile('blogimage')) {
+            $rules = [
+                'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            ];
+
+            $valaditor = Validator::make($r->all(), $rules);
+            if ($valaditor->fails()) {
+                foreach ($valaditor->errors()->all() as $error) {
+                    Toastr::error($error, 'Error');
+                }
+                // return response()->json($valaditor->errors(), 200);
+                return redirect()->route('super_admin.page.blog_add')->withErrors($valaditor)->withInput();
+            }
+            $image = $r->file('blogimage');
+            $imageName = time() . '.' . $image->extension();
+            $image->move(public_path('blog_images'), $imageName);
+        } else {
+            $imageName = '';
+        }
+        $id = PublicBlogModel::create([
+            'blog_title' => $r->title,
+            'blog_keywords' => $r->keyword,
+            'blog_description' => $r->description_editor,
+            'text_description' => $r->text_description,
+            'blog_image' => $imageName,
+            'create_by' => auth()->user()->id,
+            'featured_image_alt_text' => $r->fimagealttxt,
+            'image_description' => $r->imagedescriotion,
+            'image_caption' => $r->imageCaption,
+            'image_title' => $r->imageTitle,
+            'meta_title' => $r->mataTitle,
+            'meta_descriptions' => $r->metaDescriptions,
+            'focus_keyword' => $r->focusKeyword,
+            'blog_excerpt' => $r->blogExcerpt,
+            'content_category' => $r->content_category,
+            'active_status' => 'D'
+        ]);
+
+        foreach ($tag_ids as $item2) {
+            PublicBlogsTagsListModel::create([
+                'blog_id' => $id->blog_id,
+                'blog_tags_id' => $item2
+            ]);
+        }
+
+        return redirect()->route('super_admin.page.blog');
+    }
 
     function blog_edit($blog_id, Request $r): View|RedirectResponse|JsonResponse
+    {
+        if ($r->isMethod('post')) {
+
+        } else {
+            // $data['editdata'] = PublicBlogModel::where('blog_id', $blog_id)->first();
+            $data['editdata'] =  PublicBlogModel::where('public_blog.blog_id', $blog_id)  // Assuming $blog_id is the ID you are querying for
+            ->where('public_blog.active_status', 'A')
+            ->join('users', 'public_blog.create_by', '=', 'users.id')
+            ->with('public_tags.tag')  // Eager load public_comments relationship
+            ->with('public_tags')  // Eager load public_tags relationship
+            ->first();
+            $data['blog_id'] = $blog_id;
+            return view('admin.iot_blitz.edit_blog')->with($data);
+        }
+    }
+
+    function blog_edit_old($blog_id, Request $r): View|RedirectResponse|JsonResponse
     {
         if ($r->isMethod('post')) {
 

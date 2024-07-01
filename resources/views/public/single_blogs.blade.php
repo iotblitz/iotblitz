@@ -352,8 +352,7 @@
                             <li class="list-inline-item"><span class="text-white">/</span></li>
                             <li class="list-inline-item"><a href="{{ route('blogs') }}" class="text-white-50">Blogs</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="#"
-                                    class="text-white">{{ ucwords($blogs->blog_title) }}</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-white">{{ ucwords($blogs->blog_title) }}</a></li>
                         </ul>
 
                     </div>
@@ -374,8 +373,10 @@
 
                     {{-- <img src="https://via.placeholder.com/800x400" alt="Blog Post Image"> --}}
                     <h1 class="blog-title mb-2">{{ $blogs->blog_title }}</h1>
-                    <img src="{{ asset('public/blog_images') }}/{{ $blogs->blog_image }}"
-                        style="height: auto; width: 100%; border-radius: 20px; " alt="Blog Image" class="mb-2">
+
+                    @if(!empty($blogs->blog_image) || $blogs->blog_image!=null || $blogs->blog_image!='')
+                        <img src="{{ asset('public/blog_images') }}/{{ $blogs->blog_image }}" style="height: auto; width: 100%; border-radius: 20px; " alt="Blog Image" class="mb-2">
+                    @endif
                     <div class="blog-content mb-2">
                         <div class="blog-content mb-2">
                             <div class="d-flex align-items-center mb-3">
@@ -383,7 +384,7 @@
                                     alt="{{$blogs->featured_image_alt_text}}" title="{{$blogs->image_title}}" class="rounded-circle me-3" style="width: 50px">
                                 <div class="text-center">
                                     <div>
-                                        <h5 class="mb-0"> <a href="{{route('public_blog_author', ['author' => preg_replace('/[^a-z0-9]+/', '-',strtolower($blogs->name))])}}">{{ ucfirst($blogs->name) }}</a></h5>
+                                        <h5 class="mb-0"> <a href="{{route('public_blog_author', ['author' => preg_replace('/[^a-z0-9]+/', '-',strtolower(trim($blogs->name)))])}}">{{ ucfirst($blogs->name) }}</a></h5>
                                         <small class="text-muted">{{ date('j F, Y', strtotime($blogs->created_at)) }}</small>
                                     </div>
                                 </div>
@@ -556,14 +557,14 @@
                         @endforeach --}}
 
 
-
                         @foreach ($tags as $tagdata)
-
-
+                        {{-- {{preg_replace('/[^a-z0-9]+/', '-',strtolower(trim($tagdata->tags_name)))}} --}}
+                            @if(!empty($tagdata->tags_name))
                             <a href="{{route('public_blog_tags', ['tags' => preg_replace('/[^a-z0-9]+/', '-',strtolower($tagdata->tags_name))])}}" class="text-decoration-none mb-2">
                                 <span class="badge">{{$tagdata->tags_name}}</span>
                             </a>
-                            @endforeach
+                            @endif
+                        @endforeach
 
                     </div>
 

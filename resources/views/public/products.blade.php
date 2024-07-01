@@ -86,11 +86,11 @@
 
                     @foreach ($cattagorydata->products as $product_key)
                         <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development"
-                            onclick="location.href = '{{ route('single_product', [preg_replace('/[^a-z0-9]+/', '-', strtolower($product_key->product_title)) . '-' . $product_key->product_id]) }}';">
+                            onclick="location.href = '{{ route('single_product', [preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($product_key->product_title))) . '-' . $product_key->product_id]) }}';">
                             <div class="events_item">
                                 <div class="thumb">
                                     <a
-                                        href="{{ route('single_product', [preg_replace('/[^a-z0-9]+/', '-', strtolower($product_key->product_title)) . '-' . $product_key->product_id]) }}"><img
+                                        href="{{ route('single_product', [preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($product_key->product_title))) . '-' . $product_key->product_id]) }}"><img
                                             src="{{ asset('public/product_image') }}/{{ $product_key->product_image }}"
                                             alt=""></a>
                                     {{-- <span class="category"></span> --}}
