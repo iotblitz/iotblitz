@@ -158,7 +158,7 @@
 
     {{-- ============================================================== --}}
 
-        <input class='chat-menu hidden' id='offchat-menu' type='checkbox'/>
+        {{-- <input class='chat-menu hidden' id='offchat-menu' type='checkbox'/> --}}
 		<div class='sticky-button' id='sticky-button'>
 			<label for='offchat-menu'>
                 <img src='{{ asset('public/public_page') }}/assets/images/bot.png' alt='bot' />
@@ -350,8 +350,10 @@
             $("#sticky-button").click(function(){
                 if ($(".sticky-chat").css('visibility') === 'visible') {
                     $(".sticky-chat").css('visibility', 'hidden');
-                } else {
+                    $(".sticky-chat").css('opacity', '0');
+                } else if ($(".sticky-chat").css('visibility') === 'hidden')  {
                     $(".sticky-chat").css('visibility', 'visible');
+                    $(".sticky-chat").css('opacity', '1');
                 }
             });
     </script>
