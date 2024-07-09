@@ -348,9 +348,11 @@
 
 
             $("#sticky-button").click(function(){
-                $(".sticky-chat").css('visibility', function(i, visibility) {
-                    return visibility === 'visible' ? 'hidden' : 'visible';
-                });
+                if ($(".sticky-chat").css('visibility') === 'visible') {
+                    $(".sticky-chat").css('visibility', 'hidden');
+                } else {
+                    $(".sticky-chat").css('visibility', 'visible');
+                }
             });
     </script>
 </body>
