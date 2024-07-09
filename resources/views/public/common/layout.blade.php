@@ -8,8 +8,8 @@
 
     <meta name="description" content="{{ $meta_description ?? '' }}">
     <meta name="keywords" content="{{ $meta_keywords ?? '' }}">
-    <meta name="author" content="{{ $meta_author ?? 'iotblitz' }}">
-    <title>{{ $title ?? 'iotblitz' }}</title>
+    <meta name="author" content="{{ $meta_author ?? 'IoTBlitz' }}">
+    <title>{{ $title ?? 'IoTBlitz' }}</title>
 
 
 
@@ -153,6 +153,47 @@
 
     </div>
 
+
+
+
+    {{-- ============================================================== --}}
+
+        <input class='chat-menu hidden' id='offchat-menu' type='checkbox'/>
+		<div class='sticky-button' id='sticky-button'>
+			<label for='offchat-menu'>
+                <img src='{{ asset('public/public_page') }}/assets/images/bot.png' alt='bot' />
+
+			</label>
+		</div>
+		{{-- <div class='sticky-chat'> --}}
+			<div id="chatbot" class="main-card sticky-chat">
+                <button id="chatbot_toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+                </svg>
+                </button>
+                <div class="main-title">
+                  <div>
+                    <img src='{{ asset('public/public_page') }}/assets/images/bot.png' alt='bot' />
+                  </div>
+                  <span>Chatbot</span>
+
+                </div>
+                <div class="chat-area" id="message-box">
+                </div>
+                <div class="line"></div>
+                <div class="input-div">
+                  <input class="input-message" name="message" type="text" id="message" placeholder="Type your message ..." />
+                  <button class="input-send" onclick="send()">
+                    <svg style="width:24px;height:24px">
+                      <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+		{{-- </div> --}}
+
+
+    {{-- ============================================================== --}}
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('public/public_page') }}/vendor/jquery/jquery.min.js"></script>
@@ -232,6 +273,85 @@
                 win.focus();  // Optional: Switch focus to the new tab
             });
         });
+    </script>
+
+
+
+
+
+
+
+
+    <script>
+        var running = false;
+        function send() {
+        if (running == true) return;
+        var msg = document.getElementById("message").value;
+        if (msg == "") return;
+        running = true;
+        addMsg(msg);
+        //DELEAY MESSAGE RESPOSE Echo
+        window.setTimeout(addResponseMsg, 1000, msg);
+        }
+        function addMsg(msg) {
+        var div = document.createElement("div");
+        div.innerHTML =
+            "<span style='flex-grow:1'></span><div class='chat-message-sent'>" +
+            msg +
+            "</div>";
+        div.className = "chat-message-div";
+        document.getElementById("message-box").appendChild(div);
+        //SEND MESSAGE TO API
+        document.getElementById("message").value = "";
+        document.getElementById("message-box").scrollTop = document.getElementById(
+            "message-box"
+        ).scrollHeight;
+        }
+        function addResponseMsg(msg) {
+        var div = document.createElement("div");
+        div.innerHTML = "<div class='chat-message-received'>" + msg + "</div>";
+        div.className = "chat-message-div";
+        document.getElementById("message-box").appendChild(div);
+        document.getElementById("message-box").scrollTop = document.getElementById(
+            "message-box"
+        ).scrollHeight;
+        running = false;
+        }
+        document.getElementById("message").addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            send();
+        }
+        });
+        // document.getElementById("chatbot_toggle").onclick = function () {
+        //     // window.location.hash
+        //     if (document.getElementById("chatbot").classList.contains("collapsed")) {
+        //     document.getElementById("chatbot").classList.remove("collapsed")
+        //     document.getElementById("chatbot_toggle").children[0].style.display = "none"
+        //     document.getElementById("chatbot_toggle").children[1].style.display = ""
+        //     setTimeout(addResponseMsg,1000,"Hi")
+        //     }
+        //     else {
+        //     document.getElementById("chatbot").classList.add("collapsed")
+        //     document.getElementById("chatbot_toggle").children[0].style.display = ""
+        //     document.getElementById("chatbot_toggle").children[1].style.display = "none"
+        //     }
+        // }
+
+
+            $("#chatbot_toggle").click(function(){
+                $(".sticky-chat").css('visibility', function(i, visibility) {
+                    return visibility === 'visible' ? 'hidden' : 'visible';
+                });
+            });
+
+
+
+            $("#sticky-button").click(function(){
+                $(".sticky-chat").css('visibility', function(i, visibility) {
+                    return visibility === 'visible' ? 'hidden' : 'visible';
+                });
+            });
     </script>
 </body>
 
