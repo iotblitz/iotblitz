@@ -2461,26 +2461,40 @@ body {
     width: 100%;
     opacity: 0.2;
 }
-
 .main-title {
     background-color: rebeccapurple;
     font-size: large;
     font-weight: bold;
     display: flex;
-    height: 48px;
-}
+    height: 70px;
+    align-items: center;
+  }
 
-.main-title>div {
+  .main-title > div {
     height: 48px;
     width: 48px;
     display: flex;
     margin-left: 8px;
+  }
+
+  .main-title .ai-head {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    margin: auto 8px;
+  }
+
+  .main-title .ai-head span {
+    display: block; /* Ensure the span is displayed as a block element */
+    font-size: 12px; /* Adjust as needed */
+  }
+
+.main-title.ai-head span {
+    display: block;
+    font-size: 13px;
 }
 
-.main-title svg {
-    height: 24px;
-    margin: auto;
-}
+
 
 .main-title>span {
     margin: auto auto auto 8px;

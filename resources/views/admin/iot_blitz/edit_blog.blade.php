@@ -164,13 +164,13 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label class="floating-label" for="imageCaption">Image caption</label>
-                                            <input type="text" class="form-control" id="imageCaption" name="imageCaption" value="{{$editdata->ZZZZZZZZ}}">
+                                            <input type="text" class="form-control" id="imageCaption" name="imageCaption" value="{{$editdata->image_caption}}">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label class="floating-label" for="imageTitle">Image title</label>
-                                            <input type="text" class="form-control" id="imageTitle" name="imageTitle" value="{{$editdata->ZZZZZZZZ}}">
+                                            <input type="text" class="form-control" id="imageTitle" name="imageTitle" value="{{$editdata->image_title}}">
                                         </div>
                                     </div>
                                 </div>
@@ -266,43 +266,47 @@
 
 
             // Define the custom plugin
-            CKEDITOR.plugins.add('tabl_Of_content', {
-                icons: 'tabl_Of_content',
-                init: function(editor) {
-                    editor.ui.addButton('TablOfContent', {
-                        label: 'Insert Table of Contents',
-                        command: 'insertTablOfContent',
-                        toolbar: 'insert',
-                        icon: 'https://iotblitz.com/public/public_page/assets/images/service-01.webp' // Custom icon URL
-                    });
+CKEDITOR.plugins.add('tabl_Of_content', {
+    icons: 'tabl_Of_content',
+    init: function(editor) {
+        editor.ui.addButton('TablOfContent', {
+            label: 'Insert Table of Contents',
+            command: 'insertTablOfContent',
+            toolbar: 'insert',
+            icon: 'https://iotblitz.com/public/public_page/assets/images/service-01.webp' // Custom icon URL
+        });
 
-                    editor.addCommand('insertTablOfContent', {
-                        exec: function(editor) {
-                            // Insert the specified HTML content
-                            editor.insertHtml(
-                                '<div class="highlight" id="toc"><h2>Table of Contents</h2><ul></ul></div><br>'
-                            );
-                        }
-                    });
-                }
-            });
+        editor.addCommand('insertTablOfContent', {
+            exec: function(editor) {
+                // Insert the specified HTML content for TOC
+                editor.insertHtml(
+                    '<div class="highlight" id="toc"><h2>Table of Contents</h2><ul></ul></div><br>'
+                );
+            }
+        });
+    }
+});
 
-            // Replace the textarea with CKEditor and configure it
-            CKEDITOR.replace('description_editor', {
-                extraPlugins: 'tabl_Of_content',
-                allowedContent: true, // Allow all content
-                on: {
-                    instanceReady: function(ev) {
-                        ev.editor.on('change', function() {
-                            var editorData = ev.editor.getData(); // Get HTML content from CKEditor
-                            var plainText = editorData.replace(/<[^>]*>/g, ''); // Remove HTML tags
-                            document.getElementById('editorValue').value =
-                                plainText; // Set the value to hidden input
-                            console.log(plainText);
-                        });
-                    }
-                }
+// Replace the textarea with CKEditor and configure it
+CKEDITOR.replace('description_editor', {
+    extraPlugins: 'tabl_Of_content',
+    allowedContent: true, // Allow all content
+    on: {
+        instanceReady: function(ev) {
+            // Handle editor instance ready event
+            ev.editor.on('change', function() {
+                // Get HTML content from CKEditor
+                var editorData = ev.editor.getData();
+                // Remove HTML tags to get plain text
+                var plainText = editorData.replace(/<[^>]*>/g, '');
+                // Set the plain text value to a hidden input
+                document.getElementById('editorValue').value = plainText;
+                console.log(plainText); // Log the plain text for debugging
             });
+        }
+    }
+});
+
 
 
         };
@@ -498,7 +502,7 @@
 
         // Change form action for submit button
         $('#save').click(function(event) {
-            $('#myForm').attr('action', '{{ route('super_admin.page.save') }}');
+            $('#myForm').attr('action', '{{ route('super_admin.page.blog_edit', $blog_id) }}');
             // Remove required attributes from unnecessary fields
             $('#myForm input, #myForm textarea, #myForm select').removeAttr('required');
             // Add required attribute only to blog title
@@ -538,9 +542,12 @@
 
         // Change form action for publish button
         $('#publish').click(function(event) {
-            $('#myForm').attr('action', '{{ route('super_admin.page.blog_add') }}');
-            // Add required attributes to necessary fields
-            $('#title, .description_editor, #validatedCustomFile').attr('required', 'required');
+            $('#myForm').attr('action', '{{ route('super_admin.page.blog_edit_publish', $blog_id) }}');
+
+            $('#myForm input, #myForm textarea, #myForm select').removeAttr('required');
+            // Add required attribute only to blog title
+            $('#title').attr('required', 'required');
+
 
             validator.resetForm(); // Reset validation messages
 
@@ -548,21 +555,19 @@
             validator.settings.rules = {
                 title: {
                     required: true
-                },
-                blogimage: {
-                    required: true
                 }
-                // Add more rules as needed for publish button
+                // Add more rules as needed for save button
             };
             validator.settings.messages = {
                 title: {
                     required: "Please enter a blog title."
-                },
-                blogimage: {
-                    required: "Please select a blog image."
                 }
-                // Add more messages as needed for publish button
+                // Add more messages as needed for save button
             };
+
+            // Remove validation rules for publish button fields
+            validator.settings.rules.blogimage = {};
+            validator.settings.messages.blogimage = {};
 
             // Update validation
             validator.resetForm();

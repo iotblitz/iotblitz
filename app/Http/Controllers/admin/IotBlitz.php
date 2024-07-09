@@ -314,7 +314,7 @@ class IotBlitz extends Controller
                 ]);
             }
 
-            return redirect()->route('super_admin.page.blog');
+            return redirect()->route('super_admin.page.blog_edit',$blog_id);
         } else {
             // $data['editdata'] = PublicBlogModel::where('blog_id', $blog_id)->first();
             $data['editdata'] =  PublicBlogModel::where('public_blog.blog_id', $blog_id)  // Assuming $blog_id is the ID you are querying for
@@ -426,8 +426,7 @@ class IotBlitz extends Controller
                 'blog_tags_id' => $item3
             ]);
         }
-
-        return redirect()->route('super_admin.page.blog');
+        return redirect()->route('super_admin.page.blog_edit',$blog_id);
     }
 
     // function blog_edit_old($blog_id, Request $r): View|RedirectResponse|JsonResponse

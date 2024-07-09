@@ -172,12 +172,16 @@
                 </svg>
                 </button>
                 <div class="main-title">
-                  <div>
-                    <img src='{{ asset('public/public_page') }}/assets/images/bot.png' alt='bot' />
+                    <div>
+                      <img src='{{ asset('public/public_page') }}/assets/images/bot.png' alt='bot' />
+                    </div>
+                    <h2 class="ai-head">
+                        Jivya, your AI assistant.
+                        <span>How can I help you?</span>
+                    </h2>
+                    {{-- <span></span>
+                    <div>How can I help you?</div> --}}
                   </div>
-                  <span>Chatbot</span>
-
-                </div>
                 <div class="chat-area" id="message-box">
                 </div>
                 <div class="line"></div>
