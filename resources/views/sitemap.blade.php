@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://iotblitz.com</loc>
         <lastmod>2024-06-20 16:04:16</lastmod>
@@ -126,6 +127,9 @@
 
     <url>
         <loc>https://www.example.com/contact</loc>
+        <image:image>
+            <image:loc>https://example.com/image.jpg</image:loc>
+        </image:image>
         <lastmod>2024-06-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>

@@ -218,36 +218,37 @@ class IotBlitz extends Controller
     function blog_edit($blog_id, Request $r): View|RedirectResponse|JsonResponse
     {
         if ($r->isMethod('post')) {
-
-        } else {
-            // $data['editdata'] = PublicBlogModel::where('blog_id', $blog_id)->first();
-            $data['editdata'] =  PublicBlogModel::where('public_blog.blog_id', $blog_id)  // Assuming $blog_id is the ID you are querying for
-            ->where('public_blog.active_status', 'A')
-            ->join('users', 'public_blog.create_by', '=', 'users.id')
-            ->with('public_tags.tag')  // Eager load public_comments relationship
-            ->with('public_tags')  // Eager load public_tags relationship
-            ->first();
-            $data['blog_id'] = $blog_id;
-            return view('admin.iot_blitz.edit_blog')->with($data);
-        }
-    }
-
-    function blog_edit_old($blog_id, Request $r): View|RedirectResponse|JsonResponse
-    {
-        if ($r->isMethod('post')) {
-
             $rules = [
-                'title' => 'required',
-                'keyword' => 'required',
-                'description_editor' => 'required',
-                'text_description' => 'required',
+                'title' => 'required'
             ];
 
             $valaditor = Validator::make($r->all(), $rules);
             if ($valaditor->fails()) {
-                return response()->json($valaditor->errors(), 200);
-                // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
+                foreach ($valaditor->errors()->all() as $error) {
+                    Toastr::error($error, 'Error');
+                }
+                // return response()->json($valaditor->errors(), 200);
+                return redirect()->route('super_admin.page.blog_add')->withErrors($valaditor)->withInput();
             }
+
+
+
+
+            $tag = strtolower($r->searchTags);
+            $tags = explode(",", $tag);
+            $tag_ids = [];
+            foreach ($tags as $item2) {
+                $item=trim($item2);
+                $tagModel = PublicBlogsTagsModel::where("tags_name", $item)->first();
+                if ($tagModel) {
+                    $tag_id = $tagModel->blog_tags_id;
+                } else {
+                    $tagModel = PublicBlogsTagsModel::create(["tags_name" => $item, "create_by" => auth()->user()->id]);
+                    $tag_id = $tagModel->blog_tags_id;
+                }
+                $tag_ids[] = $tag_id; // Add the tag_id to the array
+            }
+
             if ($r->hasFile('blogimage')) {
                 $rules = [
                     'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
@@ -264,34 +265,231 @@ class IotBlitz extends Controller
                 $image = $r->file('blogimage');
                 $imageName = time() . '.' . $image->extension();
                 $image->move(public_path('blog_images'), $imageName);
-                $savedata = [
+
+                $id = PublicBlogModel::where('blog_id', $blog_id)->update([
                     'blog_title' => $r->title,
                     'blog_keywords' => $r->keyword,
                     'blog_description' => $r->description_editor,
                     'text_description' => $r->text_description,
                     'blog_image' => $imageName,
-                    'create_by' => auth()->user()->id
-                ];
-            } else {
-                $savedata = [
+                    'create_by' => auth()->user()->id,
+                    'featured_image_alt_text' => $r->fimagealttxt,
+                    'image_description' => $r->imagedescriotion,
+                    'image_caption' => $r->imageCaption,
+                    'image_title' => $r->imageTitle,
+                    'meta_title' => $r->mataTitle,
+                    'meta_descriptions' => $r->metaDescriptions,
+                    'focus_keyword' => $r->focusKeyword,
+                    'blog_excerpt' => $r->blogExcerpt,
+                    'content_category' => $r->content_category,
+                    // 'active_status' => 'D'
+                ]);
+
+
+            } else{
+                $id = PublicBlogModel::where('blog_id', $blog_id)->update([
                     'blog_title' => $r->title,
                     'blog_keywords' => $r->keyword,
                     'blog_description' => $r->description_editor,
                     'text_description' => $r->text_description,
-                    'create_by' => auth()->user()->id
-                ];
+                    'create_by' => auth()->user()->id,
+                    'featured_image_alt_text' => $r->fimagealttxt,
+                    'image_description' => $r->imagedescriotion,
+                    'image_caption' => $r->imageCaption,
+                    'image_title' => $r->imageTitle,
+                    'meta_title' => $r->mataTitle,
+                    'meta_descriptions' => $r->metaDescriptions,
+                    'focus_keyword' => $r->focusKeyword,
+                    'blog_excerpt' => $r->blogExcerpt,
+                    'content_category' => $r->content_category,
+                    // 'active_status' => 'D'
+                ]);
             }
 
-
-            PublicBlogModel::where('blog_id', $blog_id)->update($savedata);
+            PublicBlogsTagsListModel::where('blog_id', $blog_id)->delete();
+            foreach ($tag_ids as $item3) {
+                PublicBlogsTagsListModel::create([
+                    'blog_id' => $blog_id,
+                    'blog_tags_id' => $item3
+                ]);
+            }
 
             return redirect()->route('super_admin.page.blog');
         } else {
-            $data['editdata'] = PublicBlogModel::where('blog_id', $blog_id)->first();
+            // $data['editdata'] = PublicBlogModel::where('blog_id', $blog_id)->first();
+            $data['editdata'] =  PublicBlogModel::where('public_blog.blog_id', $blog_id)  // Assuming $blog_id is the ID you are querying for
+            ->where('public_blog.active_status', 'A')
+            ->join('users', 'public_blog.create_by', '=', 'users.id')
+            ->with('public_tags.tag')  // Eager load public_comments relationship
+            ->with('public_tags')  // Eager load public_tags relationship
+            ->first();
             $data['blog_id'] = $blog_id;
             return view('admin.iot_blitz.edit_blog')->with($data);
         }
     }
+
+
+    function publish_blog($blog_id, Request $r): RedirectResponse
+    {
+        $rules = [
+            'title' => 'required'
+        ];
+
+        $valaditor = Validator::make($r->all(), $rules);
+        if ($valaditor->fails()) {
+            foreach ($valaditor->errors()->all() as $error) {
+                Toastr::error($error, 'Error');
+            }
+            // return response()->json($valaditor->errors(), 200);
+            return redirect()->route('super_admin.page.blog_add')->withErrors($valaditor)->withInput();
+        }
+
+
+
+
+        $tag = strtolower($r->searchTags);
+        $tags = explode(",", $tag);
+        $tag_ids = [];
+        foreach ($tags as $item2) {
+            $item=trim($item2);
+            $tagModel = PublicBlogsTagsModel::where("tags_name", $item)->first();
+            if ($tagModel) {
+                $tag_id = $tagModel->blog_tags_id;
+            } else {
+                $tagModel = PublicBlogsTagsModel::create(["tags_name" => $item, "create_by" => auth()->user()->id]);
+                $tag_id = $tagModel->blog_tags_id;
+            }
+            $tag_ids[] = $tag_id; // Add the tag_id to the array
+        }
+
+        if ($r->hasFile('blogimage')) {
+            $rules = [
+                'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            ];
+
+            $valaditor = Validator::make($r->all(), $rules);
+            if ($valaditor->fails()) {
+                return response()->json($valaditor->errors(), 200);
+            }
+            $oldimagepath = public_path('blog_images/' . $r->input('old_image'));
+            if (File::exists($oldimagepath)) {
+                File::delete($oldimagepath);
+            }
+            $image = $r->file('blogimage');
+            $imageName = time() . '.' . $image->extension();
+            $image->move(public_path('blog_images'), $imageName);
+
+            $id = PublicBlogModel::where('blog_id', $blog_id)->update([
+                'blog_title' => $r->title,
+                'blog_keywords' => $r->keyword,
+                'blog_description' => $r->description_editor,
+                'text_description' => $r->text_description,
+                'blog_image' => $imageName,
+                'create_by' => auth()->user()->id,
+                'featured_image_alt_text' => $r->fimagealttxt,
+                'image_description' => $r->imagedescriotion,
+                'image_caption' => $r->imageCaption,
+                'image_title' => $r->imageTitle,
+                'meta_title' => $r->mataTitle,
+                'meta_descriptions' => $r->metaDescriptions,
+                'focus_keyword' => $r->focusKeyword,
+                'blog_excerpt' => $r->blogExcerpt,
+                'content_category' => $r->content_category,
+                'active_status' => 'A'
+            ]);
+
+
+        } else{
+            $id = PublicBlogModel::where('blog_id', $blog_id)->update([
+                'blog_title' => $r->title,
+                'blog_keywords' => $r->keyword,
+                'blog_description' => $r->description_editor,
+                'text_description' => $r->text_description,
+                'create_by' => auth()->user()->id,
+                'featured_image_alt_text' => $r->fimagealttxt,
+                'image_description' => $r->imagedescriotion,
+                'image_caption' => $r->imageCaption,
+                'image_title' => $r->imageTitle,
+                'meta_title' => $r->mataTitle,
+                'meta_descriptions' => $r->metaDescriptions,
+                'focus_keyword' => $r->focusKeyword,
+                'blog_excerpt' => $r->blogExcerpt,
+                'content_category' => $r->content_category,
+                'active_status' => 'A'
+            ]);
+        }
+
+        PublicBlogsTagsListModel::where('blog_id', $blog_id)->delete();
+        foreach ($tag_ids as $item3) {
+            PublicBlogsTagsListModel::create([
+                'blog_id' => $blog_id,
+                'blog_tags_id' => $item3
+            ]);
+        }
+
+        return redirect()->route('super_admin.page.blog');
+    }
+
+    // function blog_edit_old($blog_id, Request $r): View|RedirectResponse|JsonResponse
+    // {
+    //     if ($r->isMethod('post')) {
+
+    //         $rules = [
+    //             'title' => 'required',
+    //             'keyword' => 'required',
+    //             'description_editor' => 'required',
+    //             'text_description' => 'required',
+    //         ];
+
+    //         $valaditor = Validator::make($r->all(), $rules);
+    //         if ($valaditor->fails()) {
+    //             return response()->json($valaditor->errors(), 200);
+    //             // return redirect()->route('admin.register')->withErrors($valaditor)->withInput();
+    //         }
+    //         if ($r->hasFile('blogimage')) {
+    //             $rules = [
+    //                 'blogimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+    //             ];
+
+    //             $valaditor = Validator::make($r->all(), $rules);
+    //             if ($valaditor->fails()) {
+    //                 return response()->json($valaditor->errors(), 200);
+    //             }
+    //             $oldimagepath = public_path('blog_images/' . $r->input('old_image'));
+    //             if (File::exists($oldimagepath)) {
+    //                 File::delete($oldimagepath);
+    //             }
+    //             $image = $r->file('blogimage');
+    //             $imageName = time() . '.' . $image->extension();
+    //             $image->move(public_path('blog_images'), $imageName);
+    //             $savedata = [
+    //                 'blog_title' => $r->title,
+    //                 'blog_keywords' => $r->keyword,
+    //                 'blog_description' => $r->description_editor,
+    //                 'text_description' => $r->text_description,
+    //                 'blog_image' => $imageName,
+    //                 'create_by' => auth()->user()->id
+    //             ];
+    //         } else {
+    //             $savedata = [
+    //                 'blog_title' => $r->title,
+    //                 'blog_keywords' => $r->keyword,
+    //                 'blog_description' => $r->description_editor,
+    //                 'text_description' => $r->text_description,
+    //                 'create_by' => auth()->user()->id
+    //             ];
+    //         }
+
+
+    //         PublicBlogModel::where('blog_id', $blog_id)->update($savedata);
+
+    //         return redirect()->route('super_admin.page.blog');
+    //     } else {
+    //         $data['editdata'] = PublicBlogModel::where('blog_id', $blog_id)->first();
+    //         $data['blog_id'] = $blog_id;
+    //         return view('admin.iot_blitz.edit_blog')->with($data);
+    //     }
+    // }
 
 
     // ===========================================================================

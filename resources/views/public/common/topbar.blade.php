@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <a href="{{route('home')}}" class="logo" style="margin-right: 1% !important">
+                    <a href="{{route('home')}}" class="logo" style="width:9%">
                         {{-- <h1>Scholar</h1> --}}
                          <img src="{{ asset('public/public_page') }}/assets/images/logo.webp" alt=""
                            style="position: absolute; width: 6% !important; height: auto;" onclick="redirectToHome()">
