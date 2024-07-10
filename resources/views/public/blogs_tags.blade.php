@@ -438,9 +438,11 @@
                             @foreach ($tags as $tagdata)
 
 
-                            <a href="{{route('public_blog_tags', ['tags' => preg_replace('/[^a-z0-9]+/', '-',strtolower(trim($tagdata->tags_name)))])}}" class="text-decoration-none mb-2">
+                            @if(!empty($tagdata->tags_name)||$tagdata->tags_name!=null)
+                            <a href="{{ route('public_blog_tags', ['tags' => preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($tagdata->tags_name)))]) }}" class="text-decoration-none mb-2">
                                 <span class="badge">{{$tagdata->tags_name}}</span>
                             </a>
+                            @endif
                             @endforeach
 
                         </div>

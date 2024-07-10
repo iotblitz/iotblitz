@@ -432,6 +432,24 @@ class Home extends Controller
             ->select('product_title', 'product_id', 'product_image', 'created_at', 'updated_at')
             ->get();
         $data['blogs'] = PublicBlogModel::where('active_status', 'A')->select('blog_title', 'blog_id', 'blog_image','image_caption','image_title', 'created_at', 'updated_at')->get();
+
+
+        $data['author'] = PublicBlogModel::where('public_blog.active_status', 'A')
+                        ->join('users', 'users.id', 'public_blog.create_by')
+                        ->select("public_blog.create_by","users.name","users.updated_at")
+                        ->groupBy('public_blog.create_by','users.name','users.updated_at')
+                        ->get();
+
+
+
+        $data['tags'] = PublicBlogsTagsListModel::join('public_blog_tags as pt', 'public_blog_tag_list.blog_tags_id', '=', 'pt.blog_tags_id')
+        ->select('pt.tags_name','pt.updated_at', DB::raw('COUNT(*) as tag_count'))
+        ->groupBy('pt.blog_tags_id','pt.updated_at', 'pt.tags_name')
+        ->orderByDesc('tag_count')
+        ->get();
+
+
+
         $data['case_study'] = PublicCaseStudyModel::where('active_status', 'A')->select('case_study_title', 'case_study_id', 'case_study_image', 'created_at', 'updated_at')->get();
         $data['solutions'] = PublicSolutionModel::where('active_status', 'A')->select('solutions_title', 'solutions_id', 'solutions_image', 'created_at', 'updated_at')->get();
         $data['careers'] = JobCareersModel::where("status", "A")->select('title', 'careers_id', 'created_at', 'updated_at')->get();

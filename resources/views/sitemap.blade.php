@@ -50,6 +50,13 @@
         <priority>0.8</priority>
     </url>
 
+    {{-- <url>
+        <loc>https://iotblitz.com/author/</loc>
+        <lastmod>2024-06-20 16:04:16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url> --}}
+
 
 
     @foreach ($products as $product_key)
@@ -77,6 +84,24 @@
             <priority>0.64</priority>
         </url>
     @endforeach
+
+
+
+    @foreach ($tags as $tagsdata)
+    @if(!empty($tagsdata->tags_name)||$tagsdata->tags_name!=null)
+        <url>
+            <loc>https://iotblitz.com/tags/{{preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($tagsdata->tags_name)))}}</loc>
+            <lastmod>{{$tagsdata->updated_at}}</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.64</priority>
+        </url>
+    @endif
+    @endforeach
+
+
+
+
+
 
 
     @foreach ($case_study as $case_study_data)
@@ -122,6 +147,17 @@
             <changefreq>yearly</changefreq>
             <priority>0.51</priority>
         </url>
+    @endforeach
+
+    @foreach ($author as $autherdata)
+    @if(!empty($autherdata->name)||$autherdata->name!=null)
+        <url>
+            <loc>https://iotblitz.com/author/{{preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($autherdata->name)))}}</loc>
+            <lastmod>{{$autherdata->updated_at}}</lastmod>
+            <changefreq>yearly</changefreq>
+            <priority>0.51</priority>
+        </url>
+    @endif
     @endforeach
 
 
