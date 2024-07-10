@@ -7,6 +7,27 @@
             margin-right: 5px;
             /* Adjust as needed */
         }
+
+        .clickable {
+            margin: 0.5px;
+            background-color: rgb(89, 89, 89);
+            color: white;
+        }
+
+
+        .highlight {
+            background-color: yellow;
+            padding: 50px;
+        }
+        .custom-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .error{
+            color: red;
+        }
     </style>
 
 
@@ -17,12 +38,12 @@
             <div class="row align-items-center">
                 <div class="col-md-12">
                     <div class="page-header-title">
-                        <h5 class="m-b-10">Product Add</h5>
+                        <h5 class="m-b-10">New Solutions</h5>
                     </div>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                        <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
                         <li class="breadcrumb-item"><a href="#!">Page</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('super_admin.page.blog') }}">Blog</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('super_admin.page.products') }}">solutions</a></li>
                     </ul>
                 </div>
             </div>
@@ -37,83 +58,160 @@
 
 
             <!-- [ Main Content ] start -->
+
+           {{-- {{ auth()->user()->user_info}} --}}
+           <form method="POST" id="myForm" action="{{ route('super_admin.page.product_add') }}" enctype="multipart/form-data">
+            @csrf
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>Basic Component</h5>
-                        </div>
-                        <div class="card-body">
-                            <form method="POST" action="{{ route('super_admin.page.product_add') }}"
-                                enctype="multipart/form-data">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <div class="form-group">
-                                            <label class="floating-label" for="title">Title address</label>
-                                            <input type="title" class="form-control" id="title"
-                                                aria-describedby="titleHelp" name="title">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="title">Solutions Title</label>
+                                                <input type="text" class="form-control required-field" id="title" aria-describedby="titleHelp" name="title" required>
+                                            </div>
                                         </div>
-                                    </div>
-
-
-
-                                    <div class="col-sm-4">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile"
-                                            name="productImage" required="">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                        <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                    </div>
-
-
-                                    <div class="col-sm-3">
-                                        <div class="img">
-                                            <img id="previewImage" src="" class="img-fluid" alt="Preview Image">
+                                        <div class="col-sm-12">
+                                            <textarea name="description_editor" placeholder="description" class="form-control required-field description_editor" rows="12" cols="50"></textarea>
                                         </div>
-                                    </div>
-
-                                    <div class="col-sm-5">
-                                        <select class="mb-3 form-control" name="category" required>
-                                            <option>Select Category</option>
-                                            @foreach ($caregory_list as $caregory_list_data)
-                                                <option value="{{ $caregory_list_data->product_category_id }}">
-                                                    {{ $caregory_list_data->category }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <label class="floating-label" for="inputWithBadges">Keyword</label>
-                                            <input type="text" class="form-control" id="inputWithBadges" placeholder=""
-                                                name="keyword">
-                                            <div id="badgeContainer"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <textarea name="description_editor" placeholder="description" class="form-control" rows="12" cols="50"></textarea>
-                                    </div>
-                                    <input type="hidden" id="editorValue" name="text_description" value="">
-                                    <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="mataTitle">Meta title</label>
+                                                <input type="text" class="form-control" id="mataTitle" name="mataTitle">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="metaDescriptions">Meta descriptions</label>
+                                                <input type="text" class="form-control" id="metaDescriptions" name="metaDescriptions">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="focusKeyword">Focus Keyword</label>
+                                                <input type="text" class="form-control" id="focusKeyword" name="focusKeyword">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="inputWithBadges">Secondary Keywords</label>
+                                                <input type="text" class="form-control" id="inputWithBadges" placeholder="" name="keyword">
+                                                <div id="badgeContainer"></div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="editorValue" name="text_description" value="">
+                                        <div class="col-sm-12">
+                                            <button type="submit" class="btn btn-primary btn-block custom-btn" style="" id="publish"><span>PUBLISH</span><i class="fas fa-eye"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- [ form-element ] start -->
+
+                <div class="col-sm-3">
+                    <div class="row">
+                        {{-- <div class="col-md-12 mb-2">
+                            <button type="submit" class="btn btn-success btn-block shadow p-3 mb-2 rounded custom-btn" id="save"><span>SAVE</span><i class="fas fa-check"></i></button>
+                        </div> --}}
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="col-sm-12 mb-3 mt-2">
+                                        <img id="previewImage" src="https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg" class="img-fluid" alt="Preview Image">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="file" class="custom-file-input required-field" id="validatedCustomFile" name="productImage" required>
+                                            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="fimagealttxt">Featured Image Alt Text</label>
+                                            <input type="text" class="form-control" id="fimagealttxt" name="fimagealttxt">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="imagedescriotion">Image Description</label>
+                                            <input type="text" class="form-control" id="imagedescriotion" name="imagedescriotion">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="imageCaption">Image caption</label>
+                                            <input type="text" class="form-control" id="imageCaption" name="imageCaption">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="imageTitle">Image title</label>
+                                            <input type="text" class="form-control" id="imageTitle" name="imageTitle">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="col-sm-12  mt-3 mb-2">
+
+                                    <select class="mb-3 form-control" name="category" required>
+                                        <option value="">Solutions Category</option>
+                                        @foreach ($caregory_list as $caregory_list_data)
+                                            <option value="{{ $caregory_list_data->product_category_id }}">
+                                                {{ $caregory_list_data->category }}</option>
+                                        @endforeach
+
+                                    </select>
 
 
-                <!-- [ accordion-collapse ] end -->
+
+                                </div>
+                            {{-- </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card"> --}}
+                                <div class="col-sm-12 mt-2">
+                                    <div class="form-group">
+                                        <label class="floating-label" for="blogExcerpt">Solutions Excerpt</label>
+                                        <input type="text" class="form-control" id="blogExcerpt" name="blogExcerpt" maxlength="205">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
+
+
+            <!-- [ form-element ] start -->
+
+
+            <!-- [ accordion-collapse ] end -->
 
 
 
 
-            </div>
         </div>
+    </div>
 
-        <!-- Latest Customers end -->
+    <!-- Latest Customers end -->
     </div>
     <!-- [ Main Content ] end -->
 @endsection
@@ -132,19 +230,62 @@
             //     console.log(plainText)
             // });
 
+            // CKEDITOR.replace('description_editor', {
+            //     on: {
+            //         instanceReady: function(ev) {
+            //             ev.editor.on('change', function() {
+            //                 var editorData = ev.editor.getData(); // Get HTML content from CKEditor
+            //                 var plainText = editorData.replace(/<[^>]*>/g, ''); // Remove HTML tags
+            //                 document.getElementById('editorValue').value =
+            //                     plainText; // Set the value to hidden input
+            //                 console.log(plainText);
+            //             });
+            //         }
+            //     }
+            // });
+
+
+
+            // Define the custom plugin
+            CKEDITOR.plugins.add('tabl_Of_content', {
+                icons: 'tabl_Of_content',
+                init: function(editor) {
+                    editor.ui.addButton('TablOfContent', {
+                        label: 'Insert Table of Contents',
+                        command: 'insertTablOfContent',
+                        toolbar: 'insert',
+                        icon: 'https://iotblitz.com/public/public_page/assets/images/service-01.webp' // Custom icon URL
+                    });
+
+                    editor.addCommand('insertTablOfContent', {
+                        exec: function(editor) {
+                            // Insert the specified HTML content
+                            editor.insertHtml(
+                                '<div class="highlight" id="toc"><h2>Table of Contents</h2><ul></ul></div><br>'
+                            );
+                        }
+                    });
+                }
+            });
+
+            // Replace the textarea with CKEditor and configure it
             CKEDITOR.replace('description_editor', {
+                extraPlugins: 'tabl_Of_content',
+                allowedContent: true, // Allow all content
                 on: {
                     instanceReady: function(ev) {
                         ev.editor.on('change', function() {
                             var editorData = ev.editor.getData(); // Get HTML content from CKEditor
                             var plainText = editorData.replace(/<[^>]*>/g, ''); // Remove HTML tags
                             document.getElementById('editorValue').value =
-                            plainText; // Set the value to hidden input
+                                plainText; // Set the value to hidden input
                             console.log(plainText);
                         });
                     }
                 }
             });
+
+
         };
 
 
@@ -182,4 +323,247 @@
             }
         });
     </script>
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Array of example tags
+
+
+            // Function to create and update tags
+            function updateTags(tags) {
+                $('#tagsContainer').empty();
+                tags.forEach(function(tag) {
+                    $('#tagsContainer').append(`<span class="badge bg-primary">${tag}</span>&nbsp;`);
+                });
+            }
+
+            // Function to show similar tags in list
+            function showSimilarTags(searchTerm) {
+                var apiUrl = `{{ route('api.tags_serch') }}?search=${searchTerm}`;
+                $.ajax({
+                    url: apiUrl,
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        var similarTags =
+                            response; // Assuming response is in JSON format with data array
+                        console.log(response);
+                        $('#similarTagsList').empty();
+                        similarTags.forEach(function(tag) {
+                            $('#similarTagsList').append(
+                                `<li class="list-group-item clickable">${tag.tags_name}</li>`
+                            );
+                        });
+
+                        $('#similarTagsList').show(); // Show the list
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error fetching similar tags:', error);
+                    }
+                });
+
+
+
+                // var similarTags = availableTags.filter(function(tag) {
+                //   return tag.includes(searchTerm) && tag !== searchTerm;
+                // });
+
+                // $('#similarTagsList').empty();
+                // similarTags.forEach(function(tag) {
+                //   $('#similarTagsList').append(`<li class="list-group-item clickable">${tag}</li>`);
+                // });
+
+                // // Show the list
+                // $('#similarTagsList').show();
+            }
+
+            // Keyup event handler for tag input
+            $('#searchTags').keyup(function() {
+                var inputVal = $(this).val().trim();
+
+                // Separate search term and show similar tags
+                var searchTerms = inputVal.split(',').map(term => term.trim());
+                var lastTerm = searchTerms[searchTerms.length - 1]; // Get the last term for suggestions
+
+                updateTags(searchTerms); // Update tags container
+
+                if (lastTerm !== '') {
+                    showSimilarTags(lastTerm); // Show similar tags for the last term
+                } else {
+                    $('#similarTagsList').hide(); // Hide list if input is empty or only commas
+                }
+            });
+
+            // Click event handler for adding tags from similarTagsList
+            $(document).on('click', '#similarTagsList .clickable', function() {
+                var tagToAdd = $(this).text().trim();
+                var currentInput = $('#searchTags').val().trim();
+
+                // Split current input into terms and replace last one with clicked tag
+                var searchTerms = currentInput.split(',').map(term => term.trim());
+                searchTerms[searchTerms.length - 1] = tagToAdd;
+
+                // Join terms with comma and update input field
+                var updatedInput = searchTerms.join(', ');
+                $('#searchTags').val(updatedInput);
+
+                updateTags(searchTerms); // Update tags container
+                $('#similarTagsList').hide(); // Hide similar tags list
+            });
+
+            // Close list on click outside
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('#similarTagsList').length && !$(e.target).is('#searchTags')) {
+                    $('#similarTagsList').hide();
+                }
+            });
+        });
+    </script>
+
+{{-- <script>
+    $(document).ready(function() {
+
+        var validator = $('#myForm').validate({
+            // Define initial empty rules and messages (will be updated dynamically)
+            rules: {},
+            messages: {},
+            // Handle form submission
+            submitHandler: function(form) {
+                // Form submission logic here (e.g., AJAX submission)
+                form.submit();
+            }
+        });
+
+
+
+
+
+
+         // Initialize form validation
+         $('#myForm').validate({
+            // Define validation rules
+            rules: {
+                title: {
+                    required: true
+                },
+                description_editor: {
+                    required: true
+                },
+                productImage: {
+                    required: true
+                }
+                // Add more rules as needed
+            },
+            // Define validation error messages
+            messages: {
+                title: {
+                    required: "Please enter a blog title."
+                },
+                description_editor: {
+                    required: "Please enter a blog description."
+                },
+                productImage: {
+                    required: "Please select a blog image."
+                }
+                // Add more messages as needed
+            },
+            // Handle form submission
+             submitHandler: function(form) {
+                // Form submission logic here (e.g., AJAX submission)
+                form.submit();
+            }
+        });
+
+
+        // Change form action for submit button
+        $('#save').click(function(event) {
+            $('#myForm').attr('action', '{{ route('super_admin.page.save') }}');
+            // Remove required attributes from unnecessary fields
+            $('#myForm input, #myForm textarea, #myForm select').removeAttr('required');
+            // Add required attribute only to blog title
+            $('#title').attr('required', 'required');
+
+
+            validator.resetForm(); // Reset validation messages
+
+            // Update validation rules and messages
+            validator.settings.rules = {
+                title: {
+                    required: true
+                }
+                // Add more rules as needed for save button
+            };
+            validator.settings.messages = {
+                title: {
+                    required: "Please enter a blog title."
+                }
+                // Add more messages as needed for save button
+            };
+
+            // Remove validation rules for publish button fields
+            validator.settings.rules.productImage = {};
+            validator.settings.messages.productImage = {};
+
+            // Update validation
+            validator.resetForm();
+            validator.form();
+
+            // Prevent form submission
+            event.preventDefault();
+            $('#myForm').submit();
+
+
+        });
+
+        // Change form action for publish button
+        $('#publish').click(function(event) {
+            $('#myForm').attr('action', '{{ route('super_admin.page.blog_add') }}');
+            // Add required attributes to necessary fields
+            $('#title, .description_editor, #validatedCustomFile').attr('required', 'required');
+
+            validator.resetForm(); // Reset validation messages
+
+            // Update validation rules and messages
+            validator.settings.rules = {
+                title: {
+                    required: true
+                },
+                productImage: {
+                    required: true
+                }
+                // Add more rules as needed for publish button
+            };
+            validator.settings.messages = {
+                title: {
+                    required: "Please enter a blog title."
+                },
+                productImage: {
+                    required: "Please select a blog image."
+                }
+                // Add more messages as needed for publish button
+            };
+
+            // Update validation
+            validator.resetForm();
+            validator.form();
+
+            // Prevent form submission
+            event.preventDefault();
+            $('#myForm').submit();
+
+
+        });
+
+        // Disable form submission on Enter key press
+        $('#myForm').on('keydown', function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                return false;
+            }
+        });
+    });
+</script> --}}
+
 @endsection

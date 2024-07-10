@@ -8,7 +8,7 @@
             /* Adjust as needed */
         }
 
-        .list-group-item {
+        .clickable {
             margin: 0.5px;
             background-color: rgb(89, 89, 89);
             color: white;
@@ -204,12 +204,12 @@
                                     <div class="form-group">
                                         <label for="searchTags" class="floating-label">Search Tags:</label>
                                         <input type="text" class="form-control" id="searchTags" name="searchTags" value="@foreach($editdata->public_tags as $tag)@if ($tag->tag)@if($tag->tag->tags_name){{$tag->tag->tags_name.','}}@endif @endif @endforeach">
-                                        <ul class="list-group mt-3" id="similarTagsList">
-                                            <!-- Similar tags will be inserted here dynamically -->
-                                        </ul>
                                         <div id="tagsContainer">
                                             <!-- Tags will be inserted here dynamically -->
                                         </div>
+                                        <ul class="list-group mt-3" id="similarTagsList">
+                                            <!-- Similar tags will be inserted here dynamically -->
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
