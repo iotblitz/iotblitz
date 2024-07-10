@@ -17,7 +17,7 @@
     <url>
         <loc>https://iotblitz.com/contact</loc>
         <lastmod>2024-06-20 16:04:16</lastmod>
-        <changefreq>2024-06-20 16:04:16</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
