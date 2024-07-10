@@ -10,7 +10,7 @@
     <url>
         <loc>https://iotblitz.com/about</loc>
         <lastmod>2024-06-20 16:04:16</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
@@ -24,29 +24,29 @@
     <url>
         <loc>https://iotblitz.com/solutions</loc>
         <lastmod>2024-06-20 16:04:16</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://iotblitz.com/services</loc>
         <lastmod>2024-06-20 16:04:16</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://iotblitz.com/blogs</loc>
         <lastmod>2024-06-20 16:04:16</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
 
     <url>
-        <loc>https://iotblitz.com/case_study</loc>
+        <loc>https://iotblitz.com/case-study</loc>
         <lastmod>2024-06-20 16:04:16</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
@@ -81,7 +81,7 @@
 
     @foreach ($case_study as $case_study_data)
         <url>
-            <loc>https://iotblitz.com/blogs/{{preg_replace('/[^a-z0-9]+/', '-', strtolower($case_study_data->case_study_title)) . '-' . $case_study_data->case_study_id}}</loc>
+            <loc>https://iotblitz.com/case-study/{{preg_replace('/[^a-z0-9]+/', '-', strtolower($case_study_data->case_study_title)) . '-' . $case_study_data->case_study_id}}</loc>
             <image:image>
                 <image:loc>https://iotblitz.com/public/case_study_images/{{$case_study_data->case_study_image}}</image:loc>
             </image:image>
@@ -119,7 +119,7 @@
         <url>
             <loc>https://iotblitz.com/apply-job/{{preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($careers_data->title))) . '-' . $careers_data->careers_id}}</loc>
             <lastmod>{{$careers_data->updated_at}}</lastmod>
-            <changefreq>never</changefreq>
+            <changefreq>yearly</changefreq>
             <priority>0.51</priority>
         </url>
     @endforeach
