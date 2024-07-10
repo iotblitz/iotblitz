@@ -625,7 +625,8 @@ class IotBlitz extends Controller
                 "text_description" => 'required',
                 "title" => 'required',
                 "category" => 'required',
-                "keyword" => 'required'
+                "keyword" => 'required',
+
             ];
 
             $valaditor = Validator::make($r->all(), $rules);
@@ -644,7 +645,17 @@ class IotBlitz extends Controller
                 'keyword' => $r->keyword,
                 "product_description" => $r->description_editor,
                 "text_description" => $r->text_description,
-                "product_image" => $image,
+                "product_image" => $imageName,
+
+                "featured_image_alt_text" => $r->fimagealttxt,
+                "image_description" => $r->imagedescriotion,
+                "image_caption" => $r->imageCaption,
+                "image_title" => $r->imageTitle,
+                "meta_title" => $r->mataTitle,
+                "meta_descriptions" => $r->metaDescriptions,
+                "focus_keyword" => $r->focusKeyword,
+                "product_excerpt" =>$r->blogExcerpt,
+
                 "active_statu" => "A",
                 "create_by" => auth()->user()->id
             ]);
@@ -691,6 +702,17 @@ class IotBlitz extends Controller
                     'product_description' => $r->description_editor,
                     'text_description' => $r->text_description,
                     'product_image' => $imageName,
+
+                    "featured_image_alt_text" => $r->fimagealttxt,
+                    "image_description" => $r->imagedescriotion,
+                    "image_caption" => $r->imageCaption,
+                    "image_title" => $r->imageTitle,
+                    "meta_title" => $r->mataTitle,
+                    "meta_descriptions" => $r->metaDescriptions,
+                    "focus_keyword" => $r->focusKeyword,
+                    "product_excerpt" =>$r->blogExcerpt,
+
+
                     'active_status' => 'A', // 'A' means 'Active
                     'create_by' => auth()->user()->id
 
@@ -704,6 +726,16 @@ class IotBlitz extends Controller
                     'keyword' => $r->keyword,
                     'product_description' => $r->description_editor,
                     'text_description' => $r->text_description,
+
+                    "featured_image_alt_text" => $r->fimagealttxt,
+                    "image_description" => $r->imagedescriotion,
+                    "image_caption" => $r->imageCaption,
+                    "image_title" => $r->imageTitle,
+                    "meta_title" => $r->mataTitle,
+                    "meta_descriptions" => $r->metaDescriptions,
+                    "focus_keyword" => $r->focusKeyword,
+                    "product_excerpt" =>$r->blogExcerpt,
+
                     'active_status' => 'A', // 'A' means 'Active
                     'create_by' => auth()->user()->id
                 ];

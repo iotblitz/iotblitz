@@ -1,3 +1,9 @@
+@php
+    $title=$product->blog_title;
+    $meta_keywords=$product->keyword;
+    $meta_description=$product->focus_keyword.', '.$product->meta_descriptions;
+@endphp
+
 @extends('public.common.layout')
 @section('page_style')
     <style>
@@ -376,7 +382,7 @@
                     <h1 class="blog-title mb-2">{{ $product->product_title }}</h1>
                     {{-- <img src="https://via.placeholder.com/800x400" alt="Blog Post Image"> --}}
                     <img src="{{ asset('public/product_image') }}/{{ $product->product_image }}"
-                        style="height: auto; width: 100%;border-radius: 20px; object-fit: cover;" alt="Blog Image"
+                        style="height: auto; width: 100%;border-radius: 20px; object-fit: cover;" alt="{{$product->featured_image_alt_text}}" title="{{$product->image_title}}"
                         class="mb-2">
                     <div class="blog-content mb-2">
                         {!! $product->product_description !!}

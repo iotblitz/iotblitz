@@ -1,7 +1,7 @@
 @php
-    $title="$blogs->blog_title";
+    $title=$blogs->blog_title;
     $meta_author=$blogs->name;
-    $meta_keywords="iotblitz, blogs, iotblitz blogs";
+    $meta_keywords=$blogs->keyword;
     $meta_description=$blogs->focus_keyword.', '.$blogs->meta_descriptions;
 @endphp
 
@@ -375,13 +375,13 @@
                     <h1 class="blog-title mb-2">{{ $blogs->blog_title }}</h1>
 
                     @if(!empty($blogs->blog_image) || $blogs->blog_image!=null || $blogs->blog_image!='')
-                        <img src="{{ asset('public/blog_images') }}/{{ $blogs->blog_image }}" style="height: auto; width: 100%; border-radius: 20px; " alt="Blog Image" class="mb-2">
+                        <img src="{{ asset('public/blog_images') }}/{{ $blogs->blog_image }}" style="height: auto; width: 100%; border-radius: 20px; " alt="{{$blogs->featured_image_alt_text}}" title="{{$blogs->image_title}}" class="mb-2">
                     @endif
                     <div class="blog-content mb-2">
                         <div class="blog-content mb-2">
                             <div class="d-flex align-items-center mb-3">
                                 <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.webp  @endif"
-                                    alt="{{$blogs->featured_image_alt_text}}" title="{{$blogs->image_title}}" class="rounded-circle me-3" style="width: 50px">
+                                    alt="{{$blogs->name}}" title="{{$blogs->name}}" class="rounded-circle me-3" style="width: 50px">
                                 <div class="text-center">
                                     <div>
                                         <h5 class="mb-0"> <a href="{{route('public_blog_author', ['author' => preg_replace('/[^a-z0-9]+/', '-',strtolower(trim($blogs->name)))])}}">{{ ucfirst($blogs->name) }}</a></h5>

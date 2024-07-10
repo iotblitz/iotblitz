@@ -429,9 +429,9 @@ class Home extends Controller
     function sitemap(): Response
     {
         $data['products'] = PublicProductModel::where('active_status', 'A')
-            ->select('product_title', 'product_id', 'product_image', 'created_at', 'updated_at')
+            ->select('product_title', 'product_id', 'product_image','image_caption','image_title', 'created_at', 'updated_at')
             ->get();
-        $data['blogs'] = PublicBlogModel::where('active_status', 'A')->select('blog_title', 'blog_id', 'blog_image','image_caption','image_title', 'created_at', 'updated_at')->get();
+        $data['blogs'] = PublicBlogModel::where('active_status', 'A')->select('blog_title', 'blog_keywords', 'blog_id', 'blog_image','image_caption','image_title', 'content_category', 'created_at', 'updated_at')->get();
 
 
         $data['author'] = PublicBlogModel::where('public_blog.active_status', 'A')

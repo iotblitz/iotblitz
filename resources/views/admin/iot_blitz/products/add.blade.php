@@ -105,7 +105,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label class="floating-label" for="inputWithBadges">Secondary Keywords</label>
-                                                <input type="text" class="form-control" id="inputWithBadges" placeholder="" name="keyword">
+                                                <input type="text" class="form-control" id="inputWithBadges" placeholder="" name="keyword" required>
                                                 <div id="badgeContainer"></div>
                                             </div>
                                         </div>

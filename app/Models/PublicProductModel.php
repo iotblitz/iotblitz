@@ -11,7 +11,7 @@ class PublicProductModel extends Model
     protected $table = "public_products";
     protected $primaryKey = 'product_id';
     protected $fillable = [
-   "product_category_id","product_title","keyword", "product_description","text_description","product_image","active_status","create_by"
+   "product_category_id","product_title","keyword", "product_description","text_description","product_image","featured_image_alt_text", "image_description", "image_caption", "image_title", "meta_title", "meta_descriptions", "focus_keyword", "product_excerpt", "active_status","create_by"
     ];
 
 

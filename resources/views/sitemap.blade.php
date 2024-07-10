@@ -64,6 +64,8 @@
             <loc>https://iotblitz.com/solutions/{{preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($product_key->product_title))) . '-' . $product_key->product_id}}</loc>
             <image:image>
                 <image:loc>https://iotblitz.com/public/product_image/{{$product_key->product_image}}</image:loc>
+                <image:caption>{{$product_key->image_caption}}</image:caption>
+                <image:title>{{$product_key->image_title}}</image:title>
             </image:image>
             <lastmod>{{$product_key->updated_at}}</lastmod>
             <changefreq>monthly</changefreq>
@@ -77,7 +79,7 @@
             <image:image>
                 <image:loc>https://iotblitz.com/public/blog_images/{{$blogdata->blog_image}}</image:loc>
                 <image:caption>{{$blogdata->image_caption}}</image:caption>
-                <image:title>{{$blogdata->blog_image}}</image:title>
+                <image:title>{{$blogdata->image_title}}</image:title>
             </image:image>
             <lastmod>{{$blogdata->updated_at}}</lastmod>
             <changefreq>monthly</changefreq>
