@@ -250,6 +250,7 @@ class Home extends Controller
         $data['blogs'] =  PublicBlogModel::where('public_blog.blog_id', $blog_id)  // Assuming $blog_id is the ID you are querying for
             ->where('public_blog.active_status', 'A')
             ->join('users', 'public_blog.create_by', '=', 'users.id')
+            ->leftJoin('users_info', 'users_info.user_id', '=', 'users.id')
             ->with('public_tags.tag')  // Eager load public_comments relationship
             ->with('public_tags')  // Eager load public_tags relationship
             ->first();

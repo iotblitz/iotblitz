@@ -403,7 +403,7 @@
                                 <div class="card-body">
                                     {{-- <h5 class="card-title text-white">About the Author</h5> --}}
                                     <div class="d-flex align-items-center mb-3">
-                                        <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.webp  @endif" alt="Author Image" class="rounded-circle me-3" style="width: 50%">
+                                        <img src="@if($blogs->dp) {{asset('public/public_page') }}/{{$blogs->dp}} @else {{ asset('public/public_page') }}/assets/images/user.webp  @endif" alt="Author Image" class="rounded-circle me-3" style="width: 14%">
                                         <div>
                                             <h5 class="card-title text-white" >{{ ucfirst($blogs->name) }}</h5>
                                             <p class="text-muted">{{
@@ -413,13 +413,23 @@
                                                 (($blogs->user_type == 'AD') ? 'Admin' :
                                                 'Super Admin')))
                                             }}</p>
-                                            <p class="card-text text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada augue id nibh commodo, eget sodales dui mollis. Vestibulum tincidunt felis quis tortor cursus, sed vehicula arcu ultricies. Nullam eu eros ut nisi rhoncus sollicitudin. Proin id risus ut nulla fringilla gravida.</p>
+                                            <p class="card-text text-white">{{$blogs->about}}</p>
                                             <div class="social-icons mt-3">
-                                                <a href="#" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
-                                                <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
-                                                <a href="#" class="text-white me-4"><i class="fab fa-youtube"></i></a>
-                                                <a href="#" class="text-white me-4"><i class="fab fa-linkedin-in"></i></a>
-                                                <a href="" class="text-white me-4"><i class="fab fa-x-twitter"></i></a>
+                                                @if (!empty($blogs->facebook))
+                                                <a href="{{$blogs->facebook}}" target="_blank" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+                                                @endif
+                                                @if (!empty($blogs->instagram))
+                                                <a href="{{$blogs->instagram}}" target="_blank" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+                                                @endif
+                                                @if (!empty($blogs->youtube))
+                                                <a href="{{$blogs->youtube}}" target="_blank" class="text-white me-4"><i class="fab fa-youtube"></i></a>
+                                                @endif
+                                                @if (!empty($blogs->linkdin))
+                                                <a href="{{$blogs->linkdin}}" target="_blank" class="text-white me-4"><i class="fab fa-linkedin-in"></i></a>
+                                                @endif
+                                                @if (!empty($blogs->x_twiter))
+                                                <a href="{{$blogs->x_twiter}}" target="_blank" class="text-white me-4"><i class="fab fa-x-twitter"></i></a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
