@@ -4,7 +4,7 @@
 			<div class="navbar-content scroll-div " >
 				<div class="">
 					<div class="main-menu-header">
-						<img class="img-radius" src="@if(auth()->user()->dp){{ asset('public/profile') }}/{{auth()->user()->dp}}@else{{ asset('public_page/assets/images/user.webp') }}  @endif" alt="User-Profile-Image">
+						<img class="img-radius" src="@if(auth()->user()->dp){{ asset('public/profile') }}/{{auth()->user()->dp}}@else{{ asset('public/public_page/assets/images/user.webp') }}  @endif" alt="User-Profile-Image">
 						<div class="user-details">
 							<div id="more-details">{{auth()->user()->name}} <i class="fa fa-caret-down"></i></div>
 						</div>
