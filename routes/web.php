@@ -37,8 +37,8 @@ Route::get('/services', [Home::class, 'solutions'])->name('solutions');
 Route::get('/services/{solutions_id}', [Home::class, 'single_solution'])->name('single_solutions');
 
 
-Route::get('/products', [Home::class, 'product'])->name('product');
-Route::get('/products/{product_id}', [Home::class, 'single_product'])->name('single_product');
+Route::get('/solutions', [Home::class, 'product'])->name('product');
+Route::get('/solutions/{product_id}', [Home::class, 'single_product'])->name('single_product');
 
 Route::get('/blogs', [Home::class, 'blogs'])->name('blogs');
 Route::get('/blogs/{blogs_id}', [Home::class, 'single_blogs'])->name('single_blogs');

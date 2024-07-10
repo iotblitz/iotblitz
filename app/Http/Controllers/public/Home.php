@@ -168,8 +168,8 @@ class Home extends Controller
         $data['product_id'] = $product_id;
 
         $data['products'] = PublicProductCategoryModel::with(['products' => function ($query) use ($product_id) {
-                                                                $query->where('product_id', '!=', $product_id);
-                                                            }])->get();
+            $query->where('product_id', '!=', $product_id);
+        }])->get();
 
         // $data['latest_posts'] = PublicBlogModel::select("blog_title", "blog_description", "text_description", "blog_image")->where('active_status', "A")->orderBy("blog_id", "DESC")->limit(10)->get();
 
@@ -363,7 +363,7 @@ class Home extends Controller
             ->first();
         $data['solutions_id'] = $solutions_id;
 
-        $data['solution'] = PublicSolutionModel::where('active_status', 'A')->whereNot("solutions_id",$solutions_id)->orderBy("solutions_id", "DESC")->paginate(5);
+        $data['solution'] = PublicSolutionModel::where('active_status', 'A')->whereNot("solutions_id", $solutions_id)->orderBy("solutions_id", "DESC")->paginate(5);
 
 
         return view('public.single_solution')->with($data);
@@ -428,11 +428,11 @@ class Home extends Controller
     function sitemap(): Response
     {
         $data['products'] = PublicProductModel::where('active_status', 'A')
-            ->select('product_title', 'product_id', 'created_at', 'updated_at')
+            ->select('product_title', 'product_id', 'product_image', 'created_at', 'updated_at')
             ->get();
-        $data['blogs'] = PublicBlogModel::where('active_status', 'A')->select('blog_title', 'blog_id', 'created_at', 'updated_at')->get();
-        $data['case_study'] = PublicCaseStudyModel::where('active_status', 'A')->select('case_study_title', 'case_study_id', 'created_at', 'updated_at')->get();
-        $data['solutions'] = PublicSolutionModel::where('active_status', 'A')->select('solutions_title', 'solutions_id', 'created_at', 'updated_at')->get();
+        $data['blogs'] = PublicBlogModel::where('active_status', 'A')->select('blog_title', 'blog_id', 'blog_image','image_caption','image_title', 'created_at', 'updated_at')->get();
+        $data['case_study'] = PublicCaseStudyModel::where('active_status', 'A')->select('case_study_title', 'case_study_id', 'case_study_image', 'created_at', 'updated_at')->get();
+        $data['solutions'] = PublicSolutionModel::where('active_status', 'A')->select('solutions_title', 'solutions_id', 'solutions_image', 'created_at', 'updated_at')->get();
         $data['careers'] = JobCareersModel::where("status", "A")->select('title', 'careers_id', 'created_at', 'updated_at')->get();
 
 

@@ -40,7 +40,7 @@
                     <div class="header-text mt-5">
 
                         {{-- <span class="category text-white">Our Courses</span> --}}
-                        <h1 class="text-white">OUR PRODUCTS</h1>
+                        <h1 class="text-white">OUR SOLUTIONS</h1>
                         <p class="text-white">IoTBlitz specializes in IoT software design and development, IIoT Platforms,
                             and end-to-end IoT Solutions. Our custom-designed IoT Platforms and Remote Monitoring Systems
                             aim to enhance industry efficiency and performance.</p>

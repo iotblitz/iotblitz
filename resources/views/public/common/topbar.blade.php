@@ -29,7 +29,7 @@
                         <li class="scroll-to-section"><a href="{{ route('home') }}"
                                 class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
                         <li class="scroll-to-section"><a href="{{ route('product') }}"
-                                class="{{ request()->routeIs('product') ? 'active' : '' }}">Products</a></li>
+                                class="{{ request()->routeIs('product') ? 'active' : '' }}">Solutions</a></li>
                         <li class="scroll-to-section"><a href="{{ route('solutions') }}"
                                     class="{{ request()->routeIs('solutions') || request()->routeIs('single_solutions') ? 'active' : '' }}">Services</a>
                             </li>
