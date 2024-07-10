@@ -20,7 +20,7 @@
             height: 100%;
         }
 
-        h2 {
+        .category {
             background-color: #7a6ad8;
             color: #fff;
             font-size: 25px;

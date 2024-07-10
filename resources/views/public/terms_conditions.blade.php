@@ -95,7 +95,7 @@
 <!-- Content Sections -->
 <section id="section1">
     <h2>Agreement to Our Legal Terms</h2>
-    <p>These Terms and Conditions constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and IoTBlitz LLP ("Company," “we," “us," or “our”), concerning your access to and use of the <a href="http://www.iotblitz.com">www.iotblitz.com</a> website as well as any other media form, media channel, mobile website, or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms and Conditions.</p>
+    <p>These Terms and Conditions constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and IoTBlitz LLP ("Company," “we," “us," or “our”), concerning your access to and use of the <a href="https://iotblitz.com/">www.iotblitz.com</a> website as well as any other media form, media channel, mobile website, or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms and Conditions.</p>
 </section>
 
 <section id="section2">
@@ -222,7 +222,7 @@
         <li><strong>IoTBlitz LLP</strong></li>
         <li>Email: <a href="mailto:info@iotblitz.com">info@iotblitz.com</a></li>
         <li>Address: Green Valley Residency, Boral Main Road, Kolkata 700154</li>
-        <li>Website: <a href="http://www.iotblitz.com">www.iotblitz.com</a></li>
+        <li>Website: <a href="https://iotblitz.com/">www.iotblitz.com</a></li>
     </ul>
 </section>
 
