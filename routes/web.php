@@ -137,7 +137,14 @@ Route::prefix('/admin')->group(function () {
 
 
 
+    Route::middleware(['auth:sa_admin,content_writer'])->group(function () {
+        Route::prefix("/my-profile")->group(function () {
+            Route::get('/aa', [Dashboard::class, 'my_profile'])->name('my_profile');
+            Route::post('/update', [Dashboard::class, 'my_profile_update'])->name('my_profile_update');
+            Route::post('/change-password', [Dashboard::class, 'my_profile_change_password'])->name('my_profile_change_password');
+        });
 
+    });
 
 
 

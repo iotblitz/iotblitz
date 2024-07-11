@@ -3,41 +3,41 @@
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://iotblitz.com</loc>
-        <lastmod>2024-06-20 16:04:16</lastmod>
+        <lastmod>2024-06-11T12:22:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://iotblitz.com/about</loc>
-        <lastmod>2024-06-20 16:04:16</lastmod>
+        <lastmod>2024-06-11T12:22:16+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://iotblitz.com/contact</loc>
-        <lastmod>2024-06-20 16:04:16</lastmod>
+        <lastmod>2024-06-11T12:22:16+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://iotblitz.com/solutions</loc>
-        <lastmod>2024-06-20 16:04:16</lastmod>
+        <lastmod>2024-06-11T12:22:16+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://iotblitz.com/services</loc>
-        <lastmod>2024-06-20 16:04:16</lastmod>
+        <lastmod>2024-06-11T12:22:16+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://iotblitz.com/blogs</loc>
-        <lastmod>2024-06-20 16:04:16</lastmod>
+        <lastmod>2024-06-11T12:22:16+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -45,7 +45,7 @@
 
     <url>
         <loc>https://iotblitz.com/case-study</loc>
-        <lastmod>2024-06-20 16:04:16</lastmod>
+        <lastmod>2024-06-11T12:22:16+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -67,7 +67,7 @@
                 <image:caption>{{$product_key->image_caption}}</image:caption>
                 <image:title>{{$product_key->image_title}}</image:title>
             </image:image>
-            <lastmod>{{$product_key->updated_at}}</lastmod>
+            <lastmod>{{timeformat($product_key->updated_at)}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.64</priority>
         </url>
@@ -81,7 +81,7 @@
                 <image:caption>{{$blogdata->image_caption}}</image:caption>
                 <image:title>{{$blogdata->image_title}}</image:title>
             </image:image>
-            <lastmod>{{$blogdata->updated_at}}</lastmod>
+            <lastmod>{{timeformat($blogdata->updated_at)}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.64</priority>
         </url>
@@ -93,7 +93,7 @@
     @if(!empty($tagsdata->tags_name)||$tagsdata->tags_name!=null)
         <url>
             <loc>https://iotblitz.com/tags/{{preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($tagsdata->tags_name)))}}</loc>
-            <lastmod>{{$tagsdata->updated_at}}</lastmod>
+            <lastmod>{{timeformat($tagsdata->updated_at)}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.64</priority>
         </url>
@@ -112,7 +112,7 @@
             <image:image>
                 <image:loc>https://iotblitz.com/public/case_study_images/{{$case_study_data->case_study_image}}</image:loc>
             </image:image>
-            <lastmod>{{$case_study_data->updated_at}}</lastmod>
+            <lastmod>{{timeformat($case_study_data->updated_at)}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.64</priority>
         </url>
@@ -123,7 +123,7 @@
             <image:image>
                 <image:loc>https://iotblitz.com/public/solution_image/{{$solutions_key->solutions_image}}</image:loc>
             </image:image>
-            <lastmod>{{$solutions_key->updated_at}}</lastmod>
+            <lastmod>{{timeformat($solutions_key->updated_at)}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.64</priority>
         </url>
@@ -134,7 +134,7 @@
     @foreach ($careers as $careers_data)
         <url>
             <loc>https://iotblitz.com/careers/{{preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($careers_data->title))) . '-' . $careers_data->careers_id}}</loc>
-            <lastmod>{{$careers_data->updated_at}}</lastmod>
+            <lastmod>{{timeformat($careers_data->updated_at)}}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.51</priority>
         </url>
@@ -145,7 +145,7 @@
     @foreach ($careers as $careers_data)
         <url>
             <loc>https://iotblitz.com/apply-job/{{preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($careers_data->title))) . '-' . $careers_data->careers_id}}</loc>
-            <lastmod>{{$careers_data->updated_at}}</lastmod>
+            <lastmod>{{timeformat($careers_data->updated_at)}}</lastmod>
             <changefreq>yearly</changefreq>
             <priority>0.51</priority>
         </url>
@@ -155,7 +155,7 @@
     @if(!empty($autherdata->name)||$autherdata->name!=null)
         <url>
             <loc>https://iotblitz.com/author/{{preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($autherdata->name)))}}</loc>
-            <lastmod>{{$autherdata->updated_at}}</lastmod>
+            <lastmod>{{timeformat($autherdata->updated_at)}}</lastmod>
             <changefreq>yearly</changefreq>
             <priority>0.51</priority>
         </url>
@@ -201,3 +201,11 @@
     {{-- 0.51 --}}
 
 </urlset>
+
+
+@php
+    function timeformat($datetimr){
+        $timestamp = strtotime($datetimr);
+        return date('Y-m-d\TH:i:sP', $timestamp);
+    }
+@endphp

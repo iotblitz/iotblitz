@@ -18,4 +18,10 @@ class Dashboard extends Controller
     {
         return view('admin.dashboard.content_writer_dashboard');
     }
+
+
+    function my_profile(): View|RedirectResponse
+    {
+        return view('admin.dashboard.my_profile');
+    }
 }
