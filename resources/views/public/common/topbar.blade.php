@@ -55,7 +55,7 @@
 
                         <li class="scroll-to-section dropdown d-none d-md-block">
                             <a href="javascript:void(0);"
-                                class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') ||  request()->routeIs('careers') || request()->routeIs('single_careers')|| request()->routeIs('faqs') ? 'active' : '' }}">More
+                                class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') ||  request()->routeIs('careers') || request()->routeIs('single_careers')|| request()->routeIs('faqs') ? 'active' : '' }} more-buttons">More
                                 <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('case_study') }}"
