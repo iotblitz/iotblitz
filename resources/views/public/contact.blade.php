@@ -1,3 +1,9 @@
+@php
+    $title="Contact Us";
+    $meta_author="IoTBlitz";
+    $meta_keywords="contact us, contact us IoTBlitz, contact";
+    $meta_description="IoTBlitz is here to assist you with all your IoT needs. Whether you have a question about our products, need technical support, or want to discuss a potential project, we are ready to help.";
+@endphp
 @extends('public.common.layout')
 @section('page_style')
     <style>

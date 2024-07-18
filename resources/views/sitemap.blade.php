@@ -50,6 +50,28 @@
         <priority>0.8</priority>
     </url>
 
+
+    <url>
+        <loc>https://iotblitz.com/faqs</loc>
+        <lastmod>2024-07-18T10:25:57+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://iotblitz.com/faqs#list-general</loc>
+        <lastmod>2024-07-18T10:25:57+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://iotblitz.com/faqs#list-products</loc>
+        <lastmod>2024-07-18T10:25:57+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+
     {{-- <url>
         <loc>https://iotblitz.com/author/</loc>
         <lastmod>2024-06-20 16:04:16</lastmod>

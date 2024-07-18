@@ -1,3 +1,9 @@
+@php
+    $title="About Us";
+    $meta_author="IoTBlitz";
+    $meta_keywords="about us,about us IoTBlitz,about us IoTBlitz LLP,IotBlitz, IoTBlitz LLP, IoTBlitz about us";
+    $meta_description="Since its founding and establishment in 2024, IoTBlitz has expanded rapidly, serving both local and foreign customers. Our team of highly skilled experts uses cutting-edge technology to deliver the finest IoT Platform and Remote Monitoring Systems.";
+@endphp
 @extends('public.common.layout')
 
 @section('page_style')

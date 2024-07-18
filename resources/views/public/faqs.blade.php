@@ -108,7 +108,8 @@
         .faq-answer {
             /* display: none; */
             padding: 10px 15px;
-            background-color: #f8f9fa;
+            background-color: #f0eeff;
+            border-radius: 8px 8px 8px 8px;
         }
 
         .faq-list-item:last-child .faq-answer:last-child {
@@ -214,14 +215,14 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">1. What is IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>The Internet of Things (IoT) is a network of multiple physical devices embedded with software, sensors, hardware and other technologies. They communicate with each other and the cloud. It helps them to collect and exchange data.</p>
+                                        <p>The Internet of Things (IoT) is a network of multiple physical devices embedded with software, sensors, hardware, and other technologies. These devices communicate with each other and the cloud, helping them collect and exchange data.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">2. What is an IoT example?
                                     </h5>
                                     <div class="faq-answer">
-                                        <p>Some examples of IoT include smart home devices(lights, home and kitchen appliances), healthcare devices(pacemakers, remote monitoring devices), wearables(smartbands, smartwatches), security devices (smart security cameras) etc. </p>
+                                        <p>Some examples of IoT include smart home devices (lights, home and kitchen appliances), healthcare devices (pacemakers, remote monitoring devices), wearables (smart bands, smartwatches), and security devices (smart security cameras).</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
@@ -236,85 +237,84 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">4. Why is IoT used?</h5>
                                     <div class="faq-answer">
-                                        <p>IoT helps in optimizing and automating the process. IoT reduces the operational cost and enhances the business productivity and efficiency.</p>
+                                        <p>IoT helps optimize and automate processes, reduce operational costs, and enhance business productivity and efficiency.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">5. What are the benefits of IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>The Internet of Things (IoT) has several benefits. Those are data-driven insights, cost savings, improved efficiency, remote monitoring, safety, enhanced customer experience, new business opportunities etc.</p>
+                                        <p>The Internet of Things (IoT) has several benefits, including data-driven insights, cost savings, improved efficiency, remote monitoring, safety, enhanced customer experience, and new business opportunities.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">6. Is Alexa an IoT device?</h5>
                                     <div class="faq-answer">
-                                        <p>Amazon Echo is an IoT device. Alexa is a virtual voice assistant embedded in the Amazon Echo.
-                                        </p>
+                                        <p>Amazon Echo is an IoT device. Alexa is a virtual voice assistant embedded in the Amazon Echo.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">7. Is Netflix an IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Netflix uses AI (Artificial Intelligence) and IoT (Internet of Things) devices to enhance your experience. With these technologies, Netflix provides personalization and content recommendations to optimize user experience.</p>
+                                        <p>No, Netflix is not an IoT device in itself. However, Netflix uses AI (Artificial Intelligence) and IoT (Internet of Things) devices to enhance your experience. These technologies provide personalization and content recommendations to optimize user experience.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">8. Is a smartphone an IoT device?</h5>
                                     <div class="faq-answer">
-                                        <p>The four layers of IoT are sensing, connectivity, data processing, and user interface.</p>
+                                        <p>Smartphones have sensors and can communicate data to the cloud. However, they require human control and interaction to operate. Therefore, whether to call a smartphone an IoT device is debatable.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">9. Is TV an IoT device?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes. A smart TV is an IoT device that connects to the internet with Wi-Fi or ethernet. The internet connection helps the device stream shows. A smart TV can be controlled by voice, remote, and other means.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">10. What is the difference between IoT and AI?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The Internet of Things (IoT) and Artificial Intelligence (AI) are separate technologies but complement each other. IoT focuses on connecting devices and automation. On the other hand, AI focuses on understanding and making decisions based on collected data. AI modules can make decisions based on the data collected by IoT devices.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">11. What is IoT with real time example?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Examples of IoT are smart security cameras, self-driving cars, home appliances, and wearables such as smartwatches.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">12. What is an IoT dashboard?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>An Internet of Things (IoT) dashboard is a web-based user interface in the IoT platform that enables users to organize, visualize, and monitor the data collected by connected devices. It helps the user to manage and monitor the device and the inventory.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">13. What is IoT visualization?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The Internet of Things (IoT) visualization represents the data collected by IoT devices in visual formats, such as charts, graphs, maps, etc.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">14. What is IoT monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The Internet of Things (IoT) monitoring system is a process for monitoring, managing, and controlling assets and infrastructure with sensors and connected devices.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">15. What is display in IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The display is an integral part of an IoT device. It can help the user visualize the data collected from IoT sensors and interact with devices through the user interface.</p>
                                     </div>
                                 </div>
 
@@ -322,62 +322,62 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">16. What is IoT full form?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The full form of IoT is ‘Internet of Things.’</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">17. What is IoT software?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>IoT software is a collection of software and services that collect data from IoT devices. IoT software focuses on analyzing the collected data using machine learning and artificial intelligence (AI). The software can make data-driven decisions and communicate with other devices.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">18. Is IoT a good career?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>IoT promises diverse career opportunities, attractive salaries, and efficient growth. This field’s dynamic approach requires flexibility, adaptation, and optimism about your career.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">19. Does IoT need 5G?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes, 5G can be an essential aspect of IoT. 5G can efficiently deliver data and connect with IoT devices, making the process easy and faster.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">20. Which IoT platform is best?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The best IoT platform depends on your needs. Several useful IoT platforms exist, including Amazon Web Services (AWS), Microsoft Azure, Google Cloud, and Oracle.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">21. Which IoT platform is free?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>There are a few free IoT platforms. Those are Thingsboard, OpenRemote, Kaa IoT platform, etc.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">22. Is Amazon a IoT platform?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Amazon Web Services is an IoT platform that offers IoT solutions and services.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">23. What is IoT price?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The price of IoT can vary depending on several factors. From low-cost devices for your home to high-priced industrial devices, there is a range of IoT devices in multiple price segments. The price is dependent on the type of device, the brands, features, and functionality.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">24. What is the Industry 4.0 concept?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Industry 4.0 is the phase of manufacturing digitization. This smart manufacturing concept aims to deliver efficiency, flexibility, productivity, and scalability in operations. It also enables users to emphasize customization and data-driven decision-making.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">25. What is Industry 4.0 platform?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Industry 4.0 is a platform that focuses on smart manufacturing and factories. It boosts productivity, flexibility, and efficiency.</p>
                                     </div>
                                 </div>
 
@@ -385,7 +385,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">26. What are Industry 4.0 steps?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The steps of Industry 4.0 are the foundation and evaluation of the existing processes and technology, technological integration, advanced technologies, and transformation and optimization of businesses.</p>
                                     </div>
                                 </div>
 
@@ -393,7 +393,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">27. What is Industry 4.0 being driven by?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Industry 4.0 is driven by numerous trends and technologies, such as data, connectivity, the Internet of Things, robotics, machine learning, and augmented reality.</p>
                                     </div>
                                 </div>
 
@@ -401,7 +401,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">28. What is Industry 4.0 artificial intelligence?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Artificial intelligence is a crucial part of Industry 4.0. In Industry 4.0, artificial intelligence integrates with technology to provide intelligence, sense, and power to learn from the environment.</p>
                                     </div>
                                 </div>
 
@@ -409,7 +409,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">29. How is Industry 4.0 used?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Industry 4.0 uses real-time data, automation, and interconnected devices to help businesses monitor, manage, and optimize business operations and supply chains.</p>
                                     </div>
                                 </div>
 
@@ -417,7 +417,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">30. What are Industry 4.0 key trends?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Some critical trends of Industry 4.0 are artificial intelligence, the Internet of Things, robots, 5G-based technologies, augmented reality, big data analytics, etc.</p>
                                     </div>
                                 </div>
 
@@ -425,7 +425,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">31. What is Industry 4.0 in the supply chain?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Industry 4.0 is a smart manufacturing and intelligent factory management tool. This tool is embedded with digital technologies to help the business supply chains manage production and operations. It enhances the efficiency and effectiveness of the supply chain and other related processes.</p>
                                     </div>
                                 </div>
 
@@ -433,7 +433,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">32. What is the purpose of IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The primary purpose of IoT is to share, exchange, and analyze data in real time to improve operational efficiency without human intervention.</p>
                                     </div>
                                 </div>
 
@@ -441,7 +441,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">33. What are the 7 characteristics of IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The seven characteristics of IoT are connectivity, architecture, data-driven, identity and intelligence, embedded Sensors and actuators, communication, and dynamic changes.</p>
                                     </div>
                                 </div>
 
@@ -449,7 +449,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">34. What are the applications of IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The list of IoT applications is endless. These include smart homes, smart agriculture, smart grids, smart security, smart healthcare, smart vehicles, remote monitoring and control, wearables, etc.</p>
                                     </div>
                                 </div>
 
@@ -457,7 +457,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">35. What is IoT monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>A remote monitoring system uses interconnected devices and IoT sensors to monitor, manage, and control operations and systems remotely.</p>
                                     </div>
                                 </div>
 
@@ -465,7 +465,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">36. Is CCTV an IoT device?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes. CCTV can be considered an IoT device as it remotely monitors areas. CCTV cameras can be integrated with other IoT sensors to create a comprehensive system.</p>
                                     </div>
                                 </div>
 
@@ -473,7 +473,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">37. Is Tubelight an IoT device?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Traditional Tubelight is not an IoT device. However, Smart Tubelights, which Wi-Fi and remote control operate, are IoT devices.</p>
                                     </div>
                                 </div>
 
@@ -481,7 +481,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">38. Is Google Cloud an IoT platform?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes. Google Cloud Platform (GCP) is an IoT platform that offers businesses multiple IoT solutions and services.</p>
                                     </div>
                                 </div>
 
@@ -489,7 +489,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">39. Which cloud is best for IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Multiple cloud platforms, including Amazon Web Services (AWS), Microsoft Azure, Google Cloud, and Oracle, work well with the Internet of Things.</p>
                                     </div>
                                 </div>
 
@@ -497,7 +497,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">40.  Is Azure an IoT platform?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes. Microsoft Azure is an IoT platform that assists users in connecting, monitoring, and controlling their devices and equipment. Microsoft Azure offers various Solutions and services to customers.</p>
                                     </div>
                                 </div>
 
@@ -505,7 +505,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">41. Which software is used in IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The software used in IoT is Microsoft Azure IoT Suite, Kaa, Thingsboard, Arduino, etc.</p>
                                     </div>
                                 </div>
 
@@ -513,7 +513,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">42. Is AWS IoT free?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>AWS IoT is a paid platform. But with the free tier offered by AWS, you can get a few perks.</p>
                                     </div>
                                 </div>
 
@@ -521,7 +521,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">43. Which language is used in IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Several programming languages are used in IoT. A few examples of Programming languages used in IoT are C, C++, Python, Java, PHP, and many more.</p>
                                     </div>
                                 </div>
 
@@ -529,7 +529,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">44. Is IoT a tool?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes. IoT (Internet of Things) is a tool combined with software or hardware components that can assist businesses in analyzing, developing, deploying, and managing solutions. It reduces complexity and provides faster development, enhanced security, efficiency, and effectiveness in operations.</p>
                                     </div>
                                 </div>
 
@@ -537,7 +537,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">45. Does IoT need coding?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes. IoT-embedded devices have microprocessors and microcontrollers. They require programming (coding) to perform specific tasks, control devices, manage data, etc.</p>
                                     </div>
                                 </div>
 
@@ -545,7 +545,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">46. Does IoT use AI?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes. IoT uses artificial intelligence (AI) to make the whole system efficient and intelligent. With AI, IoT devices can learn from the environment and make decisions based on learned data.</p>
                                     </div>
                                 </div>
 
@@ -553,7 +553,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">47. Does IoT need Python?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Python is an excellent choice for IoT. Most developers choose it because it is easy to learn, versatile, and has a vast online community that assists each other. However, using Python in IoT is optional. You can use different programming languages.</p>
                                     </div>
                                 </div>
 
@@ -561,7 +561,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">48. Does IoT require WIFI?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>WIFI is one of the popular technologies for IoT, but there are also multiple options, such as Bluetooth, cellular networks, Zigbee, etc.</p>
                                     </div>
                                 </div>
 
@@ -569,7 +569,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">49. Does IoT use 4G?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes. IoT uses 4G networks. Though having a 5G network is better due to ease and speed, 4G is still a good option in rural areas.</p>
                                     </div>
                                 </div>
 
@@ -577,7 +577,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">50. Is IoT wired or wireless?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The Internet of Things (IoT) can use both wired and wireless connections, depending on the needs of the applications.</p>
                                     </div>
                                 </div>
 
@@ -599,19 +599,19 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">1. What is energy meter in IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>An IoT Energy meter is a device that uses IT technology to monitor and record energy consumption. It can provide schedule and real-time analytics on energy usage and easily share information with businesse</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">2. What is smart energy monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The smart energy monitoring system is the process of monitoring and controlling energy use in real-time using the Internet of Things (IoT). This system can be used in businesses, manufacturing, plants, and smart homes.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">3. What is an example of an energy monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>An example of an energy monitoring system is the smart meter.</p>
                                     </div>
                                 </div>
 
@@ -620,84 +620,84 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">4. What is the app for energy monitoring devices?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>There are multiple applications available to monitor energy usage. The apps for energy monitoring devices are OWL Intuition-E Online Energy Monitor, Loop, Emporia Energy, etc.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">5. What is an example of an energy monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Examples of remote energy monitoring systems are cloud platforms, smart meters, IoT gateways, etc.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">6. How is IoT used in energy?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur. </p>
+                                        <p>The Internet of Things (IoT) can be used in the energy sector to monitor energy consumption, improve energy efficiency and reduce energy consumption. IoT-connected devices are used in smart homes, smart grids, industries, Transportation, oil, gas, and renewable energy generation plants.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">7. What is IoT based energy monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>An IoT energy monitoring system connects with devices and appliances to collect and share real-time data on energy use. This data can be used to gain insights into energy consumption patterns.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">8. How IoT is used in energy management?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The Internet of Things (IoT) can be used in energy management to monitor consumption, reduce cost and energy wastage, and promote sustainability.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">9. What is smart home energy consumption and monitoring using IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Smart home energy consumption and IoT monitoring use IoT sensors to track, monitor, and manage energy use in the home in real-time. This system can help the user reduce energy consumption and electricity costs and enable sustainability.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">10. What is the application of remote monitoring?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Remote monitoring is used in multiple industries, including healthcare, smart agriculture, energy control, logistics and management, IIoT, and others.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">11. What is solar monitoring system using IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Solar monitoring systems embedded with the Internet of Things (IoT) collect real-time data from IoT sensors in a solar power system. They analyze the data and provide insights to improve the system's efficiency and performance. They also reduce management and maintenance problems.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">12. What is solar remote monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>A solar remote monitoring system is a solution for solar systems that tracks and analyzes the energy production and consumption of the solar system in real-time.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">13. What is the use of IoT in solar energy?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The Internet of Things (IoT) is used in solar systems to monitor, manage, control, and optimize solar panels, increasing efficiency and overall performance.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">14. What is solar system monitoring?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Solar system monitoring devices collect and analyze the data of solar energy production and usage in real-time.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">15. What is the use of IoT in solar energy?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The Internet of Things (IoT) is used in solar energy systems to monitor, manage, control, and optimize solar panels remotely. The Internet of Things (IoT) can help homes and businesses reduce costs, improve efficiency, and provide real-time data for proactive maintenance.</p>
                                     </div>
                                 </div>
 
@@ -705,62 +705,62 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">16. Which sensor is used in solar tracker?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Solar trackers use Light-dependent resistors (LDRs), Photodiodes, Electronic compasses, GPS, and ionic liquid-based photodetectors, among other things.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">17. What is smart solar energy monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>A smart solar energy monitoring system is a combination of hardware and software monitors that monitor and manage solar plants, reduce costs, and improve the efficiency and effectiveness of the overall system.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">18. What is solar tracker technology?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Solar tracker technology is a set of mechanical systems or devices that track and follow the sun’s movement to maximize the solar energy in the sonar panels and receivers.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">19. Do I need solar monitoring?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Yes, you need solar monitoring because a solar monitoring system can help you understand the condition of your solar panels, identify potential issues, and determine the solar system's performance. It can track energy production and usage in real-time and provide data over a specific time period.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">20. What is the future of solar tracker?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>A solar tracker is an essential part of the solar monitoring system. The solar tracker market is expected to grow at a CAGR of 13.5% from 2024 to 2031 and reach a value of $16.73 billion by 2031.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">21. What is IoT based fuel monitoring for future vehicles?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>IoT-based fuel monitoring systems use IoT sensors and the Internet to track fuel consumption in vehicles. These systems can help users reduce fuel wastage, fuel cost, and fuel theft and improve efficiency.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">22. How can you monitor fuel usage?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The fuel monitoring system can assist you in tracking and analyzing full fuel use in vehicles and storage chambers. You can use the data to identify problems and inefficiencies and make information-driven decisions to improve fuel efficiency.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">23. How does fuel monitoring system work?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The fuel tank monitoring system uses sensors.</p>
                                     </div>
                                 </div>
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">24. How does fuel monitoring system work?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The fuel monitoring system tracks and analyzes the values in the vehicles. It can help individuals or businesses monitor consumption, identify problems, reduce cost and efficiency, and prevent fuel theft and leakage.</p>
                                     </div>
                                 </div>
 
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">25. What is IoT fuel efficiency?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>IoT energy can help improve fuel efficiency. With fuel monitoring and management, the IoT system will analyze full consumption patterns, reducing unnecessary expenses and improving efficiency.</p>
                                     </div>
                                 </div>
 
@@ -768,7 +768,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">26. What technology improves fuel efficiency?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>A few technologies improve fuel efficiency, such as direct injection, fuel management systems, electronic fuel injection (EFI), and energy management systems.</p>
                                     </div>
                                 </div>
 
@@ -776,7 +776,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">27. What is IoT in oil and gas?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The Internet of Things (IoT) is a </p>
                                     </div>
                                 </div>
 
@@ -784,7 +784,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">28. Which fuel has highest fuel efficiency?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Hydrogen has the highest fuel efficiency.</p>
                                     </div>
                                 </div>
 
@@ -792,7 +792,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">29. Which fuel system is more efficient?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Sequential fuel injection is the most efficient and effective fuel system available in the automotive industry.</p>
                                     </div>
                                 </div>
 
@@ -800,7 +800,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">30. How to calculate fuel consumption?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The easiest way to calculate fuel consumption is by dividing the distance traveled by fuel usage.</p>
                                     </div>
                                 </div>
 
@@ -808,7 +808,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">31. What is UPS monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>A UPS monitoring system monitors different metrics of UPS devices in a network to ensure they are always working properly.</p>
                                     </div>
                                 </div>
 
@@ -816,7 +816,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">32. What is the full form of UPS?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The full form of UPS is an Uninterruptible Power Supply.</p>
                                     </div>
                                 </div>
 
@@ -824,7 +824,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">33. What type of device is a UPS?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>UPS is a backup power supply for the devices and systems that works during power cuts and power failures. It protects the devices from damage and maintains a power supply during power-related issues.</p>
                                     </div>
                                 </div>
 
@@ -832,7 +832,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">34. How does UPS work?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>UPS constantly monitors the power it receives from the mains. In case of power fluctuations, high or low voltage, it automatically switches to battery power, protecting the connected devices.</p>
                                     </div>
                                 </div>
 
@@ -840,7 +840,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">35. How does a smart UPS work?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Smart-UPS provides a few extra functions than regular UPS. It can shut down equipment before power is completely lost and reboot it when power is back. It can choose to shut down less essential equipment first so crucial equipment can stay powered for longer.</p>
                                     </div>
                                 </div>
 
@@ -848,7 +848,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">36. What is UPS for WiFi?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>UPS is the backup power supply that ensures uninterrupted and reliable internet connectivity.</p>
                                     </div>
                                 </div>
 
@@ -856,7 +856,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">37. What is the principle of UPS?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>UPS works by converting AC power to DC and then reconverting it to stable AC power.</p>
                                     </div>
                                 </div>
 
@@ -864,7 +864,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">38. How many types of UPS are there?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>There are three types of UPS available: line-interactive UPS, standby (offline)UPS, and online double-conversion UPS.</p>
                                     </div>
                                 </div>
 
@@ -872,7 +872,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">39. What is UPS management software?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>UPS management software is an application that tracks the performance of UPS devices and keeps them functional.</p>
                                     </div>
                                 </div>
 
@@ -880,7 +880,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">40. What is the free software for UPS monitoring?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The free software for UPS monitoring is ION UPS, WinMust, Vertiv™ Power Assist etc, and many more.</p>
                                     </div>
                                 </div>
 
@@ -888,7 +888,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">41. What is IoT based water monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The IoT-based water monitoring system focuses on monitoring and managing the quality of water and water usage from remote locations.</p>
                                     </div>
                                 </div>
 
@@ -896,7 +896,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">42. What are IoT devices for water?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>The IoT devices for water monitoring systems are IoT sensors, IoT controllers, and IoT smart water meters which are connected to taps, pipes, irrigation systems, flood detection systems, and water distribution networks.</p>
                                     </div>
                                 </div>
 
@@ -904,7 +904,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">43. What is a smart water monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>A smart water monitoring system monitors the quality of the water and checks water availability.</p>
                                     </div>
                                 </div>
 
@@ -912,7 +912,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">44. What is IoT water meter?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>An IoT water meter is a device that measures water consumption and enhances water management efficiency with real-time data and remote reading.</p>
                                     </div>
                                 </div>
 
@@ -920,7 +920,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">45. How do we use technology to monitor water?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Technologies like IoT sensors, smart water metering, remote monitoring systems, etc., help water monitoring systems monitor and manage water availability and quality and make data-driven decisions.</p>
                                     </div>
                                 </div>
 
@@ -928,7 +928,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">46. What are two ways to monitor the use of water?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Traditional water metering and smart water monitoring systems are the two ways to monitor water use.</p>
                                     </div>
                                 </div>
 
@@ -936,7 +936,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">47. hy do we do water monitoring?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Water monitoring is essential to measuring water usage and wastage, water quality, pipeline leakage detection, predictive maintenance, etc.</p>
                                     </div>
                                 </div>
 
@@ -944,7 +944,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">48. What is the objective of water level monitoring system using IoT?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Water level monitoring systems using IoT have multiple objectives. Those objectives are real-time monitoring, water conservation, predictive maintenance, tracking, and alerts of water levels.</p>
                                     </div>
                                 </div>
 
@@ -952,7 +952,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">49. What is a budget Water Monitoring IoT Platform?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>There is no one-size-fits-all solution for the water monitoring IoT platform. The budget depends on multiple factors, including technical skills, requirements, platform charges, hardware, and software.</p>
                                     </div>
                                 </div>
 
@@ -960,7 +960,7 @@
                                 <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">50. What is the need of water level monitoring system?</h5>
                                     <div class="faq-answer">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, harum? Rem sint iusto esse, recusandae distinctio optio obcaecati. Adipisci rerum doloremque exercitationem iure, dicta reiciendis similique minima suscipit tempora consectetur.</p>
+                                        <p>Water level monitoring systems can mitigate water-related challenges. They help with water conservation, groundwater monitoring, resource management, early leak detection, flood monitoring, and more.</p>
                                     </div>
                                 </div>
 
@@ -980,7 +980,7 @@
                             <h2 class="faq-category">Services FAQs</h2>
                             <!-- FAQ items -->
                             <div class="list-group faq-list">
-                                <div class="list-group-item faq-list-item">
+                                {{-- <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">Question 1</h5>
                                     <div class="faq-answer">
                                         <p>Answer to question 1.</p>
@@ -997,7 +997,7 @@
                                     <div class="faq-answer">
                                         <p>Answer to question 3.</p>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -1009,7 +1009,7 @@
                             <h2 class="faq-category">Payment FAQs</h2>
                             <!-- FAQ items -->
                             <div class="list-group faq-list">
-                                <div class="list-group-item faq-list-item">
+                                {{-- <div class="list-group-item faq-list-item">
                                     <h5 class="faq-question mb-0">Question 1</h5>
                                     <div class="faq-answer">
                                         <p>Answer to question 1.</p>
@@ -1026,7 +1026,7 @@
                                     <div class="faq-answer">
                                         <p>Answer to question 3.</p>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

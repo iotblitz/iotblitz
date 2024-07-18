@@ -1,4 +1,9 @@
-
+@php
+    $title="Auther Archives:{{ ucwords($authername) }}";
+    $meta_author="{{ ucwords($authername) }}";
+    $meta_keywords="{{ ucwords($authername) }}, author, author archives, author archives IoTBlitz, author archives IoTBlitz LLP,IotBlitz, IoTBlitz LLP, IoTBlitz author archives";
+    $meta_description="Since its founding and establishment in 2024, IoTBlitz has expanded rapidly, serving both local and foreign customers. Our team of highly skilled experts uses cutting-edge technology to deliver the finest IoT Platform and Remote Monitoring Systems.";
+@endphp
 
 @extends('public.common.layout')
 @section('page_style')
