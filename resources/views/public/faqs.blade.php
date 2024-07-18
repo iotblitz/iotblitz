@@ -110,12 +110,17 @@
             padding: 10px 15px;
             background-color: #f0eeff;
             border-radius: 8px 8px 8px 8px;
+
         }
 
+        .faq-answer p {
+            font-size:16px
+        }
         .faq-list-item:last-child .faq-answer:last-child {
             padding: 10px 15px;
             background-color: #f8f9fa;
             border-radius: 0 0 10px 10px;
+
         }
 
         .faq-answer.show {
