@@ -25,8 +25,8 @@
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="{{ route('home') }}"
-                                class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
+                        {{-- <li class="scroll-to-section"><a href="{{ route('home') }}"
+                                class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li> --}}
                         <li class="scroll-to-section"><a href="{{ route('product') }}"
                                 class="{{ request()->routeIs('product') ? 'active' : '' }}">Solutions</a></li>
                         <li class="scroll-to-section"><a href="{{ route('solutions') }}"
