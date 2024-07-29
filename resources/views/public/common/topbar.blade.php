@@ -57,8 +57,8 @@
                                 class="{{ request()->routeIs('case_study') || request()->routeIs('single_case_study') ||  request()->routeIs('careers') || request()->routeIs('single_careers')|| request()->routeIs('faqs') ? 'active' : '' }} more-buttons">More
                                 <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
-                                <li><a href="{{ route('case_study') }}"
-                                        class="{{ request()->routeIs('case_study*') ? 'active' : '' }}">Case Study</a></li>
+                                {{-- <li><a href="{{ route('case_study') }}"
+                                        class="{{ request()->routeIs('case_study*') ? 'active' : '' }}">Case Study</a></li> --}}
 
 
                                 <li><a href="{{ route('faqs') }}"

@@ -985,25 +985,174 @@
                             <h2 class="faq-category">Services FAQs</h2>
                             <!-- FAQ items -->
                             <div class="list-group faq-list">
-                                {{-- <div class="list-group-item faq-list-item">
-                                    <h5 class="faq-question mb-0">Question 1</h5>
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">1. What is IoT in software development?</h5>
                                     <div class="faq-answer">
-                                        <p>Answer to question 1.</p>
+                                        <p>IoT software development involves integrating hardware and software to connect devices to a network and creating software components to power interconnected devices and IoT systems.</p>
                                     </div>
                                 </div>
-                                <div class="list-group-item faq-list-item">
-                                    <h5 class="faq-question mb-0">Question 2</h5>
-                                    <div class="faq-answer">
-                                        <p>Answer to question 2.</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item faq-list-item">
-                                    <h5 class="faq-question mb-0">Question 3</h5>
-                                    <div class="faq-answer">
-                                        <p>Answer to question 3.</p>
-                                    </div>
-                                </div> --}}
                             </div>
+
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">2. How to create IoT software?</h5>
+                                    <div class="faq-answer">
+                                        <p>Before creating IoT software, you need to find its purpose. Then, you need to choose the right hardware and components, select a connectivity protocol, develop firmware, choose a cloud platform, build the app, and test and secure the IoT Software.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">3. Which programming language for IoT?</h5>
+                                    <div class="faq-answer">
+                                        <p>C and C++, Python, Java, Javascript, PHP, Rust, and other programming languages used for IoT.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">4. Is coding required for IoT?</h5>
+                                    <div class="faq-answer">
+                                        <p>Yes, coding is essential for coding. Programming is needed for IoT devices to function. With programming, microprocessors and microcontrollers can perform specific tasks. Coding powers these systems and enables them to communicate with each other and process data.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">5. What is IoT platform design?</h5>
+                                    <div class="faq-answer">
+                                        <p>IoT platform design is a process of constructing a software structure that connects, manages, monitors, and analyzes the IoT-connected devices and generated data.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">6. What are the 4 types of IoT platforms?</h5>
+                                    <div class="faq-answer">
+                                        <p>The 4 types of IoT platforms are IoT Connectivity Platforms, IoT Device Management Platforms, IoT Application Enablement Platforms, and IoT Analytics Platforms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">7. How many IoT platforms are there?</h5>
+                                    <div class="faq-answer">
+                                        <p>There are thousands of IoT platforms available in the market. The IoT platforms mostly come under 4 main types.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">8. How is IoT used in management?</h5>
+                                    <div class="faq-answer">
+                                        <p>IoT is used in management to reduce operation costs, improve operations, enhance profitability, and maintain workflow.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">9. What is predictive maintenance in IoT?</h5>
+                                    <div class="faq-answer">
+                                        <p>predictive maintenance in IoT is monitoring the IoT devices using sensors, software, machine learning, and data analysis. After analyzing data, Predictive maintenance offers predictions about the maintenance of the devices and equipment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">10. What are IoT device controls?</h5>
+                                    <div class="faq-answer">
+                                        <p>IoT device control is a process of accessing and managing IoT devices remotely. You can do multiple things, such as changing the settings, implementing access control, updating software, etc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">11. What is AI?</h5>
+                                    <div class="faq-answer">
+                                        <p>Artificial Intelligence (AI) is a branch of computer science that uses software, algorithms, data, and other technologies to create devices and machines that can perform tasks without the human touch.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">12. What is Automation?</h5>
+                                    <div class="faq-answer">
+                                        <p>Automation is a technological process that performs tasks without human intervention. It emphasizes operating the whole work automatically. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">13. What is service automation through AI?</h5>
+                                    <div class="faq-answer">
+                                        <p>Service automation through AI is a process of using AI, software, and other technologies to automate repetitive tasks, services, and operations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">14. How do I start an app development?</h5>
+                                    <div class="faq-answer">
+                                        <p>To start app development, you have to follow a few steps. Those are determining your goal, studying the market, designing a wireframe, creating an app prototype, and publishing the app.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">15. What are the 5 steps of developing an app?</h5>
+                                    <div class="faq-answer">
+                                        <p>The 5 app development steps are planning, design, development, testing, and deployment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">16. Can I develop an app for both Android and iOS?</h5>
+                                    <div class="faq-answer">
+                                        <p>Yes. You can develop an app for both Android and iOS and follow Cross-platform and Native development processes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">17. What is a dashboard in IoT?</h5>
+                                    <div class="faq-answer">
+                                        <p>IoT dashboards are the central user interface that allows the user to monitor and interact with IoT-connected devices.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">18. What is the primary purpose of a dashboard?</h5>
+                                    <div class="faq-answer">
+                                        <p>The main purpose of a dashboard is to present data collected by devices according to the needs of viewers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">19. How does the IoT dashboard differ from an IoT server?</h5>
+                                    <div class="faq-answer">
+                                        <p>The IoT dashboard is a system that shows the stats and conditions of the IoT in real-time.  It presents data for interaction in a user-friendly way. On the other hand, an IoT server is a hub that Collects, manages, stores, analyzes, and processes data from serval devices.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group faq-list">
+                                <div class="list-group-item faq-list-item">
+                                    <h5 class="faq-question mb-0">20. What is a remote monitoring dashboard?</h5>
+                                    <div class="faq-answer">
+                                        <p>A remote monitoring dashboard is an interface of the monitoring system that shows real-time data collected from sensors and devices. It provides multiple insights into the devices' condition and function.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
                         </div>
                     </div>
 
