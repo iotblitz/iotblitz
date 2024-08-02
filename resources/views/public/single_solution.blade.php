@@ -340,7 +340,7 @@
                             <li class="list-inline-item"><a href="{{ route('home') }}" class="text-white-50">Home</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
                             <li class="list-inline-item"><a href="{{ route('solutions') }}"
-                                    class="text-white-50">Solutions</a></li>
+                                    class="text-white-50">Services</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
                             <li class="list-inline-item"><a href="#"
                                     class="text-white">{{ ucwords($solutions->solutions_title) }}</a></li>
