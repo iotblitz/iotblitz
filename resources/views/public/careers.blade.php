@@ -1,3 +1,9 @@
+@php
+    $title="Careers";
+    $meta_author="iotblitz";
+    $meta_keywords="Careers, jobs, job openings, job opportunities, job postings, applications jobs, job vacancies, job listings, job search, job sites, job recruitment, job application, job opportunities, job posting sites, job search sites";
+    $meta_description="Explore exciting career opportunities at IoTBlitz. Join our team of techies and innovators to create apps, IoT devices, and industry 4.0 solutions to shape the future of technology.";
+@endphp
 @extends('public.common.layout')
 @section('page_style')
     <style>

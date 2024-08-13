@@ -1,3 +1,10 @@
+@php
+    $title="FAQs";
+    $meta_author="iotblitz";
+    $meta_keywords="FAQs";
+    $meta_description="General FAQs";
+@endphp
+
 @extends('public.common.layout')
 @section('page_style')
     <style>

@@ -1,3 +1,9 @@
+@php
+    $title="Case Study";
+    $meta_author="iotblitz";
+    $meta_keywords="Case Study";
+    $meta_description="Explore IoTBlitz LLP's AI, IoT, and Design expertise. Transform processes, enhance efficiency, and drive innovation with our tailored technology solutions.";
+@endphp
 @extends('public.common.layout')
 @section('page_style')
     <style>

@@ -1,3 +1,9 @@
+@php
+    $title=$case_study->case_study_title;
+    $meta_author="iotblitz";
+    $meta_keywords="Case Study, case study, iot case study ";
+    $meta_description=$case_study->text_description;
+@endphp
 @extends('public.common.layout')
 @section('page_style')
     <style>

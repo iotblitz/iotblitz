@@ -1,5 +1,9 @@
-
-
+@php
+    $title=$authername;
+    $meta_author="iotblitz";
+    $meta_keywords=$authername;
+    $meta_description="";
+@endphp
 @extends('public.common.layout')
 @section('page_style')
 

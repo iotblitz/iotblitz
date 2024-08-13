@@ -1,3 +1,11 @@
+@php
+    $title=$product->title;
+    $meta_author="iotblitz";
+    $meta_keywords=$product->title;
+    $meta_description=$product->about_job;
+@endphp
+
+
 @extends('public.common.layout')
 
 @section('page_style')
