@@ -1,5 +1,6 @@
 @php
-    $title=$product->blog_title;
+    $title=$product->product_title;
+    $meta_author="iotblitz";
     $meta_keywords=$product->keyword;
     $meta_description=$product->focus_keyword.', '.$product->meta_descriptions;
 @endphp

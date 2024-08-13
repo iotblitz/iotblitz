@@ -1,3 +1,10 @@
+@php
+    $title=$solutions->solutions_title;
+    $meta_author="iotblitz";
+    $meta_keywords=$solutions->solutions_keywords;
+    $meta_description=$solutions->text_description
+@endphp
+
 @extends('public.common.layout')
 @section('page_style')
     <style>

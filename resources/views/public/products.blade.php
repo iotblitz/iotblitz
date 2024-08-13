@@ -1,3 +1,9 @@
+@php
+    $title="Solutions";
+    $meta_author="iotblitz";
+    $meta_keywords="Solutions, Solution, iot solutions";
+    $meta_description="IoTBlitz specializes in IoT software design and development, IIoT Platforms, and end-to-end IoT Solutions. Our custom-designed IoT Platforms and Remote Monitoring Systems aim to enhance industry efficiency and performance.";
+@endphp
 @extends('public.common.layout')
 @section('page_style')
     <style>

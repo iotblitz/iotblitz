@@ -1,3 +1,10 @@
+@php
+    $title="IoTBlitz";
+    $meta_author="iotblitz";
+    $meta_keywords="iotblitz,iotblitz llp, IoTBlitz,IoTBlitz LLP";
+    $meta_description="Connect your devices and be at the forefront of the Industry 4.0 revolution with the effortless power of IoT. Stay ahead of the curve with real-time alerts using our IoT Platform powered by Cloud and Industrial IoT. Track your energy, fuel, water, solar, and voltage consumption in real-time and optimize it according to your needs.";
+@endphp
+
 @extends('public.common.layout')
 @section('page_style')
     <style>

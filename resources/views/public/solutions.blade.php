@@ -1,3 +1,9 @@
+@php
+    $title="Services";
+    $meta_author="iotblitz";
+    $meta_keywords="Services, services, iot services";
+    $meta_description="Our expert IoT engineers are available 24/7 to provide a solution tailored to your business and operational needs.";
+@endphp
 @extends('public.common.layout')
 @section('page_style')
     <style>
