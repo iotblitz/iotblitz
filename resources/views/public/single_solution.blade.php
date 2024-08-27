@@ -18,7 +18,7 @@
             line-height: 1.6;
             color: #555;
             margin-bottom: 15px;
-            text-align: justify;
+            /* text-align: justify; */
         }
 
         /* Headings */
