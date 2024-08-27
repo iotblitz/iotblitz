@@ -666,7 +666,7 @@
 
 
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.4300796987472!2d88.37257297436688!3d22.450466979578902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0271b97eb603bd%3A0x3f972575249e099!2sGreen%20Valley%20Residency%2C%20486%2C%20Boral%20Main%20Road%2C%20near%20To...wheelz%2C%20Banerjee%20Para%2C%20Kamdahari%2C%20West%20Bengal%20700084!5e0!3m2!1sen!2sin!4v1719463781784!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14749.714657687526!2d88.3751459!3d22.4505202!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027160322251a5%3A0xa8c7fed54e5a7780!2sIoTBlitz!5e0!3m2!1sen!2sin!4v1724756326769!5m2!1sen!2sin"
                         width="100%" height="450" style="border:0;border-radius: 20px!important;"
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                         title="Google Map showing a specific location">
