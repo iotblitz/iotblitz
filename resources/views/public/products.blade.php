@@ -185,7 +185,7 @@
 
 
 
-                <div class="content-container">
+                {{-- <div class="content-container">
                     <div class="row">
                         <div class="col-md-1">
                             <img src="https://via.placeholder.com/40" alt="Icon">
@@ -207,7 +207,7 @@
 
 
 
-                </div>
+                </div> --}}
 
 
                 <div class="row event_box">
