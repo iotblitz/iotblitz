@@ -18,7 +18,8 @@ class PublicProductCategoryModel extends Model
 
     public function products()
     {
-        return $this->hasMany(PublicProductModel::class, 'product_category_id', 'product_category_id');
+        return $this->hasMany(PublicProductModel::class, 'product_category_id', 'product_category_id')
+        ->where('active_status', 'A');
     }
 
 }

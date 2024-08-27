@@ -36,6 +36,92 @@
             display: inline-block;
             margin-bottom: 50px;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .content-container {
+            display: flex;
+            align-items: center;
+            /* padding: 20px; */
+            background-color: #f1f0fe;
+            /* border: 1px solid #ccc; */
+            /* margin-bottom: 10px; */
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+
+            border-radius: 25px;
+            position: relative;
+            padding: 40px;
+            margin-bottom: 96px;
+
+
+
+
+        }
+
+        .content-container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content-head {
+            flex-grow: 1;
+            margin-left: 15px;
+        }
+
+        .arrow-icon {
+            /* position: absolute;
+            right: 0;
+            font-size: 18px;
+            background-color: #7a6ad8;
+            border-radius: 50%;
+            padding: 2%;
+            display: inline-block;
+            text-align: center;
+            width: 1px;
+            /* line-height: 120px;
+            /* font-size: 18px;
+            z-index: 1;
+            color: #fff;
+            border-radius: 100% 0% 0% 100%; */
+
+
+            position: absolute;
+            right: 0;
+            top: 22px;
+            background-color: #7a6ad8;
+            width: 60px;
+            height: 120px;
+            display: inline-block;
+            text-align: center;
+            line-height: 120px;
+            font-size: 18px;
+            z-index: 1;
+            color: #fff;
+            border-radius: 60% 0% 0% 60%;;
+        }
+
+        .expanded-content {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
     </style>
 @endsection
 @section('page_content')
@@ -87,6 +173,43 @@
             </ul> --}}
             @foreach ($products as $cattagorydata)
                 <h2 class="mb-5 category">{{ $cattagorydata->category }}</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="content-container">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <img src="https://via.placeholder.com/40" alt="Icon">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="content-head">
+                                <h5 class="mb-0">Content Head This is the expanded content that appears when you click the arrow.</h5>
+                                <div class="expanded-content">
+                                    <p>This is the expanded content that appears when you click the arrow.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="arrow-icon">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
                 <div class="row event_box">
 
 
